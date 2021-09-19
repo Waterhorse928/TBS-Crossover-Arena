@@ -1,12 +1,12 @@
-class Aya:
+class Chen:
     def __init__(self):
-        self.name = "Aya"
-        self.hp = 5
-        self.sp = 6
-        self.dfn = 1
+        self.name = "Chen"
+        self.hp = 3
+        self.sp = 3
+        self.dfn = 0
         self.res = 0
-        self.spd = 9
-        self.eva = 6
+        self.spd = 10
+        self.eva = 5
         self.maxHp = self.hp
         self.maxSp = self.sp
         self.atkS = 0
@@ -15,3 +15,7 @@ class Aya:
         self.resS = 0
         self.spdS = 0
         self.evaS = 0
+
+
+    
+
