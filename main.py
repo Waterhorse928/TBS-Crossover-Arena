@@ -15,13 +15,14 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 DARK_BLUE = (0,8,53)
 
-FONT = pygame.font.SysFont('consolas', 20)
+FONT = pygame.font.SysFont('consolas', 50)
 
 CHEN_IMAGE = pygame.image.load(os.path.join('images', 'chen-trimmy.png'))
 BACKGROUND = pygame.image.load(os.path.join('images', 'Background.png'))
 BOX = pygame.image.load(os.path.join('images', 'box.png'))
 LOWER_BOX = pygame.image.load(os.path.join('images', 'lower_box2.png'))
 HIGHER_BOX = pygame.image.load(os.path.join('images', 'higher_box.png'))
+BUTTON = pygame.image.load(os.path.join('images', 'button.png'))
 
 FPS = 60
 
@@ -36,6 +37,13 @@ def main():
         WIN.blit(BACKGROUND,(0,0))
         WIN.blit(LOWER_BOX,(50,700))
         WIN.blit(HIGHER_BOX,(50,50))
+        WIN.blit(BUTTON,(75,725))
+        WIN.blit(BUTTON,(375,725))
+        WIN.blit(BUTTON,(675,725))
+        WIN.blit(BUTTON,(75,850))
+        WIN.blit(BUTTON,(375,850))
+        WIN.blit(BUTTON,(675,850))
+        text("Skill 1", (90, 740), WHITE)
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
