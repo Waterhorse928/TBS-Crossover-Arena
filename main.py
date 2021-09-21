@@ -2,7 +2,7 @@ import pygame
 import os
 import sys
 
-from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP
+from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_z
 import battle
 pygame.font.init()
 pygame.mixer.init()
@@ -107,6 +107,10 @@ def main():
                     x -= 1
                     if x < x_limit_lower:
                         x = x_limit_upper
+                if event.key == K_z:
+                    pass
+
+                
 
 
                 
