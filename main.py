@@ -36,7 +36,8 @@ PANEL2_OUTLINE = pygame.image.load(os.path.join('images', 'panel2_outline.png'))
 
 FPS = 60
 
-
+player1 = {1:c.characters.chen,2:c.characters.chen,3:c.characters.chen,4:c.characters.chen}
+player2 = {1:c.characters.chen,2:c.characters.chen,3:c.characters.chen,4:c.characters.chen}
 
 class Label:
     def __init__(self, font, text, color, position, anchor="topleft"):
@@ -49,11 +50,11 @@ class Label:
         surface.blit(self.image, self.rect)
 
 
-def panel(x,y,pos):
+def panel(x,y,pos,char):
     WIN.blit(PANEL2,(x,y))
     Label(FONT_STAT,f"POS {pos}",WHITE,(x+1,y+1),"topleft").draw(WIN)
     Label(FONT_STAT,f"Order {0}",WHITE,(x+199,y+1),"topright").draw(WIN)
-    Label(FONT_STAT,f"HP {10}/{10}",WHITE,(x+1,y+269),"bottomleft").draw(WIN)
+    Label(FONT_STAT,f"HP {char.hp}/{char.maxHP}",WHITE,(x+1,y+269),"bottomleft").draw(WIN)
     Label(FONT_STAT,f"SP {10}/{10}",WHITE,(x+199,y+269),"bottomright").draw(WIN)
 
 def main():
@@ -78,22 +79,19 @@ def main():
 
             WIN.blit(HIGHER_BOX,(50,50))
 
+                #Player 1
+            panel(70,360,1,player1(1))
+            panel(290,360,2,player1(2))
+            panel(510,360,3,player1(3))
+            panel(730,360,4,player1(4))
+
+                #Player 2
+            panel(730,70,1,player2(1))
+            panel(510,70,2,player2(2))
+            panel(290,70,3,player2(3))
+            panel(70,70,4,player2(4))
             
-            panel(70,70,4)
             
-            panel(290,70,3)
-            
-            panel(510,70,2)
-            
-            panel(730,70,1)
-            
-            panel(70,360,1)
-            
-            panel(290,360,2)
-            
-            panel(510,360,3)
-            
-            panel(730,360,4)
 
             WIN.blit(LOWER_BOX,(50,700))
     
