@@ -1,6 +1,6 @@
 class Template:
     def __init__(self):
-        self.name = "Template"
+        self.name = "I AM ERROR."
         self.hp = 10
         self.sp = 10
         self.dfn = 0

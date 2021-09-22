@@ -36,8 +36,9 @@ PANEL2_OUTLINE = pygame.image.load(os.path.join('images', 'panel2_outline.png'))
 
 FPS = 60
 
-player1 = {1:characters.Chen(),2:characters.Chen(),3:characters.Chen(),4:characters.Chen()}
-player2 = {1:characters.Chen(),2:characters.Chen(),3:characters.Chen(),4:characters.Chen()}
+player1 = [characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
+player2 = [characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
+turn = 1
 
 class Label:
     def __init__(self, font, text, color, position, anchor="topleft"):
@@ -49,13 +50,42 @@ class Label:
     def draw(self, surface):
         surface.blit(self.image, self.rect)
 
-
-def panel(x,y,slot,char):
-    WIN.blit(PANEL2,(x,y))
+def panel(x,y,slot,player,image):
+    char = player[slot]
+    WIN.blit(image,(x,y))
     Label(FONT_STAT,f"{char.name}",WHITE,(x+1,y+1),"topleft").draw(WIN)
-    Label(FONT_STAT,f"Slot {slot}",WHITE,(x+1,y+22),"topleft").draw(WIN)
+    Label(FONT_STAT,f"Slot {slot+1}",WHITE,(x+1,y+22),"topleft").draw(WIN)
     Label(FONT_STAT,f"HP {char.hp}/{char.maxHp}",WHITE,(x+1,y+269),"bottomleft").draw(WIN)
     Label(FONT_STAT,f"SP {char.sp}/{char.maxSp}",WHITE,(x+199,y+269),"bottomright").draw(WIN)
+
+def panels(x_pixels, y_pixels, player, image):
+    if player == p1():
+        number = 0
+        for y in range(len(y_pixels)):
+            for x in range(len(x_pixels)):
+                panel (x_pixels[x],y_pixels[y],number,player,image)
+                number += 1
+    if player == p2():
+        number = len(x_pixels) * len(y_pixels)
+        for y in range(len(y_pixels)):
+            for x in range(len(x_pixels)):
+                number -= 1
+                panel (x_pixels[x],y_pixels[y],number,player,image)
+                
+    
+
+
+def p1():
+    if turn == 1:
+        return player1
+    if turn == 2:
+        return player2
+
+def p2():
+    if turn == 1:
+        return player2
+    if turn == 2:
+        return player1
 
 def main():
     clock = pygame.time.Clock()
@@ -80,16 +110,16 @@ def main():
             WIN.blit(HIGHER_BOX,(50,50))
 
                 #Player 1
-            panel(70,360,1,player1[1])
-            panel(290,360,2,player1[2])
-            panel(510,360,3,player1[3])
-            panel(730,360,4,player1[4])
+            panel(70,360,0,p1(),PANEL2)
+            panel(290,360,1,p1(),PANEL2)
+            panel(510,360,2,p1(),PANEL2)
+            panel(730,360,3,p1(),PANEL2)
 
                 #Player 2
-            panel(730,70,1,player2[1])
-            panel(510,70,2,player2[2])
-            panel(290,70,3,player2[3])
-            panel(70,70,4,player2[4])
+            panel(730,70,0,p2(),PANEL2)
+            panel(510,70,1,p2(),PANEL2)
+            panel(290,70,2,p2(),PANEL2)
+            panel(70,70,3,p2(),PANEL2)
             
             
 
@@ -135,45 +165,43 @@ def main():
             x_limit_lower = 1
             x_limit_upper = 4
 
-            #Display
+        
+            #Background
             WIN.blit(BACKGROUND,(0,0))
             WIN.blit(BOX,(50,50))
+            
+            #Outline
             if y_gui== 1 and x_gui== 1:
                 WIN.blit(PANEL2_OUTLINE,(65,65))
-            WIN.blit(PANEL2,(70,70))
             if y_gui== 1 and x_gui== 2:
                 WIN.blit(PANEL2_OUTLINE,(285,65))
-            WIN.blit(PANEL2,(290,70))
             if y_gui== 1 and x_gui== 3:
                 WIN.blit(PANEL2_OUTLINE,(505,65))
-            WIN.blit(PANEL2,(510,70))
             if y_gui== 1 and x_gui== 4:
                 WIN.blit(PANEL2_OUTLINE,(725,65))
-            WIN.blit(PANEL2,(730,70))
             if y_gui== 2 and x_gui== 1:
                 WIN.blit(PANEL2_OUTLINE,(65,360))
-            WIN.blit(PANEL2,(70,365))
             if y_gui== 2 and x_gui== 2:
                 WIN.blit(PANEL2_OUTLINE,(285,360))
-            WIN.blit(PANEL2,(290,365))
             if y_gui== 2 and x_gui== 3:
                 WIN.blit(PANEL2_OUTLINE,(505,360))
-            WIN.blit(PANEL2,(510,365))
             if y_gui== 2 and x_gui== 4:
                 WIN.blit(PANEL2_OUTLINE,(725,360))
-            WIN.blit(PANEL2,(730,365))
             if y_gui== 3 and x_gui== 1:
                 WIN.blit(PANEL2_OUTLINE,(65,655))
-            WIN.blit(PANEL2,(70,660))
             if y_gui== 3 and x_gui== 2:
                 WIN.blit(PANEL2_OUTLINE,(285,655))
-            WIN.blit(PANEL2,(290,660))
             if y_gui== 3 and x_gui== 3:
                 WIN.blit(PANEL2_OUTLINE,(505,655))
-            WIN.blit(PANEL2,(510,660))
             if y_gui== 3 and x_gui== 4:
                 WIN.blit(PANEL2_OUTLINE,(725,655))
-            WIN.blit(PANEL2,(730,660))
+            
+            #Panels
+            if menu == 2:
+                panels([70,290,510,730],[70,365,660],p1(),PANEL2)
+
+            if menu == 3:
+                panels([70,290,510,730],[70,365,660],p2(),PANEL2)
 
             pygame.display.update()
             
