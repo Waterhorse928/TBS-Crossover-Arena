@@ -71,9 +71,6 @@ def panels(x_pixels, y_pixels, player, image):
             for x in range(len(x_pixels)):
                 number -= 1
                 panel (x_pixels[x],y_pixels[y],number,player,image)
-                
-    
-
 
 def p1():
     if turn == 1:
