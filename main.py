@@ -1,4 +1,5 @@
 import pygame
+import random
 import os
 import sys
 
@@ -36,8 +37,8 @@ PANEL2_OUTLINE = pygame.image.load(os.path.join('images', 'panel2_outline.png'))
 
 FPS = 60
 
-player1 = [characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
-player2 = [characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
+player1 = [characters.Saitama(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
+player2 = [characters.Aya(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
 turn = 1
 
 class Label:
@@ -45,32 +46,37 @@ class Label:
         self.image = font.render(text, 1, color)
         self.rect = self.image.get_rect()
         setattr(self.rect, anchor, position)
-        print(self.rect)
+        #print(self.rect)
 
     def draw(self, surface):
         surface.blit(self.image, self.rect)
 
-def panel(x,y,slot,player,image):
+def panel(x,y,slot,player):
     char = player[slot]
-    WIN.blit(image,(x,y))
+    WIN.blit(PANEL2,(x,y))
     Label(FONT_STAT,f"{char.name}",WHITE,(x+1,y+1),"topleft").draw(WIN)
     Label(FONT_STAT,f"Slot {slot+1}",WHITE,(x+1,y+22),"topleft").draw(WIN)
     Label(FONT_STAT,f"HP {char.hp}/{char.maxHp}",WHITE,(x+1,y+269),"bottomleft").draw(WIN)
     Label(FONT_STAT,f"SP {char.sp}/{char.maxSp}",WHITE,(x+199,y+269),"bottomright").draw(WIN)
+    Label(FONT_STAT,f"DEF {char.dfn}",WHITE,(x+1,y+248),"bottomleft").draw(WIN)
+    Label(FONT_STAT,f"RES {char.res}",WHITE,(x+1,y+227),"bottomleft").draw(WIN)
+    Label(FONT_STAT,f"SPD {char.spd}",WHITE,(x+199,y+248),"bottomright").draw(WIN)
+    Label(FONT_STAT,f"EVA {char.eva}",WHITE,(x+199,y+227),"bottomright").draw(WIN)
 
-def panels(x_pixels, y_pixels, player, image):
+
+def panels(x_pixels, y_pixels, player):
     if player == p1():
         number = 0
         for y in range(len(y_pixels)):
             for x in range(len(x_pixels)):
-                panel (x_pixels[x],y_pixels[y],number,player,image)
+                panel (x_pixels[x],y_pixels[y],number,player)
                 number += 1
     if player == p2():
         number = len(x_pixels) * len(y_pixels)
         for y in range(len(y_pixels)):
             for x in range(len(x_pixels)):
                 number -= 1
-                panel (x_pixels[x],y_pixels[y],number,player,image)
+                panel (x_pixels[x],y_pixels[y],number,player)
 
 def p1():
     if turn == 1:
@@ -84,15 +90,52 @@ def p2():
     if turn == 2:
         return player1
 
+def speedOrder(l):
+    l.sort(key=lambda x : x.spd, reverse=True)
+    return l
+
+def inFront():
+    l = [player1[0],player1[1],player1[2],player1[3],player2[0],player2[1],player2[2],player2[3]]
+    return l
+
+def removeAction(l,booleen):
+    for x in l:
+        if x.action == booleen:
+            l.remove(x)
+    return l
+
+def removeKO(l):
+    for x in l:
+        if x.KO == True:
+            l.remove(x)
+    return l
+
+def actionsLeft():
+    l = inFront()
+    l = removeKO(l)
+    actions = 0
+    for x in l:
+        if x.action == True:
+            actions += 1
+    return actions
+
+def newRound():
+    for x in removeKO(inFront()):
+                x.action = True
+                print (f"{x.name}.action = True")
+
 def main():
     clock = pygame.time.Clock()
     run = True
     x_gui= 1
     y_gui= 1
     menu = 1
+    round = 1
     while run:
         clock.tick(FPS)
-
+        if actionsLeft() == 0:
+            newRound()
+            
         if menu == 1:
             #Varibles
             y_limit_lower = 1
@@ -107,16 +150,16 @@ def main():
             WIN.blit(HIGHER_BOX,(50,50))
 
                 #Player 1
-            panel(70,360,0,p1(),PANEL2)
-            panel(290,360,1,p1(),PANEL2)
-            panel(510,360,2,p1(),PANEL2)
-            panel(730,360,3,p1(),PANEL2)
+            panel(70,360,0,p1())
+            panel(290,360,1,p1())
+            panel(510,360,2,p1())
+            panel(730,360,3,p1())
 
                 #Player 2
-            panel(730,70,0,p2(),PANEL2)
-            panel(510,70,1,p2(),PANEL2)
-            panel(290,70,2,p2(),PANEL2)
-            panel(70,70,3,p2(),PANEL2)
+            panel(730,70,0,p2())
+            panel(510,70,1,p2())
+            panel(290,70,2,p2())
+            panel(70,70,3,p2())
             
             
 
@@ -195,10 +238,10 @@ def main():
             
             #Panels
             if menu == 2:
-                panels([70,290,510,730],[70,365,660],p1(),PANEL2)
+                panels([70,290,510,730],[70,365,660],p1())
 
             if menu == 3:
-                panels([70,290,510,730],[70,365,660],p2(),PANEL2)
+                panels([70,290,510,730],[70,365,660],p2())
 
             pygame.display.update()
             
@@ -244,8 +287,8 @@ def main():
 
 
                 
-            
-            
+
+   
 
 main()
 
