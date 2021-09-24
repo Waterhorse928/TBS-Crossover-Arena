@@ -6,9 +6,9 @@ import sys
 from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_x, K_z
 
 import characters
-import battle
+
 pygame.font.init()
-pygame.mixer.init()
+#pygame.mixer.init()
 
 WIDTH, HEIGHT = 1000, 1000
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -40,6 +40,11 @@ FPS = 60
 player1 = [characters.Saitama(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
 player2 = [characters.Aya(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
 turn = 1
+round = 0
+menu = 1
+x_gui= 1
+y_gui= 1
+current = 0
 
 class Label:
     def __init__(self, font, text, color, position, anchor="topleft"):
@@ -91,7 +96,8 @@ def p2():
         return player1
 
 def speedOrder(l):
-    l.sort(key=lambda x : x.spd, reverse=True)
+    random.shuffle(l)
+    l.sort(key=lambda x : -x.spd)
     return l
 
 def inFront():
@@ -99,13 +105,16 @@ def inFront():
     return l
 
 def removeAction(l,booleen):
-    for x in l:
+    l2 = l.copy()
+    for x in l2:
         if x.action == booleen:
             l.remove(x)
+    #Remove items from a list without modifing the list
     return l
 
 def removeKO(l):
-    for x in l:
+    l2 = l.copy()
+    for x in l2:
         if x.KO == True:
             l.remove(x)
     return l
@@ -123,19 +132,35 @@ def newRound():
     for x in removeKO(inFront()):
                 x.action = True
                 print (f"{x.name}.action = True")
+    global round
+    round += 1
+    print(f"Round {round}")
+    
+
+
 
 def main():
     clock = pygame.time.Clock()
     run = True
-    x_gui= 1
-    y_gui= 1
-    menu = 1
-    round = 1
+    global menu, round, turn, x_gui, y_gui, current
+    
     while run:
         clock.tick(FPS)
-        if actionsLeft() == 0:
-            newRound()
-            
+        if current == 0  or current.action == False:
+            if actionsLeft() == 0:
+                newRound()
+            current = speedOrder(removeAction(inFront(),False))[0]
+            print (f"Current is {current.name}")
+            if (current in player1):
+                turn = 1 
+            if (current in player2):
+                turn = 2
+            print (f"Turn = {turn}")
+
+
+
+
+
         if menu == 1:
             #Varibles
             y_limit_lower = 1
@@ -183,7 +208,7 @@ def main():
             if y_gui== 2 and x_gui== 1:
                 WIN.blit(BUTTON_OUTLINE, (70,845))
             WIN.blit(BUTTON,(75,850))
-            Label(FONT_MENU,"Info",WHITE,(90,865)).draw(WIN)
+            Label(FONT_MENU,"Check",WHITE,(90,865)).draw(WIN)
     
             if y_gui== 2 and x_gui== 2:
                 WIN.blit(BUTTON_OUTLINE, (370,845))
@@ -195,9 +220,8 @@ def main():
             WIN.blit(BUTTON,(675,850))
             Label(FONT_MENU,"Order",WHITE,(690,865)).draw(WIN)
 
-            pygame.display.update()
         
-        if menu == 2 or menu == 3:
+        if menu == 2 or menu == 3 or menu == 4:
             #Varibles
             y_limit_lower = 1
             y_limit_upper = 3
@@ -237,13 +261,13 @@ def main():
                 WIN.blit(PANEL2_OUTLINE,(725,655))
             
             #Panels
-            if menu == 2:
+            if menu == 2 or menu == 4:
                 panels([70,290,510,730],[70,365,660],p1())
 
             if menu == 3:
                 panels([70,290,510,730],[70,365,660],p2())
 
-            pygame.display.update()
+        pygame.display.update()
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -267,17 +291,30 @@ def main():
                     if x_gui< x_limit_lower:
                         x_gui= x_limit_upper
                 if event.key == K_z:
+                    #Action Select
                     if menu == 1:
+                        #Rally
+                        if x_gui == 2 and y_gui == 1:
+                            current.action = False
+                            x_gui= 1
+                            y_gui= 1
+                        #Swap
+                        if x_gui == 3 and y_gui == 1:
+                            menu = 4
+                            x_gui= 1
+                            y_gui= 1 
+                        #Check
                         if x_gui== 1 and y_gui== 2:
                             menu = 2
                             x_gui= 1
                             y_gui= 1
+                        #Scout
                         if x_gui== 2 and y_gui== 2:
                             menu = 3
                             x_gui= 4
                             y_gui= 3
                 if event.key == K_x:
-                    if menu == 2 or menu == 3:
+                    if menu == 2 or menu == 3 or menu == 4:
                         menu = 1
                         x_gui= 1
                         y_gui= 1
