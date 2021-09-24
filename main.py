@@ -288,6 +288,24 @@ def main():
             if menu == 3:
                 panels([70,290,510,730],[70,365,660],p2())
 
+        if menu == 5:
+            y_limit_lower = 1
+            y_limit_upper = 8
+
+            x_limit_lower = 1
+            x_limit_upper = 1
+
+            WIN.blit(BACKGROUND,(0,0))
+            WIN.blit(BOX,(50,50))
+            
+            for x in range(8):
+                WIN.blit(BAR,(70,70+(x*110)))
+                speedList = speedOrder(inFront())
+                Label(FONT_STAT,f"{speedList[x].name}",WHITE,(71,71+(x*110)),"topleft").draw(WIN)
+
+
+            
+
         pygame.display.update()
             
         for event in pygame.event.get():
