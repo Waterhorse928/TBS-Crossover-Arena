@@ -34,6 +34,8 @@ BUTTON_OUTLINE = pygame.image.load(os.path.join('images', 'button_outline.png'))
 PANEL = pygame.image.load(os.path.join('images', 'panel.png'))
 PANEL2 = pygame.image.load(os.path.join('images', 'panel2.png'))
 PANEL2_OUTLINE = pygame.image.load(os.path.join('images', 'panel2_outline.png'))
+PANEL2_OUTLINE2 = pygame.image.load(os.path.join('images', 'panel2_outline2.png'))
+BAR = pygame.image.load(os.path.join('images', 'bar.png'))
 
 FPS = 60
 
@@ -96,7 +98,9 @@ def p2():
         return player1
 
 def speedOrder(l):
+    refreshSlot()
     random.shuffle(l)
+    l.sort(key=lambda x : x.slot)
     l.sort(key=lambda x : -x.spd)
     return l
 
@@ -135,7 +139,13 @@ def newRound():
     global round
     round += 1
     print(f"Round {round}")
-    
+
+def refreshSlot():
+    for x in player1:
+        x.slot = player1.index(x)
+    for x in player2:
+        x.slot = player2.index(x)
+
 
 
 
@@ -156,7 +166,7 @@ def main():
             if (current in player2):
                 turn = 2
             print (f"Turn = {turn}")
-
+            
 
 
 
@@ -173,6 +183,17 @@ def main():
             WIN.blit(BACKGROUND,(0,0))
 
             WIN.blit(HIGHER_BOX,(50,50))
+
+            if current == p1()[0]:
+                WIN.blit(PANEL2_OUTLINE2,(67,357))
+            if current == p1()[1]:
+                WIN.blit(PANEL2_OUTLINE2,(287,357))
+            if current == p1()[2]:
+                WIN.blit(PANEL2_OUTLINE2,(507,357))
+            if current == p1()[3]:
+                WIN.blit(PANEL2_OUTLINE2,(727,357))
+
+
 
                 #Player 1
             panel(70,360,0,p1())
@@ -296,6 +317,9 @@ def main():
                         #Rally
                         if x_gui == 2 and y_gui == 1:
                             current.action = False
+                            current.sp += 3
+                            if current.sp > current.maxSp:
+                                current.sp = current.maxSp
                             x_gui= 1
                             y_gui= 1
                         #Swap
@@ -313,8 +337,12 @@ def main():
                             menu = 3
                             x_gui= 4
                             y_gui= 3
+                        if x_gui== 3 and y_gui== 2:
+                            menu = 5
+                            x_gui= 1
+                            y_gui= 1
                 if event.key == K_x:
-                    if menu == 2 or menu == 3 or menu == 4:
+                    if menu == 2 or menu == 3 or menu == 4 or menu == 5:
                         menu = 1
                         x_gui= 1
                         y_gui= 1
