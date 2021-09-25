@@ -36,6 +36,9 @@ PANEL2 = pygame.image.load(os.path.join('images', 'panel2.png'))
 PANEL2_OUTLINE = pygame.image.load(os.path.join('images', 'panel2_outline.png'))
 PANEL2_OUTLINE2 = pygame.image.load(os.path.join('images', 'panel2_outline2.png'))
 BAR = pygame.image.load(os.path.join('images', 'bar.png'))
+ICON = pygame.image.load(os.path.join('images', 'icon.png'))
+QUESTION = pygame.image.load(os.path.join('images', 'question.png'))
+AYA = pygame.image.load(os.path.join('images', 'aya.png'))
 
 FPS = 60
 
@@ -61,6 +64,10 @@ class Label:
 def panel(x,y,slot,player):
     char = player[slot]
     WIN.blit(PANEL2,(x,y))
+    icon = pygame.transform.scale(ICON, (128,128))
+    WIN.blit(icon,(x+36,y+71))
+    icon = pygame.transform.scale(char.image, (128,128))
+    WIN.blit(icon,(x+36,y+71))
     Label(FONT_STAT,f"{char.name}",WHITE,(x+1,y+1),"topleft").draw(WIN)
     Label(FONT_STAT,f"Slot {slot+1}",WHITE,(x+1,y+22),"topleft").draw(WIN)
     Label(FONT_STAT,f"HP {char.hp}/{char.maxHp}",WHITE,(x+1,y+269),"bottomleft").draw(WIN)
@@ -146,6 +153,14 @@ def refreshSlot():
     for x in player2:
         x.slot = player2.index(x)
 
+def addIcons():
+    for x in player1:
+        x.image = QUESTION
+    for x in player2:
+        x.image = QUESTION
+        if x.name == "Aya":
+            x.image = AYA
+
 
 
 
@@ -153,7 +168,7 @@ def main():
     clock = pygame.time.Clock()
     run = True
     global menu, round, turn, x_gui, y_gui, current
-    
+    addIcons()
     while run:
         clock.tick(FPS)
         if current == 0  or current.action == False:
