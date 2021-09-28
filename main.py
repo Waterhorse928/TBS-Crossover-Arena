@@ -1,11 +1,12 @@
+import characters
 import pygame
-import random
 import os
+import random
 import sys
 
 from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_x, K_z
 
-import characters
+
 
 pygame.font.init()
 #pygame.mixer.init()
@@ -24,9 +25,9 @@ DARK_BLUE = (0,8,53)
 FONT_MENU = pygame.font.SysFont('consolas', 50)
 FONT_STAT = pygame.font.SysFont('consolas', 20)
 
-CHEN_IMAGE = pygame.image.load(os.path.join('images', 'chen-trimmy.png'))
 BACKGROUND = pygame.image.load(os.path.join('images', 'Background.png'))
 BOX = pygame.image.load(os.path.join('images', 'box.png'))
+BOX_FILL = pygame.image.load(os.path.join('images', 'box_fill.png'))
 LOWER_BOX = pygame.image.load(os.path.join('images', 'lower_box2.png'))
 HIGHER_BOX = pygame.image.load(os.path.join('images', 'higher_box.png'))
 BUTTON = pygame.image.load(os.path.join('images', 'button.png'))
@@ -37,13 +38,12 @@ PANEL2_OUTLINE = pygame.image.load(os.path.join('images', 'panel2_outline.png'))
 PANEL2_OUTLINE2 = pygame.image.load(os.path.join('images', 'panel2_outline2.png'))
 BAR = pygame.image.load(os.path.join('images', 'bar.png'))
 ICON = pygame.image.load(os.path.join('images', 'icon.png'))
-QUESTION = pygame.image.load(os.path.join('images', 'question.png'))
-AYA = pygame.image.load(os.path.join('images', 'aya.png'))
+BAR_OUTLINE = pygame.image.load(os.path.join('images', 'bar_outline.png'))
 
 FPS = 60
 
-player1 = [characters.Saitama(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
-player2 = [characters.Aya(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
+player1 = [characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
+player2 = [characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
 turn = 1
 round = 0
 menu = 1
@@ -63,6 +63,8 @@ class Label:
 
 def panel(x,y,slot,player):
     char = player[slot]
+    if char == current:
+        WIN.blit(PANEL2_OUTLINE2,(x-1,y-1))
     WIN.blit(PANEL2,(x,y))
     icon = pygame.transform.scale(ICON, (128,128))
     WIN.blit(icon,(x+36,y+71))
@@ -120,7 +122,6 @@ def removeAction(l,booleen):
     for x in l2:
         if x.action == booleen:
             l.remove(x)
-    #Remove items from a list without modifing the list
     return l
 
 def removeKO(l):
@@ -153,24 +154,24 @@ def refreshSlot():
     for x in player2:
         x.slot = player2.index(x)
 
-def addIcons():
-    for x in player1:
-        x.image = QUESTION
-    for x in player2:
-        x.image = QUESTION
-        if x.name == "Aya":
-            x.image = AYA
 
 
-
+#Menus
+#1 Action Select
+#2 Check
+#3 Scout
+#4 Swap
+#5 Speed Order
+#6 Choose Skill
+#7 Character Info
 
 def main():
     clock = pygame.time.Clock()
     run = True
     global menu, round, turn, x_gui, y_gui, current
-    addIcons()
     while run:
         clock.tick(FPS)
+        refreshSlot()
         if current == 0  or current.action == False:
             if actionsLeft() == 0:
                 newRound()
@@ -182,9 +183,6 @@ def main():
                 turn = 2
             print (f"Turn = {turn}")
             
-
-
-
 
         if menu == 1:
             #Varibles
@@ -199,17 +197,6 @@ def main():
 
             WIN.blit(HIGHER_BOX,(50,50))
 
-            if current == p1()[0]:
-                WIN.blit(PANEL2_OUTLINE2,(67,357))
-            if current == p1()[1]:
-                WIN.blit(PANEL2_OUTLINE2,(287,357))
-            if current == p1()[2]:
-                WIN.blit(PANEL2_OUTLINE2,(507,357))
-            if current == p1()[3]:
-                WIN.blit(PANEL2_OUTLINE2,(727,357))
-
-
-
                 #Player 1
             panel(70,360,0,p1())
             panel(290,360,1,p1())
@@ -221,7 +208,6 @@ def main():
             panel(510,70,1,p2())
             panel(290,70,2,p2())
             panel(70,70,3,p2())
-            
             
 
             WIN.blit(LOWER_BOX,(50,700))
@@ -312,12 +298,36 @@ def main():
 
             WIN.blit(BACKGROUND,(0,0))
             WIN.blit(BOX,(50,50))
+            WIN.blit(BAR_OUTLINE,(65,65+((y_gui-1)*110)))
             
             for x in range(8):
                 WIN.blit(BAR,(70,70+(x*110)))
+                WIN.blit(ICON,(73,93+(x*110)))
                 speedList = speedOrder(inFront())
+                WIN.blit(speedList[x].image,(73,93+(x*110)))
                 Label(FONT_STAT,f"{speedList[x].name}",WHITE,(71,71+(x*110)),"topleft").draw(WIN)
 
+        if menu == 6 or menu == 7:
+            WIN.blit(BACKGROUND,(0,0))
+            WIN.blit(BOX,(50,50))
+            WIN.blit(BOX_FILL,(55,55)) #(260,55)
+            panel(55,55,current.slot,p1())
+            if current.name == "Momiji":
+                y_limit_lower = 1
+                y_limit_upper = 2
+                x_limit_lower = 1
+                x_limit_upper = 1
+                Label(FONT_STAT,f"Ability to See Far Distances",WHITE,(261,56),"topleft").draw(WIN)
+                Label(FONT_STAT,f"While this unit is on the front, all allies gain +2 ACC.",WHITE,(261,77),"topleft").draw(WIN)
+                Label(FONT_STAT,f"Rabies Bite",WHITE,(56,331),"topleft").draw(WIN)
+                
+
+            else:
+                y_limit_lower = 1
+                y_limit_upper = 1
+                x_limit_lower = 1
+                x_limit_upper = 1
+                Label(FONT_STAT,f"Passive",WHITE,(261,56),"topleft").draw(WIN)
 
             
 
@@ -347,6 +357,11 @@ def main():
                 if event.key == K_z:
                     #Action Select
                     if menu == 1:
+                        #Skill
+                        if x_gui == 1 and y_gui == 1:
+                            menu = 6
+                            x_gui= 1
+                            y_gui= 1 
                         #Rally
                         if x_gui == 2 and y_gui == 1:
                             current.action = False
@@ -370,12 +385,13 @@ def main():
                             menu = 3
                             x_gui= 4
                             y_gui= 3
+                        #Order
                         if x_gui== 3 and y_gui== 2:
                             menu = 5
                             x_gui= 1
                             y_gui= 1
                 if event.key == K_x:
-                    if menu == 2 or menu == 3 or menu == 4 or menu == 5:
+                    if menu == 2 or menu == 3 or menu == 4 or menu == 5 or menu == 6:
                         menu = 1
                         x_gui= 1
                         y_gui= 1
