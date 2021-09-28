@@ -15,6 +15,8 @@ WIDTH, HEIGHT = 1000, 1000
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("TBS Crossover Arena")
 
+DIR_PATH = os.path.dirname(os.path.abspath(__file__))
+
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
@@ -301,37 +303,43 @@ def main():
             WIN.blit(BOX,(50,50))
             WIN.blit(BOX_FILL,(55,55)) #(260,55)
             panel(55,55,current.slot,p1())
-            line = 1
-            if current.name == "Momiji":
-                y_limit_lower = 1
-                y_limit_upper = 2
-                x_limit_lower = 1
-                x_limit_upper = 1
-
-                Label(FONT_PASSIVE,f"Ability to See Far Distances",WHITE,(261,35+(21*1)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"While this unit is on the front, all allies gain +2 ACC.",WHITE,(261,35+(21*2)),"topleft").draw(WIN)
-
-                Label(FONT_SKILL,f"{sel(1)}Rabies Bite",WHITE,(56,310+(21*1)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"[ATK] Cost 1 SP",WHITE,(56,310+(21*2)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"One Enemy: [Pierce 3]",WHITE,(56,310+(21*3)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"This skill ignores 2 DEF.",WHITE,(56,310+(21*4)),"topleft").draw(WIN)
-
-                Label(FONT_SKILL,f"{sel(2)}Expellee's Canaan",WHITE,(56,310+(21*5)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"[ATK] Cost 2 SP",WHITE,(56,310+(21*6)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"All Enemies: [Wind 4]",WHITE,(56,310+(21*7)),"topleft").draw(WIN)
-                
-
-            else:
-                y_limit_lower = 1
-                y_limit_upper = 1
-                x_limit_lower = 1
-                x_limit_upper = 1
-                Label(FONT_PASSIVE,f"Passive",WHITE,(261,35+(21*1)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"Passive Text.",WHITE,(261,35+(21*2)),"topleft").draw(WIN)
-                Label(FONT_SKILL,f"{sel(1)}1st Skill",WHITE,(56,310+(21*1)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"[?] Cost ?",WHITE,(56,310+(21*2)),"topleft").draw(WIN)
-
+            y_limit_lower = 1
+            x_limit_lower = 1
+            x_limit_upper = 1
+            y_limit_upper = current.skills
             
+            line = 1
+            for x in range(current.passives):
+                y = open(f"{DIR_PATH}/characters/{current.name}/passive{x}.txt","r",encoding='utf-8')
+                y = y.readlines()
+                first = True
+                for z in y:
+                    z = z.replace("\n","")
+                    if first == True:
+                        font = FONT_PASSIVE
+                        first =False
+                    else: 
+                        font = FONT_STAT
+                    Label(font,f"{z}",WHITE,(261,35+(21*line)),"topleft").draw(WIN)
+                    line += 1
+
+            line = 1
+            for x in range(current.skills):
+                y = open(f"{DIR_PATH}/characters/{current.name}/skill{x}.txt","r",encoding='utf-8')
+                y = y.readlines()
+                first = True
+                for z in y:
+                    z = z.replace("\n","")
+                    if first == True:
+                        font = FONT_SKILL
+                        skill_indention = sel(x+1)
+                        first =False
+                    else:
+                        font = FONT_STAT
+                        skill_indention = ""
+                    Label(font,f"{skill_indention}{z}",WHITE,(56,310+(21*line)),"topleft").draw(WIN)
+                    line += 1
+   
 
         pygame.display.update()
             

@@ -1,0 +1,4 @@
+Rabies Bite
+[ATK] Cost 1 SP
+One Enemy: [Pierce 3] 
+This skill ignores 2 DEF.

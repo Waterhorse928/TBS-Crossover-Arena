@@ -31,6 +31,9 @@ class Char:
         self.action = False
         self.KO = False
         self.image = icons.QUESTION
+        self.passives = 0
+        self.skills = 1
+
 
 def base(self):
     self.maxHp = self.hp
@@ -105,4 +108,6 @@ class Momiji(Char):
         self.spd = 6
         self.eva = 2
         self.image = icons.QUESTION
+        self.passives = 1
+        self.skills = 2
         base(self)
