@@ -111,6 +111,7 @@ def p2():
     if turn == 2:
         return player1
 
+#sorts list by Spd, Slot, randomly.
 def speedOrder(l):
     refreshSlot()
     random.shuffle(l)
@@ -118,23 +119,27 @@ def speedOrder(l):
     l.sort(key=lambda x : -x.spd)
     return l
 
+#returns a list of character in front
 def inFront():
     l = [player1[0],player1[1],player1[2],player1[3],player2[0],player2[1],player2[2],player2[3]]
     return l
 
-def removeAction(l,booleen):
+#Removes characters that have taken an action
+def removeAction(l):
     l2 = l.copy()
     for x in l2:
-        if x.action == booleen:
+        if x.action == False:
             l.remove(x)
     return l
 
+#Removes KOed Character from a list
 def removeKO(l):
     l2 = l.copy()
     for x in l2:
         if x.KO == True:
             l.remove(x)
     return l
+
 
 def actionsLeft():
     l = inFront()
@@ -145,6 +150,7 @@ def actionsLeft():
             actions += 1
     return actions
 
+#start a new round and set in front's actions to true
 def newRound():
     for x in removeKO(inFront()):
                 x.action = True
@@ -153,17 +159,19 @@ def newRound():
     round += 1
     print(f"Round {round}")
 
+#update currnt slot number
 def refreshSlot():
     for x in player1:
         x.slot = player1.index(x)
     for x in player2:
         x.slot = player2.index(x)
 
+#Cursor for Info Screen
 def sel(number):
     if number == y_gui:
         return "> "
     else:
-        return " "
+        return "  "
 
 #Menus
 #1 Action Select
@@ -184,7 +192,7 @@ def main():
         if current == 0  or current.action == False:
             if actionsLeft() == 0:
                 newRound()
-            current = speedOrder(removeAction(inFront(),False))[0]
+            current = speedOrder(removeAction(inFront()))[0]
             print (f"Current is {current.name}")
             if (current in player1):
                 turn = 1 
@@ -220,34 +228,28 @@ def main():
             
 
             WIN.blit(LOWER_BOX,(50,700))
-    
-            if y_gui== 1 and x_gui== 1:
-                WIN.blit(BUTTON_OUTLINE, (70,720))
+            WIN.blit(BUTTON_OUTLINE, (-230+(x_gui*300),595+(y_gui*125)))
+
             WIN.blit(BUTTON,(75,725))
             Label(FONT_MENU,"Skill",WHITE,(90, 740)).draw(WIN)
     
-            if y_gui== 1 and x_gui== 2:
-                WIN.blit(BUTTON_OUTLINE, (370,720))
+
             WIN.blit(BUTTON,(375,725))
             Label(FONT_MENU,"Rally",WHITE,(390, 740)).draw(WIN)
-    
-            if y_gui== 1 and x_gui== 3:
-                WIN.blit(BUTTON_OUTLINE, (670,720))
+
+
             WIN.blit(BUTTON,(675,725))
             Label(FONT_MENU,"Swap",WHITE,(690,740)).draw(WIN)
             
-            if y_gui== 2 and x_gui== 1:
-                WIN.blit(BUTTON_OUTLINE, (70,845))
+
             WIN.blit(BUTTON,(75,850))
             Label(FONT_MENU,"Check",WHITE,(90,865)).draw(WIN)
     
-            if y_gui== 2 and x_gui== 2:
-                WIN.blit(BUTTON_OUTLINE, (370,845))
+
             WIN.blit(BUTTON,(375,850))
             Label(FONT_MENU,"Scout",WHITE,(390,865)).draw(WIN)
     
-            if y_gui== 2 and x_gui== 3:
-                WIN.blit(BUTTON_OUTLINE, (670,845))
+
             WIN.blit(BUTTON,(675,850))
             Label(FONT_MENU,"Order",WHITE,(690,865)).draw(WIN)
 
@@ -266,30 +268,8 @@ def main():
             WIN.blit(BOX,(50,50))
             
             #Outline
-            if y_gui== 1 and x_gui== 1:
-                WIN.blit(PANEL2_OUTLINE,(65,65))
-            if y_gui== 1 and x_gui== 2:
-                WIN.blit(PANEL2_OUTLINE,(285,65))
-            if y_gui== 1 and x_gui== 3:
-                WIN.blit(PANEL2_OUTLINE,(505,65))
-            if y_gui== 1 and x_gui== 4:
-                WIN.blit(PANEL2_OUTLINE,(725,65))
-            if y_gui== 2 and x_gui== 1:
-                WIN.blit(PANEL2_OUTLINE,(65,360))
-            if y_gui== 2 and x_gui== 2:
-                WIN.blit(PANEL2_OUTLINE,(285,360))
-            if y_gui== 2 and x_gui== 3:
-                WIN.blit(PANEL2_OUTLINE,(505,360))
-            if y_gui== 2 and x_gui== 4:
-                WIN.blit(PANEL2_OUTLINE,(725,360))
-            if y_gui== 3 and x_gui== 1:
-                WIN.blit(PANEL2_OUTLINE,(65,655))
-            if y_gui== 3 and x_gui== 2:
-                WIN.blit(PANEL2_OUTLINE,(285,655))
-            if y_gui== 3 and x_gui== 3:
-                WIN.blit(PANEL2_OUTLINE,(505,655))
-            if y_gui== 3 and x_gui== 4:
-                WIN.blit(PANEL2_OUTLINE,(725,655))
+            WIN.blit(PANEL2_OUTLINE,(-155+(x_gui*220),-230+(y_gui*295)))
+
             
             #Panels
             if menu == 2 or menu == 4:
@@ -307,7 +287,7 @@ def main():
 
             WIN.blit(BACKGROUND,(0,0))
             WIN.blit(BOX,(50,50))
-            WIN.blit(BAR_OUTLINE,(65,65+((y_gui-1)*110)))
+            WIN.blit(BAR_OUTLINE,(65,-45+(y_gui*110)))
             
             for x in range(8):
                 WIN.blit(BAR,(70,70+(x*110)))
@@ -321,17 +301,24 @@ def main():
             WIN.blit(BOX,(50,50))
             WIN.blit(BOX_FILL,(55,55)) #(260,55)
             panel(55,55,current.slot,p1())
+            line = 1
             if current.name == "Momiji":
                 y_limit_lower = 1
                 y_limit_upper = 2
                 x_limit_lower = 1
                 x_limit_upper = 1
-                Label(FONT_PASSIVE,f"Ability to See Far Distances",WHITE,(261,56),"topleft").draw(WIN)
-                Label(FONT_STAT,f"While this unit is on the front, all allies gain +2 ACC.",WHITE,(261,77),"topleft").draw(WIN)
+
+                Label(FONT_PASSIVE,f"Ability to See Far Distances",WHITE,(261,35+(21*1)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"While this unit is on the front, all allies gain +2 ACC.",WHITE,(261,35+(21*2)),"topleft").draw(WIN)
+
                 Label(FONT_SKILL,f"{sel(1)}Rabies Bite",WHITE,(56,310+(21*1)),"topleft").draw(WIN)
                 Label(FONT_STAT,f"[ATK] Cost 1 SP",WHITE,(56,310+(21*2)),"topleft").draw(WIN)
                 Label(FONT_STAT,f"One Enemy: [Pierce 3]",WHITE,(56,310+(21*3)),"topleft").draw(WIN)
-                Label(FONT_STAT,f"This skill has Break 2.",WHITE,(56,310+(21*4)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"This skill ignores 2 DEF.",WHITE,(56,310+(21*4)),"topleft").draw(WIN)
+
+                Label(FONT_SKILL,f"{sel(2)}Expellee's Canaan",WHITE,(56,310+(21*5)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"[ATK] Cost 2 SP",WHITE,(56,310+(21*6)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"All Enemies: [Wind 4]",WHITE,(56,310+(21*7)),"topleft").draw(WIN)
                 
 
             else:
@@ -339,7 +326,10 @@ def main():
                 y_limit_upper = 1
                 x_limit_lower = 1
                 x_limit_upper = 1
-                Label(FONT_PASSIVE,f"Passive",WHITE,(261,56),"topleft").draw(WIN)
+                Label(FONT_PASSIVE,f"Passive",WHITE,(261,35+(21*1)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"Passive Text.",WHITE,(261,35+(21*2)),"topleft").draw(WIN)
+                Label(FONT_SKILL,f"{sel(1)}1st Skill",WHITE,(56,310+(21*1)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"[?] Cost ?",WHITE,(56,310+(21*2)),"topleft").draw(WIN)
 
             
 

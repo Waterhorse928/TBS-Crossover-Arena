@@ -1,0 +1,2 @@
+Ability to See Far Distances
+While this unit is on the front, all allies gain +2 ACC.
