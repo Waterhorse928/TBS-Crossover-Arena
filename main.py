@@ -24,6 +24,11 @@ DARK_BLUE = (0,8,53)
 
 FONT_MENU = pygame.font.SysFont('consolas', 50)
 FONT_STAT = pygame.font.SysFont('consolas', 20)
+FONT_TEXT = pygame.font.SysFont('consolas', 20)
+FONT_SKILL = pygame.font.SysFont('consolas', 20, bold=True, italic=False)
+FONT_PASSIVE = pygame.font.SysFont('consolas', 20, bold=True, italic=False)
+FONT_ATT = pygame.font.SysFont('consolas', 20, bold=False, italic=True)
+FONT_PASSIVE.underline = True
 
 BACKGROUND = pygame.image.load(os.path.join('images', 'Background.png'))
 BOX = pygame.image.load(os.path.join('images', 'box.png'))
@@ -154,7 +159,11 @@ def refreshSlot():
     for x in player2:
         x.slot = player2.index(x)
 
-
+def sel(number):
+    if number == y_gui:
+        return "> "
+    else:
+        return " "
 
 #Menus
 #1 Action Select
@@ -317,9 +326,12 @@ def main():
                 y_limit_upper = 2
                 x_limit_lower = 1
                 x_limit_upper = 1
-                Label(FONT_STAT,f"Ability to See Far Distances",WHITE,(261,56),"topleft").draw(WIN)
+                Label(FONT_PASSIVE,f"Ability to See Far Distances",WHITE,(261,56),"topleft").draw(WIN)
                 Label(FONT_STAT,f"While this unit is on the front, all allies gain +2 ACC.",WHITE,(261,77),"topleft").draw(WIN)
-                Label(FONT_STAT,f"Rabies Bite",WHITE,(56,331),"topleft").draw(WIN)
+                Label(FONT_SKILL,f"{sel(1)}Rabies Bite",WHITE,(56,310+(21*1)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"[ATK] Cost 1 SP",WHITE,(56,310+(21*2)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"One Enemy: [Pierce 3]",WHITE,(56,310+(21*3)),"topleft").draw(WIN)
+                Label(FONT_STAT,f"This skill has Break 2.",WHITE,(56,310+(21*4)),"topleft").draw(WIN)
                 
 
             else:
@@ -327,7 +339,7 @@ def main():
                 y_limit_upper = 1
                 x_limit_lower = 1
                 x_limit_upper = 1
-                Label(FONT_STAT,f"Passive",WHITE,(261,56),"topleft").draw(WIN)
+                Label(FONT_PASSIVE,f"Passive",WHITE,(261,56),"topleft").draw(WIN)
 
             
 
