@@ -299,18 +299,20 @@ def main():
                 Label(FONT_STAT,f"{speedList[x].name}",WHITE,(71,71+(x*110)),"topleft").draw(WIN)
 
         if menu == 6 or menu == 7:
+            if menu == 6:
+                char = current
             WIN.blit(BACKGROUND,(0,0))
             WIN.blit(BOX,(50,50))
             WIN.blit(BOX_FILL,(55,55)) #(260,55)
-            panel(55,55,current.slot,p1())
+            panel(55,55,char.slot,p1())
             y_limit_lower = 1
             x_limit_lower = 1
             x_limit_upper = 1
-            y_limit_upper = current.skills
+            y_limit_upper = char.skills
             
             line = 1
-            for x in range(current.passives):
-                y = open(f"{DIR_PATH}/characters/{current.name}/passive{x}.txt","r",encoding='utf-8')
+            for x in range(char.passives):
+                y = open(f"{DIR_PATH}/characters/{char.name}/passive{x}.txt","r",encoding='utf-8')
                 y = y.readlines()
                 first = True
                 for z in y:
@@ -324,16 +326,19 @@ def main():
                     line += 1
 
             line = 1
-            for x in range(current.skills):
-                y = open(f"{DIR_PATH}/characters/{current.name}/skill{x}.txt","r",encoding='utf-8')
+            for x in range(char.skills):
+                y = open(f"{DIR_PATH}/characters/{char.name}/skill{x}.txt","r",encoding='utf-8')
                 y = y.readlines()
                 first = True
                 for z in y:
                     z = z.replace("\n","")
                     if first == True:
                         font = FONT_SKILL
-                        skill_indention = sel(x+1)
-                        first =False
+                        if menu == 6:
+                            skill_indention = sel(x+1)
+                        else:
+                            skill_indention = ""
+                        first = False
                     else:
                         font = FONT_STAT
                         skill_indention = ""
@@ -400,6 +405,13 @@ def main():
                             menu = 5
                             x_gui= 1
                             y_gui= 1
+                    if menu == 6:
+                        if y_gui == 1:
+                            
+                            pass
+                        if y_gui == 1:
+                            pass
+                        pass
                 if event.key == K_x:
                     if menu == 2 or menu == 3 or menu == 4 or menu == 5 or menu == 6:
                         menu = 1
