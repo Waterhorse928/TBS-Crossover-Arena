@@ -11,11 +11,16 @@ from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_x, K_z
 pygame.font.init()
 #pygame.mixer.init()
 
-WIDTH, HEIGHT = 1000, 1000
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+WIDTH, HEIGHT = 500, 500
+flags = 0
+
+WIN = pygame.display.set_mode((WIDTH, HEIGHT),flags)
+
 pygame.display.set_caption("TBS Crossover Arena")
 
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
+
+
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -24,12 +29,12 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 DARK_BLUE = (0,8,53)
 
-FONT_MENU = pygame.font.SysFont('consolas', 50)
-FONT_STAT = pygame.font.SysFont('consolas', 20)
-FONT_TEXT = pygame.font.SysFont('consolas', 20)
-FONT_SKILL = pygame.font.SysFont('consolas', 20, bold=True, italic=False)
-FONT_PASSIVE = pygame.font.SysFont('consolas', 20, bold=True, italic=False)
-FONT_ATT = pygame.font.SysFont('consolas', 20, bold=False, italic=True)
+FONT_MENU = pygame.font.SysFont('consolas', 25)
+FONT_STAT = pygame.font.SysFont('consolas', 10)
+FONT_TEXT = pygame.font.SysFont('consolas', 10)
+FONT_SKILL = pygame.font.SysFont('consolas', 10, bold=True, italic=False)
+FONT_PASSIVE = pygame.font.SysFont('consolas', 10, bold=True, italic=False)
+FONT_ATT = pygame.font.SysFont('consolas', 10, bold=False, italic=True)
 FONT_PASSIVE.underline = True
 
 BACKGROUND = pygame.image.load(os.path.join('images', 'Background.png'))
@@ -73,18 +78,18 @@ def panel(x,y,slot,player):
     if char == current:
         WIN.blit(PANEL2_OUTLINE2,(x-1,y-1))
     WIN.blit(PANEL2,(x,y))
-    icon = pygame.transform.scale(ICON, (128,128))
-    WIN.blit(icon,(x+36,y+71))
-    icon = pygame.transform.scale(char.image, (128,128))
-    WIN.blit(icon,(x+36,y+71))
-    Label(FONT_STAT,f"{char.name}",WHITE,(x+1,y+1),"topleft").draw(WIN)
-    Label(FONT_STAT,f"Slot {slot+1}",WHITE,(x+1,y+22),"topleft").draw(WIN)
-    Label(FONT_STAT,f"HP {char.hp}/{char.maxHp}",WHITE,(x+1,y+269),"bottomleft").draw(WIN)
-    Label(FONT_STAT,f"SP {char.sp}/{char.maxSp}",WHITE,(x+199,y+269),"bottomright").draw(WIN)
-    Label(FONT_STAT,f"DEF {char.dfn}",WHITE,(x+1,y+248),"bottomleft").draw(WIN)
-    Label(FONT_STAT,f"RES {char.res}",WHITE,(x+1,y+227),"bottomleft").draw(WIN)
-    Label(FONT_STAT,f"SPD {char.spd}",WHITE,(x+199,y+248),"bottomright").draw(WIN)
-    Label(FONT_STAT,f"EVA {char.eva}",WHITE,(x+199,y+227),"bottomright").draw(WIN)
+    icon = pygame.transform.scale(ICON, (64,64))
+    WIN.blit(icon,(x+18,y+36))
+    icon = pygame.transform.scale(char.image, (64,64))
+    WIN.blit(icon,(x+18,y+36))
+    Label(FONT_STAT,f"{char.name}",WHITE,(x+2,y+1),"topleft").draw(WIN)
+    Label(FONT_STAT,f"Slot {slot+1}",WHITE,(x+2,y+11),"topleft").draw(WIN)
+    Label(FONT_STAT,f"HP {char.hp}/{char.maxHp}",WHITE,(x+2,y+134),"bottomleft").draw(WIN)
+    Label(FONT_STAT,f"SP {char.sp}/{char.maxSp}",WHITE,(x+98,y+134),"bottomright").draw(WIN)
+    Label(FONT_STAT,f"DEF {char.dfn}",WHITE,(x+2,y+124),"bottomleft").draw(WIN)
+    Label(FONT_STAT,f"RES {char.res}",WHITE,(x+2,y+113),"bottomleft").draw(WIN)
+    Label(FONT_STAT,f"SPD {char.spd}",WHITE,(x+98,y+123),"bottomright").draw(WIN)
+    Label(FONT_STAT,f"EVA {char.eva}",WHITE,(x+98,y+113),"bottomright").draw(WIN)
 
 
 def panels(x_pixels, y_pixels, player):
@@ -214,46 +219,36 @@ def main():
             #Display
             WIN.blit(BACKGROUND,(0,0))
 
-            WIN.blit(HIGHER_BOX,(50,50))
+            WIN.blit(HIGHER_BOX,(25,25))
 
                 #Player 1
-            panel(70,360,0,p1())
-            panel(290,360,1,p1())
-            panel(510,360,2,p1())
-            panel(730,360,3,p1())
+            panel(35,180,0,p1())
+            panel(145,180,1,p1())
+            panel(255,180,2,p1())
+            panel(365,180,3,p1())
 
                 #Player 2
-            panel(730,70,0,p2())
-            panel(510,70,1,p2())
-            panel(290,70,2,p2())
-            panel(70,70,3,p2())
+            panel(365,35,0,p2())
+            panel(255,35,1,p2())
+            panel(145,35,2,p2())
+            panel(35,35,3,p2())
             
 
-            WIN.blit(LOWER_BOX,(50,700))
-            WIN.blit(BUTTON_OUTLINE, (-230+(x_gui*300),595+(y_gui*125)))
+            WIN.blit(LOWER_BOX,(25,350))
+            WIN.blit(BUTTON_OUTLINE, (-115+(x_gui*150),297+(y_gui*62)))
 
-            WIN.blit(BUTTON,(75,725))
-            Label(FONT_MENU,"Skill",WHITE,(90, 740)).draw(WIN)
-    
-
-            WIN.blit(BUTTON,(375,725))
-            Label(FONT_MENU,"Rally",WHITE,(390, 740)).draw(WIN)
-
-
-            WIN.blit(BUTTON,(675,725))
-            Label(FONT_MENU,"Swap",WHITE,(690,740)).draw(WIN)
-            
-
-            WIN.blit(BUTTON,(75,850))
-            Label(FONT_MENU,"Check",WHITE,(90,865)).draw(WIN)
-    
-
-            WIN.blit(BUTTON,(375,850))
-            Label(FONT_MENU,"Scout",WHITE,(390,865)).draw(WIN)
-    
-
-            WIN.blit(BUTTON,(675,850))
-            Label(FONT_MENU,"Order",WHITE,(690,865)).draw(WIN)
+            WIN.blit(BUTTON,(37,362))
+            Label(FONT_MENU,"Skill",WHITE,(45, 370)).draw(WIN)
+            WIN.blit(BUTTON,(187,362))
+            Label(FONT_MENU,"Rally",WHITE,(195, 370)).draw(WIN)
+            WIN.blit(BUTTON,(337,362))
+            Label(FONT_MENU,"Swap",WHITE,(345,370)).draw(WIN)
+            WIN.blit(BUTTON,(37,425))
+            Label(FONT_MENU,"Check",WHITE,(45,432)).draw(WIN)
+            WIN.blit(BUTTON,(187,425))
+            Label(FONT_MENU,"Scout",WHITE,(195,432)).draw(WIN)
+            WIN.blit(BUTTON,(337,425))
+            Label(FONT_MENU,"Order",WHITE,(345,432)).draw(WIN)
 
         
         if menu == 2 or menu == 3 or menu == 4:
@@ -267,18 +262,18 @@ def main():
         
             #Background
             WIN.blit(BACKGROUND,(0,0))
-            WIN.blit(BOX,(50,50))
+            WIN.blit(BOX,(25,25))
             
             #Outline
-            WIN.blit(PANEL2_OUTLINE,(-155+(x_gui*220),-230+(y_gui*295)))
+            WIN.blit(PANEL2_OUTLINE,(-77+(x_gui*110),-115+(y_gui*147)))
 
             
             #Panels
             if menu == 2 or menu == 4:
-                panels([70,290,510,730],[70,365,660],p1())
+                panels([35,145,255,365],[35,182,330],p1())
 
             if menu == 3:
-                panels([70,290,510,730],[70,365,660],p2())
+                panels([35,145,255,365],[35,182,330],p2())
 
         if menu == 5:
             y_limit_lower = 1
@@ -288,23 +283,23 @@ def main():
             x_limit_upper = 1
 
             WIN.blit(BACKGROUND,(0,0))
-            WIN.blit(BOX,(50,50))
-            WIN.blit(BAR_OUTLINE,(65,-45+(y_gui*110)))
+            WIN.blit(BOX,(25,25))
+            WIN.blit(BAR_OUTLINE,(32,-22+(y_gui*55)))
             
             for x in range(8):
-                WIN.blit(BAR,(70,70+(x*110)))
-                WIN.blit(ICON,(73,93+(x*110)))
+                WIN.blit(BAR,(35,35+(x*55)))
+                WIN.blit(ICON,(36,46+(x*55)))
                 speedList = speedOrder(inFront())
-                WIN.blit(speedList[x].image,(73,93+(x*110)))
-                Label(FONT_STAT,f"{speedList[x].name}",WHITE,(71,71+(x*110)),"topleft").draw(WIN)
+                WIN.blit(speedList[x].image,(36,46+(x*55)))
+                Label(FONT_STAT,f"{speedList[x].name}",WHITE,(35,35+(x*55)),"topleft").draw(WIN)
 
         if menu == 6 or menu == 7:
             if menu == 6:
                 char = current
             WIN.blit(BACKGROUND,(0,0))
-            WIN.blit(BOX,(50,50))
-            WIN.blit(BOX_FILL,(55,55)) #(260,55)
-            panel(55,55,char.slot,p1())
+            WIN.blit(BOX,(25,25))
+            WIN.blit(BOX_FILL,(27,27)) #(260,55)
+            panel(27,27,char.slot,p1())
             y_limit_lower = 1
             x_limit_lower = 1
             x_limit_upper = 1
@@ -322,7 +317,7 @@ def main():
                         first =False
                     else: 
                         font = FONT_STAT
-                    Label(font,f"{z}",WHITE,(261,35+(21*line)),"topleft").draw(WIN)
+                    Label(font,f"{z}",WHITE,(130,17+(10*line)),"topleft").draw(WIN)
                     line += 1
 
             line = 1
@@ -342,11 +337,12 @@ def main():
                     else:
                         font = FONT_STAT
                         skill_indention = ""
-                    Label(font,f"{skill_indention}{z}",WHITE,(56,310+(21*line)),"topleft").draw(WIN)
+                    Label(font,f"{skill_indention}{z}",WHITE,(28,155+(10*line)),"topleft").draw(WIN)
                     line += 1
-   
 
-        pygame.display.update()
+
+        
+        
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -417,6 +413,9 @@ def main():
                         menu = 1
                         x_gui= 1
                         y_gui= 1
+
+        
+        pygame.display.update()
 
 
                 
