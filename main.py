@@ -4,7 +4,7 @@ import os
 import random
 import sys
 
-from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_x, K_z
+from pygame.constants import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_f, K_x, K_z
 
 
 
@@ -12,9 +12,10 @@ pygame.font.init()
 #pygame.mixer.init()
 
 WIDTH, HEIGHT = 500, 500
-flags = 0
+flags = pygame.RESIZABLE
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT),flags)
+
 
 pygame.display.set_caption("TBS Crossover Arena")
 
@@ -29,13 +30,14 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 DARK_BLUE = (0,8,53)
 
-FONT_MENU = pygame.font.SysFont('consolas', 25)
-FONT_STAT = pygame.font.SysFont('consolas', 10)
-FONT_TEXT = pygame.font.SysFont('consolas', 10)
-FONT_SKILL = pygame.font.SysFont('consolas', 10, bold=True, italic=False)
-FONT_PASSIVE = pygame.font.SysFont('consolas', 10, bold=True, italic=False)
-FONT_ATT = pygame.font.SysFont('consolas', 10, bold=False, italic=True)
+FONT_MENU = pygame.font.Font('visitor1.ttf', 25)
+FONT_STAT = pygame.font.Font('visitor1.ttf', 10)
+FONT_TEXT = pygame.font.Font('visitor1.ttf', 10)
+FONT_SKILL = pygame.font.Font('visitor1.ttf', 10, bold=True, italic=False)
+FONT_PASSIVE = pygame.font.Font('visitor1.ttf', 10, bold=True, italic=False)
+FONT_ATT = pygame.font.Font('visitor1.ttf', 10, bold=False, italic=True)
 FONT_PASSIVE.underline = True
+print (pygame.font.get_fonts())
 
 BACKGROUND = pygame.image.load(os.path.join('images', 'Background.png'))
 BOX = pygame.image.load(os.path.join('images', 'box.png'))
@@ -65,7 +67,7 @@ current = 0
 
 class Label:
     def __init__(self, font, text, color, position, anchor="topleft"):
-        self.image = font.render(text, 1, color)
+        self.image = font.render(text, 0, color)
         self.rect = self.image.get_rect()
         setattr(self.rect, anchor, position)
         #print(self.rect)
@@ -191,7 +193,8 @@ def sel(number):
 
 def main():
     clock = pygame.time.Clock()
-    run = True
+    run= True
+    screen_700 = False
     global menu, round, turn, x_gui, y_gui, current
     while run:
         clock.tick(FPS)
@@ -413,8 +416,16 @@ def main():
                         menu = 1
                         x_gui= 1
                         y_gui= 1
+                if event.key == K_f:
+                    if screen_700 == True:
+                        
+                        screen_700 = False
+                    if screen_700 == False:
+                        WIN2 = pygame.display.set_mode((700, 700),flags)
+                        screen_700 = True
 
-        
+        #WIN2 = pygame.display.set_mode((700, 700),flags)
+        #WIN2.blit(pygame.transform.scale(WIN,(1000,1000)),(0,0))
         pygame.display.update()
 
 
