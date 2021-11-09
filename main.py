@@ -32,9 +32,9 @@ DARK_BLUE = (0,8,53)
 
 FONT_MENU = pygame.font.Font('visitor1.ttf', 25)
 FONT_STAT = pygame.font.Font('visitor1.ttf', 10)
-FONT_TEXT = pygame.font.Font('visitor1.ttf', 10)
-FONT_SKILL = pygame.font.Font('visitor1.ttf', 10, bold=True, italic=False)
-FONT_PASSIVE = pygame.font.Font('visitor1.ttf', 10, bold=True, italic=False)
+FONT_TEXT = pygame.font.SysFont('consolas', 12)
+FONT_SKILL = pygame.font.SysFont('consolas', 12, bold=True, italic=False)
+FONT_PASSIVE = pygame.font.SysFont('consolas', 12, bold=True, italic=False)
 FONT_ATT = pygame.font.Font('visitor1.ttf', 10, bold=False, italic=True)
 FONT_PASSIVE.underline = True
 print (pygame.font.get_fonts())
@@ -319,8 +319,8 @@ def main():
                         font = FONT_PASSIVE
                         first =False
                     else: 
-                        font = FONT_STAT
-                    Label(font,f"{z}",WHITE,(130,17+(10*line)),"topleft").draw(WIN)
+                        font = FONT_TEXT
+                    Label(font,f"{z}",WHITE,(130,17+(15*line)),"topleft").draw(WIN)
                     line += 1
 
             line = 1
@@ -338,9 +338,9 @@ def main():
                             skill_indention = ""
                         first = False
                     else:
-                        font = FONT_STAT
+                        font = FONT_TEXT
                         skill_indention = ""
-                    Label(font,f"{skill_indention}{z}",WHITE,(28,155+(10*line)),"topleft").draw(WIN)
+                    Label(font,f"{skill_indention}{z}",WHITE,(28,155+(15*line)),"topleft").draw(WIN)
                     line += 1
 
 
