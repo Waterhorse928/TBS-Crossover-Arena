@@ -1,5 +1,3 @@
-import icons
-
 class Char:
     def __init__(self):
         self.name = "I AM ERROR."
@@ -30,7 +28,6 @@ class Char:
         self.accT = 0
         self.action = False
         self.KO = False
-        self.image = icons.QUESTION
         self.passives = 0
         self.skills = 1
 
@@ -57,7 +54,6 @@ class Template(Char):
         self.res = 0
         self.spd = 0
         self.eva = 0
-        self.image = icons.QUESTION
         base(self)
 
 class Chen(Char):
@@ -82,7 +78,6 @@ class Aya(Char):
         self.res = 0
         self.spd = 9
         self.eva = 6
-        self.image = icons.AYA
         base(self)
 
 class Saitama(Char):
@@ -107,7 +102,6 @@ class Momiji(Char):
         self.res = 2
         self.spd = 6
         self.eva = 2
-        self.image = icons.QUESTION
         self.passives = 1
         self.skills = 2
         base(self)
