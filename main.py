@@ -18,9 +18,11 @@ player2 = [characters.Momiji(),characters.Momiji(),characters.Momiji(),character
 turn = 1
 round = 0
 menu = 1
-x_gui= 1
-y_gui= 1
 current = 0
+gamemode = 0
+partysize = 0
+players = 0
+wikiList = ["Momiji","Aya"]
 
 
 
@@ -103,61 +105,95 @@ def refreshSlot():
 #6 Choose Skill
 #7 Character Info
 
-def main():
-    run= True
-    screen_700 = False
-    global menu, round, turn, x_gui, y_gui, current
-    while run:
-        refreshSlot()
-        if current == 0  or current.action == False:
-            if actionsLeft() == 0:
-                newRound()
-            current = speedOrder(removeAction(inFront()))[0]
-            print (f"Current is {current.name}")
-            if (current in player1):
-                turn = 1 
-            if (current in player2):
-                turn = 2
-            print (f"Turn = {turn}")
+def numberSelect(min,max):
+    while True:
+        try:
+            x = int(input("Choose a number: "))
+            if x >= min and x <= max:
+                break
+            if x < min:
+                print("Error: Number too low.")
+            if x > max:
+                print("Error: Number too high.")
+        except ValueError:
+            print("Error: Not a integer.")
+    return x
+
+def wikiCharacterSelect():
+    while True:
+        try:
+            x = str(input("Choose a character: "))
+            if x in wikiList:
+                break
+            else:
+                print("Error: Invalid.")
             
+        except ValueError:
+            print("Error: Invalid.")
+    return x
 
-        if menu == 1:
-            #Varibles
-            y_limit_lower = 1
-            y_limit_upper = 2
-
-            x_limit_lower = 1
-            x_limit_upper = 3
-
-            
-
-        
-        if menu == 2 or menu == 3 or menu == 4:
-            #Varibles
-
-
-        
-
-
-        if menu == 5:
-
-
-        if menu == 6 or menu == 7:
-            if menu == 6:
-                char = current
+def gameModeSelect():
+    global gamemode
+    print("Select a gamemode\n1. Duel")
+    gamemode = numberSelect(1,1)
     
-            
-            line = 1
-            for x in range(char.passives):
-                y = open(f"{DIR_PATH}/characters/{char.name}/passive{x}.txt","r",encoding='utf-8')
-                y = y.readlines()
-                
 
-            line = 1
-            for x in range(char.skills):
-                y = open(f"{DIR_PATH}/characters/{char.name}/skill{x}.txt","r",encoding='utf-8')
-                y = y.readlines()
-                
+def playerNumberSelect():
+    global players
+    if gamemode == 1:
+        players = 2
+        
+    
+
+def partySizeSelect():
+    global partysize
+    print("Select party size")
+    partysize = numberSelect(8,12)
+
+def startCharacterSelect():
+    for x in range(0, players):
+        for y in range(0, partysize):
+            print(f"Player {x+1} Slot {y+1}")
+            print (wikiCharacterSelect())
+
+    
+    
+
+def main():
+    global menu, round, turn, current, gamemode, partysize, players
+    gameModeSelect()
+    playerNumberSelect()
+    partySizeSelect()
+    startCharacterSelect()
+
+
+    
+
+    refreshSlot()
+    if current == 0  or current.action == False:
+        if actionsLeft() == 0:
+            newRound()
+        current = speedOrder(removeAction(inFront()))[0]
+        print (f"Current is {current.name}")
+        if (current in player1):
+            turn = 1 
+        if (current in player2):
+            turn = 2
+        print (f"Turn = {turn}")
+        
+
+        
+
+        for x in range(current.passives):
+            y = open(f"{DIR_PATH}/characters/{current.name}/passive{x}.txt","r",encoding='utf-8')
+            y = y.readlines()
+            
+
+
+        for x in range(current.skills):
+            y = open(f"{DIR_PATH}/characters/{current.name}/skill{x}.txt","r",encoding='utf-8')
+            y = y.readlines()
+            
 
 
         
