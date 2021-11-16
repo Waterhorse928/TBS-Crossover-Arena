@@ -1,20 +1,13 @@
+from io import TextIOBase
 import characters
 import os
 import random
 import sys
 
-
-
-
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 
+# -Global Varibles-
 
-
-
-FPS = 60
-
-player1 = [characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
-player2 = [characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Momiji(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen(),characters.Chen()]
 turn = 1
 round = 0
 menu = 1
@@ -29,82 +22,11 @@ wikiList = ["Momiji","Aya"]
 
 
 
-def p1():
-    if turn == 1:
-        return player1
-    if turn == 2:
-        return player2
-
-def p2():
-    if turn == 1:
-        return player2
-    if turn == 2:
-        return player1
-
-#sorts list by Spd, Slot, randomly.
-def speedOrder(l):
-    refreshSlot()
-    random.shuffle(l)
-    l.sort(key=lambda x : x.slot)
-    l.sort(key=lambda x : -x.spd)
-    return l
-
-#returns a list of character in front
-def inFront():
-    l = [player1[0],player1[1],player1[2],player1[3],player2[0],player2[1],player2[2],player2[3]]
-    return l
-
-#Removes characters that have taken an action
-def removeAction(l):
-    l2 = l.copy()
-    for x in l2:
-        if x.action == False:
-            l.remove(x)
-    return l
-
-#Removes KOed Character from a list
-def removeKO(l):
-    l2 = l.copy()
-    for x in l2:
-        if x.KO == True:
-            l.remove(x)
-    return l
 
 
-def actionsLeft():
-    l = inFront()
-    l = removeKO(l)
-    actions = 0
-    for x in l:
-        if x.action == True:
-            actions += 1
-    return actions
+# -Functions-
 
-#start a new round and set in front's actions to true
-def newRound():
-    for x in removeKO(inFront()):
-                x.action = True
-                print (f"{x.name}.action = True")
-    global round
-    round += 1
-    print(f"Round {round}")
-
-#update currnt slot number
-def refreshSlot():
-    for x in player1:
-        x.slot = player1.index(x)
-    for x in player2:
-        x.slot = player2.index(x)
-
-#Menus
-#1 Action Select
-#2 Check
-#3 Scout
-#4 Swap
-#5 Speed Order
-#6 Choose Skill
-#7 Character Info
-
+# Ask the player to choose a number and returns it
 def numberSelect(min,max):
     while True:
         try:
@@ -119,6 +41,7 @@ def numberSelect(min,max):
             print("Error: Not a integer.")
     return x
 
+# Ask the player to a character from the wiki and returns it
 def wikiCharacterSelect():
     while True:
         try:
@@ -126,90 +49,104 @@ def wikiCharacterSelect():
             if x in wikiList:
                 break
             else:
-                print("Error: Invalid.")
-            
+                print("Error: Invalid.") 
         except ValueError:
             print("Error: Invalid.")
     return x
 
+# Ask the player to choose a gamemode
 def gameModeSelect():
     global gamemode
     print("Select a gamemode\n1. Duel")
     gamemode = numberSelect(1,1)
-    
 
+# sets how many players. skips asking for input if unessasary
 def playerNumberSelect():
     global players
     if gamemode == 1:
         players = 2
         
-    
-
+# Ask the player to choose the party size. skips asking for input if unessasary 
 def partySizeSelect():
     global partysize
-    print("Select party size")
-    partysize = numberSelect(8,12)
+    if gamemode == 1:
+        print("Select party size")
+        partysize = numberSelect(1,12)
 
+# calls the global player dictonaries. use number to select which player.
+def player(number):
+    x = "player" + str(number)
+    x = globals()[x]
+    return x
+
+# sets up global player dictonaries.
+def setUpPlayerDict():
+    for x in range(0, players):
+        player = "player" + str(x)
+        globals()[player] = {}
+
+
+
+# I need to turn the strings in the player dicts into the classes from characters
+
+
+
+
+# Asks and inputs player slots in order.
 def startCharacterSelect():
     for x in range(0, players):
         for y in range(0, partysize):
             print(f"Player {x+1} Slot {y+1}")
-            print (wikiCharacterSelect())
+            player(x)[y] = wikiCharacterSelect()
+
+
+# gets key from dict using value
+def getKey(d,v):
+    for key, value in d.items():
+        if v == value:
+            return key
+
+#updates current slot numbers on characters (WIP)
+def refreshSlot():
+    for y in range(0,players):
+        for x in range(0, partysize):
+            break
+            player(y)[x].slot = getKey(player(y),player(y)[x])
+            print (x.slot)
+
+#returns a list of character in front
+def inFront():
+    l = []
+    for x in range(0, players):
+        for y in range(0, partysize):
+            l.append (player(x)[y])
+    return l
+
+#sorts list by Spd, Slot, randomly.
+def speedOrder(l):
+    refreshSlot()
+    random.shuffle(l)
+    l.sort(key=lambda x : x.slot)
+    l.sort(key=lambda x : -x.spd)
+    return l
+
 
     
-    
+# -MAIN-
 
 def main():
     global menu, round, turn, current, gamemode, partysize, players
     gameModeSelect()
     playerNumberSelect()
     partySizeSelect()
+    setUpPlayerDict()
     startCharacterSelect()
+    battleOver = False
+    while battleOver == False:
+        refreshSlot()
+        print (inFront())
+        break
 
-
-    
-
-    refreshSlot()
-    if current == 0  or current.action == False:
-        if actionsLeft() == 0:
-            newRound()
-        current = speedOrder(removeAction(inFront()))[0]
-        print (f"Current is {current.name}")
-        if (current in player1):
-            turn = 1 
-        if (current in player2):
-            turn = 2
-        print (f"Turn = {turn}")
-        
-
-        
-
-        for x in range(current.passives):
-            y = open(f"{DIR_PATH}/characters/{current.name}/passive{x}.txt","r",encoding='utf-8')
-            y = y.readlines()
-            
-
-
-        for x in range(current.skills):
-            y = open(f"{DIR_PATH}/characters/{current.name}/skill{x}.txt","r",encoding='utf-8')
-            y = y.readlines()
-            
-
-
-        
-        
-            
-
-
-   
-
-
-                
-
-
-                
-
-   
 
 main()
 
