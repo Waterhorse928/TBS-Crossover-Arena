@@ -194,7 +194,6 @@ def sel(number):
 def main():
     clock = pygame.time.Clock()
     run= True
-    screen_700 = False
     global menu, round, turn, x_gui, y_gui, current
     while run:
         clock.tick(FPS)
@@ -238,7 +237,7 @@ def main():
             
 
             WIN.blit(LOWER_BOX,(25,350))
-            WIN.blit(BUTTON_OUTLINE, (-115+(x_gui*150),297+(y_gui*62)))
+            WIN.blit(BUTTON_OUTLINE, (-116+(x_gui*150),297+(y_gui*62)))
 
             WIN.blit(BUTTON,(37,362))
             Label(FONT_MENU,"Skill",WHITE,(45, 370)).draw(WIN)
@@ -268,15 +267,15 @@ def main():
             WIN.blit(BOX,(25,25))
             
             #Outline
-            WIN.blit(PANEL2_OUTLINE,(-77+(x_gui*110),-115+(y_gui*147)))
+            WIN.blit(PANEL2_OUTLINE,(-78+(x_gui*110),-115+(y_gui*147)))
 
             
             #Panels
             if menu == 2 or menu == 4:
-                panels([35,145,255,365],[35,182,330],p1())
+                panels([35,145,255,365],[35,182,329],p1())
 
             if menu == 3:
-                panels([35,145,255,365],[35,182,330],p2())
+                panels([35,145,255,365],[35,182,329],p2())
 
         if menu == 5:
             y_limit_lower = 1
@@ -403,8 +402,16 @@ def main():
                         if x_gui== 3 and y_gui== 2:
                             menu = 5
                             x_gui= 1
-                            y_gui= 1
+                            y_gui = 1
+
+                    if menu == 2:  
+                        menu = 7
+                        if x_gui == 1:
+                            if y_gui == 1:
+                                char = p1()[0]
+                        
                     if menu == 6:
+                        menu = 1 
                         if y_gui == 1:
                             
                             pass
@@ -412,20 +419,11 @@ def main():
                             pass
                         pass
                 if event.key == K_x:
-                    if menu == 2 or menu == 3 or menu == 4 or menu == 5 or menu == 6:
+                    if menu == 2 or menu == 3 or menu == 4 or menu == 5 or menu == 6 or menu == 7:
                         menu = 1
                         x_gui= 1
-                        y_gui= 1
-                if event.key == K_f:
-                    if screen_700 == True:
-                        
-                        screen_700 = False
-                    if screen_700 == False:
-                        WIN2 = pygame.display.set_mode((700, 700),flags)
-                        screen_700 = True
+                        y_gui= 1 
 
-        #WIN2 = pygame.display.set_mode((700, 700),flags)
-        #WIN2.blit(pygame.transform.scale(WIN,(1000,1000)),(0,0))
         pygame.display.update()
 
 

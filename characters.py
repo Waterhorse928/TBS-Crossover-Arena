@@ -108,6 +108,6 @@ class Momiji(Char):
         self.spd = 6
         self.eva = 2
         self.image = icons.QUESTION
-        self.passives = 1
+        self.passives = 2
         self.skills = 2
         base(self)
