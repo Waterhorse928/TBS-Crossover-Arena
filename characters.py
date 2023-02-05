@@ -1,33 +1,25 @@
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import pandas as pd
-
-# Connect to Google Sheets
-scope = ['https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive"]
-
-credentials = ServiceAccountCredentials.from_json_keyfile_name("gs_credentials.json", scope)
-client = gspread.authorize(credentials)
-
-sheet = client.open("NewDatabase").sheet1
-sheet_id = "1ZIqVRLdGF_bPcCGBCvUxaXwa6mEO6j8xgpt47_Gt-18"
-sheet_name = "Characters"
-url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
-df = pd.read_csv(url, on_bad_lines='skip')
-df = df.fillna('')
-sheet.update([df.columns.values.tolist()] + df.values.tolist())
 
 class Char:
     def __init__(self):
         self.name = "I AM ERROR."
         self.hp = 10
         self.sp = 10
-        self.atk = 0
-        self.mag = 0
         self.dfn = 0
         self.res = 0
         self.spd = 0
         self.eva = 0
+        self.fullname = "I AM ERROR, YES IT'S TRUE. I AM ERROR, HOW ABOUT YOU?"
+        self.p1 = ""
+        self.p2 = ""
+        self.p3 = ""
+        self.s1 = ""
+        self.s2 = ""
+        self.s3 = ""
+        self.s4 = ""
+        self.s5 = ""
+        self.passives = 0
+        self.skills = 0
+        self.id = "000"
         self.acc = 0
         self.maxHp = self.hp
         self.maxSp = self.sp
@@ -47,8 +39,6 @@ class Char:
         self.accT = 0
         self.action = False
         self.KO = False
-        self.passives = 0
-        self.skills = 0
 
 
 def base(self):
@@ -67,14 +57,48 @@ class Template(Char):
     def __init__(self):
         super().__init__()
         self.name = "I AM ERROR."
-        self.fullname = "I AM ERROR"
-        self.id = "000"
         self.hp = 10
         self.sp = 10
         self.dfn = 0
         self.res = 0
         self.spd = 0
         self.eva = 0
-        self.passives = 2
-        self.skills = 2
+        self.fullname = "I AM ERROR"
+        self.p1 = ""
+        self.p2 = ""
+        self.p3 = ""
+        self.s1 = ""
+        self.s2 = ""
+        self.s3 = ""
+        self.s4 = ""
+        self.s5 = ""
+        self.passives = 0
+        self.skills = 0
+        self.id = "000"
         base(self)
+
+class Reimu(Char):
+    def __init__(self):
+        super().__init__()
+        self.name = "Reimu"
+        self.hp = 5
+        self.sp = 9
+        self.dfn = 1
+        self.res = 1
+        self.spd = 5
+        self.eva = 1
+        self.fullname = "Reimu Hakurei"
+        self.p1 = "Grand Incantation\nWhen Reimu rallies, she gains [Crit 3]."
+        self.p2 = ""
+        self.p3 = ""
+        self.s1 = "Yin-Yang Orb\n[ATK] Cost 2 SP\nSingle Enemy: [Spirit 3]"
+        self.s2 = "Fantasy Seal\n[MAG] Cost 3 SP\nAll Enemies: [Spirit 3]\nThis Skill has -1 ACC. "
+        self.s3 = "Exorcising Border\n[SUP] Cost 3 SP\nAll Allies : Recover 3 HP."
+        self.s4 = "Great Hakurei Barrier\n[SUP] Cost 5 SP\nAll Allies : [+3 DEF] or [+3 RES]"
+        self.s5 = ""
+        self.passives = 1
+        self.skills = 4
+        self.id = "001"
+        base(self)
+
+wikiList = [Reimu()]
