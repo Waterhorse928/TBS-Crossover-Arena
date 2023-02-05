@@ -1,4 +1,21 @@
-import icons
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+
+# Connect to Google Sheets
+scope = ['https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive"]
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name("gs_credentials.json", scope)
+client = gspread.authorize(credentials)
+
+sheet = client.open("NewDatabase").sheet1
+sheet_id = "1ZIqVRLdGF_bPcCGBCvUxaXwa6mEO6j8xgpt47_Gt-18"
+sheet_name = "Characters"
+url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
+df = pd.read_csv(url, on_bad_lines='skip')
+df = df.fillna('')
+sheet.update([df.columns.values.tolist()] + df.values.tolist())
 
 class Char:
     def __init__(self):
@@ -50,60 +67,14 @@ class Template(Char):
     def __init__(self):
         super().__init__()
         self.name = "I AM ERROR."
+        self.fullname = "I AM ERROR"
+        self.id = "000"
         self.hp = 10
         self.sp = 10
         self.dfn = 0
         self.res = 0
         self.spd = 0
         self.eva = 0
-        base(self)
-
-class Chen(Char):
-    def __init__(self):
-        super().__init__()
-        self.name = "Chen"
-        self.hp = 3
-        self.sp = 3
-        self.dfn = 0
-        self.res = 0
-        self.spd = 10
-        self.eva = 5
-        base(self)
-
-class Aya(Char):
-    def __init__(self):
-        super().__init__()
-        self.name = "Aya"
-        self.hp = 5
-        self.sp = 6
-        self.dfn = 1
-        self.res = 0
-        self.spd = 9
-        self.eva = 6
-        base(self)
-
-class Saitama(Char):
-    def __init__(self):
-        super().__init__()
-        self.name = "Saitama"
-        self.hp = 99
-        self.sp = 99
-        self.dfn = 30
-        self.res = 30
-        self.spd = 20
-        self.eva = 20
-        base(self)
-
-class Momiji(Char):
-    def __init__(self):
-        super().__init__()
-        self.name = "Momiji"
-        self.hp = 8
-        self.sp = 4
-        self.dfn = 4
-        self.res = 2
-        self.spd = 6
-        self.eva = 2
         self.passives = 2
         self.skills = 2
         base(self)
