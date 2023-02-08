@@ -366,4 +366,4 @@ class Will(Char):
 
 
 
-wikiList = [Reimu(),Marisa(),Chen(),Cirno(),Emilie(),Momiji(),Gaius(),Parsee(),Stahl(),Therion(),Kogasa(),Will()]
+wikiList = ["",Reimu(),Marisa(),Chen(),Cirno(),Emilie(),Momiji(),Gaius(),Parsee(),Stahl(),Therion(),Kogasa(),Will()]
