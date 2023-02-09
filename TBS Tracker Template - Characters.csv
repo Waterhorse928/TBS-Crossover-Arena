@@ -1,0 +1,3865 @@
+Name,HP,SP,DEF,RES,SPD,EVA,Stat Total,Link,URL,Image,Full Name,Passive 1,Passive 2,Passive 3,Skill 1,Skill 2,Skill 3,Skill 4,Skill 5,Passives,Skills,ID,Date
+Reimu,5,9,1,1,5,1,22,🔗,https://tbs-crossover-arena.fandom.com/wiki/Reimu,,Reimu Hakurei,"Grand Incantation
+When Reimu rallies, she gains [Crit 3]. ",,,"Yin-Yang Orb 
+[ATK] Cost 2 SP
+Single Enemy: [Spirit 3]","Fantasy Seal 
+[MAG] Cost 3 SP
+All Enemies: [Spirit 3]
+This Skill has -1 ACC. ","Exorcising Border 
+[SUP] Cost 3 SP
+All Allies : Recover 3 HP.","Great Hakurei Barrier 
+[SUP] Cost 5 SP
+All Allies : [+3 DEF] or [+3 RES]",,1,4,001,11/6/2020
+Marisa,3,18,0,1,7,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Marisa,,Marisa Kirisame,"Magic Overflowing
+While this unit is in front,
+all Mystic damage is increased by 1.",,,"Magic Missile 
+[MAG] Cost 2 SP
+Single Enemy: [Mystic 4]","Asteroid Belt 
+[MAG] Cost 4 SP
+All Enemies: [Mystic 3]
+This Skill has -1 ACC. ","Concentration
+[SUP] Cost 3 SP
+Self: [+3 SP] Recover 6 SP.","Master Spark 
+[MAG] Cost X SP
+All Enemies: [Mystic Y]
+This Skill has -1 ACC.
+X = Marisa's current SP.
+Y = X - 3",,1,4,002,11/6/2020
+Chen,3,3,0,0,10,5,21,🔗,https://tbs-crossover-arena.fandom.com/wiki/Chen,,Chen,"Instant Attack
+When Chen is swapped,
+She recovers her turn this round.",,,"Flight of Idaten
+[ATK] Cost 1 SP
+One Enemy : [Pierce 3]","Phoenix Spread Wings
+[ATK] Cost 2 SP
+Two Enemies : [Fire 2]","Kimontonkou
+[SUP] Cost 1 SP
+Self : [+3 ATK]",,,1,3,003,11/6/2020
+Cirno,4,7,2,2,7,3,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cirno,,Cirno,"Blizzard Blowout
+When this unit is KO'ed,
+All front enemies gain [-2 SPD].",,,"Icicle Fall
+[ATK] Cost 2 SP
+One Enemy: [Cold 2] [-3 SPD]","Diamond Blizzard
+[ATK] Cost 6 SP
+All Enemies: [Cold 4] [Paralysis 1]
+This Skill has -1 ACC. ","Perfect Freeze
+[ATK] Cost 5 SP
+All Enemies: [Cold 3] {50% -3 SPD}
+This Skill has -1 ACC.","White Album
+[SUP] Cost 3 SP
+Self: [+3 DEF, RES]",,1,4,004,11/6/2020
+Emilie,6,8,1,0,7,4,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Emilie,,Sophie de Belmond,"Dashing In
+When Emilie is switched in,
+She gains [+3 SPD].",,,"Beatdown
+[ATK] Cost 2 SP
+Two Enemies : [Impact 2]
+Deals +1 damage if Emilie has [+3 SPD].","Faucon Poing
+[ATK] Cost 4 SP
+One Enemy : [Fire 5] {20% Burn 3}","Amber Thrust
+[ATK] Cost 6 SP
+All Enemies : [Electric 2] [Paralysis 2]
+This Skill has -1 ACC. ","Azure Strike
+[ATK] Cost 4 SP
+One Enemy : [Impact X]
+X = (Emilie' SPD) - (Target's SPD)",,1,4,005,11/6/2020
+Momiji,8,9,4,2,6,2,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Momiji,,Momiji Inubashiri,"Ability to See Far Distances
+At the start of Momiji's turn,
+all allies gain [+2 ACC].","Eyes that Perceive Reality
+Momiji ignores her target's Stat Boosts.  ",,"Rabies Bite
+[ATK] Cost 3 SP
+One Enemy: [Pierce 3] 
+This Skill has Break 2 and +2 ACC.","Expellee's Canaan
+[ATK] Cost 4 SP
+All Enemies: [Wind 3]
+This Skill has -1 ACC.",,,,2,2,006,11/6/2020
+Gaius,8,7,1,0,7,4,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gaius,,Gaius,"Pay me in Candy
+When Gaius KOs a target,
+recover 8 SP.",,,"Steal
+[SUP] Cost 1 SP
+One Target : All of the target's Status Effects
+are transferred onto Gaius.","Candied Dagger
+[ATK] Cost 3 SP
+One Enemy: [3 Blade] {50% -2 DEF,RES}","Levin Sword
+[MAG] Cost 2 SP
+One Enemy: [3 Electric]",,,1,3,007,11/8/2020
+Parsee,4,7,2,4,5,2,24,🔗,https://tbs-crossover-arena.fandom.com/wiki/Parsee,,Parsee Mizuhashi,"Flames of Jealousy
+When Parsee is in front,
+All Dark damage is increased by 1.",,,"Large Box and Small Box
+[ATK] Cost 3 SP
+One Enemy: [Impact 2] {20% 3*damage}","Midnight Anathema Ritual
+[ATK] Cost 1 SP
+One Enemy: [Dark 0] {50% Terror 4, Silence 2}","Grudge Returning
+[ATK] Cost 2 SP
+All Enemies: [Dark 0] [Terror 2]  
+This Skill has -1 ACC. ","Jealousy of the Kind and Lovely
+[ATK] Cost 4 SP
+All Enemies: [Dark 7]
+Only hits targets with Terror. Removes Terror on hit.
+This Skill has -1 ACC.",,1,4,008,11/9/2020
+Stahl,8,8,2,2,5,1,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Stahl,,Stahl,"The Exact Median of the Army
+At the end of Stahl's turn,
+All Other Allies gain Stahl's Stat Changes. ",,,"Apprentice Apothecary
+[SUP] Cost 2 SP
+One Ally : Recover 4 HP.","Viridian Shield
+[SUP] Cost 2 SP
+Self : [+2 ATK,DEF] [-2 SPD]","Strike of the Panther
+[ATK] Cost 4 SP
+Two Enemies : [Blade 4]",,,1,3,009,11/9/2020
+Therion,8,10,2,1,7,3,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Therion,,Therion,"Snatch
+Enemies damaged by Therion's skills lose 1 SP.
+Therion's SP may go above his MAX SP.",,,"Steal SP
+[ATK] Cost 2 SP
+One Enemy : [Blade 3]
+Self: Recover X SP. 
+X = damage dealt * 2","Wildfire
+[MAG] Cost 4 SP
+One Enemy : [Fire 5]","Share SP
+[SUP] Cost X SP
+One Ally : Recover X SP.
+X may be any positive number.","Aeber's Reckoning
+[ATK] Cost 14 SP
+All Enemies : [X Blade]
+X = Therion's SPD * 2
+This Skill has -1 ACC.",,1,4,010,11/10/2020
+Kogasa,5,8,3,1,3,0,20,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kogasa,,Kogasa Tatara,"Troubled Forgotten Item
+When Kogasa hits an enemy affected by Terror,
+She recovers 8 SP and 5 HP.",,,"Karakasa Surprising Flash
+[ATK] Cost 3 SP
+All Enemies: [Nature 2] {40% Terror 2}
+This Skill has -1 ACC. ","A Rainy Night's Ghost Story
+[ATK] Cost 2 SP
+One Enemy: [Dark 2] {70% -2 RES} {70% Terror 3}","Drizzling Large Raindrops
+[ATK] Cost 2 SP
+All Enemies: [Water 1]
+This Skill has -1 ACC.","Competent Blacksmith?
+[SUP] Cost 3 SP
+One Ally : [+2 ATK,DEF]   ",,1,4,011,11/13/2020
+Will,7,8,1,0,7,3,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Will,,Will Treaty,"Unseen Movement
+When Will is swapped,
+gain [Crit 3].",,,"Expert Shot
+[ATK] Cost 4 SP
+One Enemy : [Pierce 3] 
+This skill has Precision.","Unexpected Strategy
+[SUP] Cost 4 SP
+All Enemies : [-2 DEF,RES]","Double Knife Defense
+[SUP] Cost 1 SP
+One Enemy : [Blade 1] 
+Self : [+2 DEF]","Hit-and-Run Tactics
+[SUP] Cost 3 SP
+One Enemy : [Terror 2]
+Swap an ally Tug. ",,1,4,012,11/14/2020
+Komachi,17,7,0,1,3,0,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Komachi,,Komachi Onozuka,"Slacking Off
+When Komachi rallies,
+Recover 6 HP.",,,"Short Life Expectancy
+[ATK] Cost 1 SP
+One Enemy : [Blade 2] {30% Death 1}","Ferriage in the Deep Fog
+[ATK] Cost 2 SP
+Two Enemies : [Cold 2] {20% Death 1}","The Endless Way 
+[SUP] Cost 3 SP
+All Allies : [Distance 2]","Scythe that Chooses the Dead
+[ATK] Cost 4 SP
+One Enemy : [Blade 5]",,1,4,013,12/2/2020
+Olberic,14,5,3,0,4,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Olberic,,Olberic Eisenberg,"Cover
+Olberic has Taunt 2.",,,"Stout Wall
+[SUP] Cost 1 SP
+Self: [+2 DEF]","Incite
+[SUP] Cost 2 SP
+Self: [Taunt 3]","Cross Strike
+[ATK] Cost 3 SP
+One Enemy: [Blade 4]","Thousand Spears
+[ATK] Cost 5 SP
+All Enemies: [Pierce 6]
+This skill has -5 ACC.",,1,4,014,12/2/2020
+Youmu,6,12,3,1,4,1,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Youmu,,Youmu Konpaku,"Phantom Half
+While Youmu is at max HP,
+her skills deal +3 damage.","Intense Concentration
+When Youmu rallies,
+gain [+1 DEF,RES] and [+2 EVA].  ",,"Present Life Slash
+[ATK] Cost 4 SP
+One Enemy : [3 Blade]
+This skill has Scope and +4 ACC.","Slash of Eternity
+[ATK] Cost 8 SP
+One Enemy : [12 Blade]
+Self : [-1 SPD,DEF]
+This Skill has +2 ACC. ","Divine Slash of Karmic Wind
+[ATK] Cost 11 SP
+All Enemies: [10 Wind]
+Self : [-2 SPD,DEF] 
+This Skill has +3 ACC. ","Slash Clearing the Six Senses
+[ATK] Cost 7 SP
+All Enemies : [Nature 5]
+Self : [Cure 1] 
+This Skill has -1 ACC.",,2,4,015,12/2/2020
+Sully,7,8,1,2,6,2,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sully,,Sully,"Verbal Abuse
+When Sully rallies,
+All Enemies gain [-1 ATK].",,,"Fiery Words
+[SUP] Cost 3 SP
+All Allies : [Crit 2] [Bold 2] [-2 RES]","Swordbreaker
+[ATK] Cost 4 SP
+One Enemy: [Pierce 8]
+If target does not have a Blade Skill, this Skill has no effect.","Charge of the Bull
+[ATK] Cost 4 SP
+Two Enemies : [Pierce 4]",,,1,3,016,12/3/2020
+Vaike,14,10,1,0,5,1,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Vaike,,Vaike,"Slightly Forgetful
+If Vaike starts in a slot 1-4, he gains [Weaken 1, Disable 1].
+When Vaike is swapped, he gains [Weaken 1, Disable 1].",,,"Teach's Lesson
+[SUP] Cost 2 SP
+One Ally : [+4 ATK] [-3 SPD]","""Here Comes The Vaike!""
+[ATK] Cost 5 SP
+Two Enemies : [Impact 5 + X]
+X = [5 - Vaike's SPD]","Tomahawk
+[ATK] Cost 3 SP
+One Enemy : [Impact 4]
+This Skill has Scope and -2 ACC.",,,1,3,017,12/3/2020
+Keine,6,12,3,2,4,1,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Keine,,Keine Kamishirasawa,"Organized Formation
+When Keine uses Swap,
+All Allies recover 2 SP.",,,"Ancient History - Old History
+[MAG] Cost 4 SP
+All Enemies : [Dark 3]
+This Skill's damage is reduced by
+the opposite defensive stat.
+This Skill has -1 ACC.","New History - Next History
+[MAG] Cost 4 SP
+All Enemies : [Spirit 3]
+This Skill has -1 ACC. ","Three Treasures - Sword
+[SUP] Cost 3 SP
+All Allies : [+1 ATK,MAG,SPD]","Three Treasures - Mirror
+[SUP] Cost 3 SP
+All Allies : [+1 DEF,RES,EVA]",,1,4,018,12/4/2020
+Minoriko,7,12,0,4,6,1,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Minoriko,,Minoriko Aki,"Rapid Charge
+When Minoriko rallies, recover 4 SP.
+When Minoriko recovers SP in the back, the amount is doubled.",,,"Autumn Sky
+[MAG] Cost 2 SP
+One Enemy: [2 Nature]  
+Minoriko gains [+2 SPD].","Warm Color Harvest
+[MAG] Cost 6 SP
+All Enemies: [X Nature] 
+X = RES.
+This Skill has -1 ACC. ","Sweet Potato Room
+[SUP] Cost 3 SP
+One Ally: Recover 6 HP.","Owotoshi Harvester
+[SUP] Cost 3 SP
+One Ally: [+2 DEF, RES].",,1,4,019,12/4/2020
+Ophilia,8,15,0,3,4,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ophilia,,Ophilia Clement,"Saving Grace
+Ophilia's HP may go above her MAX HP.",,,"Heal Wounds
+[SUP] Cost 5 SP
+All Allies: Recover 5 HP.","Luminescence
+[MAG] Cost 4 SP
+All Enemies: [Light 3]
+This Skill has -1 ACC. ","Sheltering Veil
+[SUP] Cost 3 SP
+All Allies: [+2 RES]","Revive
+[SUP] Cost 5 SP
+Any Ally: Revive KO'ed Ally with 1 HP.",,1,4,020,12/4/2020
+Nitori,5,10,1,1,5,2,24,🔗,https://tbs-crossover-arena.fandom.com/wiki/Nitori,,Nitori Kawashiro,"Optical Camouflage Suit
+At the end of Nitori's turn,
+gain [Cloak 1].",,,"Kappa's Illusionary Waterfall
+[ATK] Cost 2 SP
+All Enemies: [Water 1] {50% -2 DEF}
+This Skill has -1 ACC. ","Exteeeending Aaaaarm
+[ATK] Cost 2 SP
+All Enemies: [Nature 2]
+This Skill has -2 ACC. ","Super Scope 3D
+[ATK] Cost 8 SP
+One Enemy: [Pierce 10]
+This Skill has Scope. ","Portable Versatile Machine
+[SUP] Cost 2 SP
+Self: [+1 ATK,DEF,RES,SPD]",,1,4,021,12/8/2020
+Rinnosuke,8,6,2,1,0,1,18,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rinnosuke,,Rinnosuke Morichika,"Effective Formation
+When Rinnosuke uses Swap,
+All Allies gain [+2 SPD].","Curio Trader
+When Rinnosuke uses Swap,
+you may spend 1 SP to
+give One Ally [Scope 2] or [Break 2].",,"First Aid
+[SUP] Cost: 1 SP
+One Ally : Recovers 3 HP.","Battle Command
+[SUP] Cost: 2 SP
+One Ally : [+1 ATK,MAG,DEF,RES]",,,,2,2,022,12/8/2020
+Rumia,3,9,0,2,3,0,17,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rumia,,Rumia,"Darkness-Lurking Youkai
+Attack Skills have no effect on Rumia.",,,"Moonlight Ray
+[MAG] Cost 2 SP
+One Enemy: [Dark 4]","Dark Side of the Moon
+[MAG] Cost 2 SP
+All Enemies: [Dark 2]
+This Skill has Break and -1 ACC. ","Demarcation
+[SUP] Cost 3 SP
+All Allies: Recover 2 HP. [Cure 0].",,,1,3,023,12/8/2020
+Wobbuffet,30,6,0,0,0,0,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Wobbuffet,,Wobbuffet,"Shadow Tag 
+Wobbuffet has Ward [Heavy 1].","Counter 
+When hit by an Attack Skill,
+spend 1 SP to gain [+X ATK].
+X = damage taken from Skill ","Mirror Coat
+When hit by an Magic Skill,
+spend 1 SP to gain [+X MAG].
+X = damage taken from Skill","Rebound
+[X] Cost 1 SP
+All Enemies : [Impact 0]
+X = ATK or MAG. 
+This Skill has -1 ACC. ",,,,,3,1,024,12/8/2020
+Ruby,6,11,1,1,7,4,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ruby,,Ruby Rose,"Semblance: Petal Burst
+After her action, or when swapped, Ruby may
+spend 2 SP to gain [Haste 1] and [+2 EVA]. ",,,"Crescent Rose: Sniper Shot 
+[ATK] Cost 3 SP
+One Enemy: [Pierce 3]
+This skill has +2 ACC and Scope.","Crescent Rose: Cleave
+[ATK] Cost 4 SP
+Two Enemies: [Blade 4]","Crescent Rose: Red Like Roses
+[ATK] Cost 5 SP
+All Enemies: [Blade 3] {20% Death 1}
+This Skill has -1 ACC.",,,1,3,025,1/7/2021
+Sans,1,25,0,0,6,X,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sans,,Sans,"Dodge
+X = SP. Lose 3 SP every time you evade a skill.",,,"Gaster Blaster
+[MAG] Cost 5 SP
+One Enemy: [Mystic 7]","Bone Stab
+[MAG] Cost 4 SP
+Two Enemies: [Impact 1] [Poison 4]","Changing Gravity 
+[SUP] Cost 4 SP
+All Enemies: [-3 EVA]",,,1,3,026,1/7/2021
+Geoffrey,13,8,3,2,3,0,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Geoffrey,,Geoffrey,"Inviolability
+Every time a skill hits Geoffrey, gain [1 Transform]. ","Untainted
+If Geoffrey has 5 Transforms at the start of his
+turn he becomes The Faceless Judge. ",,"Sacrement of Blades
+[MAG] Cost 5 SP
+All Enemies : [Light 3]
+Recover X HP. X = Enemies hit.
+This Skill has -1 ACC. ","Golden Chains
+[SUP] Cost 3 SP
+Self : [-2 SPD] [+2 DEF] [Cure 0]","Compulsive Purification
+[SUP] Cost 4 SP
+Self : Gain [X Transform].
+One Enemy : [Curse 0]
+X = Number of Status Effects Removed with Curse.",,,2,3,027,1/8/2021
+Taisei,8,10,X,X,5,2,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Taisei,,Taisei,"Demonheart
+After Taisei's turn, he gains [1 Transform].
+X = # of Taisei's Transforms. 
+Taisei cannot have more than 3 Transforms.","Deathless
+When Taisei is KOed, if he had 3 Transforms,
+revive him with 10 HP as The Dullahan.",,"Blackvolt
+[MAG] Cost 2 SP
+One Enemy: [Dark X]
+This Skill has Break.","Dust to Dust
+[MAG] Cost 3 SP
+One Enemy: [Dark 3]
+If Skill hits, recover 3 HP.","Anathema Surge
+[SUP] Cost 3 HP
+Gain a Transform.",,,2,3,028,1/8/2021
+Nazgul,7,10,3,0,5,3,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Nazg%C3%BBl,,Nazgul,"The Black Breath
+At the end of the Nazgûl's turn,
+all Enemies gain [Terror 1].",,,"Morgul-knife
+[ATK] Cost 6 SP
+One Enemy: [Blade 2] [Poison 5]","Piercing Screech
+[MAG] Cost 4 SP
+All Enemies: [Dark 2] [Apathy 1]
+This Skill has -1 ACC.","The Ringwraith's Sword
+[ATK] Cost 3 SP
+Two Enemies: [Blade 3]",,,1,3,029,5/14/2021
+Ichigo,9,14,1,4,7,3,38,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ichigo,,Ichigo Kurosaki,"Restless
+Ichigo recovers HP and SP twice as fast in the Back.",,,"Zangetsu
+[MAG] Cost 5 SP
+One Enemy : [7 Blade]  ","Getsuga Tenshò
+[MAG] Cost 5 SP
+Two Enemies: [5 Spirit] ","Tensa Zangetsu
+[SUP] Cost 4 SP
+Self: [+3 MAG,SPD]  ","Bult Vene 
+[SUP] Cost 4 SP
+Self: [+3 DEF,RES]",,1,4,030,5/15/2021
+Dandelion,12,8,3,0,3,0,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Dandelion,,Dandelion Goot,"Planted
+Dandelion is Steady.
+Dandelion is immune to Heavy.","Lionhearted
+Dandelion is immune to Terror and Apathy.",,"Rend The Earth
+[SUP] Cost 3 SP
+All Enemies : [Heavy 2]","Fields Of Fury
+[ATK] Cost 5 SP
+All Enemies : [Impact 4]
+This Skill has -1 ACC. ","Root
+[ATK] Cost 2 SP
+One Enemy : [Impact 1] [Heavy 4]","Solid as The Earth
+[SUP] Cost 3 SP
+All Allies : [Steady 4]",,2,4,031,5/15/2021
+Aya,5,6,1,0,9,6,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Aya,,Aya Shameimaru,"Extra Steps
+When Aya KOs an enemy, 
+She regains her turn.",,,"Wind God's Fan
+[ATK] Cost 1 SP
+Two Enemies : [Wind 1]
+This skill has +3 ACC. ","Peerless Wind God
+[ATK] Cost 3 SP
+One Enemy : [Wind 3] 
+Aya gains [+2 SPD].","Sarutahiko's Guidance
+[SUP] Cost 2 SP
+One Ally : [+3 SPD]","Divine Grandson's Advent
+[SUP] Cost 4 SP
+One Target : [Haste 2]",,1,4,032,5/15/2021
+Hazama,6,6,1,1,6,4,24,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hazama,,Hazama Honoka,"Ouroboros
+After Hazama's turn, he may
+immediately swap places with any ally.",,,"Hungry Coils
+[ATK] Cost 1 SP
+One Enemy : [Blade 0] 
+This skill has Scope.
+If this skill hits, you may swap
+the target enemy with an enemy in Front.","Serpent’s Redemption
+[SUP] Cost 1 SP
+Swap places with an ally in Front.
+You may use another skill.","Venom Sword
+[ATK] Cost 2 SP
+One Enemy : [Dark 2]
+If the target shares Hazama's slot number,
+inflict [Poison 4] on hit.",,,1,3,033,5/15/2021
+Harry Potter,5,16,0,3,4,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Harry_Potter,,Harry Potter,,,,"Expelliarmus
+[SUP] Cost 6 SP
+One Enemy : [Silence 3]","Expecto Patronum
+[MAG] Cost 5 SP
+One Enemy : [Light 10]
+This Skill has no effect on targets without a Dark Skill.","Stupefy
+[MAG] Cost 4 SP
+One Enemy : [Impact 5] {50% Weaken 2}","Protego
+[SUP] Cost 3 SP
+One Ally : [+3 RES, +1 DEF] ",,0,4,034,5/15/2021
+Koishi,4,5,1,2,3,8,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Koishi,,Koishi Komeiji,"Subconscious Manipulation
+Koishi has Distance.",,,"The Embers of Love
+[MAG] Cost 2 SP
+One Enemy : [Fire 5]
+This skill has -3 ACC.","Super-Ego
+[MAG] Cost 3 SP
+All Enemies : [Void 1]
+This skill has +2 ACC. ","Bedside Ancestors
+[MAG] Cost 4 SP
+All Enemies : [Mystic 1 + X]
+This Skill has -1 ACC. 
+If target is has Silence or Terror then X = 2.
+If target is has Silence and Terror then X = 5.","Selfless Love
+[SUP] Cost 3 SP
+One Target : Recover X HP. [Cure 0, Curse 0]
+X = Sum of Target's Status Effects.",,1,4,035,5/16/2021
+The Impostor,4,6,0,0,2,0,12,🔗,https://tbs-crossover-arena.fandom.com/wiki/The_Impostor,,The Impostor,"Vent
+When an Ally in front uses a normal Swap action
+on themselves and The Imposter in the back,
+The Imposter gains a turn this round
+and gains [Haste 1].",,,"Kill
+[SUP] Cost 6 SP
+One Target : {50% Death 0}","Sabotage Lights
+[SUP] Cost 6 SP
+All Enemies : [-3 ACC]","Sabotage Reactor
+[SUP] Cost 6 SP
+All Enemies : [Terror 3]","Sabotage Comms
+[SUP] Cost 6 SP
+All Enemies : [Disable 3]",,1,4,036,5/16/2021
+Scorpion,8,7,1,1,6,2,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Scorpion,,Scorpion,"Borne of Rage
+Scorpion is immune to Burn.
+Fire Skills have no effect on Scorpion.",,,"Spear
+[ATK] Cost 4 SP
+One Enemy : [Blade 4] [Weaken 2] ","Flameport
+[ATK] Cost 3 SP
+One Enemy : [Fire 4]
+Scorpion may swap places with an ally in Front.","Hellfire
+[MAG] Cost 5 SP
+One Enemy : [Fire 4 + X]
+X = Scorpion's missing HP.",,,1,3,037,5/16/2021
+The Dullahan,10,0,3,3,7,0,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Taisei,,The Dullahan,"Edge of Death
+Taisei has Break.",,,"Chaos Scissors
+[ATK] Cost 3 HP
+One Enemy: [Blade 8]
+This skill has Precision and Scope.","Nightmare Tares
+[MAG] Cost 0 SP
+One Enemy: [Dark 5]
+Self : Recover X HP.",,,,1,2,038,5/14/2021
+The Faceless Judge,13,4,0,0,0,0,17,🔗,https://tbs-crossover-arena.fandom.com/wiki/Geoffrey,,The Faceless Judge,"Baton Stance
+The Faceless Judge has Thorns 6.",,,"Crusader's Oath 
+[MAG] Cost 4 SP
+Two Enemies : [Blade 6] 
+This Skill has Break and +X ACC.
+X = Target's SPD ","Inviolable Judgement 
+[ATK] Cost 4 SP
+One Enemy : [Light 10]
+This Skill has Scope and Break.",,,,1,2,039,5/14/2021
+Link (LoZ),10,12,1,1,4,0,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Link_(LoZ),,Link (LoZ),,,,"Magical Sword
+[MAG] Cost 4 SP
+One Enemy : [Blade 4]
+When Link is at max HP,
++2 ACC and deal +1 damage. ","Bow and Arrows
+[ATK] Cost X
+One Enemy : [Pierce X]
+X = Choose a number from 0 to 5.
+This Skill has Scope and +2 ACC.","Bomb
+[ATK] Cost 3 SP
+Two Enemies : [Fire 7]
+This skill has -5 ACC.  ","Candle
+[ATK] Cost 2 SP
+One Enemy : [Fire 1]
+All Allies : [+2 ACC] ","Power Bracelet
+[ATK] Cost 8 SP
+One Enemy : [Impact 5]
+If this skill hits,
+swap the target and any enemy.",0,5,040,5/17/2021
+Snake,16,8,3,0,6,2,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Solid_Snake,,Snake,"Stealth Specialist
+When Snake rallies,
+he gains [Invisible 1].",,,"Cardboard Box
+[SUP] Cost 4 SP
+Self : [Invisible 1] [Crit 3]","Silent Takedown
+[ATK] Cost 3 SP
+One Enemy : [Impact 0] [Death 1]
+Snake can only use this skill while Invisible.
+If attack hits, gain [Invisible 1].","Aggressive Takedown
+[ATK] Cost 4 SP
+One Enemy : [Pierce 7] 
+Snake can only use this skill while Invisible.",,,1,3,041,5/17/2021
+Atticus,8,14,0,0,5,1,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Atticus,,Atticus O'Sullivan,"Iron Bound Aura
+Magic Skills have no effect on Atticus. ","Healing Charm
+At the end of Atticus' turn,
+you may spend 1 SP to recover 3 HP.",,"Fragarach
+[ATK] Cost 5 SP
+One Enemy : [Blade 4]
+This Skill has Break.","Druidic Bindings
+[SUP] Cost 4 SP
+One Ally : [+2 ACC,ATK,SPD]
+If used on Atticus, you may take another action. ",,,,2,2,042,5/18/2021
+Gengar,6,8,1,2,7,3,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gengar,,Gengar,"Cursed Body
+When Gengar is in front and
+an enemy uses a Support Skill,
+they suffer [Disable 2]. ",,,"Perish Song
+[SUP] Cost 3 SP 
+All Targets : [Death 3] ","Hypnosis
+[SUP] Cost 4 SP
+One Enemy : {70% Sleep 3}  ","Shadow Ball  
+[MAG] Cost 5 SP
+One Enemy : [Dark 5] {50% -2 RES}  ",,,1,3,043,5/18/2021
+Ike,14,13,2,0,5,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ike,,Ike,"Radiant Vanguard
+Blade Skills have no effect on Ike.",,,"Legendary Ragnell 
+[ATK] Cost 5 SP
+One Enemy : [Blade 6]
+This Skill has Scope and +2 ACC.","Hallowed Urvan 
+[ATK] Cost 4 SP
+Two Enemies : [Impact 4]
+This Skill has +2 ACC. ","Great Aether
+[ATK] Cost 8 SP
+One Enemy : [Blade 6]
+Self : Recover X HP. 
+This Skill has Break.
+X = damage dealt to the target",,,1,3,044,5/18/2021
+Sanae,8,8,1,1,5,0,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sanae,,Sanae Kochiya,"Power of the Living God
+While Sanae is in front,
+Spirit type skills deal +1 damage.  ",,,"Night of Bright Guest Stars
+[MAG] Cost 5 SP
+All Enemies : [Spirit 1]
+This skill has Precision.","Moses's Miracle
+[MAG] Cost 3 SP
+Two Enemies : [Cold 2]
+This skill has +3 ACC. ","Yasaka's Divine Wind
+[SUP] Cost 4 SP
+One Ally : Recover 3 HP. [Cure 1]","Miracle Fruit
+[SUP] Cost 3 SP
+One Ally : [+1 ATK,MAG,DEF,RES,SPD,EVA]",,1,4,045,5/18/2021
+Mokou,10,13,2,1,4,1,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mokou,,Fujiwara no Mokou,"Resurrection
+When Mokou is KO'ed,
+you may spend 1 SP to revive her at 1 HP.
+She loses her turn this round. ",,,"Fire Bird - Flying Phoenix
+[ATK] Cost 2 SP
+One Enemy : [Fire 3] {20% Burn 2} ","Tsuki no Iwaskasa's Curse
+[ATK] Cost 4 SP
+All Enemies : [Wind 2] [-2 ATK,MAG]
+This Skill has -1 ACC. ","Fujiyama Volcano
+[ATK] Cost 7 SP
+All Enemies : [Fire 5]
+This skill has +2 ACC.",,,1,3,046,5/20/2021
+Dave,6,10,0,0,8,5,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Dave_the_Destructive,,Dave the Destructive,"Martial Arts
+Dave has Combo 3.",,,"Quivering Palm
+[ATK] Cost 6 SP
+One Enemy : [Impact 0] [Death 2]","Flurry of Blows
+[ATK] Cost 3 SP
+One Enemy : [Impact 5] ","Patient Defense
+[SUP] Cost 1 SP
+Self : [+2 EVA] ","Step of the Wind
+[SUP] Cost 2 SP 
+Swap with any ally. ",,1,4,047,5/21/2021
+Dio,13,9,0,0,8,3,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Dio,,Dio,"Vampiric Body
+At the end of Dio's turn,
+recover 2 HP and SP.
+Light Skills deal +2 damage against Dio. ","Stand -THE WORLD-
+Dio has Pursuit 2.",,"MUDA MUDA MUDA MUDA!!!
+[ATK] Cost 4 SP
+One Enemy : [Impact 8]
+This Skill has Direct and +1 ACC. ","Throwing Knives
+[ATK] Cost 2 SP
+One Enemy : [Blade 4] ","Blood Sucking
+[ATK] Cost 2 SP
+One Enemy : [Pierce 1] [Bleed 1]
+On hit, recover 4 HP. ","ROAD ROLLER DA!!!
+[ATK] Cost 9 SP
+One Enemy : [Impact 7] [Trap 6, Stuck 2]
+This Skill has Direct.",,2,4,048,5/21/2021
+Andy,5,8,2,1,5,2,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Andy,,Andy,"Commanding Officer
+At the start of this unit's turn you may
+swap with an ally in Back then use a Skill.","Day-to-Day Effect
+None.  ",,"Hyper Repair
+[SUP] Cost 4 SP
+All Allies : [+1 DEF] Recover 4 HP.","Hyper Upgrade   
+[SUP] Cost 8 SP
+All Allies : [+1 ATK,DEF] Recover 10 HP. ",,,,2,2,049,5/25/2021
+Henry Stickmin,6,18,0,0,6,3,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Henry_Stickmin,,Henry Stickmin,"Choose One
+You may use the Support Skills of any character
+in the Front like they're your own.",,,"Distraction Dance
+[SUP] Cost 3 SP
+All Enemies : [Disable 1]",,,,,1,1,050,5/25/2021
+Miko,7,16,1,1,4,0,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Miko,,Toyosatomimi no Miko,"True Administrator 
+At the start of Miko's turn,
+If at least three allies in front are uninjured,
+Miko gains [+2 MAG];
+If all allies in front are injured,
+Miko gains [+2 DEF,RES,SPD]. ",,,"Tradition of Just Rewards
+[MAG] Cost 5 SP
+One Enemy : [Mystic 1] [-2 ATK,MAG,DEF,RES]
+This Skill has Precision.","Halo of the Guse Kannon
+[MAG] Cost 9 SP
+All Enemies : [Spirit 5]
+This Skill has +3 ACC. ","Wishful Soul of Desire  
+[SUP] Cost 5 SP
+One Ally : Recover 5 HP and 5 SP.",,,1,3,051,5/25/2021
+Satori,8,15,0,1,4,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Satori,,Satori,"Spell Card Recollection
+You may use the Magic Skills of any character
+in the Front like they're your own. ",,,"Brain Fingerprint
+[MAG] Cost 4 SP
+All Enemies : [Mystic 2] [Silence 1]
+This Skill has -1 ACC.",,,,,1,1,052,5/25/2021
+Shou,12,7,3,2,6,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shou,,Shou Toramaru,"Pagoda's Light of Dharma
+When Shou KOs a target,
+All Allies recover 3 SP.  ","Ability to Gather Treasures
+When Shou rallies,
+recover 3 HP and SP.  ",,"Hungry Tiger
+[ATK] Cost 3 SP
+One Enemy : [Pierce 1]
+Self : Recover 2 HP. 
+This Skill has Precision.  ","Radiant Treasure Gun
+[ATK] Cost 5 SP
+All Enemies : [Spirit 2]
+All Allies : Recover 2 SP.
+This Skill has +1 ACC.  ","Dazzling Gold
+[MAG] Cost 7 SP
+All Enemies : [Spirit 5] [Heavy 2]
+This Skill has -1 ACC. ","Aura of Justice
+[SUP] Cost 7 SP
+All Allies : [+3 DEF,ACC]",,2,4,053,5/25/2021
+Taskmaster,10,12,2,0,5,2,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Taskmaster,,Taskmaster,"Photographic Reflexes
+You may use the Attack Skills of any character
+in the Front like they're your own.",,,"Masterclass Merc
+[ATK] Cost 5 SP
+All Enemies : [Impact 3] [Weaken 1] 
+This Skill has -1 ACC.",,,,,1,1,054,5/25/2021
+Kyubi no Kitsune,10,30,2,2,5,3,52,🔗,https://tbs-crossover-arena.fandom.com/wiki/Seijun,,Kyubi no Kitsune,"Ancient Ambition
+Kyubi no Kitsune's SP may go above her MAX SP.","Heart of the Mountain
+When Kyubi no Kitsune rallies,
+recover 6 SP and gain [Shield 2, Taunt 2].",,"Tale of Nine Sorrows
+[MAG] Cost 7 SP
+Two Enemies : [Mystic 9]","Tale of Seven Trials
+[MAG] Cost 13 SP
+One Enemy : [Mystic 15]
+This Skill has Scope.",,,,2,2,055,5/26/2021
+Seijun,10,17,2,2,3,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Seijun,,Seijun,"Watchful Guardian
+After Seijun's action she gains [1 Transform] and recovers X SP.
+X = # of Transforms.
+Seijun cannnot have more than 5 Transforms. ","Kitsune's Wrath
+If Seijun has 5 Transforms at the start of her
+turn she becomes Kyubi no Kitsune and recovers 10 SP.",,"Ink Spike
+[MAG] Cost 5 SP
+One Enemy : [Impact 7] ","Fox Fire
+[MAG] Cost 4 SP
+One Enemy : [Fire 4]
+If this skill hits, you may swap
+the target enemy with an enemy in Front.","Ink Splash
+[MAG] Cost 5 SP 
+Two Enemies : [Mystic 3]
+Self : [Haste 2]",,,2,3,056,5/26/2021
+Henry,8,12,3,1,2,0,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Henry,,Henry,"""Yeah, blood!""
+If target is injured, deal +3 damage.",,,"Flux
+[MAG] Cost 3 SP
+One Enemy : [Dark 4]","Mire
+[MAG] Cost 5 SP
+Any Enemy : [Dark 1] ","""Hahahahaha!""
+[MAG] Cost 6 SP
+All Enemies : [Dark 5] 
+This Skill has -1 ACC.",,,1,3,057,5/27/2021
+Sekibanki,6,9,2,1,4,2,24,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sekibanki,,Sekibanki,"Flight Sign ""Flying Head""
+At the end of Sekibanki's turn, gain [2 Heads];
+Then arrange Heads in the Front as you wish. ",,,"Flying Head ""Multiplicative Head""
+[SUP] Cost 2 SP
+Self : [5 Heads] ","Glinting Eyes ""Hell's Ray""
+[MAG] Cost 4 SP
+All Enemies : [Dark X]
+This Skill only hits targets with Heads.
+This Skill has +1 ACC and Break. 
+X = Number of target's heads.","Flying Head ""Dullahan Night""
+[ATK] Cost 5 SP
+All Enemies : [Impact 3] [2 Heads]
+This Skill has -1 ACC. ","Flying Head ""Seventh Head""
+[SUP] Cost 3 SP
+One Enemy : [Death 0]
+This skill only works if the target has 7 Heads.",,1,4,058,5/27/2021
+Tidus,8,12,1,1,6,4,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Tidus,,Tidus,"""I've been saving this one for you!""
+Tidus' skills deal +2 damage while he's at 4 HP or lower.",,,"Brotherhood
+[ATK] Cost 3 SP
+One Enemy : [Water 4]
+Self : Gain [1 Limit].","Curaga
+[SUP] Cost 5 SP
+One Ally : Recover 10 HP.","Blitz Ace
+[ATK] Cost 2 Limit
+One Enemy : [Water 10] ",,,1,3,059,5/27/2021
+Tug,13,0,1,0,0,1,15,🔗,https://tbs-crossover-arena.fandom.com/wiki/Tug,,Tug,"Reliable Mount
+When Tug is swapped in from the back,
+you may swap an ally from the back
+with an ally in the front.","Deep Bond
+When Tug is swapped out,
+you may swap an ally Will Treaty
+from the front to the back.",,"Worry Wort
+[SUP] Cost 0 SP
+One Ally : [Cure 0]  ","Crucial Sprint
+[SUP] Cost 0 SP
+Self : [Haste 1]
+Tug may use Swap after this skill.",,,,2,2,060,5/27/2021
+Vella,7,11,0,0,6,3,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Vella,,Vella Moisia,"Semblance: Binding Glyphs
+At the start of Vella's turn,
+you may pay 2 SP 
+to swap a Marked enemy with an enemy in the Front.",,,"Chatareus: Rapid-fire
+[ATK] Cost 5 SP
+All Enemies : [Pierce 1] [Mark 3]
+This skill has +3 ACC.","Chatareus: Razor-Edged
+[ATK] Cost 4 SP
+One Enemy : [Blade 4]
+This skill deals +6 damage to Marked targets. ","Chatareus: Distant Shot
+[SUP] Cost 3 SP
+Any Enemy : [Mark 3]",,,1,3,061,5/27/2021
+Boneclang,6,2,3,0,4,1,16,🔗,https://tbs-crossover-arena.fandom.com/wiki/Boneclang,,Boneclang,,,,"Slice
+[ATK] Cost 0 SP
+One Enemy : [Blade 1]","Walk Backwards
+[SUP] Cost 0 SP
+Self : [+2 EVA]
+Swap with an ally in front.","Skeletal Sentry
+[MAG] Cost 2 SP
+One Enemy : [Dark 3]","Will Skull
+[SUP] Cost 3 HP
+One Ally : Recover 9 SP.",,0,4,062,5/28/2021
+Demoknight,10,8,2,1,5,1,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Demoknight,,Tavish Finnegan DeGroot,"The Headtaker
+At the end of Demoknight's turn,
+gain [+X HP,SPD,EVA,ACC]
+X = 2 * Demoknight's Heads
+Demoknight can have a max of 2 Heads.
+Sekibanki cannot add or remove Demoknight's Heads.","Ali Baba's Wee Booties
+If Demoknight KO's a target,
+Recover 6 SP and 2 HP at the end of his turn.",,"The Eyelander
+[ATK] Cost 2 SP
+One Enemy : [Blade 3]
+If this Skill KO's, gain [+1 Heads] and
+all the Heads the target had.","The Splendid Screen
+[ATK] Cost 4 SP
+One Enemy : [Impact 0 + X]
+Self : [Cure 0]
+On hit, gain [Crit 6] and this Skill has Combo.",,,,2,2,063,5/28/2021
+Grit,7,8,1,0,4,3,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Grit,,Grit,"Commanding Officer
+At the start of this unit's turn you may
+swap with an ally in Back then use a Skill.","Day-to-Day Effect
+While Grit is in front, 
+Allied Scoped Skills deal +1 damage.
+Allied Direct Skills deal -3 damage. ",,"Snipe Attack
+[SUP] Cost 4 SP
+All Allies : [+2 ACC] [Scope 2] [Distance 1]","Super Snipe
+[SUP] Cost 8 SP
+All Allies : [+5 ACC] [Scope 4] [Distance 2]",,,,2,2,064,5/28/2021
+Lon'qu,7,8,1,0,7,4,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Lon'qu,,Lon'qu,"Swordfaire
+Lon'qu deals +1 damage for every other ally
+in front with a Blade damage type.",,,"Killing Edge
+[ATK] Cost 3 SP
+One Enemy : [Blade 3] {30% 3*damage}  ","Double-edged Fury
+[ATK] Cost 5 SP
+Two Enemies : [Blade 2]
+This Skill has Tempo. ",,,,1,2,065,5/28/2021
+Murasa,5,8,3,1,5,3,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Murasa,,Minamitsu Murasa,"Already Capsizing
+While this unit is in front,
+all Water damage is increased by 1.",,,"Capsize ""Sinking Anchor""
+[ATK] Cost 4 SP
+One Enemy : [Impact 4] [Heavy 2] ","Drowning Sign ""Sinkable Vortex""
+[ATK] Cost 3 SP
+All Enemies : [Water 2] {60% Heavy 2} ","Harbor Sign ""Phantom Ship's Eternal Anchorage""
+[SUP] Cost 2 SP
+Two Enemies : [Heavy 2] ","Ghost ""Dipper Creeping Close""
+[ATK] Cost 5 SP
+Two Enemies : [Water 3]
+Self : [+3 EVA]",,1,4,066,5/28/2021
+Specter Knight,20,X,2,1,3,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Specter_Knight,,Specter Knight,"The Will to Exist
+Specter Knight's HP and SP are the same stat.",,,"Dash Slash
+[ATK] Cost 2 HP
+One Enemy : [Blade 4]
+Self : [+2 SPD] ","Hover Plume
+[SUP] Cost 1 HP
+Self : [+3 EVA]","Judgement Rush
+[ATK] Cost 5 HP
+Two Enemies : [Blade 5]
+This skill has +2 ACC. ","Raise Dead
+[SUP] Cost 4 HP
+Revive a KO'ed ally as a Boneclang with max HP and SP.",,1,4,067,5/28/2021
+Abelard,13,2,1,0,5,1,22,🔗,https://tbs-crossover-arena.fandom.com/wiki/Abelard,,"Abelard","Reliable Mount
+When Abelard is swapped in from the back,
+you may swap an ally from the back
+with an ally in the front.","Deep Bond
+When Abelard is swapped out,
+you may swap an ally Halt
+from the front to the back.",,"Encourage
+[SUP] Cost 2 SP
+One Ally : Recover 4 SP. ","Kick
+[ATK] Cost 2 SP
+One Enemy : [Impact 3]",,,,2,2,068,5/29/2021
+Halt,8,9,1,0,6,2,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Halt,,Halt O'Carrick,"Aura of Legend
+When Halt is swapped in Front from the Back,
+all enemies gain [Terror 2].",,,"Armor Piercing Arrow
+[ATK] Cost 3 SP
+One Enemy : [Pierce 3]
+This skill has Break.","Bold Strategy
+[SUP] Cost 5 SP
+All Allies : [Crit 2]
+All Enemies : [-2 EVA]  ","Clever Strategy
+[SUP] Cost 5 SP 
+All Allies : [+1 DEF,EVA] 
+All Enemies : [-2 ATK]","Planned Distraction
+[SUP] Cost 2 SP
+One Enemy : [Weaken 1]
+Swap an ally Abelard.  ",,1,4,069,5/29/2021
+Captain America,12,8,3,1,6,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Captain_America,,Captain America,"Last Stand
+Captain America takes -2 damage from skills at 4 or lower health. ",,,"Shield Bash
+[ATK] Cost 2 SP
+One Enemy : [Impact 2] [Disable 2]   ","Ricochet Throw
+[ATK] Cost 4 SP
+Two Enemies : [Impact 4]","Patriot's Shield
+[SUP] Cost 4 SP
+Self : [+3 DEF] [Taunt 3]","Rallying Speech
+[SUP] Cost 2 SP
+Two Allies : Recover 3 SP.  ",,1,4,070,5/31/2021
+Hulk,20,20,0,0,5,0,45,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hulk,,Robert Bruce Banner,"Rage
+Hulk deals more damage the less HP he has.
+20 HP = +0 damage
+19-15 HP = +1 damage 
+14-10 HP = +2 damage 
+9-5 HP = +3 damage
+4-1 HP = +4 damage   ",,,"Hulk Smash!
+[ATK] Cost 5 SP
+One Enemy : [Impact 5] ","Hulk Smash!
+[ATK] Cost 5 SP
+Two Enemies : [Impact 3] ","Hulk Smash!
+[ATK] Cost 5 SP
+All Enemies : [Impact 2] 
+This Skill has -1 ACC.",,,1,3,071,5/31/2021
+Iron Man,6,20,1,0,5,1,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Iron_Man,,Iron Man,"Suit
+When Iron Man takes damage,
+He loses SP instead of HP until his SP reaches 0.
+Deal the remainder of the damage that brought him to 0 SP to his HP.",,,"Repulsors
+[ATK] Cost 5 SP
+One Enemy : [Impact 6]","Pulse Bolt
+[ATK] Cost 3 SP
+One Enemy : [Impact 2 + X]
+X = Target's Slot number  ","Smart Missiles
+[ATK] Cost 4 SP
+One Enemy : [Impact 3]
+This Skill has Break and Scope. ","Unibeam 
+[ATK] Cost X SP
+One Enemy : [Impact X]
+X = Iron Man's Current SP.",,1,4,072,5/31/2021
+Lyn,4,11,1,3,8,5,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Lyn,,Lyndis,"Memories of the Earth
+Lyn deals +1 damage if at least 1 ally is KO'ed. ",,,"Staunchflash Sol Katti
+[ATK] Cost 5 SP
+One Enemy : [Blade 4]
+This skill has Precision.","Afterimage Sword Strike
+[ATK] Cost 3 SP
+Two Enemies : [Blade 1]
+This skill has Adept 1.","Mulagir
+[ATK] Cost 5 SP
+One Enemy : [Pierce 3]
+Self : [+1 SPD,EVA]
+This skill has Scope.","""Lend me your strength!""
+[SUP] Cost 7 SP
+Swap an ally from the Back to the Front.
+This ally gains [Shield 3] and [Bold 3].",,1,4,073,6/1/2021
+Megumu,8,13,1,2,6,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Megumu_Iizunamaru,,Megumu Iizunamaru,"Lost in the Stars
+While Megumu is in front,
+Marked enemies deal -1 damage. ",,,"Calamitous Star
+[MAG] Cost 4 SP
+One Enemy : [Astral 3] [-4 ATK,MAG]
+If target is not Marked, this Skill has no effect.","Stellar Wind
+[MAG] Cost 6 SP
+Two Enemies : [Mystic 4] [Mark 5]","Luminous Horse
+[MAG] Cost 3 SP
+All Enemies : [Astral 5] [Mark 2] [+3 SPD]
+This Skill has -1 ACC. ","Rainbow Illumination
+[SUP] Cost 4 SP
+All Allies : [+2 EVA,DEF,RES] [-3 ATK]",,1,4,074,6/2/2021
+Joshua,8,12,1,3,7,3,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Joshua,,Joshua,"""Let's have us a little wager.""
+At the start of Joshua's turn spend 1 SP to flip a coin.
+Heads : Joshua deals +3 damage this turn.
+Tails : Joshua deals -1 damage this turn.","Tempest King
+Joshua has Windsweep.",,"Audhulma
+[ATK] Cost 4 SP
+One Enemy : [Blade 6]","Killing Edge
+[ATK] Cost 3 SP
+One Enemy : [Blade 3] {30% 3*damage} ",,,,2,2,075,6/4/2021
+Saitama,99,99,30,30,20,20,298,🔗,https://tbs-crossover-arena.fandom.com/wiki/Saitama,,Saitama,"I got lost.
+Saitama cannot start in slots 1-4 
+Saitama cannot be swapped until round 6,
+unless he is the only character left.","He left?
+If Every Other Ally has 0 HP after Saitama's turn,
+the opponent wins.",,"Normal Punch
+[ATK] Cost 50 SP
+One Enemy : [Impact 50] 
+Self : Recover 50 SP. 
+This skill has Precision and Scope. ",,,,,2,1,076,6/5/2021
+Cherche,12,8,4,0,3,0,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cherche,,Cherche,"Renewal
+At the start of Cherche's turn, recover 2 HP.",,,"Winged Deliverer
+[SUP] Cost 2 SP
+Swap two Other Allies.
+You may use another skill as part of your action.","Wyvern's Screech
+[SUP] Cost 4 SP
+All Enemies : [Terror 2]","Hammer
+[ATK] Cost 4 SP
+One Enemy: [Impact 4+X]
+X = Target's DEF
+This Skill has Break.",,,1,3,077,10/11/2021
+Alfyn,12,11,1,1,3,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Alfyn,,Alfyn Greengrass,"Concoct
+When using a Support Skill,
+Alfyn may pay double the SP Cost
+to double the skill's effect. ",,,"Inspiriting Mist
+[SUP] Cost 2 SP
+All Other Allies : Recover 3 SP.","Amputation
+[ATK] Cost 4 SP
+One Enemy : [Blade 5]","First Aid
+[SUP] Cost 2 SP
+One Ally : Recover 4 HP.   ","Pomegranate Panacea
+[SUP] Cost 5 SP
+All Allies : [Crit 3]",,1,4,078,10/15/2021
+Serra,4,21,0,2,8,3,38,🔗,https://tbs-crossover-arena.fandom.com/wiki/Serra,,Serra,,,,"Physic
+[SUP] Cost 8 SP
+Any Ally: Recover 12 HP.","Restore
+[SUP] Cost 4 SP
+One Ally : [Cure 2]","Lightning
+[MAG] Cost 3 SP
+One Enemy : [Light 5]","""Hey, come help me?""
+[SUP] Cost 4 SP
+Swap an ally from the Back to the Front.
+This ally gains [Crit 3].","""You will protect little old me, won't you?""
+[SUP] Cost 4 SP
+One Ally : [Stubborn 1] Recover 10 SP.",0,5,079,10/15/2021
+Blake,8,12,1,0,6,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Blake,,Blake Belladonna,"Semblance: Shadow
+When hit by a skill, Blake may pay 6 SP to have it miss instead.",,,"Gambol Shroud: Slash
+[ATK] Cost 3 SP
+One Enemy : [Blade 4]","Gambol Shroud: Duel Wield
+[ATK] Cost 4 SP
+One Enemy : [Blade 7]
+Self : [-1 EVA]","Gambol Shroud: Kusarigama
+[ATK] Cost 5 SP
+Two Enemies : [Blade 6]
+Self : [-2 EVA]","Gambol Shroud: Slingshot
+[SUP] Cost 3 SP
+One Ally: [Haste 1] [Crit 2]",,1,4,080,10/16/2021
+Hibaru,9,16,0,1,6,3,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hibaru,,Hibaru Kokutenshi,"Life or Death Repayment
+When Hibru is in front and
+enemies have no SP left,
+Terror removes HP instead.","Money Laundering
+While an enemy has Terror,
+Hibaru recovers 4 SP
+at the end of their turn.",,"Welfare Chain Organization
+[SUP] Cost 4 SP
+All Other Allies : [Terror 2] 
+All Enemies : [Terror 4]","Debt Collection Eulogy
+[SUP] Cost 8 SP
+One Enemy : [Terror 6]  ","Building Money
+[SUP] Cost 8 SP
+One Ally : [Bold 6] ",,,2,3,081,10/16/2021
+Weiss,7,14,0,1,5,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Weiss,,Weiss Schnee,"Semblance: Glyphs
+While Weiss is in Front,
+sustain +1 and -1 stats changes on allies.",,,"Myrtenaster: Thrust 
+[ATK] Cost 3 SP
+One Enemy : [Blade 3]
+This Skill has +3 ACC. ","Myrtenaster: Ice Wall
+[SUP] Cost 6 SP
+All Allies : [+3 DEF] [+1 RES]","Glyphs: Ice Shot
+[MAG] Cost 4 SP
+One Enemy : [4 Cold] {80% -3 SPD}","Glyphs: Time Dilation
+[SUP] Cost 6 SP
+All Allies : [+2 SPD,EVA] ",,1,4,082,10/16/2021
+Wriggle,9,7,2,1,4,3,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Wriggle,,Wriggle Nightbug,"Poison Specialist
+Wriggle is immune to Poison.
+At the end of Wriggle's turn,
+reduce Poison on allies by 2.",,,"Comet on Earth
+[ATK] Cost 3 SP
+One Enemy : [0 Nature] [Poison 5]  ","Firefly Phenomenon
+[ATK] Cost 4 SP
+All Enemies : [0 Nature] [Poison 3]  
+This Skill has -1 ACC. ","Nightbug Tornado
+[ATK] Cost 6 SP
+All Enemies : [2 Nature]
+If target is Poisoned, deal +5 damage.
+This Skill has -1 ACC. ","Wriggle Kick  
+[ATK] Cost 5 SP
+One Enemy : [3 Nature]
+This skill has Scope and Precision.",,1,4,083,10/16/2021
+Yang,13,10,2,1,5,3,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yang,,Yang Xiao Long,"Semblance: Burn
+When hit by a skill, gain [+1 Charge].
+You may use Charges to deal +2 damage each.",,,"Ember Celica: Explosive Punch
+[ATK] Cost 5 SP
+One Enemy : [Impact 7]   ","Ember Celica: Defend
+[SUP] Cost 2 SP
+Self: [+2 DEF,RES] ","Ember Celica: Explosive Shot
+[ATK] Cost 4 SP
+Two Enemies : [Impact 4] ","Ember Celica: Launch
+[SUP] Cost 2 SP
+Self: [Crit 3]",,1,4,084,10/16/2021
+Garen,12,10,2,1,5,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Garen,,Garen,"Perseverance
+When Garen recovers HP and SP in the back, the amount is doubled.",,,"Decisive Strike
+[ATK] Cost 3 SP
+One Enemy : [Blade 4] [Silence 1] ","Courage  
+[SUP] Cost 3 SP
+Self : [+2 DEF,RES] [Cure 0]","Judgment 
+[ATK] Cost 5 SP
+All Enemies : [Blade 3] {30% -3 DEF}
+This Skill has -1 ACC.  ","Demacian Justice 
+[ATK] Cost 5 SP
+One Enemy : [Blade X]
+X = target's missing HP. 
+This skill has Break, Scope and Precision.",,1,4,085,10/17/2021
+Kellam,20,6,4,2,2,0,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kellam,,Kellam,"""I blend into the background sometimes...""
+While at least 3 other allies are not KO'ed,
+Kellam is Invisible. ",,,"Rally Defense 
+[SUP] Cost 4 SP
+All Allies : [+2 DEF]","Steel Lance
+[ATK] Cost 3 SP
+One Enemy : [Pierce 4] ",,,,1,2,086,10/17/2021
+Teemo,8,12,0,0,6,3,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Teemo,,Teemo,"Guerrilla Warfare
+When Teemo is swapped, he gains [Invisible 1].",,,"Blinding Dart
+[MAG] Cost 4 SP
+One Enemy : [Pierce 4] [Weaken 2]","Move Quick
+[SUP] Cost 1 SP
+Self : [+2 SPD,EVA]  ","Toxic Shot
+[MAG] Cost 3 SP
+One Enemy : [Pierce 2] [Poison 3]","Noxious Trap 
+[MAG] Cost 6 SP
+One Enemy : [Impact 0] [Stuck 3] [Reveal 3] [Poison 3]",,1,4,087,10/17/2021
+Kaguya,4,12,0,3,3,0,22,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kaguya,,Kaguya Houraisan,"Desire to Rest
+When Kaguya is swapped to the Back,
+she recovers 4 HP and 8 SP.",,,"Dragon's Neck Jewel
+[MAG] Cost 3 SP
+All Enemies : [Mystic 3]
+This Skill has -1 ACC.","Buddha's Stone Bowl  
+[MAG] Cost 6 SP
+All Enemies : [Spirit 3] [-2 DEF,RES]
+Self : {50% +1 MAG,DEF,RES,SPD} 
+This Skill has -1 ACC. ","Swallow's Cowrie Shell
+[MAG] Cost 8 SP
+All Enemies : [Nature 4]
+All Allies : [Cure 1]
+This Skill has -1 ACC. ","Bullet Branch of Hourai
+[MAG] Cost 9 SP
+All Enemies : [Astral 8]
+This Skill has -1 ACC. ",,1,4,088,10/18/2021
+Lycan,10,9,1,1,6,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Lycan,,Lycan Arcadia,"Semblance: Clone Sending
+Lycan has Tempo.",,,"Razorbolt: Knife Throw
+[ATK] Cost 2 SP
+One Enemy : [Blade 1]
+This Skill has +4 ACC.","Razorbolt: Fierce Slash
+[ATK] Cost 4 SP
+One Enemy : [Blade 4]
+This Skill has +2 ACC.","Razorbolt: King of Anything
+[ATK] Cost 5 SP
+Self : [+2 ATK,EVA]
+Two Enemies : [Blade 1] ",,,1,3,089,10/18/2021
+Simin,9,15,1,1,5,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Simin,,Simin Megistus,,,,"Kore Kosmou: Ice Sword
+[ATK] Cost 4 SP
+Two Enemies : [Cold 3]
+Self : [+2 SPD,EVA] ","Kore Kosmou: Ice Shield
+[ATK] Cost 3 SP
+One Enemy : [Cold 2]
+Self : [+2 DEF,RES]  ","Kore Kosmou: Fire Greatsword
+[ATK] Cost 5 SP
+One Enemy : [Fire 5] {50% Burn 2}
+Self : [+2 ATK,MAG]","Kore Kosmou: Wind Lance
+[MAG] Cost 6 SP
+All Enemies : [Wind 5] 
+This Skill has -1 ACC.",,0,4,090,10/18/2021
+Alfonse,8,7,2,0,7,2,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Alfonse,,Alfonse Steadsteel,"The Thermal Knight
+When Alfonse is in front,
+all Wind damage is increased by 1.",,,"Scorching Slash
+[ATK] Cost 5 SP 
+One Enemy : [Blade 4] {30% Burn 5}","Sirocco Gust
+[ATK] Cost 4 SP
+One Enemy : [Wind 2]  {10% Burn 3}
+If hit, opponent swaps target with a character in their Back.","Blast of Speed
+[SUP] Cost 2 SP
+Swap with any ally.
+You may use this skill after using a different skill.",,,1,3,091,10/19/2021
+Mystia,6,8,1,0,6,4,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mystia,,Mystia Lorelei,"Deaf to All but the Song
+While Mystia is in front,
+Silenced characters take +1 damage.",,,"Ill-Starred Dive
+[ATK] Cost 2 SP
+One Enemy : [Wind 2]
+This skill has +4 ACC.","Poisonous Moth's Dark Dance 
+[ATK] Cost 6 SP
+All Enemies : [Nature 3] {80%  Poison 3, Paralysis 1}
+This Skill has -1 ACC. ","Midnight Chorus Master
+[ATK] Cost 5 SP
+All Enemies : [Wind 2] [Silence 4]
+This Skill has -1 ACC. ","Mysterious Song
+[SUP] Cost 4 SP
+All Allies : Remove Silence. If Silence was removed, recover max HP and [Cure 0].",,1,4,092,10/19/2021
+Primrose,8,10,0,0,7,3,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Primrose,,Primrose Azelhart,"Eye for an Eye
+Primrose has Thorns 3.",,,"Lions Dance
+[SUP] Cost 4 SP
+One Ally : [+3 ATK] ","Peacock Strut
+[SUP] Cost 4 SP
+One Ally : [+3 MAG]  ","Moonlight Waltz	
+[MAG] Cost 3 SP
+One Enemy : [Dark 4]","Encore
+[SUP] Cost 8 SP
+Any Ally : Revive KO'ed Ally with 1 HP and max SP.  ",,1,4,093,10/19/2021
+Ragora,14,12,0,1,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ragora,,Ragora Cinarum,"Semblance: Familiar
+When using a Skill, Ragora may use
+both a ""Hexentanz"" and ""Familiar"" Skill.",,,"Hexentanz: Shotgun
+[ATK] Cost 3 SP
+Two Enemies : [Impact 2]","Hexentanz: Glaive
+[ATK] Cost 4 SP
+One Enemy : [Impact 5]","Familiar: Restrain
+[SUP] Cost 1 SP
+One Enemy : [-2 EVA] ","Familiar: Drawing Down the Moon
+[SUP] Cost 2 SP
+Self : [Crit 2]  
+Ragora's Skills are Reversed this turn.",,1,4,094,10/19/2021
+Apollo,8,10,1,1,5,2,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Apollo,,Apollo,"Path of the Spheromancer
+At the end of Apollo's turn,
+gain a +2 Stat Boost in a stat of choice.",,,"Mine Valley
+[SUP] Cost 6 SP
+All Enemies : [Trap 4] [Burn 1]","Frozen Stance
+[SUP] Cost 3 SP
+Self : [Thorns 4] [Steady 2]","Song of Storms
+[MAG] Cost 8 SP
+One Enemy : [Electric 3]
+This Skill has Adept 3.","Ki Thrust
+[MAG] Cost 3 SP
+One Enemy : [Wave 1] [Mark 3]
+If hit, opponent swaps target with a character in their Back.",,1,4,095,10/20/2021
+Lea,8,10,1,1,5,2,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Lea,,Lea,"Path of the Spheromancer
+At the end of Lea's turn,
+gain a +2 Stat Boost in a stat of choice.",,,"Flame Jab
+[ATK] Cost 3 SP
+One Enemy : [Fire 2] {50% Burn 4}","Indigo Rush
+[ATK] Cost 5 SP
+All Enemies : [Cold 3]
+All Allies : [Thorns 2] 
+This Skill has -1 ACC. ","Glitch Time
+[SUP] Cost 4 SP
+Self : [+3 EVA] [Scope 2, Precision 1]","Ether Snipe
+[MAG] Cost 8 SP
+One Enemy : [Wave 8] [Mark 2]
+This skill has Scope.
+This skill deals +8 damage if target is Marked.",,1,4,096,10/20/2021
+Shizuka,8,10,1,1,5,2,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shizuka,,Shizuka,"Path of the Spheromancer
+At the end of Shizuka's turn,
+gain a +2 Stat Boost in a stat of choice.",,,"Ragnarök
+[ATK] Cost 9 SP
+All Enemies : [Fire 5] [Burn 3] 
+This Skill has -1 ACC. ","Hail Flurry
+[ATK] Cost 2 SP
+One Enemy : [Cold 2] [-2 SPD,EVA]","Tesla Waltz
+[MAG] Cost 6 SP
+All Enemies : [Electric 4] [Paralysis 1]
+This Skill has -1 ACC. ","Circle of Valor 
+[SUP] Cost 5 SP
+All Allies : [Shield 4] [Taunt 2]",,1,4,097,10/20/2021
+Kasen,12,11,1,1,5,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kasen,,Kasen Ibaraki,"Fighting Spirit
+At the end of Kasen's turn,
+gain [+1 Fighting Spirit] and [+X ATK,DEF,RES].
+Kasen cannot have more than 3 Fighting Spirit.
+Remove Fighting Spirit if Kasen is swapped to the back. 
+X = [X Fighting Spirit] ",,,"Higekiri's Cursed Arm
+[ATK] Cost 7 SP
+One Enemy : [Dark 4] [-1 ATK,SPD] [Terror 3]
+This skill +2 ACC.   ","Echo of the Nine Forest Gods
+[ATK] Cost 5 SP 
+All Enemies : [Nature 3]
+This skill has +1 ACC.  ","Diving Waltz of the Raijuu
+[ATK] Cost 4 SP
+One Enemy : [Electric 3] [-2 RES] [Paralysis 1]","Breath of the Hermit
+[SUP] Cost 4 SP 
+Self : [+2 SPD,EVA] [Regenerate 3]",,1,4,098,10/24/2021
+Mima,10,20,2,2,0,5,39,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mima,,Mima,"Reincarnation
+At the start of the game, she gains [Reincarnation].
+When Mima is swapped, gain [Reincarnation]. 
+While Mima has Reincarnation, she cannot use Skills, Rally or Swap.
+Instead, she recovers 20 SP. 
+At the end of Mima's turn, remove Reincarnation.",,,"Escape Velocity
+[ATK] Cost 4 SP
+One Enemy : [Impact 6]  ","Orreries Sun
+[MAG] Cost 8 SP
+All Enemies : [Astral 4]
+Self : [Shield 6]  
+This Skill has -1 ACC. ","Evil Field
+[SUP] Cost 8 SP
+All Enemies : [Direct 2, Stubborn 2]  ","Twilight Spark
+[MAG] Cost 16 SP
+All Enemies : [Mystic 14]
+This Skill has -1 ACC. ",,1,4,099,10/24/2021
+Seija,8,9,0,2,5,3,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Seija,,Seija Kijin,"Reverse Ideology
+Seija may ignore Reverse.
+Seija deals +1 damage to Reversed enemies.",,,"Overturning All Under Heaven
+[SUP] Cost 3 SP
+All Targets : [Reverse 3]","Reverse Hierarchy
+[SUP] Cost 4 SP
+One Enemy and One Ally : They trade their current HP and SP with each other.","Reverse Needle Attack
+[ATK] Cost 3 SP
+All Enemies : [Pierce 2]  
+This Skill's damage is reduced by the opposite defensive stat.
+This Skill has -1 ACC. ","This Side Down
+[SUP] Cost 1 SP
+One Target : Change Stat Boosts into Stat Drops and vice versa.",,1,4,100,10/25/2021
+Papyrus,12,8,2,1,3,1,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Papyrus,,Papyrus,"I AM A SKELETON WITH HIGH STANDARDS!!!
+Only characters with more than -3 HP can be on the same team as Papyrus.",,,"NYEH HEH HEH!!!
+[SUP] Cost 3 SP
+Self : [+1 SPD] [Shield 3, Taunt 2]","SILKEN SPAGHETTI, FINELY AGED IN AN OAKEN CASK...
+[SUP] Cost 2 SP
+One Other Ally : Recover 8 HP and lose 2 SP.","BLUE ATTACK!'
+[ATK] Cost 4 SP
+All Enemies : [Impact 4]
+This Skill misses enemies with 4 SPD or lower.
+This Skill has +1 ACC.","YOU'RE BLUE NOW.
+[SUP] Cost 3 SP
+One Enemy : [-5 EVA] ","AN ABSOLUTELY NORMAL ATTACK...
+[ATK] Cost 4 SP
+One Enemy : [Impact 6] ",1,5,101,10/26/2021
+Hina,6,12,2,3,3,4,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hina,,Hina Kagiyama,"Misfortune Stockpilling
+When Hina rallies, all Allies
+move their Stat Drops on to Hina.
+This is cumulative.",,,"Misfortune God's Biorhythm
+[SUP] Cost 3 SP
+All Targets : [-2 ATK,MAG,DEF,RES,SPD,EVA]","Pain Flow
+[MAG] Cost 5 SP
+All Enemies : [Dark X] 
+Self : [Cure 0]
+This Skill has -1 ACC.
+X = Sum of Hina's Stat Drops.","Old Lady Ohgane's Fire 
+[MAG] Cost 4 SP
+Two Enemies : [Fire 2] [-1 ATK,MAG,DEF,RES,SPD]",,,1,3,102,10/27/2021
+Letty,12,7,1,2,2,1,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Letty,,Letty Whiterock,"Manipulation of Chill
+While Letty is in Front,
+all Cold damage is increased by 1.",,,"Cold Sign ""Lingering Cold""
+[SUP] Cost 5 SP
+All Enemies : [-2 EVA] [Freeze 1] ","Cold Sign ""Cold Snap""
+[ATK] Cost 2 SP
+One Enemy : [Cold 2] {20% Shock 2, Death 2}  ","Winter Sign ""Northern Winner"" 
+[MAG] Cost 4 SP
+All Enemies : [Cold 4]
+Self : [Sleep 1]
+This Skill has -1 ACC.",,,1,3,103,10/27/2021
+Nazrin,8,9,1,1,5,3,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Nazrin,,Nazrin,"Bishamonten's Blessing
+While Nazrin is in Front, 
+enemies with a Spirit damage type take +2 damage. ",,,"Gold Rush
+[MAG] Cost 3 SP
+One Enemy : [Impact 3] 
+If this skill KOs its target,
+all allies recover 5 SP.  ","Rare Metal Detector
+[MAG] Cost 3 SP
+One Enemy : [Wind 3]
+If this skill KOs its target,
+all allies gain [Shield 3, Crit 3]","Nazrin Pendulum
+[MAG] Cost 3 SP
+One Enemy : [Cold 3]
+If this skill KOs its target,
+all allies gain [+2 ATK,MAG,DEF,RES]",,,1,3,104,10/27/2021
+Orin,5,6,0,3,9,6,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Orin,,Rin Kaenbyou,"Vengeful Cat's Erratic Step
+Orin's Skills have a 20% chance of being used twice at no cost. ",,,"Cat's Walk
+[ATK] Cost 2 SP
+One Enemy : [Impact 1] [Paralysis 1]","Vengeful Cannibal Spirit
+[ATK] Cost 4 SP
+One Enemy : [Dark 2] [Terror 4]","Former Hell's Needle Hill 
+[ATK] Cost 5 SP
+Two Enemies : [Pierce 4] {50% -3 DEF}","Blazing Wheel 
+[MAG] Cost 6 SP
+All Enemies : [Fire 5]
+This Skill has -1 ACC.",,1,4,105,10/27/2021
+Utsuho,10,12,3,2,6,2,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Utsuho,,Utsuho Reiuji,"Subterranean Sun
+While Utsuho is in front,
+all Fire damage is increased by 1.",,,"Giga Flare
+[MAG] Cost 10 SP
+All Enemies : [Mystic 4]
+This Skill has Break and -2 ACC.","Intense Nuclear Reaction
+[MAG] Cost 4 SP 
+All Enemies : [Fire 3] 
+Self : [-1 DEF,RES,SPD] [+2 MAG]
+This Skill has -2 ACC.","Hell's Tokamak 	
+[MAG] Cost 4 SP
+All Enemies : [Fire 3] [-1 RES] 
+This Skill has -2 ACC.
+",,,1,3,106,10/27/2021
+Kurohebi,9,11,2,2,5,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kurohebi,,Kurohebi,"Remembered Remnants
+When a Skill misses Kurohebi,
+gain [Invisible 1].",,,"Darkness Card ""Blind Shot""
+[ATK] Cost 3 SP
+One Enemy : [Blade 2] [-5 ACC]  ","Slash Card ""Slit Dragon""
+[ATK] Cost 6 SP
+One Enemy : [Blade 6]
+If Kurohebi is Invisible, This Skill deals +6 damage.","Imperceptible
+[SUP] Cost 5 SP
+All Enemies : [-2 ACC]
+Self : [Invisible 1]",,,1,3,107,10/28/2021
+Akshan,6,13,2,1,6,3,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Akshan,,Akshan,"Scoundrel!
+While Akshan is in Front,
+When an Ally is KO'ed by a Skill,
+The Character that used that Skill gains [Scoundrel]
+and the KO'ed Ally gains [Victim].","Going Rouge
+When Akshan's skills target a [Scoundrel], they gain Scope.
+When Akshan KOs a target with [Scoundrel], remove it;
+Any Allies with [Victim], remove it and revive them with 1 HP.",,"Dirty Fighting 
+[ATK] Cost 4 SP
+One Enemy : [Pierce 4]
+Self : [Break 2] or [+2 SPD]","Heroic Swing
+[SUP] Cost 3 SP
+Self : [+3 EVA] 
+You may use Dirty Fighting after using this skill.","Comeuppance
+[SUP] Cost 2 SP
+Self : [Precision 1] [Crit 2]
+You may use Heroic Swing after using this skill. ",,,2,3,108,10/29/2021
+Aoji,5,9,3,3,2,4,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Aoji,,Aoji Shitodo ,"Wishy Washy
+When Aoji rallies, gain [Shield 4] and recover 2 HP.
+When Aoji is hit by a skill, gain [Terror 3]. ",,,"Current Wave ""Current Blast""
+[MAG] Cost 2 SP
+One Enemy : [Water 2] [-3 EVA]  ","Shitodo Card ""Blue Storm"" 
+[MAG] Cost 4 SP
+All Enemies : [Water 3]
+This Skill has -1 ACC.     ","Rotation Card ""Eastern Garbage Patch""
+[SUP] Cost 7 SP
+All Enemies : [Stuck 2]",,,1,3,109,10/29/2021
+Elice,2,18,0,3,3,3,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Elice,,Elice,,,,"Aum
+[SUP] Cost 10 SP
+Any Ally : Revive KO'ed Ally with Max HP and SP.","Bolganone
+[MAG] Cost 7 SP
+One Enemy : [Fire 10]
+This Skill has -3 ACC. ","Fortify
+[SUP] Cost 8 SP
+Every Other Ally : Recover 2 HP and SP.",,,0,3,110,10/29/2021
+Utsuho (BM),12,12,3,3,0,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Utsuho_(BM),,Utsuho Reiuji,,,,"Control Rod Crush
+[ATK] Cost 5 SP 
+One Enemy : [Impact 8]
+This Skill has -2 ACC.","Subterranean Sun
+[MAG] Cost 9 SP
+All Enemies : [Fire 7] [-3 EVA]
+This Skill has -3 ACC. ","Hell's Tokamak
+[MAG] Cost 4 SP
+One Enemy : [Fire 4]
+This Skill has Break and -2 ACC.","Rocket Dive
+[ATK] Cost 6 SP
+All Enemies : [Impact 4]  
+This Skill has -2 ACC.",,0,4,111,10/29/2021
+Master Yi,9,9,1,1,8,3,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Master_Yi,,Master Yi,"Double Strike
+At the end of Master Yi's turn gain [Charge].
+At the start of Master Yi's turn you may spend it.
+If you do, gain Tempo this turn. Don't gain [Charge] this turn.",,,"Alpha Strike
+[ATK] Cost 4 SP
+All Enemies : [Blade 1]
+Self : [+3 EVA]
+Master Yi may swap with any ally.
+This Skill has -1 ACC. ","Meditate
+[SUP] Cost 4 SP
+Self: [+1 DEF,RES] [Regenerate 3]","Wuju Style
+[ATK] Cost 3 SP
+One Enemy : [Blade 5]","Highlander
+[SUP] Cost 3 SP
+Self : [+2 ACC,SPD,ATK]  ",,1,4,112,10/30/2021
+Cyrus,7,13,0,2,5,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cyrus,,Cyrus Albright,"Percipience
+Cyrus is immune to Terror. 
+At the end of Cyrus's turn,
+reduce Terror on allies by 2. ",,,"Analyze
+[SUP] Cost 1 SP
+One Enemy : [Reveal 2]  ","Fire Storm 
+[MAG] Cost 8 SP
+All Enemies : [Fire 7] 
+This Skill has -1 ACC. ","Blizzard
+[MAG] Cost 8 SP
+All Enemies : [Cold 7]  
+This Skill has -1 ACC. ","Lightning Blast
+[MAG] Cost 8 SP
+All Enemies : [Electric 7]
+This Skill has -1 ACC.",,1,4,113,11/1/2021
+Driller Mk 1,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Driller_Mk_1,,Driller,,,,"CRSPR Flamethrower
+[ATK] Cost 5 SP
+All Enemies : [Fire 1] [Burn 3] 
+This Skill has -1 ACC. ","Subata 120
+[ATK] Cost 2 SP
+One Enemy : [Pierce 4] ","Reinforced Power Drills
+[SUP] Cost 3 SP
+All Allies : [+2 SPD]  ","Satchel Charge
+[ATK] Cost 4 SP
+Two Enemies : [Impact 3]
+This Skill has Break 2. ","Impact Axe 
+[ATK] Cost 4 SP
+One Enemy : [Impact 6]  ",0,5,114,11/2/2021
+Engineer Mk 1,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Engineer_Mk_1,,Engineer,,,,"""Warthog"" Auto 210
+[ATK] Cost 5 SP
+Two Enemies : [Pierce 3] {70% Shock 2}   ","Deepcore 40mm PGL
+[ATK] Cost 6 SP 
+Two Enemies : [Impact 4] {50% Terror 3}","Platform Gun
+[SUP] Cost 2 SP
+All Allies : [Steady 2]  ","LMG Gun Platform
+[ATK] Cost 5 SP
+One Enemy : [Pierce 5]
+Self : Gain [Sentry] 
+This Skill only costs 2 SP if Engineer has Sentry. ","L.U.R.E. 
+[SUP] Cost 2 SP
+One Ally : [Taunt 3]",0,5,115,11/2/2021
+Gunner Mk 1,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gunner_Mk_1,,Gunner,,,,"""Lead Storm"" Powered Minigun
+[ATK] Cost 2 SP
+One Enemy : [Pierce 3 + X]
+Self : Gain [+1 Rev].
+X = Rev ","""Bulldog"" Heavy Revolver
+[ATK] Cost 4 SP
+One Enemy : [Pierce 5] {30% Shock 2}","Zipline Launcher
+[SUP] Cost 2 SP
+One Ally : [Distance 3]","Shield Generator
+[SUP] Cost 3 SP
+All Allies : [Shield 2]  ","Sticky Grenade   
+[ATK] Cost 4 SP 
+Two Enemies : [Impact 3] {40% Terror 2}",0,5,116,11/2/2021
+H'aanit,9,7,1,0,6,2,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/H%27aanit,,H'aanit,"Eagle Eye
+H'aanit has Scope.
+H'aanit has Break against Invisible targets.",,,"True Strike
+[ATK] Cost 7 SP
+One Enemy : [Pierce 6]
+This Skill has Precision. ","Thunderbird
+[MAG] Cost 4 SP
+One Enemy : [Electric 5]","Leghold Trap
+[SUP] Cost 2 SP
+One Enemy : [Trap 3]  ","Take Aim 
+[SUP] Cost 3 SP
+All Allies : [Scope 1] [Crit 2]",,1,4,117,11/2/2021
+Meiling,16,5,3,1,3,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Meiling,,Hong Meiling,"Gatekeeper's Nap
+When Meiling rallies,
+she gains [+2 DEF,SPD].",,,"Brilliant Light Gem
+[ATK] Cost 2 SP
+One Enemy : [Spirit 3]","Mountain Breaker
+[ATK] Cost 3 SP
+One Enemy : [Impact 5]
+This Skill has Break 2.","Colourful Rain
+[SUP] Cost 4 SP
+Self : Recover 12 HP.","Healer
+[SUP] Cost 1 SP
+One Ally : Recover 3 HP.",,1,4,118,11/2/2021
+Scout Mk 1,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Scout_Mk_1,,Scout,,,,"Deepcore GK2
+[ATK] Cost 5 SP
+One Enemy : [Pierce 7]  ","Jury-Rigged Boomstick
+[ATK] Cost 4 SP
+One Enemy : [Pierce 5] {70% Shock 1}  ","Grappling Hook
+[SUP] Cost 2 SP
+Swap with any Ally.
+You may use this Skill after using a different Skill.  ","Flare Gun 
+[SUP] Cost 3 SP
+All Enemies : [Reveal 2]","Inhibitor-Field Generator  
+[SUP] Cost 3 SP
+Two Enemies : [-1 DEF,EVA] [Heavy 1]",0,5,119,11/2/2021
+Setsuna,5,11,1,3,7,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Setsuna,,Setsuna,"Absent-minded 
+Setsuna is immune to Terror, Poison, and Stat Drops. 
+If Setsuna is Trapped, remove Trap and KO Setsuna.",,,"Iron Yumi
+[ATK] Cost 3 SP
+One Enemy : [Pierce 4] 
+This Skill has Scope.  ","Setsuna’s Yumi  
+[ATK] Cost 4 SP
+One Enemy : [Pierce 2] [-2 ACC,SPD,DEF]
+This Skill has Scope and -2 ACC. ","Bowbreaker
+[ATK] Cost 8 SP
+One Enemy: [Pierce 12] 
+This Skill can only hit targets with Scope or with Skills that have Scope.",,,1,3,120,11/2/2021
+Tressa,11,12,1,1,5,1,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Tressa,,Tressa Colzione,"Grows on Trees
+While Tressa is in Front,
+when an enemy is KO'ed,
+all Allies recover 2 SP.  ",,,"Donate BP
+[SUP] Cost 6 SP
+One Ally : [Crit 4]  ","Hired Help
+[SUP] Cost 6 SP
+Use Swap twice.  ","Bifelgan's Bounty
+[MAG] Cost 12 SP
+One Enemy : [Impact 8]
+All Allies : Recover X SP.
+X = damage dealt   ","Rest
+[SUP] Cost 0 SP
+Self : Recover 6 SP and 2 HP.",,1,4,121,11/2/2021
+Yuugi,18,6,4,0,1,0,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yuugi,,Yuugi Hoshiguma,"Ruinous Super Strength
+While Yuugi is in Front, 
+all Impact damage is increased by 1.",,,"Supernatural Phenomenon
+[ATK] Cost 2 SP
+One Enemy : [Nature 6]
+This Skill has -2 ACC.   ","Knockout in Three Steps
+[ATK] Cost 6 SP
+One Enemy : [Impact 12]
+This Skill has Break and -5 ACC.  ","Irremovable Shackles
+[ATK] Cost 3 SP
+One Enemy : [Spirit 1] [Heavy 2, Weaken 2]",,,1,3,122,11/2/2021
+Alice,9,11,1,2,5,4,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Alice,,Alice Margatroid,"Doll Guards
+When Alice rallies,
+she gains [+2 EVA] and [Shield 2].",,,"Artful Sacrifice
+[MAG] Cost 5 SP
+One Enemy : [Fire 5]
+This Skill has +2 ACC. 
+This Skill's damage is reduced by the opposite defensive stat.    ","Little Legion
+[MAG] Cost 4 SP
+All Enemies : [Pierce 3]
+This Skill has -1 ACC.
+This Skill's damage is reduced by the opposite defensive stat.","Hanged Hourai Doll
+[MAG] Cost 6 SP 
+Two Enemies : [Mystic 6] ","Trip Wire  
+[MAG] Cost 5 SP
+All Enemies : [Impact 1] [-2 SPD] [Heavy 2,Stuck 1] 
+This Skill has -1 ACC.",,1,4,123,11/3/2021
+Patchouli,2,30,0,7,0,0,39,🔗,https://tbs-crossover-arena.fandom.com/wiki/Patchouli,,Patchouli Knowledge,"The Unmoving Great Library
+While Patchouli is in the 4th Slot,
+She recovers 7 SP at the end of her turn.",,,"Royal Flare
+[MAG] Cost 15 SP
+All Enemies : [Fire 12]
+This Skill has -1 ACC.   ","Princess Undine
+[MAG] Cost 14 SP
+All Enemies : [Cold 11]
+This Skill has -1 ACC.  ","Djinn Gust
+[MAG] Cost 13 SP
+All Enemies : [Wind 10]
+This Skill has -1 ACC.  ","Satellite Himawari
+[MAG] Cost 12 SP
+All Enemies : [Nature 9]
+This Skill has -1 ACC.  ","Silent Selene  
+[MAG] Cost 15 SP
+One Enemy : [Mystic 30]  ",1,5,124,11/3/2021
+Eirin,12,22,2,1,5,2,44,🔗,https://tbs-crossover-arena.fandom.com/wiki/Eirin,,Eirin Yagokoro,"Brain of the Moon
+While Eirin is in Front,
+Allies in Back recover HP twice as fast.",,,"Mercury Sea 
+[MAG] Cost 5 SP
+All Enemies : [Astral 2] [-3 ATK]
+This Skill has -1 ACC.    ","Omoikane's Device
+[MAG] Cost 5 SP
+All Enemies : [Mystic 2] [-3 MAG]
+This Skill has -1 ACC.  ","Hourai Elixir
+[SUP] Cost 8 SP
+One Ally : [+5 HP] [Cure 0] Recover 10 HP. ","Astronomical Entombing  
+[MAG] Cost 8 SP
+All Enemies : [Dark 4] [Heavy 3] 
+This Skill has -1 ACC.",,1,4,125,11/4/2021
+Iku,10,9,1,2,6,3,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Iku,,Iku Nagae,"Lightning Fish
+Iku is Immune to Paralysis.
+While Iku is in front,
+all Electric damage is increased by 1.",,,"Elekiter Dragon Palace
+[MAG] Cost 4 SP
+One Enemy : [Electric 3] [-2 DEF] {60% Paralysis 2} ","Light Dragon's Sigh
+[MAG] Cost 5 SP
+All Enemies : [Wind 3] [-2 DEF]
+This Skill has -1 ACC.","Thundercloud Stickleback
+[SUP] Cost 4 SP
+One Ally : [+3 ATK,MAG] [Paralysis 2]","Whiskers of the Dragon God
+[SUP] Cost 3 SP
+One Ally : [+4 SPD] [-1 DEF,RES]  ",,1,4,126,11/4/2021
+Reisen,9,11,1,1,6,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Reisen,,Reisen Udongein Inaba,,,,"Lunatic Red Eyes
+[MAG] Cost 4 SP
+All Enemies : [Astral 1] [-3 RES] {50% Terror 2, Disable 2} 
+This Skill has -1 ACC. ","Mind Starmine
+[MAG] Cost 6 SP
+All Enemies : [Mystic 4] {40% Shock 2}
+This Skill has -1 ACC.  ","Discarder
+[MAG] Cost 4 SP
+One Enemy : [Dark 4] [-1 ATK,MAG,DEF,RES,SPD,EVA]  ","Gas-Woven Orb
+[MAG] Cost 1 SP
+All Enemies : [Nature 0] {20% Poison 3} 
+This Skill has -1 ACC.  ","Grand Patriot's Elixir  
+[SUP] Cost 5 SP
+Self : [+2 ATK,MAG,DEF,RES,SPD,EVA] ",0,5,127,11/4/2021
+Aphelios,11,12,0,0,3,1,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Aphelios,,Aphelios,"Weapons of the Faithful
+Each of Aphelios' weapons gives an effect to his skills.
+[Calibrum] : This Skill has Scope and +2 ACC.
+[Severum] : When this Skill hits a target, recover 4 HP.
+[Gravitum] : This Skill inflicts [-2 SPD,EVA] on hit.
+[Infernum] : This Skill's target is Two Enemies instead of One Enemy.
+[Crescendum] : This Skill deals +2 damage.
+Aphelios starts with [Calibrum] and [Severum].
+At the end of Aphelios' turn, remove a Weapon and gain a different Weapon.",,,"Moonshot
+[ATK] Cost 4 SP
+One Enemy : [Astral 4]
+This Skill can only be used if Aphelios has [Calibrum].","Onslaught
+[ATK] Cost 4 SP
+One Enemy : [Astral 2]
+This Skill has Adept 1.
+This Skill can only be used if Aphelios has [Severum].","Binding Eclipse
+[MAG] Cost 4 SP
+One Enemy : [Astral 2] [Heavy 2]  
+This Skill can only be used if Aphelios has [Gravitum]. ","Duskwave
+[ATK] Cost 4 SP 
+All Enemies : [Astral 2]
+This Skill has -1 ACC.
+This Skill can only be used if Aphelios has [Infernum].","Sentry   
+[ATK] Cost 4 SP
+One Enemy : [Astral 3]
+Self : Gain [Sentry].
+If Aphelios has [Sentry] this Skill costs 2 SP.
+This Skill can only be used if Aphelios has [Crescendum].",1,5,128,11/5/2021
+Steeve,15,5,7,0,3,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Steeve,,Steeve,"Carapace
+When hit by an Attack Skill, gain [-2 DEF].
+This is cumulative.  ",,,"Bite
+[ATK] Cost 2 SP
+One Enemy : [Pierce 3]  ","Crippling Slash
+[ATK] Cost 3 SP
+One Enemy : [Blade 3] [Stuck 2]","Guard
+[SUP] Cost 3 SP
+Self : [+2 DEF] [Taunt 1]",,,1,3,129,11/5/2021
+Ditto,10,5,0,0,5,1,21,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ditto,,Ditto,"Limber
+Ditto is immune to Paralysis.","Imposter
+When swapped in Front,
+Ditto may transform into the enemy with the same slot number.
+If you do recover max HP and SP. ",,"Transform
+[SUP] Cost 1 SP
+Transform Ditto into a character in Front.
+Recover max HP and SP.
+This Skill can only be used by Ditto. ",,,,,2,1,130,11/6/2021
+Ran,12,12,2,2,6,0,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ran,,Ran Yakumo,"Cooling Down
+If Ran rallies with max HP, recover max SP.",,,"Fox-Tanuki Youkai Laser
+[MAG] Cost 6 SP
+All Enemies : [Mystic 5]
+This Skill has -1 ACC.  ","Soaring En no Ozuno
+[ATK] Cost 6 SP
+All Enemies : [Impact 5]
+This Skill has -1 ACC. ","Banquet of General Gods
+[SUP] Cost 12 SP
+Every Ally : [+2 ATK,MAG]  ","Eighty Million Holy Boards	  
+[SUP] Cost 12 SP
+Every Ally : [+2 DEF,RES] ",,1,4,131,11/6/2021
+Suika,10,6,2,3,3,4,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Suika,,Suika,"Throwing Mt.Togakushi
+[ATK] Cost 2 SP
+One Enemy : [Nature 4]  ",,,"Throwing Atlas
+[ATK] Cost 4 SP
+One Enemy : [Wind 7]
+Self : [-1 SPD,EVA]  ","Gathering and Dissipating
+[MAG] Cost 3 SP
+Two Enemies : [Wind 1] {80% -3 ATK,MAG}  ","Missing Power
+[SUP] Cost 6 SP
+Self : [+5 ATK] [+2 DEF,RES] [-3 SPD,EVA]","Art of Segaki Binding
+[ATK] Cost 3 SP
+One Enemy : [Dark 1] [Heavy 2, Terror 2]",,1,4,132,11/6/2021
+Suwako (BM),8,13,0,2,4,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Suwako_(BM),,Suwako (BM),,,,"Iron Rings
+[ATK] Cost 3 SP
+One Enemy : [Blade 3]
+This Skill has +2 ACC.","Curse
+[SUP] Cost 3 SP
+One Enemy : [Curse 2]","Geyser
+[MAG] Cost 5 SP
+One Enemy : [Water 5] {10% Burn 3}
+This Skill has +4 ACC.","Rock Fling
+[MAG] Cost 5 SP
+One Enemy : [Impact 5]  
+This Skill has +2 ACC.
+This Skill's damage is reduced by the opposite defensive stat.","Scourged Earth
+[MAG] Cost 7 SP
+All Enemies : [Dark 3] [Curse 2]
+This Skill has +1 ACC.",0,5,133,11/6/2021
+Cho'Gath,12,9,2,2,5,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cho%27Gath,,Cho'Gath,"Carnivore
+When Cho'Gath KOs a target,
+Recover 4 HP and SP.","The Terror of the Void
+At the end of Cho'Gath's turn, gain [+X HP,ACC].
+X = Feast ",,"Rupture
+[MAG] Cost 4 SP
+All Enemies : [Void 2] [Weaken 2]
+This Skill has -3 ACC. ","Feral Scream
+[MAG] Cost 5 SP
+Two Enemies : [Dark 4] [Silence 2]   ","Vorpal Spikes
+[MAG] Cost 3 SP
+One Enemy : [Pierce 4] 
+This Skill has +2 ACC.","Feast
+[MAG] Cost 6 SP
+One Enemy : [Void 4]
+This Skill has Break.
+If this Skill KOs target, gain [+2 Feast].",,2,4,134,11/7/2021
+Remilia,8,7,3,2,8,4,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Remilia,,Remilia Scarlet,"Majesty
+Remilia sustains Stat Changes.",,,"Spear the Gungnir
+[ATK] Cost 4 SP
+One Enemy : [Pierce 4]
+This Skill has Scope and Break 2.","Curse of Vlad Tepes
+[SUP] Cost 3 SP
+One Ally : [+3 ATK,DEF,RES] [Poison 4, Heavy 2]",,,,1,2,135,11/7/2021
+Sakuya,9,9,2,1,7,4,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sakuya,,Sakuya Izayoi,"Perfect and Elegant Maid
+When Sakyua rallies,
+One Ally recovers 4 SP. ",,,"Misdirection
+[ATK] Cost 3 SP
+All Enemies : [Blade 1]
+This Skill has +1 ACC.","Killing Doll
+[ATK] Cost 3 SP
+One Enemy : [Dark 2]
+This Skill has +4 ACC. ","Soul Sculpture
+[ATK] Cost 5 SP
+All Enemies : [Wind 1]
+This Skill has Precision. ","Lunar Clock
+[SUP] Cost 5 SP
+All Allies : [+3 SPD]","Private Square
+[SUP] Cost 8 SP
+All Enemies : [Shock 2]",1,5,136,11/7/2021
+Flandre,7,18,1,0,7,3,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Flandre,,Flandre Scarlet,,,,"Starbow Break
+[ATK] Cost 6 SP
+One Enemy : [Dark 18]
+Self : Lose 6 HP. This can KO.  ","Forbidden Fruit
+[MAG] Cost 7 SP
+All Enemies : [Mystic 6]
+All Allies : Lose 1 SP.
+This Skill has +1 ACC.  ","Laveatein
+[ATK] Cost 12 SP
+All Enemies : [Fire 18]
+All Allies : Lose 4 HP. This can KO.
+This Skill has -3 ACC.",,,0,3,137,11/8/2021
+Suwako,6,12,0,0,6,5,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Suwako,,Suwako,"Froggy Power!
+While Suwako is in front,
+all Nature damage is increased by 1.",,,"Moriya's Iron Ring
+[ATK] Cost 2 SP
+One Enemy : [Blade 4]","Long-Arm and Long-Leg
+[ATK] Cost 6 SP
+One Enemy : [Nature 8]","Froggy Braves the Elements
+[MAG] Cost 5 SP
+All Enemies : [Cold 3] [-2 RES]
+This Skill has -1 ACC. ","Mishaguji-sama
+[MAG] Cost 6 SP
+All Enemies : [Nature 4] [-2 DEF] 
+This Skill's damage is reduced by the opposite defensive stat.
+This Skill has -1 ACC.",,1,4,138,11/8/2021
+Galdred,5,3,1,1,5,2,17,🔗,https://tbs-crossover-arena.fandom.com/wiki/Galdred,,Galdred,"Obsessive Research
+Galdred has Bold 3.
+The first time each of Galdred's Skills hit a target,
+gain [1 Transform]. ","Secret Formula
+If Galdred has 3 Transforms at the end of his
+turn he becomes The Beast Within and recovers 10 HP.",,"Withering Toxin
+[ATK] Cost 3 SP
+One Enemy : [Dark 0] [Poison 3,Terror 3] ","Eviscerate
+[ATK] Cost 3 SP
+One Enemy : [Pierce 5]","Explosive Cocktail
+[ATK] Cost 3 SP
+One Enemy : [Impact 2] [-2 DEF,RES,SPD,EVA]",,,2,3,139,11/17/2021
+Kanako,12,12,2,2,2,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kanako,,Kanako Yasaka,"Strong Faith
+While Kanako is injured,
+She recovers 4 SP at the end of her turn.",,,"Mad Dance on Medoteko
+[MAG] Cost 3 SP
+One Enemy : [Spirit 4] [Heavy 1]  
+This Skill's damage is reduced by the opposite defensive stat.","Misayama Hunting Ritual
+[MAG] Cost 5 SP
+All Enemies : [Blade 3]
+This Skill has +1 ACC.
+This Skill's damage is reduced by the opposite defensive stat.   ","Beautiful Spring like Suiga
+[MAG] Cost 6 SP
+One Enemy : [Cold 7] [-1 ATK,MAG] ","Virtue of Wind God
+[MAG] Cost 8 SP
+All Enemies : [Wind 7]
+This Skill has -1 ACC.",,1,4,140,11/17/2021
+Tenshi,9,5,4,3,1,0,22,🔗,https://tbs-crossover-arena.fandom.com/wiki/Tenshi,,Tenshi,"Keystone Formation
+When Tenshi uses Swap,
+all allies gain [+2 DEF].",,,"World Creation Press
+[ATK] Cost 2 SP
+One Enemy : [Nature 1] [-3 ATK]","Violent Motherland
+[ATK] Cost 5 SP
+All Enemies : [Nature 2] [-2 MAG,SPD]
+This Skill has -1 ACC.","Sword of Hisou
+[ATK] Cost 4 SP
+One Enemy : [Spirit 3] {20% Curse 3}
+This Skill has Precision.","State of Enlightenment
+[SUP] Cost 5 SP
+Self : [+4 DEF,RES] [Heavy 3, Stuck 3] ",,1,4,141,11/17/2021
+The Beast Within,15,10,3,3,9,4,44,🔗,https://tbs-crossover-arena.fandom.com/wiki/Galdred,,The Beast Within,"Inhuman Speed
+The Beast Within recovers 10 SP at the end of it's turn.",,,"Blood Frenzy
+[ATK] Cost 10 SP
+One Enemy : [Pierce 8]
+If this Skill KOs the target, use it again at no cost. ","Hydra Helix 
+[ATK] Cost 7 SP
+All Enemies : [Pierce 6]
+This Skill has -1 ACC.",,,,1,2,142,11/17/2021
+Yukari,9,20,2,2,2,3,38,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yukari,,Yukari Yakumo,"Manipulation of Boundaries
+At the start of Yukari's turn,
+you may give one target [Reverse 1].
+If you target Yukari,
+you may remove Reverse after Yukari's turn.",,,"Mesh of Light and Darkness
+[MAG] Cost 5 SP
+All Enemies : [Spirit 2] [-2 ACC] [Reveal 2]
+This Skill has -1 ACC.  ","Hyperactive Flying Object
+[MAG] Cost 5 SP
+Two Enemies : [Wind 4]
+This Skill has Break 2.  ","Shikigami ""Ran Yakumo +""
+[MAG] Cost 5 SP
+One Enemy : [Impact 5]
+This Skill deals +2 damage if Ran is in front.
+This Skill deals +2 damage if Chen is in front.  
+This Skill's damage is reduced by the opposite defensive stat. ","Yukari's Spiriting Away
+[SUP] Cost 20 SP
+End the current Round.","IN Quadruple Barrier
+[SUP] Cost 5 SP
+All Allies : [+3 DEF] or [+3 RES]  ",1,5,143,11/17/2021
+Yuuka,16,15,3,1,1,2,38,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yuuka,,Yuuka Kazami,"Force of Nature
+Yuuka has Break 2.
+Nature Skills have no effect on Yuuka.",,,"Flower Shot
+[MAG] Cost 3 SP
+One Enemy : [Nature 4]
+This Skill has +2 ACC. ","Gensokyo's Reflowering
+[MAG] Cost 5 SP
+All Enemies : [Nature 3]
+All Allies : Recover 3 HP.
+This Skill has -1 ACC.  ","Beauty of Nature
+[MAG] Cost 5 SP
+All Enemies : [Nature 3]
+Increase Negative Status Effects on All Enemies by 2.
+This Skill has -1 ACC.",,,1,3,144,11/17/2021
+Yuyuko,9,18,1,4,1,1,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yuyuko,,Yuyuko Saigyouji,"Hakugyokurou's Mistress
+Yuyuko is immune to Death.
+While Yuyuko is in front,
+allies have a 50% chance of removing Death when applied.",,,"Ghostly Dream's Butterfly
+[MAG] Cost 5 SP
+One Enemy : [Sprirt 2] [-2 SPD,EVA] {50% Death 1}  ","Deadly Swallowtail Lance
+[MAG] Cost 4 SP
+Two Enemies : [Dark 2] {30% Death 1}
+This Skill has Break 1.   ","Ghastly Dream
+[MAG] Cost 7 SP
+All Enemies : [Spirit 4] [-1 SPD,EVA] [Death 3]
+This Skill has -1 ACC. ","Saigyouji Flawless Nirvana
+[MAG] Cost 10 SP
+All Enemies : [Dark 3] [Death 1]
+This Skill has -3 ACC.",,1,4,145,11/17/2021
+Clint,9,18,1,0,5,1,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Clint,,Clint,"Private Collection
+When Clint rallies, gain [1 X]. 
+X = Name of any character on the wiki. ",,,"Copy
+[SUP] Cost 0 SP
+One Target : Target's Name = Y 
+Self : Gain [3 Y].","Paste
+[SUP] Cost [1 Name]
+Use one of that character's Skills.
+Pay the appropriate costs.",,,,1,2,146,11/18/2021
+Mark,10,21,1,3,4,2,41,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mark,,Mark Mableridge,"Swaying Formation
+When Mark uses Swap,
+all allies gain [+2 EVA].",,,"Dagger
+[ATK] Cost 2 SP
+One Enemy : [Blade 2]
+This Skill has +4 ACC.","Pure Crystalight
+[SUP] Cost 2 SP
+One Target : [+3 ACC] or [Reveal 2] ","Shooting Star
+[MAG] Cost 4 SP
+One Enemy : [Fire 5]","Mossy Song
+[SUP] Cost 5 SP
+One Other Ally : [Terror 2]
+All Enemies : [-3 ATK] or [-3 MAG]",,1,4,147,11/18/2021
+Mikhail,15,15,2,2,2,0,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mikhail,,Mikhail,"The Illusive Ryuujin
+This character cannot start in slots 1-4.","Midori-ryuu, the Green Dragon
+At the start of the game,
+all allies gain [+1 ATK,MAG,DEF,RES,SPD,EVA].  ",,"Encyclopedia
+[SUP] Cost 5 SP
+All Allies : Gain a +1 Stat Boost.","The Tale of the Journey
+[SUP] Cost 5 SP
+Two Allies : [Cure 1]","Berth of the Dragon
+[SUP] Cost 5 SP
+All Allies : Recover 3 HP and SP.  ","The Vast and Beautiful World
+[SUP] Cost 5 SP
+All Allies : [Distance 3]",,2,4,148,11/18/2021
+Znaniya,16,15,3,2,1,0,37,🔗,https://tbs-crossover-arena.fandom.com/wiki/Znaniya,,Znaniya,"The Illusive Ryuujin
+This character cannot start in slots 1-4.","Kurenai-ryuu, the Crimson Dragon
+At the start of the game,
+all allies gain [Bold 2, Shield 2].",,"Greatsword
+[SUP] Cost 5 SP
+All Allies : [+3 ACC]","The Tale of the Hero
+[SUP] Cost 5 SP
+One Ally: Revive KO'ed Ally with 1 HP and max SP.","Fury of the Dragon
+[ATK] Cost 5 SP
+One Enemy : [Fire 5]
+This Skill has Scope, Precision, Break, and cannot KO.","Swaying Strike
+[SUP] Cost 5 SP
+All Allies : [+2 EVA] [Crit 2]",,2,4,149,11/18/2021
+Daruis,9,10,4,2,5,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Darius,,Daruis,"Hemorrhage
+When Darius inflicts Bleed, the effect is Cumulative.
+Darius gains [+3 ATK] if he applies [Bleed 3] or more.",,,"Decimate
+[ATK] Cost 5 SP
+All Enemies : [Blade 3] {50% Bleed 1}
+Self : Recover X HP. 
+X = Targets inflicted with Bleed by this Skill.
+This Skill has -1 ACC.  ","Crippling Strike
+[ATK] Cost 2 SP
+One Enemy : [Blade 3] [Bleed 2]","Apprehend
+[ATK] Cost 2 SP
+One Enemy : [Blade 1] [Bleed 1, Heavy 3]","Noxian Guillotine
+[ATK] Cost 6 SP
+One Enemy : [Blade 2 + X] 
+This skill has Break, Scope and Precision.
+If this Skill KO's, recover 6 SP. 
+X = Target's [Bleed X]",,1,4,150,11/23/2021
+Shion,18,18,1,4,5,1,47,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shion,,Shion,"Absorbing one's spirit and self
+When an enemy is KO'ed while Shion is in front,
+Recover 3 HP and SP.","Soul-related abilities
+While Shion is in front,
+all Spirit damage is increased by 1.",,"Id=Es
+[MAG] Cost 5 SP
+One Enemy : [Spirit 4]
+Self : [Shield 3] ","Feral Ghost of Aveyron 
+[ATK] Cost 6 SP
+One Enemy : [Blade 5]
+Self : [+2 SPD,EVA]  ","Fading Sense of Self
+[MAG] Cost 4 SP
+All Enemies : [Spirit 1] [-2 ACC]
+This Skill has +1 ACC. ","Monochrome Wraith
+[MAG] Cost 8 SP
+All Enemies : [Mystic 5]
+This Skill has Break and -1 ACC.",,2,4,151,11/25/2021
+Wakasagihime,11,11,1,3,1,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Wakasagihime,,Wakasagihime,"Grows in Power when Underwater
+At the end of Wakasagihime's Turn,
+All Allies with Water Skills gain [+2 EVA]",,,"Tail Fin Slap
+[SUP] Cost 2 SP
+One Ally : Gain [Cure 0] and recover 2 HP.","Great Raging Waves of the Reversed Scale
+[SUP] Cost 7 SP
+All Enemies : [Curse 1] ","Tidal Wave of the Lake
+[ATK] Cost 4 SP
+All Enemies : [Water 1] [Disable 2]
+This Skill has +1 ACC. ","School of Fish
+[SUP] Cost 5 SP
+All Allies : [Taunt 2, Distance 1]",,1,4,152,11/25/2021
+Shaggy,7,14,0,0,6,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shaggy,,Shaggy Rogers,"Flight or Flight Response
+At the end of Shaggy's turn,
+gain [+X SPD, EVA].
+X = Shaggy's [X Terror] ","Consistent Cowardice 
+When Shaggy loses 2 or more SP, 
+lose only 1 SP instead.",,"Zoinks!
+[SUP] Cost 2 SP
+Self : [Distance 3] [Terror 4]   ","In-fight Snack
+[SUP] Cost 4 SP
+Self : [Regenerate 3]
+One Ally : [Regenerate 3]","Makeshift Trap
+[SUP] Cost 4 SP
+One Enemy : [Trap 6]","Would you do it for a Scooby Snack?   
+[SUP] Cost 4 SP
+Shaggy : Recover 12 SP.
+Shaggy cannot use this Skill. 
+All Other Allies can use this Skill.",,2,4,153,11/26/2021
+Ultra Instinct Shaggy,7,14,0,0,6,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ultra_Instinct_Shaggy,,Shaggy Rogers,"Fight or Fight Response
+At the end of Shaggy's turn,
+gain [+X ATK, DEF].
+X = Shaggy's [X Bold] ","Shaggy's Power
+Shaggy is immune to Terror.
+Shaggy has Counter 3.",,"""Bad""
+[SUP] Cost 2 SP
+Self : [Bold 4]","Masterful Hand-to-Hand Combat
+[ATK] Cost 7 SP
+One Enemy : [Impact 7] 
+This Skill has +4 ACC. ","Facebreaker
+[ATK] Cost 6 SP
+Two Enemies : [Impact 6]","Improvised Weapon
+[ATK] Cost 10 SP
+One Enemy : [Impact 12] ",,2,4,154,11/26/2021
+Paul Atreides,4,22,0,0,6,3,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Paul_Atreides,,Paul Atreides,"Kwisatz Haderach
+At the start of Paul's turn, choose an enemy in front.
+Your opponent decides that character's next action now
+and must follow later though if able to do so.","Shield
+Skills that would deal 3 or more damage miss instead. ",,"Prana-Bindu
+[SUP] Cost 5 SP
+Self : [+5 EVA]
+You may use another skill. ","Voice
+[SUP] Cost 4 SP
+One Enemy : [Weaken 1] or [Silence 1] or [Disable 1]  ","Balintawak Eskrima Fighting Style 
+[ATK] Cost 8 SP
+One Enemy : [Blade 2]
+This Skill has +2 ACC and Adept 3.",,,2,3,155,11/30/2021
+Yasuo,8,12,2,2,7,3,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yasuo,,Yasuo,"Way of the Wanderer
+When Yasuo hits a target, gain [+1 Flow] to a max of 5.
+At the end of his turn, you may spend 2 Flow to gain [Shield 3].",,,"Steel Tempest
+[ATK] Cost 2 SP
+One Enemy : [Blade 3]
+This Skill has +2 ACC. 
+If this Skill hits, you may spend 1 Flow to inflict [Mark 3].","Wind Wall
+[SUP] Cost 4 SP
+Enemy Slot X : [Weaken 1, Silence 1] 
+X = Yasuo's Slot number.","Sweeping Blade
+[SUP] Cost 1 SP
+Swap places with an ally in Front.
+You may use another skill.","Last Breath
+[ATK] Cost 6 SP
+All Enemies : [Blade 8]
+This Skill only hits Marked Enemies.
+This Skill has -1 ACC.",,1,4,156,11/30/2021
+Yone,9,12,1,2,7,3,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yone,,Yone,"Way of the Hunter
+At the start of the game, Yone has [Steel Sword].
+At the end of his turn, swap [Steel Sword] for [Azakana Sword] or vice versa.
+If Yone has [Steel Sword], X = ATK
+If Yone has [Azakana Sword], X = MAG",,,"Mortal Steel
+[X] Cost 2 SP
+One Enemy : [Blade 4]  ","Spirit Cleave
+[X] Cost 4 SP
+All Enemies : [Blade 2]
+Self : [Shield Y]
+Y = Targets hit 
+This Skill has -1 ACC. ","Soul Unbound
+[SUP] Cost 3 SP 
+Self : [+2 ATK,MAG,SPD]","Fate Sealed
+[X] Cost 5 SP
+All Enemies : [Blade 4] [Mark 2]
+This Skill has -1 ACC.",,1,4,157,11/30/2021
+Rammus,12,9,4,3,4,0,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rammus,,Rammus,,,,"Spiked Shell
+[MAG] Cost 3 SP
+One Enemy : [Pierce X]
+X = Rammus' DEF
+This Skill inflicts [Weaken 2] if Rammus has Crit.  ","Powerball
+[SUP] Cost 3 SP
+Self : [+3 SPD] [Crit 2]","Defensive Ball Curl
+[SUP] Cost 3 SP
+Self : [+2 DEF,RES] [-2 SPD] [Thorns 3] ","Frenzying Taunt
+[SUP] Cost 3 SP
+Self : [+1 MAG] [Taunt 4]","Soaring Slam
+[MAG] Cost 5 SP
+All Enemies : [Impact 3] [-2 SPD]
+This Skill has -1 ACC. 
+This Skill inflicts [Weaken 2] if Rammus has Crit.",0,5,158,12/1/2021
+Brandon,7,13,2,0,5,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Brandon,,"Brandon ""The Raven"" Hess","Slicing Formation
+When Brandon uses Swap,
+all Allies gain [+2 ATK].  ",,,"Dagger Storm
+[ATK] Cost 5 SP
+All Enemies : [Blade 4]
+This Skill has -1 ACC.","Curtain Call
+[SUP] Cost 5 SP
+All Enemies : [-3 ATK]","Take the Stage
+[SUP] Cost 2 SP
+Self : [+2 EVA,ACC] ","The Show's Over
+[SUP] Cost 7 SP
+All Allies : [Crit 4]",,1,4,159,12/6/2021
+Ferederick,8,12,0,0,6,3,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ferederick,,Ferederick,"Safety First
+At the start of Ferederick's turn,
+one Ally gains [Cure 0].",,,"Plastic Safety Scissors
+[ATK] Cost 2 SP
+One Enemy : [Impact 2] {10% +8 damage}  ","Watch Out!
+[SUP] Cost 4 SP
+One Ally : [+3 EVA]  ","Not Again...
+[SUP] Cost 8 SP
+All X : [Y 3]
+Flip a Coin.
+Heads: X = Enemies
+Tails: X = Allies
+Roll a D6.
+1: Y = Terror  4: Y = Curse
+2: Y = Poison  5: Y = Death
+3: Y = Heavy   6: Y = Freeze","Prepared
+[SUP] Cost 4 SP
+One Ally : [Cure 3]",,1,4,160,12/6/2021
+Sally,4,15,0,0,6,4,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sally,,Sally James,"Eep!
+When a skill misses Sally,
+gain [Cloak 1, Distance 1].","Paranoid
+While Sally is in Front,
+Enemies or Skills with Scope deal -1 damage. ",,"Slingshot
+[ATK] Cost 4 SP
+One Enemy : [Impact 4]
+If Sally is Distanced, deal +3 damage. ","Lasso
+[ATK] Cost 2 SP
+One Enemy : [Impact 0] [Weaken 2, Trap 3]   ","Once More!
+[SUP] Cost 6 SP
+One Ally : Recover 12 SP.","Try Again.
+[SUP] Cost 7 SP
+One Enemy : [Weaken 1, Silence 1, Disable 1, Shock 1]",,2,4,161,12/6/2021
+Terrowin,12,15,0,3,4,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Terrowin,,Terrowin,"I Want to Break Free
+Terrowin is immune to Trap and Heavy.","Another One Bites the Dust
+When Terrowin KOs his target, he may use another Skill.",,"Don’t Stop Me Now!
+[SUP] Cost 4 SP
+Self : Recover 12 SP.","Galaxy Scepter
+[ATK] Cost 3 SP
+One Enemy : [Impact 5]","Under Pressure
+[ATK] Cost 5 SP
+One Enemy : [Impact X]
+X = Terrowin's missing HP.",,,2,3,162,12/6/2021
+Warwick,11,10,1,2,4,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Warwick,,Warwick,"Blood Hunt
+If target is injured, deal +2 damage and gain Scope.","Eternal Hunger
+If Warwick has 4 or less HP, gain Break.",,"Jaws of the Beast
+[MAG] Cost 2 SP
+One Enemy : [Pierce 1]
+Self : Recover X HP.
+X = Damage dealt. ","Primal Howl
+[SUP] Cost 4 SP
+Self : [+1 DEF,RES]
+All Enemies : [Paralysis 1] ","Infinite Duress
+[ATK] Cost 6 SP
+One Enemy : [Blade 4] [Weaken 1, Silence 1, Disable 1, Shock 1]
+Self : Recover X HP.
+X = Damage dealt.",,,2,3,163,12/6/2021
+Link (AoL),8,10,2,1,5,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Link_(AoL),,Link (AoL),,,,"Shield
+[SUP] Cost 3 SP
+One Ally : [+2 DEF,RES]","Down Thrust
+[ATK] Cost 2 SP
+One Enemy : [Blade 4] ","Jump Thrust
+[ATK] Cost 3 SP
+One Enemy : [Blade 3]
+This Skill has +4 ACC.","Life
+[SUP] Cost 4 SP
+One Ally : Recover 8 HP.  ","Thunder
+[MAG] Cost 8 SP
+All Enemies : [Electric 3]
+All Allies : [Break 3] 
+This Skill has -1 ACC.",0,5,164,12/7/2021
+Link's Shadow,8,10,2,1,5,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Link%27s_Shadow,,Link's Shadow,"Reflection
+You may use the Attack Skills of any enemies
+in the Front like they're your own.","Expert Swordfighter
+At the start of Link's Shadow's turn,
+gain [Shield 1, Counter 3].",,"Unpredictable A.I.
+[SUP] Cost 2 SP
+Self : [+3 EVA]   ",,,,,2,1,165,12/7/2021
+Rebonack,12,7,3,2,3,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rebonack,,Rebonack,"Horse and Rider
+At the start of Rebonack's turn,
+if he has 8 or more HP,
+gain [+3 SPD,EVA].",,,"Lance
+[ATK] Cost 3 SP
+One Enemy : [Pierce 7]
+Rebonack can only use this Skill if he has 8 or more HP.","Sword
+[ATK] Cost 2 SP
+One Enemy : [Blade 3]  ","Knives
+[ATK] Cost 2 SP
+One Enemy : [Blade 2]
+This Skill has +2 ACC.  ","Shield
+[SUP] Cost 4 SP
+Self : [Shield 5]",,1,4,166,12/7/2021
+Able (Chromatik),8,12,1,2,7,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Able_(Chromatik),,Able,"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Honed Stance
+If Able hits a target,
+gain [Precision 1].",,"Practiced Strike
+[ATK] Cost 5 SP
+One Enemy : [Blade 4]
+Self : [+2 DEF,RES]  ","Drifting Slash
+[ATK] Cost 4 SP
+One Enemy : [Blade 3]
+You may swap with any ally.","Silencing Strike
+[ATK] Cost 3 SP
+One Enemy : [Blade 1] [Silence 2]",,,2,3,167,12/8/2021
+Chromatik,X,X,X,X,X,X,0,🔗,https://tbs-crossover-arena.fandom.com/wiki/Chromatik,,Chromatik,"Start
+At the start of the game,
+Chromatik becomes Mikhail.","Souls of Warriors 
+Chromatik is comprised of these souls.
+Mikhail: A competent and aggressive swordfighter
+Rueger: A competent and defensive swordfighter
+Clan: A ninja with plans within plans
+Osten: A noble who lives for attention
+Able: A samurai with a code of honor that’s never failed him
+Gree: A viking who always seems to be happy
+Rou: An archer with a discerning eye
+Inno: A tinker who macgyvers his way to victory
+Kin: A knight with a hand out for those in need",,,,,,,2,0,168,12/8/2021
+Clan (Chromatik),8,12,0,0,7,4,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Clan_(Chromatik),,Clan (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Elusive Stance
+If Clan hits a target,
+gain [Distance 2].   ",,"Throwing Knives
+[ATK] Cost 5 SP
+All Enemies : [Blade 2]
+This Skill has +3 ACC. ","Dive Kick
+[ATK] Cost 4 SP
+One Enemy : [Impact 5]","Blinding Strike
+[ATK] Cost 3 SP
+One Enemy : [Blade 1] [Weaken 2]",,,2,3,169,12/8/2021
+Gree (Chromatik),8,12,3,1,3,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gree_(Chromatik),,Gree (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Jovial Stance
+If Gree hits a target,
+gain [Regenerate 2].",,"Reassuring Attack
+[ATK] Cost 5 SP
+One Enemy : [Impact 4]
+All Allies : [+2 RES]","Talkative Assault
+[ATK] Cost 4 SP
+One Enemy : [Impact 3] [-3 RES] ","Indifferent Strike
+[ATK] Cost 3 SP
+One Enemy : [Impact 3]
+Self : [Cure 0]",,,2,3,170,12/8/2021
+Inno (Chromatik),8,12,1,1,5,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Inno_(Chromatik),,Inno (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Surveying Stance 
+If Inno hits a target,
+gain [Scope 2].",,"Clever Trap
+[ATK] Cost 5 SP
+All Enemies : [Impact 1] [Heavy 2, Stuck 2]
+This Skill has -1 ACC.","Stealing Strike
+[ATK] Cost 4 SP
+One Enemy : [Impact 2] [Curse 2] ","Excited Discovery
+[ATK] Cost 3 SP
+One Enemy : [Impact 0]
+One Ally : [+1 ATK,MAG,DEF,RES,SPD,EVA] ",,,2,3,171,12/8/2021
+Kin (Chromatik),8,12,4,1,2,0,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kin_(Chromatik),,Kin (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Sheltering Stance
+If Kin hits a target,
+gain [Taunt 2].",,"Valiant Defence
+[ATK] Cost 5 SP
+One Enemy : [Blade 4]
+All Allies : [+2 DEF]","Lend Aid
+[ATK] Cost 4 SP
+One Enemy : [Blade 2]
+One Other Ally : [Cure 2] ","To Protect
+[ATK] Cost 3 SP
+One Enemy : [Blade 2]
+One Other Ally : [Shield 3]",,,2,3,172,12/8/2021
+Mikhail (Chromatik),8,12,1,1,6,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mikhail_(Chromatik),,Mikhail (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Aggressive Stance
+If Mikhail hits a target,
+gain [Crit 2]. ",,"Leaping Slash
+[ATK] Cost 5 SP
+One Enemy : [Blade 8]
+Self : [-1 DEF,EVA]","Dashing Strike
+[ATK] Cost 4 SP
+One Enemy : [Blade 4]
+Self : [+2 SPD]   ","Heavy Cut
+[ATK] Cost 3 SP
+One Enemy : [Blade 6]
+This Skill has -2 ACC.",,,2,3,173,12/8/2021
+Osten (Chromatik),8,12,0,2,5,3,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Osten_(Chromatik),,Osten (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Bold Stance
+If Osten hits a target,
+gain [Bold 2].",,"Swift Strikes
+[ATK] Cost 5 SP
+One Enemy : [Blade 2]
+This Skill has +2 ACC and Adept 2. ","Flamboyant Display
+[ATK] Cost 4 SP
+One Enemy : [Blade 2]
+Self : [Taunt 5]","Deft Riposte
+[ATK] Cost 3 SP
+One Enemy : [Blade 2]
+Self : [Counter 3]",,,2,3,174,12/8/2021
+Rou (Chromatik),8,12,0,1,6,3,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rou_(Chromatik),,Rou (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Pierceing Stance
+If Rou hits a target,
+gain [Break 2].  ",,"Deadly Shot
+[ATK] Cost 5 SP
+One Enemy : [Pierce 5]  
+This Skill has +4 ACC.","Crippling Shot
+[ATK] Cost 4 SP
+One Enemy : [Pierce 3] [-3 DEF]  ","Disabling Shot
+[ATK] Cost 3 SP
+One Enemy : [Pierce 1] [Disable 2]",,,2,3,175,12/8/2021
+Rueger (Chromatik),8,12,3,2,4,0,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rueger_(Chromatik),,Rueger (Chromatik),"Chromatik
+At the end of this character's turn,
+he may spend 2 SP to swap souls.","Defensive Stance
+If Rueger hits a target,
+gain [Shield 2].   ",,"Block and Counter
+[ATK] Cost 5 SP
+One Enemy : [Blade 4]
+Self : [+1 DEF] [Thorns 3] ","Sweeping Slash
+[ATK] Cost 4 SP
+Two Enemies : [Blade 2]
+Self : [Distance 2]  ","Shield Bash
+[ATK] Cost 3 SP
+One Enemy : [Impact 2] [-2 EVA,ACC]    ",,,3,2,176,12/8/2021
+Usato,8,18,2,2,7,3,40,🔗,https://tbs-crossover-arena.fandom.com/wiki/Usato,,Ken Usato,"Insane Conditioning
+Usato recovers 2 SP at the end of his turn.",,,"Self Sustaining Healing Magic
+[SUP] Cost 6 SP
+Self : [Regenerate 6] ","Enhanced Hand-to-Hand Combat
+[ATK] Cost 6 SP
+One Enemy : [Impact 8] ","Healing Pitch
+[MAG] Cost 6 SP
+One Enemy : [Light 12]
+If this Skill hits and doesn't KO, the target recovers 12 HP.","Regular Healing
+[SUP] Cost 6 SP
+One Ally : Recover 12 HP.",,1,4,177,12/8/2021
+Cadenza,16,6,4,2,2,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cadenza,,Cadenza,"Iron Body
+At the end of Cadenza's turn,
+you may spend 3 SP to gain [Shield 5]. ",,,"Clockwork Drive
+[ATK] Cost 3 SP
+One Enemy : [Blade 6]
+Self: [-2 SPD]","Grapnel Grasp
+[ATK] Cost 3 SP
+One Enemy : [Pierce 3]
+If this skill hits, you may swap
+the target enemy with an enemy in Front.","Battery Burst
+[SUP] Cost 3 SP
+One Ally : [Haste 1] [Distance 1]  ","Rocket Press
+[ATK] Cost 6 SP
+One Enemy : [Impact 10]
+This Skill has -2 ACC.","Feedback Field
+[SUP] Cost 3 SP
+Self : [Thorns 6]",1,5,178,12/13/2021
+Byakuren,15,13,1,0,5,2,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Byakuren,,Byakuren Hijiri,"Sorcerer's Sutra Scroll
+At the end of Byakuren's turn,
+gain [+1 ATK,MAG,DEF,RES,SPD,EVA]
+This effect is cumulative up to a +3 Stat Boost.",,,"Skanda's Legs
+[ATK] Cost 2 SP
+One Enemy : [Wind 2] 
+This Skill has +2 ACC.","Master of the Trichiliocosm
+[ATK] Cost 7 SP
+One Enemy : [Impact 5] [Shock 4] ","Magic Milky Way
+[MAG] Cost 6 SP
+All Enemies : [Mystic 3] [-1 ATK,MAG,SPD]
+This Skill has +1 ACC. ","Star Sword Apologetics
+[MAG] Cost 5 SP 
+One Enemy : [Spirit 3] [Silence 2] {50% -2 ATK,DEF}
+This Skill has +2 ACC. ","Sutra - Duplicating Chant
+[SUP] Cost 1 SP
+One Ally : Copy Byakuren's Stat Changes onto Target.",1,5,179,12/14/2021
+Eiki,8,10,1,2,4,1,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Eiki,,"Eiki Shiki, Yamaxanadu","Supreme Judge of Paradise
+When Eiki rallies,
+All Allies recover 1 SP.  ","Cleansed Crystal Mirror   
+While Eiki is in front, 
+Enemy Support Skills cost an additional 2 SP.  ","Rod of Remorse     
+If Eiki hits a target with a Support Skill,
+recover 2 SP at the end of her turn.  ","Last Judgement
+[ATK] Cost 6 SP
+One Enemy : [Spirit 5]
+This Skill has Break and +2 ACC.","Trial of the Ten Kings
+[MAG] Cost 7 SP
+All Enemies : [Dark 5] [-1 ATK,MAG,DEF,RES,SPD,EVA]
+This Skill has -1 ACC.  ","Wandering Sin  
+[MAG] Cost 6 SP
+All Enemies : [Dark 3] {50% Poison 2, Terror 2, Heavy 2, Silence 2} {10% Death 1, Shock 1}
+This Skill has -1 ACC.",,,3,3,180,12/17/2021
+Olaf,8,8,2,0,5,0,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Olaf,,Olaf,"Commanding Officer
+At the start of this unit's turn you may
+swap with an ally in Back then use a Skill.","Day-to-Day Effect
+While Olaf is in front, 
+Enemy Cold Skills deal -2 damage.
+Enemy Water Skills deal +2 damage.",,"Blizzard
+[SUP] Cost 4 SP
+All Enemies : [-3 SPD]
+All Allies : [+1 MAG,ATK] ","Winter Fury
+[SUP] Cost 8 SP
+All Enemies : [-3 SPD] Lose 4 HP. This cannot KO.  
+All Allies : [+1 MAG,ATK] ",,,,2,2,181,12/17/2021
+Qrow,11,11,3,1,7,3,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Qrow,,Qrow Branwen,"Semblance: Misfortune
+At the end of Qrow's turn, flip a coin.
+Heads: All Enemies lose 1 HP. This cannot KO.
+Tails: All Allies lose 2 HP. This cannot KO.  ","Transformation: Crow
+When swapped, gain [+2 ACC,EVA].",,"Harbinger: Greatsword
+[ATK] Cost 3 SP
+One Enemy : [Blade 5]  ","Harbinger: Shotgun
+[ATK] Cost 4 SP
+Two Enemies : [Impact 3] {20% Shock 3}  ","Harbinger: War Scythe
+[ATK] Cost 6 SP
+One Enemy : [Blade 8]
+This Skill has +1 ACC.",,,2,3,182,12/17/2021
+Renko,12,9,3,1,6,4,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Renko,,Renko Usami,"Astral Reading
+Astral Skills have no effect on Renko.
+When Renko is in front,
+Marked Enemies take +1 damage from Attack and Magic Skills.  ",,,"Galaxy Stop
+[MAG] Cost 6 SP
+All Enemies : [Spirit 3] [Shock 2]
+All Allies : [-3 SPD]
+This Skill has +3 ACC. ","Charge 
+[SUP] Cost 9 SP
+All Allies : Gain [+3 ATK,MAG,DEF,RES,SPD,EVA,ACC]
+All Allies : Lose 3 HP. This can KO.","Assault Point
+[ATK] Cost 1 SP 
+One Enemy : [Impact 0] [Mark 4]
+This Skill has +2 ACC.",,,1,3,183,12/17/2021
+Colin,5,8,2,0,4,4,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Colin,,Colin,"Commanding Officer
+At the start of this unit's turn you may
+swap with an ally in Back then use a Skill.","Day-to-Day Effect
+While Colin is in front, 
+Allied Attack and Magic Skills deal -1 damage and cost 1 less SP.",,"Gold Rush
+[SUP] Cost 4 SP
+All Allies : Recover 4 SP.  ","Power of Money 
+[SUP] Cost 8 SP
+All Allies : If target is at max SP, they gain [Shield 1, Crit 4].",,,,2,2,184,12/18/2021
+Satoshi,7,13,1,0,7,3,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Satoshi,,Satoshi,"Banishing Blade
+Satoshi's Skills deal +2 damage if the target
+has less SP than himself after paying skill costs.",,,"Relentless
+[SUP] Cost 2 HP
+Use a Skill at no cost.  ","Demon Slayer Slash
+[ATK] Cost 4 SP 
+One Enemy : [Blade X]
+X = (Satoshi's SP) - (Target's SP)  ","Shuriken Illusion
+[ATK] Cost 2 SP
+One Enemy : [Blade 1]
+Self : [+2 ACC]  ","Jigoku Banishment
+[MAG] Cost 4 SP
+One Enemy : [Spirit 2]
+If this Skill hits, the target loses 6 SP. ","Paralyzing Dust 
+[SUP] Cost 3 SP
+All Enemies : [Paralysis 1]
+Self : You may swap with Any Ally.",1,5,185,12/18/2021
+Zaamassal,6,13,2,2,7,3,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Zaamassal,,Zaamassal Kett,"Subjective Reality
+Each of Zaamassal's Paradigms gives a passive effect.
+[Fluidity] : If Zaamassal uses a Skill, he may use a Swap Action before or after it.
+[Haste] : Zaamassal has Haste and +2 ACC.
+[Pain] : Zaamassal has Inflict [Bleed 2].
+[Resilience] : Zaamassal has Shield 2.
+[Distortion] : Zaamassal has Distance and Scope.
+After hitting with a Skill, Zaamassal may assume a Paradigm.
+Remove all Zaamassal's Paradigms if he assumes a Paradigm or loses HP.",,,"Urgent Shot
+[MAG] Cost 2 SP
+One Enemy : [Blade 1]
+This Skill has +4 ACC and Scope.","Malicious Strike
+[ATK] Cost 4 SP
+One Enemy : [Blade 7]
+This Skill has -2 ACC.","Warped Burst
+[MAG] Cost 3 SP
+One Enemy : [Void 3]
+Self : [+2 EVA]   ","Open the Gate
+[SUP] Cost 4 SP
+Self : Assume 3 Paradigms.  ","Plane Divider
+[ATK] Cost 8 SP
+One Enemy : [Void X]
+If this skill hits, you may swap
+the target enemy with an enemy in Front. 
+X = [Zaamassal Slot Number] + [Target's Slot Number]",1,5,186,12/24/2021
+Crewmate,4,6,0,0,2,0,12,🔗,https://tbs-crossover-arena.fandom.com/wiki/Crewmate,,Crewmate,"Team Effort
+When an Ally in front recovers SP while Crewmate is in front,
+Crewmate recovers 4 SP.  ","Report
+When an Ally is KO'ed by a Skill while Crewmate is in front, 
+the Character that used that Skill gains [Reveal 1, Stuck 1]. ","Ghost
+When Crewmate is KO'ed, 
+Crewmate may become Ghost (Crewmate).","Do Tasks
+[SUP] Cost 2 SP
+Self : [Distance 1]
+One Ally : Recover 3 SP.","Fix Sabotage
+[SUP] Cost 4 SP
+All Allies : [Cure 2] 
+All Enemies : [Disable 2] ","Check Admin
+[SUP] Cost 4 SP
+All Enemies : [Reveal 2] [-2 EVA]",,,3,3,187,12/26/2021
+Ghost (Crewmate),0,0,0,0,5,0,5,🔗,https://tbs-crossover-arena.fandom.com/wiki/Crewmate,,Ghost (Crewmate),"Dead
+Ghost has Resolve, Cure and Curse.
+If Every Ally has 0 HP, Ghost loses Resolve. ",,,"Do Tasks
+[SUP] Cost 0 SP
+One Ally : Recover 5 SP.",,,,,1,1,188,12/26/2021
+Eye of Cthulhu,12,10,2,2,3,0,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Eye_of_Cthulhu,,Eye of Cthulhu,"Cthulhu's Desperation
+If Eye of Cthulhu has 6 or less HP at the start of it's turn,
+Eye of Cthulhu becomes Eye of Cthulhu (2nd Form) and recovers 6 SP.",,,"Sluggish Charge
+[ATK] Cost 3 SP
+One Enemy : [Impact 4]","Servants of Cthulhu
+[MAG] Cost 3 SP
+All Enemies : [Impact 3]
+This Skill has -3 ACC.  ",,,,1,2,189,12/28/2021
+Eye of Cthulhu (2nd Form),6,12,0,0,6,3,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Eye_of_Cthulhu,,Eye of Cthulhu (2nd Form),,,,"Frenzied Dash
+[ATK] Cost 4 SP
+One Enemy : [Impact 6]
+This Skill has +2 ACC. ","Roar of Agony
+[SUP] Cost 5 SP 
+All Enemies : Lose 2 SP.  ",,,,0,2,190,12/28/2021
+Ancient Shadow Warrior,10,10,2,2,7,3,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ancient_Shadow_Warrior,,Ancient Shadow Warrior,,,,"Terragrim
+[ATK] Cost 2 SP
+One Enemy : [Blade 4] ","Enchanted Boomerang
+[ATK] Cost 3 SP
+One Enemy : [Impact 4]
+This Skill has Scope.   ","Ball O' Hurt 
+[ATK] Cost 4 SP
+All Enemies : [Impact 3]
+This Skill has -1 ACC.   ","Spear
+[ATK] Cost 3 SP
+One Enemy : [Pierce 3]
+Self : [+2 DEF]",,0,4,191,12/29/2021
+Diamond Sorcerer,10,20,0,0,5,1,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Diamond_Mage,,Diamond Sorcerer,,,,"Diamond Staff
+[MAG] Cost 6 SP
+One Enemy : [Light 8]","Water Bolt
+[MAG] Cost 3 SP
+All Enemies : [Water 3]
+This Skill has -2 ACC.","Crimson Rod
+[SUP] Cost 4 SP
+One Enemy : [Bleed 2]  ","Demon Scythe  
+[MAG] Cost 6 SP
+All Enemies : [Dark 5] 
+This Skill has -1 ACC.",,0,4,192,12/29/2021
+Fossil Ranger,10,10,1,1,5,1,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Fossil_Ranger,,Fossil Ranger,,,,"Minishark
+[ATK] Cost 3 SP
+One Enemy : [Pierce 5]
+This Skill has +1 ACC. ","Sandgun
+[ATK] Cost 2 SP
+One Enemy : [Impact 2]
+If this Skill misses, the target suffers [-2 EVA].   ","Platinum Bow
+[ATK] Cost 5 SP
+One Enemy : [Pierce 2] [Freeze 2]
+This Skill has +1 ACC. ","Boomstick
+[ATK] Cost 4 SP
+Two Enemies : [Pierce 4]",,0,4,193,12/29/2021
+Shadow Flinx Summoner,10,10,2,2,6,1,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shadow_Flinx_Summoner,,Shadow Flinx Summoner,,,,"Leather Whip
+[SUP] Cost 1 SP 
+For each unique Minion Token you have,
+use the corresponding Skill
+as an Attack Skill at no cost.","Vampire Frog Staff
+[MAG] Cost 4 SP
+One Enemy : [Impact 5] 
+Self : [Vampire Frog Minion]","Slime Staff
+[MAG] Cost 3 SP 
+One Enemy : [Impact 3] [-2 EVA]
+Self : [Baby Slime Minion] ","Flinx Staff
+[MAG] Cost 2 SP 
+One Enemy : [Impact 3]
+Self : [Flinx Minion] ",,0,4,194,12/29/2021
+Shadow Warrior,10,10,2,2,7,3,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shadow_Warrior,,Shadow Warrior,"Worm Scarf
+Take 1 less damage from Attack Skills. ",,,"Night's Edge
+[ATK] Cost 4 SP
+One Enemy : [Blade 7]
+This Skill has -1 ACC.  ","Dark Lance
+[ATK] Cost 4 SP
+Two Enemies : [Pierce 2] [Curse 0, Burn 2]","Shield of Cthulhu
+[SUP] Cost 2 SP
+Self : [+3 EVA]  ",,,1,3,195,12/29/2021
+Athel,13,11,2,1,7,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Athel,,Athel,"Leader Slot
+Only 1 Leader Aura passive may activate on your team.
+Ignore the effects of the rest.","Leader Aura
+At the start of the game,
+Every Ally gains [+2 HP] and recovers 2 HP. ",,"Strike Down
+[ATK] Cost 3 SP
+One Enemy : [Blade 4] {70% Weaken 2}","Divine Blades
+[ATK] Cost 5 SP
+All Enemies : [Light 4]
+This Skill has -1 ACC.","Higher Blessing
+[SUP] Cost 3 SP
+Self : [+2 ATK]
+If Athel has 7 HP or less, gain [+2 DEF].
+You may use another Skill.",,,2,3,196,1/2/2022
+Elhain,14,12,0,1,8,0,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Elhain,,Elhain,"Leader Slot
+Only 1 Leader Aura passive may activate on your team.
+Ignore the effects of the rest.","Leader Aura
+At the start of the game,
+Every Ally gains [+2 HP] and recovers 2 HP. ",,"Keen Shot
+[ATK] Cost 2 SP
+One Enemy : [Pierce 3] {50% +2 damage}  ","Lightning Arrow
+[ATK] Cost 5 SP
+All Enemies : [Electric 3]
+If a target is KOed, gain [Crit 3].
+This Skill has -1 ACC.  ","Valley of Death
+[MAG] Cost 6 SP
+All Enemies : [Pierce 5]
+This Skill has -1 ACC.",,,2,3,197,1/2/2022
+Galek,13,12,3,0,6,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Galek,,Galek,"Leader Slot
+Only 1 Leader Aura passive may activate on your team.
+Ignore the effects of the rest.","Leader Aura
+At the start of the game,
+Every Ally gains [+2 HP] and recovers 2 HP. ",,"Cross Slash
+[ATK] Cost 2 SP
+One Enemy : [Blade 4]","Hellraiser   
+[MAG] Cost 5 SP
+All Enemies : [Fire 3]
+Self : [+2 SPD]
+This Skill has -1 ACC. ","Cursed Blade
+[ATK] Cost 4 SP
+Two Enemies : [Blade 3] {40% -3 DEF}",,,2,3,198,1/2/2022
+Kael,13,12,1,2,6,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kael,,Kael,"Leader Slot
+Only 1 Leader Aura passive may activate on your team.
+Ignore the effects of the rest.","Leader Aura
+At the start of the game,
+Every Ally gains [+2 HP] and recovers 2 HP.",,"Dark Bolt
+[MAG] Cost 2 SP
+One Enemy : [Dark 2] {80% Poison 3} ","Acid Rain
+[MAG] Cost 5 SP
+All Enemies : [Acid 3]
+Self : [Haste 1]
+This Skill has -1 ACC. ","Disintigrate
+[MAG] Cost 5 SP
+Two Enemies : [Dark 4] {60% Poison 3}",,,2,3,199,1/2/2022
+Vanaah,8,12,0,1,8,1,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Vanaah,,Vanaah Kalmor,"Divine Rush
+Vanaah starts with [Divine Rush].
+When Vanaah is swapped, regain [Divine Rush].
+When using a Skill,
+Vanaah may remove [Divine Rush] to add +2 damage and +2 ACC. ",,,"Reaping Strike
+[ATK] Cost 4 SP
+One Enemy : [Blade 5] [Curse 1]","Paladin Scythe
+[ATK] Cost 3 SP
+One Enemy : [Light 3]
+Vanaah may swap with an ally in front. ","Judgment Drive
+[MAG] Cost 5 SP
+One Enemy : [Blade 4] [-3 EVA]
+This Skill has +1 ACC.   ","Hand of Divinity
+[MAG] Cost 4 SP
+One Enemy : [Light 4]
+Self : [Cure 0]   
+This Skill has Scope. ","Death Walks
+[ATK] Cost 6 SP 
+One Enemy : [Blade 5] [Paralysis 2]",1,5,200,1/3/2022
+Hu Tao,16,14,2,2,3,0,37,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hu_Tao,,Hu Tao,"Paramita Papilio
+When Hu Tao has Paramita Papilio, 
+her skills deal +2 damage, are now also [Fire] Skills,
+and inflict [Burn 2].  
+Reduce Paramita Papilio by 1 at the end of Hu Tao's turn.","Sanguine Rouge
+If Hu Tao has 8 or less HP,
+her [Burn 2] effects are now [Burn 4]
+and she recovers twice as much HP from Skills.",,"Secret Spear of Wangsheng
+[ATK] Cost 4 SP
+One Enemy : [Pierce 5]
+This Skill has +3 ACC.","Guide to Afterlife
+[SUP] Cost 6 HP
+Self : [4 Paramita Papilio]","Spirit Soother
+[MAG] Cost 5 SP
+All Enemies : [Spirit 1]
+Self : Recover X HP.
+This Skill has -1 ACC.
+X = Targets hit",,,2,3,201,1/5/2022
+Rift Scuttler,10,16,1,1,5,1,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Rift_Scuttler,,Rift Scuttler,"Shield
+At the end of Rift Scuttler's turn, gain [Shield 2].","Dying Wish
+When Rift Scuttler is KO'ed,
+use Speed Shrine at no cost.",,"Speed Shrine
+[SUP] Cost 6 SP
+All Allies : [+2 SPD]
+All Enemies : [Reveal 2]   ","Dash
+[SUP] Cost 4 SP
+Self : [+2 EVA]
+You may swap with an Ally.
+If that Ally was in front, you may swap again.",,,,2,2,202,1/5/2022
+Trundle,16,9,1,1,7,1,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Trundle,,Trundle,"King's Tribute
+When an enemy is KO'ed while Trundle is in front,
+Recover 6 HP.",,,"Chomp
+[ATK] Cost 2 SP
+One Enemy : [Pierce 3] [Heavy 1]","Frozen Domain
+[SUP] Cost 3 SP
+Self : [+3 ATK,SPD]  ","Pillar of Ice
+[SUP] Cost 3 SP
+One Enemy : [Weaken 1, Silence 1]  ","Subjugate
+[SUP] Cost 6 SP
+One Enemy : [Poison 3] [-1 DEF,RES]
+Self : [Regenerate 3] [+1 DEF,RES]",,1,4,203,1/5/2022
+Xiao,12,13,2,1,4,1,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Xiao,,Xiao,"Yaksha's Mask
+When Xiao has Yaksha's Mask,
+his skills deal +3 damage, cost -1 SP, 
+and are now also [Wind] Skills.
+At the end of Xiao's turn, Reduce Yaksha's Mask by 1.
+If you do so, lose 1 HP and gain [+2 EVA]. This cannot KO. ",,,"Whirlwind Thrust
+[ATK] Cost 4 SP
+All Enemies : [Pierce 3]
+This Skill has -1 ACC.  ","Lemniscatic Wind Cycling
+[MAG] Cost 2 SP 
+All Enemies : [Blade 0]
+Self : Recover X SP.
+X = Targets hit * 2 ","Bane of All Evil
+[SUP] Cost 6 SP  
+Self : [4 Yaksha's Mask]",,,1,3,204,1/6/2022
+Amber,9,10,1,0,6,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Amber,,Amber,"Baron Bunny
+If an ally with Baron Bunny is hit by a Skill,
+remove Baron Bunny and the Skill user is inflicted with [Burn 2].
+If an ally with Baron Bunny doesn't have taunt,
+remove Baron Bunny.   ",,,"Sharpshooter
+[ATK] Cost 4 SP
+One Enemy : [Pierce 4]
+This Skill has Scope and +2 ACC.
+If Amber has Charge, remove Charge and this Skill inflicts [Burn 4].","Charged Attack
+[SUP] Cost 0 SP
+Self : Recover 2 SP and gain [Charge].","Explosive Puppet
+[SUP] Cost 3 SP
+One Ally : [Taunt 3] [Baron Bunny] ","Fiery Rain
+[ATK] Cost 5 SP
+All Enemies : [Fire 3] [Burn 1]  
+This Skill has -1 ACC.",,1,4,205,1/11/2022
+Crossbow Master,7,12,1,1,6,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Crossbow_Master,,Crossbow Master,"Long Range Darts
+Crossbow Master has Scope.
+While Crossbow Master is in front,
+Revealed enemies take +1 damage.  ",,,"Enhanced Eyesight  
+[SUP] Cost 2 SP
+One Enemy : [Reveal 3]","Crossbow
+[ATK] Cost 3 SP
+One Enemy : [Pierce 4]
+This Skill has Break 2.","Sharp Shooter
+[ATK] Cost 5 SP
+One Enemy : [Pierce 4]
+This Skill has Break and +2 ACC.","Crossbow Master 
+[ATK] Cost 9 SP
+All Enemies : [Pierce 5]
+This Skill has Break and +1 ACC.",,1,4,206,1/11/2022
+Pyro,9,13,1,1,4,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Pyro,,Pyro,"Friendly Pyromaniac
+Pyro is Immune to Burn.
+At the end of Pyro's turn,
+remove Burn from one ally.",,,"Degreaser
+[ATK] Cost 5 SP
+All Enemies : [Fire 3] [Burn 1] 
+This Skill has -3 ACC and Combo.","Flare Gun
+[ATK] Cost 4 SP
+One Enemy : [Fire 2] [Burn 3]
+This Skill deals +4 damage against Burning targets.","Axtinguisher
+[ATK] Cost 4 SP
+One Enemy : [Impact 2]
+If target is Burning, deal +6 damage and remove Burn.
+If this Skill KOs, gain [+2 SPD].",,,1,3,207,1/11/2022
+Ippo,12,14,2,0,6,2,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ippo,,Ippo Makunouchi,"Fighting Spirit
+When Ippo is KO'ed,
+you may spend 5 SP to revive him at 8 HP and gain [-2 DEF,EVA].
+He doesn't lose his turn due to being KO'ed. ",,,"Liver Blow
+[ATK] Cost 3 SP
+One Enemy : [Impact 7]
+This Skill has Direct. ","Gazelle Punch
+[ATK] Cost 4 SP
+One Enemy : [Impact 6] 
+This Skill has Direct 2 and +2 ACC.   ","Dempsey Roll
+[ATK] Cost 8 SP
+One Enemy : [Impact 12]
+Self : [+3 EVA] [-3 DEF] 
+This Skill has Direct. ","Wind God Makunouchi
+[ATK] Cost 5 SP
+One Enemy : [Impact 8]
+This Skill has Direct and +2 ACC.",,1,4,208,1/12/2022
+Paimon,4,20,0,2,4,4,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Paimon,,Paimon,"Foodie
+When Paimon rallies,
+recover 6 SP.  ",,,"Floating Child
+[SUP] Cost 5 SP
+Self : [+3 EVA] [Distance 3] ","Emergency Food 
+[SUP] Cost 5 SP
+One Ally : Recover 8 HP and gain [+2 SPD].  ","Knowledge of Ancient Lore
+[SUP] Cost 5 SP
+One Ally : [+5 ACC]","Comic Relief
+[SUP] Cost 5 SP
+One Ally : Recover 8 SP and [+2 RES].",,1,4,209,1/12/2022
+Plasma Monkey Fan Club,8,15,0,0,5,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Plasma_Monkey_Fan_Club,,Plasma Monkey Fan Club,"Quick Shots
+Plasma Monkey Fan Club's Skills
+gain ACC equal to his SPD Boost. ",,,"Very Quick Shots
+[ATK] Cost 3 SP
+One Enemy : [Pierce 1]
+This Skill has Adept 1.  ","Triple Shot
+[ATK] Cost 4 SP
+Three Enemies : [Pierce 4]
+This Skill has -1 ACC. ","Super Monkey Fan Club 
+[SUP] Cost 6 SP
+All Allies : [+2 SPD,HP] Recover 2 HP.","Plasma Monkey Fan Club
+[SUP] Cost 8 SP
+All Allies : [+2 ATK,MAG] [Break 3]",,1,4,210,1/12/2022
+Futo,7,11,2,0,6,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Futo,,Mononobe no Futo,"Kodoku Plate Pileup
+At the start of the game, gain [Mikoto Nigihayahi] or [Okami Omononushi]
+After Futo uses a skill, gain [+2 Sake Cups].
+When Futo is hit by a skill, lose [-1 Sake Cup] to take 1 less damage.
+X = Futo's Sake Cups ","Offering - Mikoto Nigihayahi
+At the start of her turn if Futo has Mikoto Nigihayahi,
+recover X SP and gain [Shield 1]. ","Offering - Okami Omononushi  
+At the start of her turn if Futo has Okami Omononushi,
+recover 3 HP and gain [Crit X]. ","Mononobe's Eighty Sake Cups
+[ATK] Cost 3 SP
+All Enemies : [Impact 2]
+This Skill has -1 + X ACC.  ","Catastrophic Gate Opening
+[ATK] Cost 4 SP
+One Enemy : [Dark 2] [Mark 1]
+For every Sake Cup, inflict an additional Debuff on hit.
+1 = [Poison 1]
+2 = [Terror 1]
+3 = [Heavy 1]
+4 = [Silence 1]
+5 = [Paralysis 1]
+6 = [Shock 1]
+7 = [Death 1]  ","Miwa Plate Storm 
+[ATK] Cost 6 SP
+All Enemies : [Wind 4]
+This Skill has +1 ACC.  ","Taiyi True Fire
+[ATK] Cost 7 SP
+All Enemies : [Fire 3] [Poison X]
+This Skill has -1 ACC.",,3,4,211,1/15/2022
+Maribel,7,13,1,1,6,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Maribel,,Maribel Hearn,"Meddling with Borders
+When an Ally rallies while Maribel is in front,
+recover 4 SP.",,,"Liberated Abilities
+[MAG] Cost 6 SP
+All Enemies : [Void 2]
+This Skill has Precision.","Chaotic Quadruple Barrier	
+[MAG] Cost 4 SP
+One Enemy : [Dark 2] {80% Terror 2, Shock 2} {40% Death 2}","Overflowing Unnatural Power
+[SUP] Cost 8 SP and 3 HP
+Self : [+3 ATK,MAG,DEF,RES,SPD]  ","Mari's DIY Novice Border
+[SUP] Cost 6 SP
+All Allies : [Regenerate 3, Crit 2]",,1,4,212,1/15/2022
+Driller Mk 2,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Driller_Mk_2,,Driller,"""Mole"" Armor Rig
+Driller is immune to Burn.
+Driller takes -2 damage from Fire and Impact Skills. ",,,"Cryo Cannon
+[ATK] Cost 4 SP
+One Enemy : [Cold 0] [Freeze 2, Stuck 2]
+This Skill has +2 ACC. ","Experimental Plasma Charger
+[MAG] Cost 2 SP
+One Enemy : [Electric 4]","Vampiric Power Drills
+[ATK] Cost 4 SP
+One Enemy : [Pierce 8]
+This Skill has -6 ACC.
+If this Skill KO's a target, recover 8 HP.   ","High Explosive Grenade
+[ATK] Cost 3 SP
+One Enemy : [Impact 5] [-2 DEF] [Terror 2]    
+This Skill has -3 ACC.",,1,4,213,1/16/2022
+Loot Bug,12,0,0,0,2,0,14,🔗,https://tbs-crossover-arena.fandom.com/wiki/Loot_Bug,,Loot Bug,"Shameful
+Loot Bug has Ward [Apathy 2].","Pet
+While Loot Bug is in front,
+Allies recover 4 additional SP when Rallying.
+While Loot Bug is in back,
+Allies in back recover SP twice as fast.","Explode 
+When Loot Bug is KO'ed,
+Every Ally recovers 8 SP.","It's a Bug Thing
+[SUP] Cost 0 SP
+Self : [Death 0]",,,,,3,1,214,1/16/2022
+Engineer Mk 2,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Engineer_Mk_2,,Engineer,"""Owl"" Armor Rig
+Engineer is immune to Poison.
+Acid Skills have no effect on Engineer.
+Engineer takes -2 damage from Nature Skills.",,,"""Stubby"" Voltaic SMG
+[ATK] Cost 2 SP
+One Enemy : [Electric 3] {30% Paralysis 2}   ","Breach Cutter
+[MAG] Cost 5 SP
+All Enemies : [Electric 3]
+This Skill has Break 2 and -1 ACC.  ","Field Medic
+[SUP] Cost 4 SP
+One Ally : Revive KO'ed Ally with 5 HP. ","Plasma Burster
+[MAG] Cost 6 SP
+Two Enemies : [Electric 4] {20% Terror 2}
+This Skill has Break 3.",,1,4,215,1/17/2022
+Gunner Mk 2,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gunner_Mk_2,,Gunner,"""Barracuda"" Armor Rig 
+Break doesn't work on Gunner.
+Gunner takes -4 damage from Impact Skills.  ",,,"""Thunderhead"" Heavy Autocannon
+[ATK] Cost 2 SP
+Two Enemies : [Impact 1 + X]   
+Self : Gain [+1 Rev].
+This Skill has Break 1. 
+X = Rev  ","BRT7 Burst Fire Gun
+[ATK] Cost 3 SP
+One Enemy : [Pierce 5] ","Thorny Shield Generator
+[SUP] Cost 4 SP
+All Allies : [Shield 2]
+Self : [Thorns 3]    ","Incendiary Grenade
+[SUP] Cost 5 SP
+Two Enemies : [Burn 2]",,1,4,216,1/17/2022
+Scout Mk 2,15,10,2,0,4,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Scout_Mk_2,,Scout,"""Fox"" Armor Rig
+Scout is immune to Trap and Heavy.",,,"M1000 Classic
+[ATK] Cost 7 SP
+One Enemy : [Pierce 8]
+This Skill has Scope. ","Zhukov NUK17
+[ATK] Cost 3 SP
+One Enemy [Pierce 6]
+This Skill has -2 ACC.  ","Grappling Hook and Dash
+[SUP] Cost 3 SP
+Swap with any Ally.
+If that Ally was in front, you may swap again. 
+You may use this Skill after using a different Skill.  ","Cryo Grenade
+[SUP] Cost 5 SP
+Two Enemies : [Freeze 2]",,1,4,217,1/17/2022
+Uweiss,5,14,0,1,6,3,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Uweiss,,Uweiss Sneeze,"Ability: Circles
+When Uweiss rallies,
+All Allies gain [+1 ATK,ACC]. ",,,"Murdermaster: Stab Stab Stab
+[ATK] Cost 2 SP
+One Enemy : [Blade 3]
+This Skill has +3 ACC and Direct 2.","Murdermaster: Can Ice Stop a Train? Sort Of...
+[SUP] Cost 7 SP
+All Allies : [Shield 3, Thorns 3] [Terror 2]","Murdermaster: Blizzara
+[MAG] Cost 4 SP
+All Enemies : [2 Cold] {80% -3 SPD}
+This Skill has -1 ACC. ","Murdermaster: THE WORLD!!!
+[SUP] Cost 9 SP
+All Allies : [Haste 2]",,1,4,218,1/17/2022
+Mamizou,17,16,0,0,3,1,37,🔗,https://tbs-crossover-arena.fandom.com/wiki/Mamizou,,Mamizou Futatsuiwa,"Tanuki Disguise
+When Mamizou rallies,
+recover 2 SP and gain [X Disguise].
+X = A damage type of choice.","Quick Transformation 
+At the start of Mamizou's turn,
+you may select one of her Disguises.
+All of Mamizou's Skills are now this type.",,"Frolicking Animals Scrolls
+[MAG] Cost 2 SP
+One Enemy : [Cold 1] {50% Shock 2} 
+This Skill has +2 ACC.  ","Futatsuiwa Clan's Curse
+[MAG] Cost 8 SP
+One Enemy : [Dark 6] [Shock 2, Silence 2] {50% -1 ATK,MAG,DEF,RES,SPD} ","10 Transformations Danmaku
+[MAG] Cost 6 SP
+All Enemies : [Wind 4]
+This Skill has -1 ACC.
+This Skill has an extra effect depending on it's type.
+[Blade] : +2 ACC.
+[Pierce] : Scope.
+[Impact] Inflict [Shock 1] on hit. 
+[Fire] : +1 damage.
+[Wind] : Inflict [-2 SPD] on hit.
+[Cold] : Inflict [Heavy 1] on hit.
+[Nature] : Inflict [Poison 2] on hit.
+[Mystic] : Recover 2 SP.
+[Dark] : Inflict [-2 ATK] on hit.
+[Light] : Recover 2 HP. 
+[Spirit] : Gain {50% Haste 1}    
+[Acid] : Inflict [Terror 2] on hit.
+[Electric] : Inflict {50% Paralysis 1} on hit.
+[Water] : Inflict [-2 MAG] on hit.
+[Wave] : Inflict [Mark 3] on hit.
+[Astral] : Break 2.","Full Moon Pompokolin
+[MAG] Cost 8 SP
+All Enemies : [Spirit 5 + X]
+This Skill has +1 ACC.
+X = number of characters in front with Astral Skills.",,2,4,219,1/23/2022
+Owain,7,10,2,2,7,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Owain,,Owain Dark,"The Avenging Scion of Light and Shadow
+When a ally is KO'ed while Owain is in front,
+gain [Crit 3].","Galeforce, The Fearsome Winds of Justice
+When Owain KO's a target,
+recover 3 SP and you may use another Skill.
+Galeforce can only activate once a turn.   ","""I thus engrave my name into your very soul!""
+When Owain rallies,
+One Enemy gains [Mark 2].
+Owain deals +2 damages against Marked Enemies.  ","Missiletainn, The Demon Sword of Legend and Awe
+[ATK] Cost 3 SP
+One Enemy : [Blade 3] {50% 3*damage} 
+This Skill has -2 ACC.","Elthunder, Sparking Skyfury of Endless Storms
+[MAG] Cost 3 SP
+One Enemy : [Electric 4] {10% Paralysis 2}","Steel Sword, Flameclaw Wyvernborn The Foe-Slayer
+[ATK] Cost 3 SP
+One Enemy : [Blade 4] {10% Burn 2}",,,3,3,220,1/24/2022
+Hol Horse,8,14,1,0,8,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hol_Horse,,Hol Horse,"Stand -Emperor-
+Hol Horse has Precision.","Better to be No.2
+At the end of Hol Horse's Turn,
+gain X SP.
+X = Slot Number - 2","A Fine Line Between Cowardice And Cleverness
+When an Ally is KO'ed,
+Hol Horse uses Escape Plan.","Homing Bullets
+[ATK] Cost 8 SP
+One Enemy : [9 Pierce]","Escape Plan
+[SUP] Cost 0 SP
+Swap with an Ally in the back.
+This Ally loses 2 HP. This can KO.
+You may use this Skill after using a different Skill.",,,,3,2,221,1/28/2022
+Commando,10,8,2,0,4,1,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Commando,,Commando (Risk of Rain),"Heaven Cracker
+Every time Commando hits a target, gain [+1 Stack]
+When Commando uses a Skill,
+you may spend 4 Stacks to target All Enemies.
+Commando gains no Stacks when targeting All Enemies. ","Energy Cell
+At the end of Commando's Turn,
+recover X SP.
+X = Max HP - HP  ",,"Double Tap
+[ATK] Cost 4 SP
+One Enemy : [Pierce 3]
+This Skill has Adept 1.  ","Full Metal Jacket
+[ATK] Cost 6 SP
+All Enemies : [Pierce 3] [Shock 1]
+This Skill has +1 ACC. ","Tactical Dive
+[SUP] Cost 2 SP
+Self : [Distance 2]
+You may use another Skill. ","Suppressive Fire
+[ATK] Cost 8 SP
+One Enemy : [Pierce 2]
+This Skill has Adept 5.",,2,4,222,2/1/2022
+Ilyana,7,19,0,4,3,1,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ilyana,,Ilyana,"Fleeting Shade
+Ilyana has Shade 2.","Gratitude for a Meal
+If an Ally recovers Ilyana's SP,
+both characters recover 3 SP.",,"Rexbolt
+[MAG] Cost 16 SP
+One Enemy : [Electric 20]
+If the target has a passive that contains the word ""Dragon"",
+this Skill deals +10 damage.","Blárfox
+[MAG] Cost 11 SP
+One Enemy : [Mystic 12]
+This Skill has Break 2.","Elthunder
+[MAG] Cost 6 SP
+One Enemy : [Electric 9]
+This Skill has -1 ACC.  ","Heal
+[SUP] Cost 3 SP
+One Ally : Recover 6 HP.",,2,4,223,2/1/2022
+Kagerou,14,9,0,0,4,3,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kagerou,,Kagerou Imaizumi,"Grassroots Youkai Network
+If an Ally uses a Support Skill while Kagerou is in front,
+All Allies recover 1 SP.",,,"Fang Sign ""Moonlit Canine Teeth""
+[ATK] Cost 2 SP
+One Enemy : [Astral 2] [Bleed 1]  ","Transformation ""Star Fang""
+[SUP] Cost 3 SP
+One Ally : [Break 2] [Inflict [Terror 2] 1] [Reveal 2]  ","Roar ""Full Moon Howling""
+[SUP] Cost 4 SP
+All Allies : [+2 ATK,MAG]
+All Enemies : [Shock 1]","Sirius ""High-Speed Pounce""
+[ATK] Cost 4 SP
+One Enemy : [Impact 4]
+Self : [+3 EVA]   ","Wolf Fang ""Bloodthirsty Wolf Fang""
+[ATK] Cost 7 SP
+One Enemy : [Pierce 3]
+This Skill has Adept 2.   
+When this Skill hits a target, recover 2 HP.",1,5,224,2/1/2022
+Dio Brando,14,8,0,0,7,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Dio_Brando,,Dio Brando,"Sustained by Willpower
+When Dio is about to take lethal damage,
+damage beyond 1 HP is taken from his SP.
+If his SP cannot pay the cost, he is KO'ed instead.
+Light Skills ignore this passive.  ","Vampiric Body
+At the end of Dio's turn,
+recover 2 HP and SP.
+Light Skills deal +2 damage against Dio. ",,"Vampiric Strength
+[ATK] Cost 4 SP
+One Enemy : [Impact 7]
+This Skill has Direct 2 and +1 ACC.","Blood Sucking
+[ATK] Cost 2 SP
+One Enemy : [Pierce 1] [Bleed 1]
+On hit, recover 4 HP.  ","Vaporization Freezing Technique
+[ATK] Cost 6 SP
+One Enemy : [Dark 0] [Freeze 3]",,,2,3,225,2/3/2022
+Jonathan Joestar,12,12,1,1,5,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Jonathan_Joestar,,Jonathan Joestar,"Ripple
+Jonathan gains +2 ACC and +3 damage against targets
+with Dark Skills or Vampiric Body, unless Jonathan is Frozen.
+While Frozen, Jonathan's Light Skills are now Impact Skills and deal -2 damage.","Explosive Power
+When a ally is KO'ed while Jonathan is in front,
+gain [+2 ATK,DEF].",,"Overdrive
+[ATK] Cost 4 SP
+One Enemy : [Light 7]
+This Skill has Direct 2.   ","Zoom Punch
+[ATK] Cost 6 SP
+One Enemy : [Impact 7]
+This Skill has Scope.  ","Luck & Pluck: Metal Silver Overdrive
+[ATK] Cost 7 SP
+One Enemy : [Blade 9]
+This Skill has +1 ACC. ","Sunlight Yellow Overdrive
+[ATK] Cost 10 SP
+One Enemy : [Light 14]
+This Skill has Direct and +1 ACC. ","Ripple Healing
+[SUP] Cost 4 SP
+One Ally : Recover 8 HP.",2,5,226,2/3/2022
+Speedwagon,12,12,1,0,6,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Speedwagon,,Robert E. O. Speedwagon,,,,"Saw-Hat
+[ATK] Cost 6 SP
+One Enemy : [Blade 6]
+This Skill has +4 ACC.  ","Sledgehammer
+[ATK] Cost 3 SP
+One Enemy : [Impact 6]
+This Skill has -2 ACC.  ","Vigorous Cheering
+[SUP] Cost 5 SP
+One Ally : Recover 10 SP.  ","""I can tell a bad person from a good person just by his smell!""
+[SUP] Cost 4 SP
+One Enemy : [Reveal 3]
+If the target has a Dark Skill, inflict [-3 ACC].","Body Heat
+[SUP] Cost 1 SP
+One Ally : Remove Freeze. If Freeze was removed, the target recovers 3 SP.",0,5,227,2/3/2022
+Seth,5,13,1,0,9,3,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Seth,,Seth,"Abyssal Geometric
+When Seth rallies,
+gain [Charge].",,,"Captive Segment
+[MAG] Cost 5 SP
+One Enemy : [Dark 3] [Trap 5]
+If this Skill hits a target,
+you may remove [Charge] to swap the target with any enemy.   ","Dual Piercing Vengeance
+[ATK] Cost 3 SP
+One Enemy : [Blade 5]","Vanishing Doubt
+[SUP] Cost 4 SP
+Self : [Shade 3, Precision 1]
+This Skill has Combo.","Penetrate
+[ATK] Cost 3 SP
+One Enemy : [Blade 4]
+This Skill has Scope.","Convict
+[ATK] Cost 5 SP
+One Enemy : [Blade 7]
+This Skill has Direct and Break.",1,5,228,2/6/2022
+Shoto Goto,8,11,1,0,5,1,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Shoto_Goto,,Shoto Goto,"Meter
+When Shoto uses a Skill and hits at least 1 target, gain [+1 Meter]. ",,,"Blazing Sun
+[ATK] Cost 3 SP
+One Enemy : [Fire 4]
+This Skill has Scope.","Rising Fist
+[ATK] Cost 3 SP
+One Enemy : [Impact 6]
+This Skill has Direct 2.  ","Parry
+[SUP] Cost 2 SP and 1 Meter
+Self : [Shield 3] [Thorns 3]","Super Shoto Attack!
+[ATK] Cost 5 SP and 2 Meter
+One Enemy : [Fire 8]
+This Skill has Scope and Break.",,1,4,229,2/23/2022
+Arden,14,4,4,0,1,0,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Arden,,Arden,"Vantage
+Arden has Thorns 4 while at 7 or less HP.",,,"Iron Sword
+[ATK] Cost 1 SP
+One Enemy : [Blade 2]","Pursuit Ring
+[SUP] Cost 4 SP
+One Ally : [Pursuit 1]",,,,1,2,230,3/1/2022
+Enoch,13,7,4,2,2,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Enoch,,Enoch O’Connor,"Peculiarity: Necromantic Regeneration
+While Enoch is in front, recover 2 SP at the end of his turn.",,,"Reanimate
+[SUP] Cost 7 SP or 1 Heart and 2 SP
+Any Ally : Revive KO’ed Ally with 3 HP and they gain [Cure 0].","Steal Heart
+[ATK] Cost 7 SP
+Any Enemy : [Pierce 2]
+If this Skill KO’s the target, gain [+1 Heart].",,,,1,2,231,3/1/2022
+Hollowghast,13,9,2,1,7,3,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hollowghast,,Hollowghast,"I Can Smell Your Souls.
+If a character with a Peculiarity passive is in the enemy team’s front, 
+Hollowghast gains Scope and +2 ACC.
+Hollowghast must target a character with a Peculiarity passive if able. ",,,"Tongue Lash
+[ATK] Cost 2 SP
+One Enemy : [Impact 4]","Salivated Grasp
+[ATK] Cost 3 SP
+One Enemy : [Impact 0]  [Stuck 2, Heavy 1]","Eyes!
+[ATK] Cost 6 SP
+One Enemy : [Pierce 15]
+This Skill has -10 ACC.",,,1,3,232,3/1/2022
+Hugh,10,11,1,2,4,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hugh,,Hugh Apiston,"Peculiarity: Bee Shield
+Hugh has Ward [Poison 2].",,,"Bee Sting
+[ATK] Cost 3 SP
+One Enemy : [Pierce 3] [Poison 3]","Bee Swarm
+[ATK] Cost 5 SP
+All Enemies : [Pierce 3] [Poison 2]
+This Skill has -1 ACC.",,,,1,2,233,3/1/2022
+Millard,6,4,1,4,6,2,23,🔗,https://tbs-crossover-arena.fandom.com/wiki/Millard,,Millard Nullings,"Peculiarity: Blood of the Unseen Revealed
+Millard has Shade X.
+X = Millard’s HP ",,,"I Must Impress Perplexus
+[SUP] Cost 4 SP
+All Allies : [+2 EVA] ","The Mighty Pen
+[ATK] Cost 1 SP
+One Enemy : [Pierce 3]",,,,1,2,234,3/1/2022
+Don McRon,8,10,0,1,5,2,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Don_McRon,,Don McRon,"Meter
+When Don uses a Skill and hits at least 1 target, gain [+1 Meter].",,,"Taste Ketchup
+[ATK] Cost 2 SP
+One Enemy : [Impact 2]
+On hit, recover 4 SP. ","Taste Fries
+[ATK] Cost 2 SP
+One Enemy : [Pierce 3]
+This Skill has Scope.   ","Slider
+[ATK] Cost 2 SP
+One Enemy : [Impact 5]
+This Skill has Direct 2. ","Slamburger
+[ATK] Cost 3 SP and 1 Meter
+One Enemy : [Impact 4] [Trap 4, Stuck 2] ","Clock Out
+[SUP] Cost 2 Meter
+Self : [Combo 3] or [Pursuit 1]",1,5,235,3/2/2022
+Technoblade,10,10,2,2,6,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Technoblade,,Technoblade,"[PIG+++]  
+Technoblade has Taunt 1, Bold 1.","Potato Crown
+When Technoblade rallies,
+recover 2 SP and gain [+2 SPD].","""Blood for the Blood God!""
+When Technoblade KOs a target,
+recover 4 SP and gain [Resolve 1].
+This effect is cumulative.","Orphan Obliterator
+[ATK] Cost 3 SP 
+One Enemy : [Blade 3] [Burn 2]","Axe of Peace
+[ATK] Cost 4 SP
+One Enemy : [Blade 6] ","Golden Apple
+[SUP] Cost 3 SP
+Self : [+2 HP] Recover 6 HP.","Subscribe to Technoblade ~ Rocket Launcher
+[ATK] Cost 7 SP
+All Enemies : [Fire 6]
+This Skill has -1 ACC.",,3,4,236,3/15/2022
+Taroumaru,12,14,2,1,4,1,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Taroumaru,,Taroumaru,"Honed Technique: Storm Blade
+Taroumaru has [Shield 3].
+When Taroumaru misses a Skill,
+Taroumaru gains [Enraged].
+While Taroumaru is Enraged,
+the only Skill Taroumaru may use is Canine Art: Slicing Tempest.","Doggo Art: Infinite Cuteness
+While Taroumaru is Stunned,
+Taroumaru takes 5 more damage from Skills
+and you feel bad for attacking him.",,"Slash Combo
+[ATK] Cost 4 SP
+One Enemy : [Blade 6]","Thunderblades
+[ATK] Cost 3 SP
+One Enemy : [Electric 4] {60% Paralysis 1}","Canine Art: Geo Bunshin
+[SUP] Cost 3 SP
+Self : [Counter 3] [+3 EVA]","Canine Art: Plummeting Blade
+[ATK] Cost 5 SP
+All Enemies : [Electric 3] {40% Paralysis 2} 
+This Skill has -1 ACC.","Canine Art: Slicing Tempest
+[ATK] Cost 4 SP
+One Enemy : [Blade 9]
+Taroumaru may only use this Skill while Enraged.
+If this Skill misses, gain [Curse 2, Stun 2] and lose [Enraged].",2,5,237,4/21/2022
+Susie,14,12,3,0,3,0,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Susie,,Susie,"“Hey. Let me tell you a secret. Quiet people piss me off.”
+Susie has Stubborn and Bold 3.","DEFEND
+When Susie rallies,
+she gains [Shield 2] and recovers 2 SP.",,"Mane Ax
+[ATK] Cost 3 SP
+One Enemy : [Blade 6]
+This Skill has Direct 2.","Rude Buster
+[MAG] Cost 5 SP
+One Enemy : [Blade 5] [Terror 3]
+This Skill has Direct 2.","S-Action
+[SUP] Cost X
+Choose one Ally in front.
+Use their Self Support Skill as your own.
+X = Cost of the selected Skill.","UltimateHeal
+[SUP] Cost 12 SP
+Any Ally : Lose 12 HP and Recover 15 HP.
+This Skill can KO.
+This Skill can Revive KO’ed Allies.",,2,4,238,4/28/2022
+Sese,13,10,3,0,5,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sese,,Sese Kitsugai,"Knowing the Underground 
+While Sese is in front,
+Allies' Impact Skills have Scope.","A Corpse in Search of Themself
+When an enemy is KO'ed while Sese is in front,
+gain [+1 Bones].
+X = Bones ",,"Thrown Bone ""Bone Boomerang""
+[ATK] Cost 3 SP
+One Enemy : [Impact 5 + X]  ","Marrow Cannon ""Bone Buster""
+[MAG] Cost 5 SP
+All Enemies : [Dark 4]
+This Skill has -1 + X ACC. ","Corpse Card ""Cadaver Heart""
+[SUP] Cost 4 SP
+One Ally : [Resolve 2] Recover X SP.","Cruel Death ""Punishment of Bone Skewers""
+[ATK] Cost 7 SP
+All Enemies : [Pierce X * 4]
+This Skill has -1 ACC.",,2,4,239,4/30/2022
+Yumemi,12,16,1,3,6,1,39,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yumemi,,Yumemi Okazaki,"Artificial Magic
+ATK Stat Boosts increase the damage of Yumemi's Magic Skills.","Probability Space Hypervessel
+When Yumemi rallies,
+she may swap an ally in Front with an ally in Back. ",,"Dream Bomb
+[MAG] Cost 3 SP
+Two Enemies : [Mystic 3]  ","Strawberry Cross
+[MAG] Cost 4 SP
+One Enemy : [Mystic 4]
+If this Skill hits, the target loses X SP. 
+X = damage taken by Skill. ","Fantasy Legend 
+[MAG] Cost 8 SP 
+All Enemies : [Mystic 8]
+This Skill has -2 ACC.","Magical Position of Science
+[SUP] Cost 7 SP
+All Allies: [+3 ATK,MAG]  ","Strawberry Crisis!!
+[SUP] Cost 11 SP
+One Ally : [+4 ATK,MAG] ",2,5,240,5/6/2022
+Daiyousei,7,10,2,3,3,2,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Daiyousei,,Greater Fairy,"Lunate Elf
+If an Ally uses a Magic Skill while Daiyousei is in front,
+All Allies recover 1 SP.","Natural Cure
+When Daiyousei is swapped,
+gain [Cure 0].  ",,"Spiral Intercept
+[SUP] Cost 4 SP
+Self : [Taunt 4, Shield 4]","Off-Season Bloom
+[MAG] Cost 6 SP
+One Enemy : [Nature 10]
+Self : [-2 MAG]
+This Skill has -2 ACC. ","Everyday Magic
+[SUP] Cost 8 SP
+All Allies : [Cure 1] Recover 6 HP. ","Wind and Frost ""Kreis of Wind""
+[MAG] Cost 8 SP
+All Enemies : [Nature 4] {20% Freeze 2}
+All Allies : [Windsweep 3]
+This Skill has -1 ACC.",,2,4,241,7/8/2022
+Koakuma,7,14,0,3,6,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Koakuma,,Little Devil,"Assistant at the Magic Library
+While Koakuma is in front,
+Allies gain [Shade 2] when they use a Magic Skill.",,,"Grimoire Arrangement
+[SUP] Cost 4 SP
+One Ally : [+2 MAG, +2 ACC] [Cancel 1]","Devil's Trap “Restriction”
+[SUP] Cost 3 SP
+One Enemy : [Stuck 1, Stubborn 1, Curse 0]","Dreaming Necronomicon
+[MAG] Cost 7 SP
+All Enemies : [Dark 2] [-3 RES] [Boost [Regenerate 2, Bold 2] 2]
+This Skill has -1 ACC.",,,1,3,242,7/8/2022
+Roman,9,15,2,1,5,2,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Roman,,Roman Torchwick,"""Always a pleasure!""
+When Roman rallies,
+He may swap with an ally in the back.
+If he does, One Enemy gains [Trap 3].",,,"Melodic Cudgel: Cane Lash 
+[ATK] Cost 5 SP
+One Enemy : [Impact 5] [-3 DEF] ","Melodic Cudgel: Explosive Shot
+[ATK] Cost 7 SP
+One Enemy : [Fire 6] [Shock 2]
+This Skill has Scope. ","Melodic Cudgel: Grappling Hook
+[ATK] Cost 4 SP
+Any Enemy : [Impact 0]
+If this skill hits,
+Swap the target and any enemy. ","Smuggled Weaponry
+[SUP] Cost 8 SP
+One Ally : [+2 ATK,MAG] [Shield 6]",,1,4,243,7/9/2022
+Madoka Kaname,7,17,0,2,5,1,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Madoka_Kaname,,Madoka Kaname,"Soul Gem: Transformation
+When Madoka Kaname rallies,
+transform into Madoka Kaname (Magical Girl) and recover 2 HP.",,,"Weapon: Magical Arrow
+[MAG] Cost 3 SP
+One Enemy : [Mystic 4]
+This Skill has Break 2.","Connect: I'll Shoulder Your Burden
+[SUP] Cost 6 SP
+One Ally : Recover 6 HP and SP ","Magia: Pluvia☆Magica
+[MAG] Cost 8 SP
+All Enemies : [Mystic 3] [-3 MAG]
+All Allies : Recover 3 SP
+This Skill has -1 ACC.","Doppel: Doppel of Mercy - Salvation Shaped
+[MAG] Cost 15 SP
+All Enemies : [Mystic 6] [-4 MAG]
+All Allies : Recover 4 HP and SP
+This Skill has -1 ACC.",,1,4,244,7/21/2022
+Madoka Kaname (Magical Girl),9,17,2,4,7,3,42,🔗,https://tbs-crossover-arena.fandom.com/wiki/Madoka_Kaname,,Madoka Kaname,,,,"Weapon: Magical Arrow
+[MAG] Cost 3 SP
+One Enemy : [Mystic 4]
+This Skill has Break 2.","Connect: I'll Shoulder Your Burden
+[SUP] Cost 6 SP
+One Ally : Recover 6 HP and SP ","Magia: Pluvia☆Magica
+[MAG] Cost 8 SP
+All Enemies : [Mystic 3] [-3 MAG]
+All Allies : Recover 3 SP
+This Skill has -1 ACC.  ","Doppel: Doppel of Mercy - Salvation Shaped
+[MAG] Cost 15 SP
+All Enemiese: [Mystic 6] [-4 MAG]
+All Alliesi: Recover 4 HP and SP
+This Skill has -1 ACC.",,0,4,245,7/21/2022
+Moemura Akemi,8,16,1,1,6,0,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Moemura_Akemi,,Homura Akemi,"Soul Gem: Transformation
+When Moemura Akemi rallies,
+transform into Moemura Akemi (Magical Girl) and recover 4 HP. ","I Want to Become Someone Who Can Protect Her
+If both Moemura and Madoka are in front,
+Moemura has Taunt 4. ",,"Weapon: Golf Club
+[MAG] Cost 2 SP
+One Enemy : [Impact 2] [-2 SPD]","Weapon: Time Shield
+[SUP] Cost 6 SP
+Selfl: [Pursuit 2]","Connect: Everybody Do Your Best! 
+[SUP] Cost 4 SP
+One Ally : [Dodge 1]
+All Allies : [+1 MAG]","Magia: Time Stop Special
+[MAG] Cost 7 SP
+All Enemies : [Impact 4]
+All Allies : [Haste 1]
+This Skill has -1 ACC. ","Doppel: Doppel of Closed Loop - Mortal World Shaped
+[MAG] Cost 16 SP
+All Enemies : [Pierce 7]
+All Allies : [Pursuit 1] 
+This Skill has -1 ACC.",2,5,246,7/21/2022
+Moemura Akemi (Magical Girl),12,16,3,3,8,0,42,🔗,https://tbs-crossover-arena.fandom.com/wiki/Moemura_Akemi,,Homura Akemi,"I Want to Become Someone Who Can Protect Her
+If both Moemura and Madoka are in front,
+Moemura has Taunt 4. ",,,"Weapon: Golf Club
+[MAG] Cost 2 SP
+One Enemy : [Impact 2] [-2 SPD]","Weapon: Time Shield
+[SUP] Cost 6 SP
+Selfl: [Pursuit 2]","Connect: Everybody Do Your Best! 
+[SUP] Cost 4 SP
+One Ally : [Dodge 1]
+All Allies : [+1 MAG]","Magia: Time Stop Special
+[MAG] Cost 7 SP
+All Enemies : [Impact 4]
+All Allies : [Haste 1]
+This Skill has -1 ACC. ","Doppel: Doppel of Closed Loop - Mortal World Shaped
+[MAG] Cost 16 SP
+All Enemies : [Pierce 7]
+All Allies : [Pursuit 1] 
+This Skill has -1 ACC.",1,5,247,7/21/2022
+Charlotte,4,15,0,0,0,0,19,🔗,https://tbs-crossover-arena.fandom.com/wiki/Charlotte,,Charlotte,"Labyrinth of Sweets
+At the end of Charlotte's turn,
+All Enemies suffer [-1 EVA] and All Allies recover 1 SP.  ","Sweet Taste
+Charlotte has Combo 1 and Ward [Death 2].
+When Charlotte is KO'ed,
+revive as Charlotte (2nd Form) with Max HP.",,"Familiar: Pyotrs
+[MAG] Cost 2 SP
+All Enemies : [Impact 0] [Reveal 2]","Familiar: Polina
+[SUP] Cost 3 SP 
+One Ally : Recover 3 HP and SP. ",,,,2,2,248,7/22/2022
+Charlotte (2nd Form),12,15,3,1,4,0,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Charlotte,,Charlotte,"Labyrinth of Sweets
+At the end of Charlotte's turn,
+All Enemies suffer [-1 EVA] and All Allies recover 1 SP.  ","Snake Skin
+Skills that deal more than 4 damage to Charlotte,
+deal 4 damage instead.  ",,"Familiar: Pyotrs
+[MAG] Cost 2 SP
+All Enemies : [Impact 0] [Reveal 2]","Familiar: Polina
+[SUP] Cost 3 SP 
+One Ally : Recover 3 HP and SP. ","Cheese Hunger
+[MAG] Cost 7 SP
+One Enemy : [Pierce 7]
+This Skill has Break 2 and -1 ACC.
+If this Skill KO's, All Enemies suffer [Terror 2]",,,2,3,249,7/22/2022
+Arsene,12,10,2,2,8,0,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Arsene,,Arsène,"Adverse Resolve
+While Arsène is in front,
+Arsène gains [Crit 2] when an Enemy uses Swap.",,,"Eiha
+[MAG] Cost 4 SP
+One Enemy : [Dark 6]","Cleave
+[ATK] Cost 1 HP and 2 SP
+One Enemy : [Blade 6]","Sukunda
+[SUP] Cost 2 SP
+One Enemy : [-3 SPD]   ","Dream Needle 
+[ATK] Cost 1 HP and 2 SP
+One Enemy : [Pierce 2] {50% Sleep 3}",,1,4,250,7/23/2022
+Joker,10,12,1,1,7,2,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Joker,,Ren Amamiya,"Power of the Wild Card
+At the start of Joker's turn,
+Joker may gain [X] and remove his previous Persona.
+X = choose the name of any Persona 
+Joker may only have one Persona at a time.
+Joker inherits the Skills and Passives of his current Persona.","Wielding Firearms 
+At the start of the game, Joker has [Ammo 3]. ",,"Melee: Paradise Lost
+[ATK] Cost 4 SP
+One Enemy : [Blade 5]
+Self : [+2 RES] ","Gun: Tyrant Pistol
+[ATK] Cost 1 Ammo
+One Enemy : [Pierce 5]
+Self : [+2 MAG]",,,,2,2,251,7/23/2022
+Doc Louis,18,8,2,1,4,1,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Doc_Louis,,Doc Louis,"Heavyweight Star
+When Doc hits with a Skill gain [Star].
+When Doc is hit by a Skill lose [Star].","""You won't like Doc when he's angry!""
+When Doc is hit by a Skill while Stuck,
+gain [Jaguar Print Shirt].
+While Doc has [Jaguar Print Shirt],
+gain Bold 2 and +1 ACC.",,"""Block this!""
+[ATK] Cost 3 SP
+One Enemy : [Impact 5]
+This Skill has +2 ACC and Direct 2.","""Duck this one!""
+[ATK] Cost 4 SP
+One Enemy : [Impact 8]
+This Skill has -2 ACC and Direct 2. ","Chocolate Bar
+[SUP] Cost 4 SP
+Self : [Stuck 1] Recover 12 HP.","""I invented the Star Punch!""
+[ATK] Cost [Star]
+One Enemy : [Impact 10]
+This Skill has +2 ACC.   ","""Join the Nintendo Fun Club today! Mac.""
+[SUP] Cost 2 SP
+One Ally : [Cancel 2]",2,5,252,7/26/2022
+Scout,5,14,1,0,8,4,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Scout,,Jeremy,"Snarky Speedster
+At the end of Scout's turn,
+he may swap to the Back.
+If he does, One Enemy suffers [Stubborn 1].",,,"Scattergun
+[ATK] Cost 6 SP
+One Enemy : [Pierce 9] 
+This Skill has Direct 2.  ","Pretty Boy's Pocket Pistol
+[ATK] Cost 4 SP
+One Enemy : [Pierce 2]
+This Skill has Adept 2.
+On hit, Recover 1 HP.  ","Boston Basher
+[ATK] Cost 2 SP
+One Enemym: [Pierce 2] [Bleed 1]
+This Skill has Direct 2.
+On miss, Hit yourself. Idiot.",,,1,3,253,7/26/2022
+Elly,9,16,1,2,4,2,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Elly,,Elly,"Labyrinth of Control
+At the end of Elly's turn,
+Two Enemies suffer [Heavy 1] and Two Allies gain [Steady 2].",,,"Covetous Desire
+[SUP] Cost 4 SP
+Any Enemy : [Heavy 2] [Stuck 1]   ","Distortion
+[MAG] Cost 6 SP
+One Enemy : [Electric 3] [Death 2]  ","Familiar: Daniyyel & Jennifer
+[SUP] Cost 6 SP
+Swap any two enemies.","""I have only one wish. Box up that memory.""
+[MAG] Cost 9 SP
+All Enemies : [Electric 4] [Terror 3] [Trap 3]
+This Skill has -1 ACC.",,1,4,254,7/31/2022
+Plague Knight,6,17,0,2,4,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Plague_Knight,,Plague Knight,"Bomb Construction
+When Plague Knight uses a Skill,
+he pay for the following effects for 2 SP each.
+Lob Casing : +4 ACC
+Float Casing :  Scope, +1 Damage
+Cascade Powder : +3 Damage, -2 ACC 
+Sparkler Powder : [Paralysis 3], -1 Damage 
+Quick Fuse : Direct, Break, +2 ACC
+Remote Fuse : [Trap 4], -1 ACC","Vat
+When Plague Knight rallies,
+gain [Vat].
+When Plague Knight uses a Skill,
+he may remove Vat to target All Enemies and the Skill has -1 ACC.",,"Bomb Toss
+[MAG] Cost 1 SP
+One Enemy : [Impact 2]
+This Skill has +2 ACC.","Bomb Burst 
+[MAG] Cost 3 SP
+One Enemy : [Impact 3]
+Swap Plague Knight with Any Ally. ","Staff of Surging
+[MAG] Cost 3 SP
+One Enemy : [Impact 7]
+This Skill has Direct 2 and -2 ACC.",,,2,3,255,8/1/2022
+Hooaka,9,11,0,3,5,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Hooaka,,Hooaka Shitodo,"Matching the Mood
+Hooaka has Bold X.
+X = # of characters in front with higher MAX SP.","Controlling Hot and Cold
+While Hooaka is in front,
+Burned Enemies take +3 damage from Cold Skills,
+Frozen Enemies take +3 damage from Fire Skills.  ","Spreading Wings
+If Every Enemy is Burned or Frozen,
+Hooaka deals +3 damage.","Cold Card ""Timed Sublimation""
+[MAG] Cost 4 SP
+All Enemies : [Cold 1] [Burn 2]  
+This Skill has -1 ACC. ","Sublimation ""Frost Needles in Early Spring""
+[MAG] Cost 5 SP
+All Enemies : [Fire 2] [Freeze 2]  
+This Skill has -1 ACC. ","Eruption ""Steam Explosion"" 
+[MAG] Cost 8 SP
+All Enemies : [Fire 4] [Burn 3]  
+This Skill has -2 ACC. ","""Bipolar Wings""
+[SUP] Cost 10 SP
+All Enemies : [Burn 2] [Freeze 1] [Heavy 1]",,3,4,256,8/2/2022
+Kyo,12,10,2,0,5,1,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Kyo,,Kyo Kusanagi,"Pyrokinesis
+When Kyo inflicts Burn, the effect is Cumulative.","Hobbies: Writing Poetry
+When Kyo rallies,
+he gains [+2 ACC] and [Bold 2].  ",,"108 Shiki Yami Barai
+[ATK] Cost 3 SP
+One Enemy : [Fire 2] [Burn 1]   
+This Skill has Scope and +2 ACC. ","100 Shiki Oniyaki
+[ATK] Cost 4 SP
+One Enemy : [Fire 6] [Burn 2]
+This Skill has Direct 2 and -2 ACC.  ","114 Shiki Aragami
+[ATK] Cost 3 SP
+One Enemy : [Fire 3] [Burn 1] [Stuck 1]
+This Skill has Direct 2 and Combo.  ","212 Shiki Kototsuki You 
+[ATK] Cost 7 SP
+One Enemy : [Fire 7] [Burn 2]  
+This Skill has Direct, Break and -2 ACC.",,2,4,257,8/2/2022
+Gertrud,13,9,1,1,3,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gertrud,,Gertrud,"Labyrinth of Thorns
+At the end of Gertrud's turn,
+All Enemies suffer [Trap 1] and All Allies gain [Thorns 1].","Guile born of Paranoia
+When an ally's skill hits a Trapped target while Gertrud is in front,
+the target's Trap is removed and added to the damage of the Skill. ","For the Roses
+When an enemy is KO'ed while Gertrud is in front,
+Recover 4 SP. ","Gardener's Shears
+[ATK] Cost 6 SP
+One Enemy : [Blade 7] {20% Death 0} ","Familiar: Anthony
+[ATK] Cost 3 SP
+One Enemy : [Blade 3] [Bleed 2]","Familiar: Adelbert
+[ATK] Cost 4 SP
+One Enemy : [Impact 4] [Trap 4]",,,3,3,258,8/3/2022
+Noelle,9,14,0,3,4,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Noelle,,Noelle Holiday,"Passive Name
+If both Noelle and Susie are in front,
+Noelle has Shade 2 and Bold 2.",,,"Heal Prayer
+[SUP] Cost 4 SP
+All Allies : Recover 4 HP. ","Sleep Mist
+[SUP] Cost 5 SP
+All Enemies : {30% Sleep 3} ","IceShock
+[MAG] Cost 3 SP
+One Enemy : [Cold 5]  ","N-Action
+[SUP] Cost X
+Choose one Ally in front.
+Use their One Ally Support Skill as your own.
+X = Cost of the selected Skill.","SnowGrave
+[MAG] Cost 10 SP
+All Enemies : [Cold 8]
+This Skill has -1 ACC.",1,5,259,8/3/2022
+Yuzuriha,12,10,2,0,4,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Yuzuriha,,Yuzuriha,"Iki Seishin no Kamae
+After using any Skill,
+Yuzuriha may gain [Stance].
+With Stance,
+Yuzuriha has Stuck, Haste and Combo 1.
+If Yuzuriha has Stance at the start of her turn,
+she loses Stance at the end of her turn.",,,"Battoujutsu Ni no Kata: Saki
+[ATK] Cost 4 SP
+One Enemy : [Blade 6]
+This Skill has +1 ACC. ","Sougetsu Ittou-ryu et cetera! Yae Ichirin
+[ATK] Cost 2 SP
+One Enemy : [Blade 3]
+Self : [+2 EVA]  ","Over Here! 
+[SUP] Cost 2 SP
+Swap with any Ally.
+This Skill has Combo.","Battoujutsu Ni no Kata: Tachi 
+[SUP] Cost 2 SP
+Self : [Scope 1, Break 2]",,1,4,260,8/4/2022
+Minato,10,8,0,0,6,2,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Minato,,Minato,"Hellraiser
+Minato may pay part or all of an SP Cost with his MAX SP.
+When he does this, gain [+1 Transform].","One More Ride
+If Minato has 3 Transforms at the start of his
+turn he becomes The Oboroguruma.
+His MAX SP remains the same.",,"Bus Stop
+[ATK] Cost 3 + X SP
+One Enemy : [Impact 5 + X]
+X = Choose a number from 0 to 5.","Cabstand 
+[ATK] Cost 4 + X SP
+One Enemy : [Impact 8]
+This Skill has -4 ACC and +2 * X ACC.
+X = Choose a number from 0 to 4. ","Flight 13
+[ATK] Cost 3 + X SP
+One Enemy : [Impact 3]
+Self : [+X SPD,EVA]
+This Skill has Scope. 
+X = Choose a number from 0 to 3.  ","Jump the Shark
+[ATK] Cost 0 SP
+One Enemy : [Impact X]
+Self : [Death 0] 
+X = 8 - MAX SP ",,2,4,261,8/12/2022
+Saber Alter,12,16,1,2,2,0,33,🔗,https://tbs-crossover-arena.fandom.com/wiki/Saber_Alter,,Artoria Pendragon (Alter) ,"Noble Phantasm
+At the end of Saber Alter's turn,
+gain [+1 NP]. ","Twilight Star A
+When Saber Alter rallies,
+recover 2 SP and gain [+1 NP]","Magic Resistance B
+When Saber Alter suffers a Negative Status Effects from an enemy skill or passive,
+she has a 20% to remove it when applied.","Black Excalibur
+[ATK] Cost 6 SP
+One Enemy : [Blade 8]","Charisma E
+[SUP] Cost 2 SP
+All Allies : [+1 ATK,MAG]","Mana Burst A 
+[SUP] Cost 6 SP
+Self : [Crit 4] 
+This Skill has Combo.","Excalibur Morgan - Sword of Promised Victory 
+[ATK] Cost 12 SP and 4 NP
+All Enemies : [Blade 15]
+This Skill has +1 ACC.  
+This Skill is unaffected by Crit.",,3,4,262,8/12/2022
+The Oboroguruma,10,?,0,0,10,5,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Minato,,The Oboroguruma,,,,"A Streetcar Named Disaster
+[ATK] Cost X MAX SP
+All Enemies : [Impact 2 * X]
+This Skill has +1 ACC and Break.
+X = The Oboroguruma's MAX SP
+This Skill cannot be used with 0 MAX SP. ","Hellward Bound
+[ATK] Cost 0 SP
+One Enemy : [Impact 30]
+Self : [Death 0] 
+This Skill has Scope, Break and Precision.
+This Skill can only be used with 0 MAX SP.",,,,0,2,263,8/12/2022
+Ina'nis,12,10,0,3,4,1,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ina%27nis,,Ninomae Ina'nis,"Cult Following
+When another ally Rallies while Ina’nis is in front,
+she gains [+2 MAG] and the ally gains [Scope 1].",,,"Summon Tentacle
+[MAG] Cost 2 SP
+One Enemy: [Dark 4]","Ancient One
+[MAG] Cost 5 SP
+One Enemy: [Dark 6] [Apathy 2]","Harmless Takoyaki 
+[SUP] Cost 3 SP
+One Ally: Recover 4 HP and gain [+2 RES].","Tako Spin
+[MAG] Cost 8 SP
+All Enemies: [Dark 5] [Heavy 2, Silence 2]
+This Skill has -1 ACC.",,1,4,264,8/13/2022
+Okita Alter,7,9,2,1,7,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Okita_Alter,,Okita Sōji (Alter),"Noble Phantasm
+At the end of Okita Alter's turn,
+gain [+1 NP]. ","Counter Guardian
+Okita Alter has +2 ACC and Pursuit 1.","Independent Action A
+When Okita Sōji (Alter) uses Swap on herself,
+gain [Crit 2] and recover 3 SP and 1 HP.","Kyokuchi A
+[ATK] Cost 3 SP
+One Enemy : [Blade 4]
+Self : [+1 NP]","Persistence B+
+[SUP] Cost 4 SP
+Self : [+2 NP] [Crit 2]  ","Boundlessness A+
+[SUP] Cost 2 SP
+Self : [Dodge 1] [Overcharge]","Zekken - Mukyuu Sandan
+[MAG] Cost 5 SP and 4 NP
+All Enemies : [Blade 6] [-2 DEF,RES] 
+This Skill has +1 ACC.
+If you remove Overcharge, this Skill deals +1 damage and inflicts [-3 DEF,RES].",,3,4,265,8/13/2022
+Walpurgis Minion,7,7,0,0,4,1,19,🔗,https://tbs-crossover-arena.fandom.com/wiki/Walpurgis_Minion,,?????,"Form of Darkness
+When swapped to the front,
+gain [X].
+X = Name of a KO'ed Character.","Manic Mimicry
+Walpurgis Minion may use all of the Form's Skills and Passives as it's own.","Fade to Black
+When swapped to the back,
+lose Form.","Magicae Orb
+[MAG] Cost 2 SP
+One Enemy : [Mystic 4]","Trabem Magicae 
+[MAG] Cost 3 SP
+All Enemies : [Mystic 2]
+This Skill has -1 ACC.",,,,3,2,266,8/21/2022
+Walpurgisnacht,50,30,0,0,0,0,80,🔗,https://tbs-crossover-arena.fandom.com/wiki/Walpurgisnacht,,?????,"The Coming of Walpurgisnacht
+Walpurgisnacht cannot start in slots 1-4.
+Walpurgisnacht cannot be swapped into the front until all Allies are KO'ed.
+When this happens, swap Walpurgisnacht into the 4th Slot and end the round.
+Walpurgisnacht cannot swap again after this.","Surgam Identidem
+When Walpurgisnacht swaps,
+Every Enemy that's not KO'ed recovers MAX HP and SP and gains [Cure 0].
+Two Allies revive as Walpurgis Minion with MAX HP and SP and gain [Cure 0].","Immutable March
+Walpurgisnacht has Cure and Curse and cannot recover HP. 
+When Walpurgisnacht rallies,
+She recovers 6 SP.","Manifested Performer
+[SUP] Cost 12 SP
+Any Ally : Revive as Walpurgis Minion with MAX HP and SP and gain [Cure 0].","Walpurgisnacht
+[SUP] Cost 8 SP
+All Allies : [Windsweep 2] [+2 SPD]
+All Enemies : [-2 DEF,RES,EVA]   ","Telekinetic Destruction
+[ATK] Cost 16 SP
+One Enemy : [Impact 15]
+This Skill has Break and +2 ACC.","Sigh of Ruin
+[MAG] Cost 8 SP
+All Enemies : [Fire 7]
+This Skill has -1 ACC.","Nux Walpurgis
+[SUP] Cost 16 SP
+One Enemy : [Death 3, Despair 1, Crisis 3]",3,5,267,8/21/2022
+Sakuya (Alt),6,14,2,1,8,4,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sakuya_(Alt),,Sakuya Izayoi,"Night of Nights
+While this unit is in front,
+all Blade damage is increased by 1.",,,"Time Sign ""Imaginary Vertical Time""
+[ATK] Cost 7 SP
+All Enemies : [Blade 3] [Slow 3]
+This Skill has +4 ACC.   ","Light Speed ""C. Ricochet""
+[ATK] Cost 6 SP
+One Enemy : [Blade 3]
+This Skill has Adept 2. ","Conjuring ""Eternal Meek""
+[MAG] Cost 4 SP
+All Enemies : [Blade 1]
+This Skill has +1 ACC and Adept 1. ","Watch ""Luna Dial""
+[MAG] Cost 5 SP
+One Enemy : [Impact 0] [Stun 1] 
+This Skill has -2 ACC. ","Time Sign ""Sakuya's Special Stopwatch""
+[SUP] Cost 7 SP
+All Enemies : [Slow 2]
+Self : [Pursuit 2]",1,5,268,8/25/2022
+Jason Asano,7,12,1,1,5,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Jason_Asano,,Jason Asano,"Quest System
+When Jason KO's an enemy or if an enemy is KO'ed due to Debuffs while Jason is in front,
+he recovers 2 HP and SP.","Midnight Eyes
+Jason's Skills have +2 ACC. Jason is immune to ACC Stat Drops.","Cloak of Night
+When Jason is swapped,
+gain [Scope 1, Cloak 2].","Night Fang
+[ATK] Cost 2 SP
+One Enemy : [Blade 2] [Poison 1]
+This Skill can Combo into Inexorable Doom.","Feast of Absolution
+[SUP] Cost 4 SP
+One Target : [Cure 0]  
+X = Sum of Status Effect removed
+Recover X HP and SP.  ","Leech Bite
+[SUP] Cost 1 SP
+Self : [Inflict [Bleed 1] 0]
+This Skill can Combo into Night Fang.","Punish
+[SUP] Cost 1 SP
+Self : [Inflict [Sin 1] 0]  
+This Skill can Combo into Night Fang.","Inexorable Doom
+[SUP] Cost 4 SP
+One Enemy : [Doom 6]",3,5,269,8/29/2022
+Toge,10,13,0,0,6,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Toge,,Toge Inumaki,"Cough Syrup
+When Toge rallies,
+recover 2 HP and 2 SP.
+When Toge rests,
+recover 1 HP and 1 SP. ",,,"""Stop""
+[SUP] Cost 4 SP and 1 HP
+One Enemy : [Stun 1]","""Sleep""
+[SUP] Cost 4 SP and 1 HP
+One Enemy : [Sleep 2]","""Run Away""
+[SUP] Cost 3 SP and 1 HP
+All Allies : [Distance 3]  ","""Explode""
+[ATK] Cost 5 SP and 1 HP
+All Enemies : [Impact 4]
+This Skill has Scope and +1 ACC. ","""Blast Away""
+[ATK] Cost 5 SP and 2 HP
+One Enemy : [Impact 10]
+This Skill has Scope and +2 ACC.",1,5,270,8/30/2022
+Sendai Hakurei,13,12,1,1,6,2,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sendai_Hakurei,,Sendai Hakurei no Miko,"Reikokuna Oni Miko
+Sendai Hakurei has Sin 2 and Bold 3.","Fantasy Nature 
+When Sendai Hakurei hits a target, gain [+1 Orb]
+Sendai Hakurei cannot have more than 7 Orbs.",,"Hakurei Amulet 
+[MAG] Cost 4 SP
+One Enemy : [Spirit 5]
+This Skill has Scope.   ","Hakurei Boxing Higi ""Fantasy Seal""
+[ATK] Cost 3 SP
+One Enemy : [Spirit 7]
+This Skill has Direct 2.  ","Hakurei Boxing Higi ""Ascension Rush""
+[ATK] Cost 8 SP
+One Enemy : [Spirit 3]
+This Skill has Adept 4 and Direct.","Hakurei Boxing Higi ""Dimensional Rift"" 
+[ATK] Cost 5 SP
+One Enemy : [Spirit 6]
+This Skill has +2 ACC. ","Hakurei Boxing Higi ""Fantasy Nature""
+[SUP] Cost 7 Orbs
+Self : [Crit 4] [Shield 4]
+This Skill has Combo.",2,5,271,8/31/2022
+Waluigi,9,14,1,3,6,2,35,🔗,https://tbs-crossover-arena.fandom.com/wiki/Waluigi,,Waluigi,"""Everyone else cheat! Next time I cheat, too!""
+Waluigi has Pride, Resist [Dark] 2, and Inflict [Stuck 1].","Swimming Return
+When Waluigi is swapped,
+One Enemy suffers [Shock 1]
+and Waluigi gains [Cancel 1].",,"Bob-omb
+[ATK] Cost 3 SP
+One Enemy : [Impact 8]
+This Skill has -5 ACC.   ","Liar Ball
+[ATK] Cost 2 SP
+One Enemy : [Impact 0] [Reveal 2]
+This Skill has Scope, and +4 ACC.","Wall-Luigi!
+[SUP] Cost 5 SP
+Self : [Taunt 3, Shield 3] [+2 SPD,ACC]","Showtime
+[SUP] Cost 4 SP
+All Enemies : [Doom 2, Slow 2] 
+Self : [Combo 2, Reveal 1]",,2,4,272,9/13/2022
+Meimu,9,10,1,1,5,4,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Meimu,,Meimu,"Dark Dream
+Meimu has Inflict [Apathy 2].
+At the end of Meimu's turn,
+Recover 2 SP for every enemy with Apathy.",,,"Formless Wave
+[MAG] Cost X SP
+X Enemies : [Dark 2]
+This Skill has +1 ACC. 
+X = Choose a number from 1 to 3.","Formless Movement
+[SUP] Cost 3 SP
+Self : [Cure 0]
+Swap with an ally in front.
+This Skill has Combo.  ","Boundary of Shadow and Substance
+[MAG] Cost 5 SP
+One Enemy : [Impact 8]
+This Skill has Scope. 
+This Skill misses if target doesn't share Meimu's slot number.","""Let this World Return to Nothingness!""
+[MAG] Cost 8 SP
+All Enemies : [Dark 10]
+This Skill only hits targets with Apathy.
+This Skill has -1 ACC. ","""End of Fantasy ~ Gensokyo Reloaded""
+[SUP] Cost 10
+Every Enemy : [Death 0] 
+This Skill can only be used if every enemy is Apathetic.",1,5,273,9/16/2022
+Tiki,13,9,1,3,3,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Tiki,,Tiki (Naga's Voice),"The Voice of the Divine Dragon
+At the end of Tiki's turn,
+All Allies gain [Blessed 2].","Odd Rhythm
+At the start of Tiki's turn on odd numbered rounds,
+gain [Dodge 1] and your skills have +2 ACC this turn.",,"Dragonstone+
+[MAG] Cost 5 SP
+One Enemy : [Mystic 7]","Armored Blow
+[ATK] Cost 4 SP
+One Enemy : [Impact 5]
+Self : [+2 DEF]  ","Breath of Fog
+[MAG] Cost 4 SP
+One Enemy : [Mystic 2]
+Self : Recover 2 HP. 
+If the target has a passive that contains the word ""Dragon"",
+this Skill deals +10 damage.","Tiki's Tear
+[SUP] Cost 5 SP
+One Ally : [+3 HP,SP] Recover 3 HP and SP.",,2,4,274,9/21/2022
+Nanami,12,13,2,4,6,2,39,🔗,https://tbs-crossover-arena.fandom.com/wiki/Nanami,,Kento Nanami,"Overtime 
+While it's Round 6 or later,
+Nanami's Skills deal +2 damage.   ",,,"Effective Plan
+[SUP] Cost 4 SP
+All Allies : [+2 SP] Recover 2 SP","Revealing One's Hand
+[SUP] Cost 0 SP
+Self : [Reveal 3] [-3 ACC] [Bold 4]","Ratio Technique
+[ATK] Cost 6 SP
+One Enemy : [Blade 6]
+This Skill has Break, Direct 2 and +3 ACC.","Collapse
+[ATK] Cost 10 SP
+All Enemies : [Impact 8] 
+This Skill can only be used while on Overtime. 
+This Skill has -1 ACC and Break.",,1,4,275,9/24/2022
+Rei'sen,7,14,1,4,5,2,33,,https://tbs-crossover-arena.fandom.com/wiki/Rei%27sen,,Rei'sen,"Lunar Sense
+While Rei'sen is in front,
+Allies' Astral Skills have Scope.","Vanishing
+When Rei'sen is swapped,
+gain [Cloak 2, Distance 1].",,"LN Hazymoon Rifle
+[MAG] Cost 6 SP
+One Enemy : [Astral 10]
+This skill can only be used while Cloaked.  ","Kolt Laser Pistol
+[MAG] Cost 4 SP
+One Enemy : [Astral 6]  ","Lunar Veil
+[SUP] Cost 2 SP
+Self : Swap with any ally. Recover 12 SP and gain [Crisis 2].","Hawk's Talon Kick
+[ATK] Cost 3 SP
+One Enemy : [Impact 5] [Shock 2]
+This Skill has Direct 2.",,2,4,276,9/27/2022
+Nue,7,9,1,2,4,2,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Nue,,Nue Houjuu,"Concealing her true form
+When picking Nue for your team,
+type another character's name and add a space to the end.
+Remove the space from the characters name on your reveal list.
+Nue now has this character's stats and passives. (Nue does not gain their skills.)
+When your opponent realizes this character is Nue or whenever you choose,
+change the name on the reveal list to Nue and gain the character's name as a token.
+Nue retains that character's passives.",,,"Undefined Darkness
+[SUP] Cost 3 SP
+One Ally : [Cloak 3] [Distance 1]","Danmaku Chimera
+[MAG] Cost 3 SP
+One Enemy : [X 5]
+X = damage type of choice ","Nightmare of Heiankyou
+[ATK] Cost 6 SP
+All Enemies : [Dark 4] {50% Terror 3}
+This Skill has -1 ACC","The Bow of Genzanmi Yorimasa
+[ATK] Cost 3 SP
+One Enemy : [Pierce 2] [Bleak 3]
+This Skill has Scope.",,1,4,277,10/15/2022
+Potemkin,18,16,3,1,1,0,39,🔗,https://tbs-crossover-arena.fandom.com/wiki/Potemkin,,Potemkin,"Roman Cancel
+After using a Skill, you may pay 2 SP to Combo.
+You may only Roman Cancel once a turn. ","Armor-clad Faith
+Potemkin has Hope 2 and Alert 1.",,"Potemkin Buster
+[ATK] Cost 4 SP
+One Enemy : [Impact 10]
+This Skill has -4 ACC and Direct.","Hammerfall
+[ATK] Cost 2 SP
+One Enemy : [Impact 2]
+Self : [Scope 1]","Slide Head
+[ATK] Cost 2 SP
+All Enemies : [Impact 0] [Stuck 2]
+This Skill has -3 ACC. ","Heavenly Potemkin Buster
+[ATK] Cost 10 SP
+One Enemy : [Impact 18]
+This Skill has -6 ACC and Direct.",,2,4,278,1/17/2023
+VIVIT,8,11,1,1,5,2,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/VIVIT,,VIVIT,"Velvet Maiden
+When VIVIT rallies,
+gain [+2 EVA] and one other ally recovers 2 SP.","All-purpose Android
+When VIVIT evades a Skill, recover 2 SP. ","Powered by Saboten Energy
+VIVIT's skills are also [Nature] Skills.
+VIVIT deals +1 damage for every other ally
+in front with a [Nature] damage type.","Wide Shot
+[ATK] Cost 5 SP
+All Enemies : [Astral 4]
+This Skill has -1 ACC.","Homing Missile
+[ATK] Cost 4 SP
+One Enemy : [Impact 4]
+This Skill has Scope and +2 ACC. ","Laser
+[ATK] Cost 6 SP
+Two Enemies : [Electric 5]
+This Skill has Break 2.","Laser
+[ATK] Cost 6 SP
+Two Enemies : [Electric 5]
+This Skill has Break 2.",,3,4,279,1/17/2023
+Faust,9,13,2,2,4,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Faust,,Faust,"Roman Cancel
+After using a Skill, you may pay 2 SP to Combo.
+You may only Roman Cancel once a turn. ","Alone Infection
+When Faust rallies, gain [Despair 1].
+When Faust removes Despair, gain [Refresh 0, Tempo 1].",,"What Could This Be?
+[SUP] Cost 3 SP
+Roll a D10.
+1: Bomb [ATK] One Enemy [Fire 8] -4 ACC.
+2: Banana [SUP] One Target [Slow 1, Heavy 1] Recover 6 HP and SP.
+3: Donut [SUP] One Ally [Cure 0] Recover 6 HP.
+4: Afro [SUP] One Enemy [Reveal 2, Vulnerable [Fire] 2] [-2 EVA]
+5: Hammer [ATK] One Enemy [Impact 6]
+6: Mini Faust [SUP] One Enemy [Trap 6]
+7: 100T Weight [SUP] All Targets [Slow 1, Heavy 1]
+8: Your opponent chooses a character in front to make this attack instead of Faust.
+   Trumpet [ATK] All Enemies [Impact 3] -1 ACC.
+9: Meteors [MAG] All Enemies [Fire 3] -1 ACC.
+10: Roll again.","Thrust
+[ATK] Cost 4 SP
+One Enemy : [Blade 4]
+If this skill hits, you may swap
+the target enemy with an enemy in Front. ","Snip Snip Snip
+[ATK] Cost 4 SP
+One Enemy : [Blade 3] [Reveal 2, Vulnerable [Fire] 2] [-2 EVA]","Scarecrow
+[ATK] Cost 6 SP
+One Enemy : [Blade 4] [Terror 3]
+This Skill has Scope.","Bone-crushing Excitement
+[ATK] Cost 8 SP
+One Enemy : [Impact 4] [Stun 2]",2,5,280,1/20/2023
+Sayaka Miki,8,14,1,0,7,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sayaka_Miki,,Sayaka Miki,"Soul Gem: Transformation
+When Sayaka Miki rallies,
+transform into Sayaka Miki (Magical Girl) and recover 6 HP.","By Decretum Dismantled and Delivered
+Sayaka has Blessed 1.
+When Sayaka loses Resolve,
+recover 1 HP.",,"Weapon: Cutlass
+[ATK] Cost 2 SP
+One Enemy : [Blade 1]
+This Skill has Adept 3. ","Connect: My Turn Now!
+[SUP] Cost 5 SP
+One Ally : [+2 ATK,MAG] [Regenerate 2] Recover 3 HP.","Magia: Prestissimo Agitato
+[ATK] Cost 7 SP
+One Enemy : [Blade 6]
+Self : [Resolve 2, Crit 2]","Doppel: Oktavia von Seckendorff
+[ATK] Cost 10 SP
+One Enemy : [Blade 8]
+Self : [Counter 4, Crit 2]",,2,4,281,2/3/2023
+Sayaka Miki (Magical Girl),14,14,1,0,9,4,42,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sayaka_Miki,,Sayaka Miki,"By Decretum Dismantled and Delivered
+Sayaka has Blessed 1.
+When Sayaka loses Resolve,
+recover 1 HP.",,,"Weapon: Cutlass
+[ATK] Cost 2 SP
+One Enemy : [Blade 1]
+This Skill has Adept 3. ","Connect: My Turn Now!
+[SUP] Cost 5 SP
+One Ally : [+2 ATK,MAG] [Regenerate 2] Recover 3 HP.","Magia: Prestissimo Agitato
+[ATK] Cost 7 SP
+One Enemy : [Blade 6]
+Self : [Resolve 2, Crit 2]","Doppel: Oktavia von Seckendorff
+[ATK] Cost 10 SP
+One Enemy : [Blade 8]
+Self : [Counter 4, Crit 2]",,1,4,282,2/3/2023
+Alucard,11,14,1,1,7,2,36,🔗,https://tbs-crossover-arena.fandom.com/wiki/Alucard,,Adrian Fahrenheit Ţepeş,"Shapeshifting
+After Alucard's turn, he may spend 2 SP to
+immediately swap places with any ally.",,,"Alucard Sword
+[ATK] Cost 3 SP
+One Enemy : [Blade 4]
+Self : [Cloak 2] ","Alucard Shield
+[SUP] Cost 5 SP
+Self : [Shield 3, Thorns 4]   ","Hellfire
+[MAG] Cost 6 SP
+Three Enemies : [Fire 6]
+This Skill has -1 ACC. ","Bible
+[SUP] Cost 2 SP
+Self : [Crit 3]",,1,4,283,2/4/2023
