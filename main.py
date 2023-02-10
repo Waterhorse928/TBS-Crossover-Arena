@@ -38,21 +38,11 @@ def listPick (player):
     return player
         
 print ("-Team Pick-\n 1. Draft\n 2. List")
+print (f'{"---Team Pick---": ^{100}}\n{"1. Draft": ^{50}}{"2. List": ^{50}}')
 teamPickMode = ask(1,2)   
 
 if teamPickMode == 1:
-    wikiListA = [*range(1,len(wikiList))]
-    for y in range(1,9):
-        print("Player A: Choose a character")
-        for x in wikiListA:
-            print(f"{x}. {wikiList[x].name}")
-        n = askList(wikiListA)
-        wikiListA.remove(n)
-        playerA[y] = wikiList[n]
-        print (f"Selected {playerA[y].name}")
-    for x in playerA:
-        if x != "":
-            print(f"{x.name}")
+    pass
 
 elif teamPickMode == 2:
     playerA = listPick(playerA)
