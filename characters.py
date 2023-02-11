@@ -2,6 +2,7 @@
 class Char:
     def __init__(self):
         self.name = "I AM ERROR."
+        self.slot = 0
         self.hp = 10
         self.sp = 10
         self.dfn = 0
@@ -62,7 +63,7 @@ class Template(Char):
         self.res = 0
         self.spd = 0
         self.eva = 0
-        self.fullname = "I AM ERROR"
+        self.fullname = "I AM ERROR, YES IT'S TRUE. I AM ERROR, HOW ABOUT YOU?"
         self.p1 = ""
         self.p2 = ""
         self.p3 = ""
