@@ -65,9 +65,9 @@ def draftPick ():
         
 def slotOrder (player):
     playerListTaken = [*range(1,9)]
-    result = [player[0]]
+    result = [player[0],"","","","","","","",""]
     for y in range(1,9):
-        print(f'Choose a character for Slot {y}')
+        print(f'{player[0]}: Choose a character for Slot {y}.')
         for x in playerListTaken:
             print(f"{x}. {player[x].name}")
         n = askList(playerListTaken)
@@ -81,20 +81,49 @@ def checkTeams():
     for x in range(1,9):
         print(f'{str(x) + ". " + playerA[x].name: <{20}}{str(x) + ". " + playerB[x].name: <{20}}')
 
+def box(text):
+    boxSize = 150
+    print(f'{"":-^{boxSize+2}}')
+    rows = len(text)
+    for x in range(0,rows):
+        columns = len(text[x])
+        margin = boxSize//columns
+        print ("|",end="")
+        for y in text[x]:
+            print(f'{y: ^{margin}}',end="")
+        print ("|")
+    print(f'{"":-^{boxSize+2}}')
 
-# Team Pick        
-print ("-Team Pick-\n 1. Draft\n 2. List")
-print (f'{"---Team Pick---": ^{40}}\n{"1. Draft": ^{20}}{"2. List": ^{20}}')
-teamPickMode = ask(1,2)   
-if teamPickMode == 1:
-    draftPick()     
-elif teamPickMode == 2:
-    playerA = listPick(playerA)
-    playerB = listPick(playerB)
-checkTeams()
+def display8(l):
+    boxSize = 100
+    print(f'{"":-^{boxSize}}')
+    
 
-# Slot Order
-playerA = slotOrder(playerA)
-playerB = slotOrder(playerB)
-checkTeams()
 
+
+        
+
+        
+        
+
+    
+
+
+def start():
+    # Team Pick        
+    print (f'{"---Team Pick---": ^{40}}\n{"1. Draft": ^{20}}{"2. List": ^{20}}')
+    box([["---Team Pick---"],["1. Draft","2. List"]])
+    teamPickMode = ask(1,2)   
+    if teamPickMode == 1:
+        draftPick()     
+    elif teamPickMode == 2:
+        playerA = listPick(playerA)
+        playerB = listPick(playerB)
+    checkTeams()
+    
+    # Slot Order
+    playerA = slotOrder(playerA)
+    playerB = slotOrder(playerB)
+    checkTeams()
+    
+start()
