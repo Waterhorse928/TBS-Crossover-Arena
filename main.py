@@ -94,10 +94,11 @@ def box(text):
         print ("|")
     print(f'{"":-^{boxSize+2}}')
 
-def display8(l):
-    boxSize = 100
-    print(f'{"":-^{boxSize}}')
-    
+def refreshSlot():
+    for x in playerA:
+        x.slot = playerA.index(x) + 1
+    for x in playerB:
+        x.slot = playerB.index(x) + 1
 
 
 
@@ -111,7 +112,6 @@ def display8(l):
 
 def start():
     # Team Pick        
-    print (f'{"---Team Pick---": ^{40}}\n{"1. Draft": ^{20}}{"2. List": ^{20}}')
     box([["---Team Pick---"],["1. Draft","2. List"]])
     teamPickMode = ask(1,2)   
     if teamPickMode == 1:
