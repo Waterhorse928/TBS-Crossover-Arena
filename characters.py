@@ -38,8 +38,9 @@ class Char:
         self.spdT = 0
         self.evaT = 0
         self.accT = 0
-        self.action = False
+        self.turn = False
         self.KO = False
+        self.slot = 0
 
 def base(self):
     self.maxHp = self.hp
