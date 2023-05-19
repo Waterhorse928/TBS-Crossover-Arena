@@ -956,9 +956,9 @@ When Hibru is in front and
 enemies have no SP left,
 Terror removes HP instead.","Money Laundering
 While an enemy has Terror,
-Hibaru recovers 4 SP
+Hibaru recovers 2 SP
 at the end of their turn.",,"Welfare Chain Organization
-[SUP] Cost 4 SP
+[SUP] Cost 16 SP
 All Other Allies : [Terror 2] 
 All Enemies : [Terror 4]","Debt Collection Eulogy
 [SUP] Cost 8 SP
@@ -1606,8 +1606,7 @@ Ditto may transform into the enemy with the same slot number.
 If you do recover max HP and SP. ",,"Transform
 [SUP] Cost 1 SP
 Transform Ditto into a character in Front.
-Recover max HP and SP.
-This Skill can only be used by Ditto. ",,,,,2,1,130,11/6/2021
+Recover max HP and SP.",,,,,2,1,130,11/6/2021
 Ran,12,12,2,2,6,0,34,🔗,https://tbs-crossover-arena.fandom.com/wiki/Ran,,Ran Yakumo,"Cooling Down
 If Ran rallies with max HP, recover max SP.",,,"Fox-Tanuki Youkai Laser
 [MAG] Cost 6 SP
@@ -3785,10 +3784,9 @@ One Enemy : [Impact 4]
 This Skill has Scope and +2 ACC. ","Laser
 [ATK] Cost 6 SP
 Two Enemies : [Electric 5]
-This Skill has Break 2.","Laser
-[ATK] Cost 6 SP
-Two Enemies : [Electric 5]
-This Skill has Break 2.",,3,4,279,1/17/2023
+This Skill has Break 2.","Broken Strawberry Shortcake
+[SUP] Cost 6 SP
+One Ally : [Refresh 2]",,3,4,279,1/17/2023
 Faust,9,13,2,2,4,2,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Faust,,Faust,"Roman Cancel
 After using a Skill, you may pay 2 SP to Combo.
 You may only Roman Cancel once a turn. ","Alone Infection
@@ -3863,3 +3861,106 @@ Three Enemies : [Fire 6]
 This Skill has -1 ACC. ","Bible
 [SUP] Cost 2 SP
 Self : [Crit 3]",,1,4,283,2/4/2023
+Sekibanki (暁Records),6,11,1,0,2,4,24,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sekibanki_(%E6%9A%81Records),,Sekibanki,"Rock 'n' Rock 'n' Beat
+While Sekibanki is in front,
+all characters gain [2 Heads] when they rally.","Worldwide Flying Head
+At the end of Sekibanki's turn,
+arrange [Heads] on all Characters as you wish.",,"Bang! Bang!
+[ATK] Cost 2 SP
+One Enemy : [Impact X * 2]
+X = Number of Heads on target. ","Ruler of the Night
+[SUP] Cost 3 SP
+Self : [Cloak 3] [2 Heads]  ","Kawaii~♡
+[SUP] Cost 5 SP
+All Allies : Recover X SP.
+All Enemies : [Shock X]
+X = Number of Heads on target. ","Kakkoii♥
+[SUP] Cost 5 SP
+All Allies : [Shade X]
+All Enemies : [Terror X]
+X = Number of Heads on target.","Maka-fukashigi
+[MAG] Cost 4 SP
+All Enemies : [Dark X * 3]
+This Skill has -1 ACC.
+X = Shock and Terror on target",2,5,284,3/25/2023
+Sylas,9,11,1,2,6,2,31,🔗,https://tbs-crossover-arena.fandom.com/wiki/Sylas,,Sylas,"The Unshackled
+Sylas gains [+1 Unshackled] whenever
+he uses a Skill other than Petricite Burst.
+When Sylas rallies or rests, remove Unshackled.",,,"Petricite Burst
+[ATK] Cost X Unshackled
+Two Enemiese: [Impact 1]
+This Skill has Adept X and Break 2. 
+X = Amount of Unshackled.
+This skill cannot be used if X = 0. ","Chain Lash
+[MAG] Cost 3 SP
+One Enemy : [Impact 4] [-2 EVA] ","Kingslayer
+[MAG] Cost 4 SP
+One Enemy : [Impact 4]
+Self : [+2 EVA]
+On hit, recover 2 HP. ","Abscond and Abduct
+[MAG] Cost 4 SP
+One Enemy : [Impact 2] [Weaken 2, Disable 2]
+Self : Swap Sylas with a character in front.","Hijack
+[MAG] Cost 0 SP
+One Enemy : [Impact 0]
+On hit, gain [Y] if Sylas doesn't have [Y Used].
+Y = Target's Name
+If Sylas has [Name], instead of using the above skill,
+use one of that character's skills at no cost.
+In this case, [Name] becomes [Name Used].",1,5,285,4/13/2023
+Medias,13,8,4,1,2,2,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Medias,,Medias Moritake,"Getting rid of friction
+While Medias is in front,
+Cold skills inflict [Boost [Dodge 1] 2]. ","Southern Meteor Shower
+When Medias rallies,
+gain [Taunt 3].","Re-Thrill
+Medais has Counter 3 and Rash 2. ","Cold Claw ""Flightless Bird Standing on its Claws""
+[ATK] Cost 2 SP
+All Enemies : [Cold 0]
+This Skill has +1 ACC.  ","Frozen Path ""Penguin Highway""
+[SUP] Cost 4 SP
+All Allies : [+2 ACC, +1 EVA] [Resist [Cold] 2]","Royal River ""Emperor's Sword""
+[ATK] Cost 6 SP
+One Enemy : [Blade 10] [+2 EVA] [Distance 2]
+This Skill has +2 ACC.",,,3,3,286,4/26/2023
+Cypher,10,10,2,2,4,1,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cypher,,Amir El Amari,"Operation VALORANT
+At the end of Cypher's turn, he may gain or remove [Focus].
+While Focused, gain Stuck, Heavy and Ghost deals +4 damage.","""Got you.""
+If Cypher has Spycam, after using a support skill other than Spycam,
+One Enemy gains [Reveal 3].",,"Ghost
+[ATK] Cost 3 SP
+One Enemy : [Pierce 4]
+This Skill has Windsweep.","Trapwire
+[SUP] Cost 3 SP
+One Ally : [Ward [Crisis 2] 3]","Cyber Cage
+[SUP] Cost 2 SP
+One Target : [Blind 2, Cloak 2]   ","Spycam
+[SUP] Cost 2 SP
+Self : [Spycam]
+This skill can Combo into Trapwire or Cyber Cage.","Neural Theft
+[SUP] Cost 5 SP
+Every Enemy : [Reveal 2]
+This Skill can only be used if at least 1 enemy is KO'ed.",2,5,287,4/27/2023
+Advent Cirno,9,9,3,0,6,2,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Advent_Cirno,,Advent Cirno,"Girl of Justice
+Cirno has Pride.
+When Cirno rallies,
+she gains [Refresh 3, Miracle 3].","Lucky Strike
+When Cirno rallies or rests gain [+1 Swords].
+Cirno cannot use skills unless she has at least 1 Sword.
+Cirno cannot have more 6 Swords.","Cat Tongue
+Cirno has Vulnerable [Fire] 4.
+All of Cirno's Skills are also [Cold] Skills and inflict [-1 SPD,-1 EVA].","Watermelon Sword
+[ATK] Cost 3 SP
+One Enemy : [Blade 6]
+Self : Gain [+1 Limit]
+This Skill has Direct 2 and -2 ACC. ","Winning Sword
+[ATK] Cost 3 SP
+One Enemy : [Blade 3] {50% *2 damage}
+Self : Gain [+1 Limit]
+This Skill has Direct 2.","Limit Break: Braver
+[ATK] Cost 1 Limit
+One Enemy : [Blade 6] {50% *2 damage}
+This Skill has Direct and -2 ACC.
+This Skill can only be used if Cirno has at least 2 Swords.","Limit Break: Version ➈ Omnislash
+[ATK] Cost 3 Limit and 6 Swords
+One Enemy : [Blade 3] {50% *2 damage} [Stuck 1]
+This Skill has Direct and Adept 5.",,3,4,288,5/10/2023

@@ -2,6 +2,15 @@ import characters
 import random
 import math
 from characters import wikiList
+import csv
+
+with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
+    reader = csv.reader(infile)
+    count= 0
+    wiki = {}
+    for row in reader:
+        wiki[count] = row
+        count += 1
 
 teamPickMode = 0
 playerA = ["Player A","","","","","","","",""]
@@ -81,10 +90,10 @@ def checkTeams():
     for x in range(1,9):
         print(f'{str(x) + ". " + playerA[x].name: <{20}}{str(x) + ". " + playerB[x].name: <{20}}')
 
-def box(text,p = "center"):
+def box(text,align = "center"):
     boxSize = 120
     print(f'{"":-^{boxSize+2}}')
-    if p == "center":
+    if align == "center":
         rows = len(text)
         for x in range(0,rows):
             columns = len(text[x])
@@ -94,7 +103,7 @@ def box(text,p = "center"):
                 print(f'{y: ^{margin}}',end="")
             print ("|")
         print(f'{"":-^{boxSize+2}}')
-    if p == "right":
+    if align == "left":
         rows = len(text)
         for x in range(0,rows):
             columns = len(text[x])
@@ -179,11 +188,37 @@ def checkSelect(char):
         player = playerA
     if char in playerB:
         player = playerB
-    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"right")
+    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
     result = ask(1,8)
+    result = player[result]
+    check(result)
+
+def check(char):
+    print(f"{char.name} - {char.fullname}")
+    print()
+    print(f"HP {char.hp}/{char.maxHp} DEF {char.dfn} SPD {char.spd}")
+    print(f"SP {char.sp}/{char.maxSp} RES {char.res} EVA {char.eva}")
+    for x in range(1,char.passives+1):
+        print()
+        attr_name = "p" + str(x)
+        attr_value = getattr(char, attr_name)
+        print(attr_value)
+    for x in range(1,char.skills+1):
+        print()
+        attr_name = "s" + str(x)
+        attr_value = getattr(char, attr_name)
+        print(attr_value)
+    input(f"")
 
 def scout(char):
-    pass
+    if char in playerA:
+        player = playerB
+    if char in playerB:
+        player = playerA
+    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
+    result = ask(1,8)
+    result = player[result]
+    check(result)
 
 def order():
     pass
@@ -268,8 +303,5 @@ def start():
         #Cleanup
             #Check Win Condtion
             #Rest
-        
-
-    
     
 start()
