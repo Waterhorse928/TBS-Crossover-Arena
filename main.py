@@ -1,7 +1,6 @@
 import characters
 import random
 import math
-from characters import wikiList
 import csv
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
@@ -16,6 +15,7 @@ teamPickMode = 0
 playerA = ["Player A","","","","","","","",""]
 playerB = ["Player B","","","","","","","",""]
 thueMorse = [0,1,1,0,1,0,0,1,1,0,0,1,0,1,1,0]
+wikiList = list(range(1,13))
 
 def ask (lowRange,highRange):
     while True:
@@ -36,42 +36,47 @@ def askList (numberList):
             return result
 
 def listPick (player):
-    wikiListTaken = [*range(1,len(wikiList))]
+    wikiListTaken = wikiList.copy()
     for y in range(1,9):
         print(f"{player[0]}: Choose a character")
         for x in wikiListTaken:
-            print(f"{x}. {wikiList[x].name}")
+            print(f"{x}. {wiki[x][0]}")
         n = askList(wikiListTaken)
         wikiListTaken.remove(n)
-        player[y] = wikiList[n]
+        player[y] = wikiToClass(n)
         print (f"Selected {player[y].name}")
     return player
 
 def draftPick ():
-    wikiListTakenA = [*range(1,len(wikiList))]
-    wikiListTakenB = [*range(1,len(wikiList))]
+    wikiListTakenA = wikiList.copy()
+    wikiListTakenB = wikiList.copy()
     a = 1
     b = 1
     for y in thueMorse:
         if y == 0:
             print(f"{playerA[0]}: Choose a character")
             for x in wikiListTakenA:
-                print(f"{x}. {wikiList[x].name}")
+                print(f"{x}. {wiki[x][0]}")
             n = askList(wikiListTakenA)
             wikiListTakenA.remove(n)
-            playerA[a] = wikiList[n]
+            playerA[a] = wikiToClass(n)
             print (f"Selected {playerA[a].name}")
             a += 1
         elif y == 1:
             print(f"{playerB[0]}: Choose a character")
             for x in wikiListTakenB:
-                print(f"{x}. {wikiList[x].name}")
+                print(f"{x}. {wiki[x][0]}")
             n = askList(wikiListTakenB)
             wikiListTakenB.remove(n)
-            playerB[b] = wikiList[n]
+            playerB[b] = wikiToClass(n)
             print (f"Selected {playerB[b].name}")
             b += 1
-        
+
+def wikiToClass(id):
+    char = getattr(characters,"Template")
+    char = char(wiki[id][0],int(wiki[id][1]),int(wiki[id][2]),int(wiki[id][3]),int(wiki[id][4]),int(wiki[id][5]),int(wiki[id][6]),wiki[id][11],wiki[id][12],wiki[id][13],wiki[id][14],wiki[id][15],wiki[id][16],wiki[id][17],wiki[id][18],wiki[id][19],int(wiki[id][20]),int(wiki[id][21]),int(wiki[id][22]))
+    return char
+
 def slotOrder (player):
     playerListTaken = [*range(1,9)]
     result = [player[0],"","","","","","","",""]
@@ -263,23 +268,23 @@ def start():
         checkTeams()
     elif teamPickMode == 3:
         playerA = ["Player A",
-                   characters.Reimu(),
-                   characters.Marisa(),
-                   characters.Chen(),
-                   characters.Cirno(),
-                   characters.Emilie(),
-                   characters.Momiji(),
-                   characters.Gaius(),
-                   characters.Parsee()]
+                   wikiToClass(1),
+                   wikiToClass(2),
+                   wikiToClass(3),
+                   wikiToClass(4),
+                   wikiToClass(5),
+                   wikiToClass(6),
+                   wikiToClass(7),
+                   wikiToClass(8)]
         playerB = ["Player B",
-                   characters.Parsee(),
-                   characters.Gaius(),
-                   characters.Momiji(),
-                   characters.Emilie(),
-                   characters.Cirno(),
-                   characters.Chen(),
-                   characters.Marisa(),
-                   characters.Reimu()]
+                   wikiToClass(1),
+                   wikiToClass(2),
+                   wikiToClass(3),
+                   wikiToClass(4),
+                   wikiToClass(5),
+                   wikiToClass(6),
+                   wikiToClass(7),
+                   wikiToClass(8)]
 
     # Slot Order
     if teamPickMode != 3:
