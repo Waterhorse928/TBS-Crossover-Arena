@@ -3,6 +3,7 @@ import skills
 import random
 import math
 import csv
+import re
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
     reader = csv.reader(infile)
@@ -75,8 +76,25 @@ def draftPick ():
 
 def wikiToClass(id):
     char = getattr(characters,"Template")
-    char = char(wiki[id][0],int(wiki[id][1]),int(wiki[id][2]),int(wiki[id][3]),int(wiki[id][4]),int(wiki[id][5]),int(wiki[id][6]),wiki[id][11],wiki[id][12],wiki[id][13],wiki[id][14],wiki[id][15],wiki[id][16],wiki[id][17],wiki[id][18],wiki[id][19],int(wiki[id][20]),int(wiki[id][21]),int(wiki[id][22]))
+    char = char(wiki[id][0],int(wiki[id][1]),int(wiki[id][2]),int(wiki[id][3]),int(wiki[id][4]),int(wiki[id][5]),int(wiki[id][6]),wiki[id][11],wiki[id][12],wiki[id][13],wiki[id][14],idToSkill(id,4),wiki[id][16],wiki[id][17],wiki[id][18],wiki[id][19],int(wiki[id][20]),int(wiki[id][21]),int(wiki[id][22]))
     return char
+
+def idToSkill(idChar,idSkill):
+    ref = wiki[idChar][idSkill + 11]
+    refList = ref.splitlines()
+    skillType = "???"
+    match = re.search(r"\[(.*?)\]", ref)
+    if match:
+        skillType = match.group(1)
+    costType = "SP"
+    cost = 0
+    target = "One Enemy"
+    damageType = "Impact"
+    damage = 2
+    inflict = []
+    skill = getattr(skills,"Temp")
+    skill = skill(refList[0],ref,(idChar*10)+idSkill,skillType,costType,cost,target,damageType,damage,inflict)
+    return skill
 
 def slotOrder (player):
     playerListTaken = [*range(1,9)]
