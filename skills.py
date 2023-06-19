@@ -15,13 +15,12 @@ def base(self):
     pass
 
 class Temp(Skill):
-    def __init__(self,name,display,id,skillType,costType,cost,target,damageType,damage,inflict):
+    def __init__(self,name,display,id,skillType,cost,target,damageType,damage,inflict):
         super().__init__()
         self.name = name
         self.display = display
         self.id = id
         self.skillType = skillType
-        self.costType = costType
         self.cost = cost
         self.target = target
         self.damageType = damageType
