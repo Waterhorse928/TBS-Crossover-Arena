@@ -211,7 +211,50 @@ def hasTurn(l):
     return newList
 
 def skillSelect(char):
-    pass
+    while True:
+        print(f"---{char.name}'s Skills---")
+        for x in range(1,char.skills+1):
+            print()
+            print(f"{x}. ",end="")
+            print(getattr(char,"s" + str(x)).display)
+        print()
+        print("0. Back")
+        print()
+        skill = ask(0,char.skills)
+        if skill == 0:
+            return False
+        if checkCost(char,skill):
+            useSkill(char,skill)
+            return True
+        else:
+            print("Cannot use skill.")
+
+def useSkill(char,skill):
+    skill = getattr(char,"s" + str(skill))
+    if checkIfSP(skill.cost):
+        char.sp -= pullSP(skill.cost)
+        print(f"Used {skill.name} in your imagination.")
+
+def checkCost(char,skill):
+    skill = getattr(char,"s" + str(skill))
+    if checkIfSP(skill.cost):
+        if char.sp >= pullSP(skill.cost):
+            return True
+    return False
+
+def checkIfSP(variable):
+    pattern = r"^\d+ SP$"
+    match = re.match(pattern, variable)
+    return match is not None
+
+def pullSP(variable):
+    pattern = r"(\d+) SP"
+    match = re.search(pattern, variable)
+    if match:
+        number = int(match.group(1))
+        return number
+    else:
+        return None
 
 def rally(char):
     char.sp = min(char.sp+4,char.maxSp)
@@ -270,7 +313,8 @@ def startTurn(char):
         refreshSlot()
         x = ask(1,6)
         if x == 1:
-            skillSelect(char)
+            if skillSelect(char):
+                break
         if x == 2:
             rally(char)
             break
