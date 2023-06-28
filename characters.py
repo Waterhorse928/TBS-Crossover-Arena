@@ -22,6 +22,7 @@ class Char:
         self.skills = 0
         self.id = "000"
         self.acc = 0
+        self.intercept = 1
         self.maxHp = self.hp
         self.maxSp = self.sp
         self.atkC = 0

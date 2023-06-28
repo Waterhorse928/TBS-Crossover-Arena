@@ -210,6 +210,17 @@ def hasTurn(l):
             newList.append(x)
     return newList
 
+def onTeam(l,char,on=True):
+    if (char in playerA and on) or (not char in playerA and not on):
+        team = playerA
+    if (char in playerB and on) or (not char in playerB and not on):
+        team = playerB
+    newList = []
+    for x in l:
+        if x in team:
+            newList.append(x)
+    return newList
+
 def skillSelect(char):
     while True:
         print(f"---{char.name}'s Skills---")
@@ -231,9 +242,61 @@ def skillSelect(char):
 
 def useSkill(char,skill):
     skill = getattr(char,"s" + str(skill))
+    payCost(char,skill)
+    target = selectTarget(char,skill)
+    if skill.skillType == "ATK" or skill.skillType == "MAG":
+        target = targeting(char,skill,target)
+        hit  = accuracy(char,skill,target)
+
+def targeting(char,skill,target):
+    if skill.target == "One Enemy":
+        l = beforeSlot(onTeam(alive(inFront()),target,True),target)
+        interceptList = []
+        for x in l:
+            for y in range(0,x.intercept):
+                interceptList.append(x.name)
+        for x in range(0,6):
+            interceptList.append(target.name)
+        roll = []
+        for x in range(0,6):
+            roll.append(interceptList[x])
+        print("rolling targeting")
+        y = 0
+        for x in roll:
+            y += 1
+            print(f"{y}. {x}")
+        n = random.randint(1,6)
+        for x in l:
+            if roll[n-1] == x.name:
+                target = x
+        print(f"Rolled a {n}. Targeting {target.name}")
+        return target
+
+def beforeSlot(l,target):
+    newList = []
+    for x in l:
+        if x.slot <= target.slot:
+            newList.append(x)
+    return newList
+
+def accuracy(char,skill,target):
+    pass
+
+def payCost(char,skill):
     if checkIfSP(skill.cost):
         char.sp -= pullSP(skill.cost)
-        print(f"Used {skill.name} in your imagination.")
+        print(f"{char.name} spends {skill.cost}.")
+
+def selectTarget(char,skill):
+    if skill.target == "One Enemy":
+        y = 0
+        l = onTeam(alive(inFront()),char,False)
+        for x in l:
+            y += 1
+            print(f"{y}. {x.name}")
+        target = ask(1,y)
+        target = l[target-1]
+        return target
 
 def checkCost(char,skill):
     skill = getattr(char,"s" + str(skill))
