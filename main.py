@@ -247,6 +247,28 @@ def useSkill(char,skill):
     if skill.skillType == "ATK" or skill.skillType == "MAG":
         target = targeting(char,skill,target)
         hit  = accuracy(char,skill,target)
+        if hit:
+            dealDamage(char,skill,target)
+
+def dealDamage(char,skill,target):
+    damage = int(skill.damage)
+    
+    if skill.skillType == "ATK":
+        damage += char.atk
+        damage -= target.dfn
+        damage = max(0,damage)
+
+    if skill.skillType == "MAG":
+        damage += char.mag
+        damage -= target.res
+        damage = max(0,damage)
+
+    print (f'{char.name} deals {damage} damage to {target.name}.')
+    target.hp -= damage
+    if target.hp <= 0:
+        print(f"{target.name} is KO'ed.")
+        target.hp = 0
+        target.KO = True
 
 def targeting(char,skill,target):
     if skill.target == "One Enemy":
@@ -280,7 +302,18 @@ def beforeSlot(l,target):
     return newList
 
 def accuracy(char,skill,target):
-    pass
+    miss = 0
+    miss += target.eva
+    miss -= char.acc
+    miss -= skill.acc
+    n = random.randint(1,10)
+    print(f"Rolling Accuracy. Number to beat is {miss}.")
+    if n > miss:
+        print(f"Rolled {n}. Hit")
+        return True
+    else:
+        print(f"Rolled {n}. Miss")
+        return False
 
 def payCost(char,skill):
     if checkIfSP(skill.cost):

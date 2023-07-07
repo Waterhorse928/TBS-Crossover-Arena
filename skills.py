@@ -10,6 +10,7 @@ class Skill:
         self.damageType = "Impact"
         self.damage = "2"
         self.inflict = []
+        self.acc = 0
 
 def base(self):
     pass
