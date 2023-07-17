@@ -1,7 +1,7 @@
-Character,#,Text,Char ID,Skill ID,Name,Skill Type,Cost,Target,Damage Type,
+Character,#,Text,Char ID,Skill ID,Name,Skill Type,Cost,Target,Damage Type,Damage
 Reimu,1,"Yin-Yang Orb 
 [ATK] Cost 2 SP
-Single Enemy: [Spirit 3]",001,14,"Yin-Yang Orb ",ATK,2 SP,Single Enemy,Spirit,3
+One Enemy: [Spirit 3]",001,14,Yin-Yang Orb ,ATK,2 SP,One Enemy,Spirit,3
 Reimu,2,"Fantasy Seal 
 [MAG] Cost 3 SP
 All Enemies: [Spirit 3]
@@ -14,7 +14,7 @@ Reimu,4,"Great Hakurei Barrier
 All Allies : [+3 DEF] or [+3 RES]",001,17,Great Hakurei Barrier ,SUP,5 SP,All Allies,,
 Marisa,1,"Magic Missile 
 [MAG] Cost 2 SP
-Single Enemy: [Mystic 4]",002,24,"Magic Missile ",MAG,2 SP,Single Enemy,Mystic,4
+One Enemy: [Mystic 4]",002,24,"Magic Missile ",MAG,2 SP,One Enemy,Mystic,4
 Marisa,2,"Asteroid Belt 
 [MAG] Cost 4 SP
 All Enemies: [Mystic 3]

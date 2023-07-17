@@ -2,7 +2,7 @@ Name,HP,SP,DEF,RES,SPD,EVA,Stat Total,Link,URL,Image,Full Name,Passive 1,Passive
 Reimu,5,9,1,1,5,1,22,🔗,https://tbs-crossover-arena.fandom.com/wiki/Reimu,,Reimu Hakurei,"Grand Incantation
 When Reimu rallies, she gains [Crit 3]. ",,,"Yin-Yang Orb 
 [ATK] Cost 2 SP
-Single Enemy: [Spirit 3]","Fantasy Seal 
+One Enemy: [Spirit 3]","Fantasy Seal 
 [MAG] Cost 3 SP
 All Enemies: [Spirit 3]
 This Skill has -1 ACC. ","Exorcising Border 
@@ -14,7 +14,7 @@ Marisa,3,18,0,1,7,3,32,🔗,https://tbs-crossover-arena.fandom.com/wiki/Marisa,,
 While this unit is in front,
 all Mystic damage is increased by 1.",,,"Magic Missile 
 [MAG] Cost 2 SP
-Single Enemy: [Mystic 4]","Asteroid Belt 
+One Enemy: [Mystic 4]","Asteroid Belt 
 [MAG] Cost 4 SP
 All Enemies: [Mystic 3]
 This Skill has -1 ACC. ","Concentration
@@ -329,7 +329,7 @@ Self : Gain [X Transform].
 One Enemy : [Curse 0]
 X = Number of Status Effects Removed with Curse.",,,2,3,027,1/8/2021
 Taisei,8,10,X,X,5,2,25,🔗,https://tbs-crossover-arena.fandom.com/wiki/Taisei,,Taisei,"Demonheart
-After Taisei's turn, he gains [1 Transform].
+After Taisei's turn, he gains [+1 Transform].
 X = # of Taisei's Transforms. 
 Taisei cannot have more than 3 Transforms.","Deathless
 When Taisei is KOed, if he had 3 Transforms,
@@ -341,7 +341,7 @@ This Skill has Break.","Dust to Dust
 One Enemy: [Dark 3]
 If Skill hits, recover 3 HP.","Anathema Surge
 [SUP] Cost 3 HP
-Gain a Transform.",,,2,3,028,1/8/2021
+Self : [+1 Transform]",,,2,3,028,1/8/2021
 Nazgul,7,10,3,0,5,3,28,🔗,https://tbs-crossover-arena.fandom.com/wiki/Nazg%C3%BBl,,Nazgul,"The Black Breath
 At the end of the Nazgûl's turn,
 all Enemies gain [Terror 1].",,,"Morgul-knife
@@ -2721,7 +2721,7 @@ When an Ally rallies while Maribel is in front,
 recover 4 SP.",,,"Liberated Abilities
 [MAG] Cost 6 SP
 All Enemies : [Void 2]
-This Skill has Precision.","Chaotic Quadruple Barrier	
+This Skill has Precision.","Chaotic Quadruple Barrier        
 [MAG] Cost 4 SP
 One Enemy : [Dark 2] {80% Terror 2, Shock 2} {40% Death 2}","Overflowing Unnatural Power
 [SUP] Cost 8 SP and 3 HP
@@ -2788,12 +2788,12 @@ Scout is immune to Trap and Heavy.",,,"M1000 Classic
 One Enemy : [Pierce 8]
 This Skill has Scope. ","Zhukov NUK17
 [ATK] Cost 3 SP
-One Enemy [Pierce 6]
-This Skill has -2 ACC.  ","Grappling Hook and Dash
+One Enemy : [Pierce 6]
+This Skill has -2 ACC.   ","Grappling Hook and Dash
 [SUP] Cost 3 SP
-Swap with any Ally.
-If that Ally was in front, you may swap again. 
-You may use this Skill after using a different Skill.  ","Cryo Grenade
+Any Ally : Swap with target.
+If that Ally was in front, you may swap with Any Ally again. 
+You may use this Skill after using a different Skill. ","Cryo Grenade
 [SUP] Cost 5 SP
 Two Enemies : [Freeze 2]",,1,4,217,1/17/2022
 Uweiss,5,14,0,1,6,3,29,🔗,https://tbs-crossover-arena.fandom.com/wiki/Uweiss,,Uweiss Sneeze,"Ability: Circles
@@ -2815,7 +2815,7 @@ recover 2 SP and gain [X Disguise].
 X = A damage type of choice.","Quick Transformation 
 At the start of Mamizou's turn,
 you may select one of her Disguises.
-All of Mamizou's Skills are now this type.",,"Frolicking Animals Scrolls
+All of Mamizou's Skills are now this type this turn.",,"Frolicking Animals Scrolls
 [MAG] Cost 2 SP
 One Enemy : [Cold 1] {50% Shock 2} 
 This Skill has +2 ACC.  ","Futatsuiwa Clan's Curse
@@ -3110,8 +3110,7 @@ This Skill has Direct 2.","Rude Buster
 One Enemy : [Blade 5] [Terror 3]
 This Skill has Direct 2.","S-Action
 [SUP] Cost X
-Choose one Ally in front.
-Use their Self Support Skill as your own.
+Self : Choose a Self Support Skill of an Ally in Front and use it as your own.
 X = Cost of the selected Skill.","UltimateHeal
 [SUP] Cost 12 SP
 Any Ally : Lose 12 HP and Recover 15 HP.
@@ -3434,8 +3433,7 @@ All Enemies : {30% Sleep 3} ","IceShock
 [MAG] Cost 3 SP
 One Enemy : [Cold 5]  ","N-Action
 [SUP] Cost X
-Choose one Ally in front.
-Use their One Ally Support Skill as your own.
+One Ally : Choose a One Ally Support Skill of an Ally in Front and use it as your own.
 X = Cost of the selected Skill.","SnowGrave
 [MAG] Cost 10 SP
 All Enemies : [Cold 8]

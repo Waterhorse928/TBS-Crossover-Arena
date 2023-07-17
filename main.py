@@ -29,6 +29,50 @@ playerB = ["Player B","","","","","","","",""]
 thueMorse = [0,1,1,0,1,0,0,1,1,0,0,1,0,1,1,0]
 wikiList = list(range(1,13))
 
+# Display
+def box(text,align = "center"):
+    boxSize = 120
+    print(f'{"":-^{boxSize+2}}')
+    if align == "center":
+        rows = len(text)
+        for x in range(0,rows):
+            columns = len(text[x])
+            margin = boxSize//columns
+            print ("|",end="")
+            for y in text[x]:
+                print(f'{y: ^{margin}}',end="")
+            print ("|")
+        print(f'{"":-^{boxSize+2}}')
+    if align == "left":
+        rows = len(text)
+        for x in range(0,rows):
+            columns = len(text[x])
+            margin = boxSize//columns
+            print ("|",end="")
+            for y in text[x]:
+                print(f'{y: <{margin}}',end="")
+            print ("|")
+        print(f'{"":-^{boxSize+2}}')
+
+def percentage(part, whole, size):
+    return size * float(part) / float(whole)
+
+def healthbar(HP,maxHP,size):
+    if maxHP <= size:
+        bar = ('|'*HP)
+        result = (f'[{bar: <{maxHP}}]')
+    elif maxHP > size:
+        percent = math.ceil(percentage(HP,maxHP,size))
+        bar = ('|'*percent)
+        result = (f'[{bar: <{size}}]')
+    return result
+
+def checkTeams():
+    print(f'{"Player A": <{20}}{"Player B": <{20}}')
+    for x in range(1,9):
+        print(f'{str(x) + ". " + playerA[x].name: <{20}}{str(x) + ". " + playerB[x].name: <{20}}')
+
+# Input
 def ask (lowRange,highRange):
     while True:
         try:
@@ -84,6 +128,20 @@ def draftPick ():
             print (f"Selected {playerB[b].name}")
             b += 1
 
+def slotOrder (player):
+    playerListTaken = [*range(1,9)]
+    result = [player[0],"","","","","","","",""]
+    for y in range(1,9):
+        print(f'{player[0]}: Choose a character for Slot {y}.')
+        for x in playerListTaken:
+            print(f"{x}. {player[x].name}")
+        n = askList(playerListTaken)
+        playerListTaken.remove(n)
+        result[y] = player[n]
+        print (f"Selected {result[y].name} for Slot {y}")
+    return result
+
+# Setup
 def wikiToClass(id):
     char = getattr(characters,"Template")
     char = char(wiki[id][0],int(wiki[id][1]),int(wiki[id][2]),int(wiki[id][3]),int(wiki[id][4]),int(wiki[id][5]),int(wiki[id][6]),wiki[id][11],wiki[id][12],wiki[id][13],wiki[id][14],idToSkill(id,4),idToSkill(id,5),idToSkill(id,6),idToSkill(id,7),idToSkill(id,8),int(wiki[id][20]),int(wiki[id][21]),int(wiki[id][22]))
@@ -108,70 +166,12 @@ def idToSkill(idChar,idSkill):
     skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict)
     return skill
 
-def slotOrder (player):
-    playerListTaken = [*range(1,9)]
-    result = [player[0],"","","","","","","",""]
-    for y in range(1,9):
-        print(f'{player[0]}: Choose a character for Slot {y}.')
-        for x in playerListTaken:
-            print(f"{x}. {player[x].name}")
-        n = askList(playerListTaken)
-        playerListTaken.remove(n)
-        result[y] = player[n]
-        print (f"Selected {result[y].name} for Slot {y}")
-    return result
-    
-def checkTeams():
-    print(f'{"Player A": <{20}}{"Player B": <{20}}')
-    for x in range(1,9):
-        print(f'{str(x) + ". " + playerA[x].name: <{20}}{str(x) + ". " + playerB[x].name: <{20}}')
-
-def box(text,align = "center"):
-    boxSize = 120
-    print(f'{"":-^{boxSize+2}}')
-    if align == "center":
-        rows = len(text)
-        for x in range(0,rows):
-            columns = len(text[x])
-            margin = boxSize//columns
-            print ("|",end="")
-            for y in text[x]:
-                print(f'{y: ^{margin}}',end="")
-            print ("|")
-        print(f'{"":-^{boxSize+2}}')
-    if align == "left":
-        rows = len(text)
-        for x in range(0,rows):
-            columns = len(text[x])
-            margin = boxSize//columns
-            print ("|",end="")
-            for y in text[x]:
-                print(f'{y: <{margin}}',end="")
-            print ("|")
-        print(f'{"":-^{boxSize+2}}')
-
-def percentage(part, whole, size):
-    return size * float(part) / float(whole)
-
-def healthbar(HP,maxHP,size):
-    if maxHP <= size:
-        bar = ('|'*HP)
-        result = (f'[{bar: <{maxHP}}]')
-    elif maxHP > size:
-        percent = math.ceil(percentage(HP,maxHP,size))
-        bar = ('|'*percent)
-        result = (f'[{bar: <{size}}]')
-    return result
-
+# Team List   
 def strList(list):
     result = ""
     for x in list:
         result += str(x)
     return result
-
-def display(l):
-
-    pass
 
 def refreshSlot():
     for x in playerA[1:]:
@@ -181,6 +181,10 @@ def refreshSlot():
 
 def inFront():
     l = [playerA[1],playerA[2],playerA[3],playerA[4],playerB[1],playerB[2],playerB[3],playerB[4]]
+    return l
+
+def allCharacters():
+    l = [playerA[1],playerA[2],playerA[3],playerA[4],playerA[5],playerA[6],playerA[7],playerA[8],playerB[1],playerB[2],playerB[3],playerB[4],playerB[5],playerB[6],playerB[7],playerB[8]]
     return l
 
 def alive(l):
@@ -221,6 +225,22 @@ def onTeam(l,char,on=True):
             newList.append(x)
     return newList
 
+def beforeSlot(l,target):
+    newList = []
+    for x in l:
+        if x.slot <= target.slot:
+            newList.append(x)
+    return newList
+
+# Shortcuts
+def getTeam(char):
+    if char in playerA:
+        return playerA
+    if char in playerB:
+        return playerB
+
+# Actions
+# - Skill
 def skillSelect(char):
     while True:
         print(f"---{char.name}'s Skills---")
@@ -248,7 +268,11 @@ def useSkill(char,skill):
         target = targeting(char,skill,target)
         hit  = accuracy(char,skill,target)
         if hit:
-            dealDamage(char,skill,target)
+            if dealDamage(char,skill,target):
+                KOswap(target)
+
+def KOswap(target):
+    pass
 
 def dealDamage(char,skill,target):
     damage = int(skill.damage)
@@ -269,6 +293,8 @@ def dealDamage(char,skill,target):
         print(f"{target.name} is KO'ed.")
         target.hp = 0
         target.KO = True
+        return True
+    return False
 
 def targeting(char,skill,target):
     if skill.target == "One Enemy":
@@ -293,13 +319,6 @@ def targeting(char,skill,target):
                 target = x
         print(f"Rolled a {n}. Targeting {target.name}")
         return target
-
-def beforeSlot(l,target):
-    newList = []
-    for x in l:
-        if x.slot <= target.slot:
-            newList.append(x)
-    return newList
 
 def accuracy(char,skill,target):
     miss = 0
@@ -352,23 +371,81 @@ def pullSP(variable):
     else:
         return None
 
+# - Rally
 def rally(char):
     char.sp = min(char.sp+4,char.maxSp)
 
+# - Swap
 def swapSelect(char):
-    pass
+    party = onTeam(alive(allCharacters()),char,True)
+    if len(party) >= 2: 
+        print("Swap whom?")
+        y = 0
+        for x in party:
+            y += 1
+            print(f"{y}. {x.name}")
+        print(f"0. Back")
+        n = ask(0,y)
+        if n == 0:
+            return False
+        target1 = party.pop(n-1)
+        print(f"Swap {target1.name} with whom?")
+        y = 0
+        for x in party:
+            y += 1
+            print(f"{y}. {x.name}")
+        print(f"0. Back")
+        n = ask(0,y)
+        if n == 0:
+            return False
+        target2 = party.pop(n-1)
+        swap(target1,target2)
+        return True
+        
+    else:
+        print("Too few allies to swap.")
+        return False
 
-def checkSelect(char):
+def swap(target1,target2):
+    refreshSlot()
+    trigger1 = False
+    trigger2 = False
+    if target1.turn == True and target1.slot >= 5:
+        trigger1 = True
+    if target2.turn == True and target2.slot >= 5:
+        trigger2 = True
+
+    print(f"Swapped {target1.name} and {target2.name}.")
+    party = getTeam(target1)
+    a, b = party.index(target1), party.index(target2)
+    party[b], party[a] = party[a], party[b]
+
+    refreshSlot()
+    if (target1.turn == True and target1.slot >= 5) or trigger1:
+        target1.turn = False
+        print(f"{target1.name} lost their turn.")
+    if (target2.turn == True and target2.slot >= 5) or trigger2:
+        target2.turn = False
+        print(f"{target2.name} lost their turn.")
+
+# - Check
+def check(char):
     if char in playerA:
         player = playerA
     if char in playerB:
         player = playerB
-    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
-    result = ask(1,8)
-    result = player[result]
-    check(result)
+    displaySelect(player)
 
-def check(char):
+def displaySelect(player):
+    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
+    print("0. Back")
+    result = ask(0,8)
+    if result == 0:
+        return
+    result = player[result]
+    display(result)
+
+def display(char):
     print(f"{char.name} - {char.fullname}")
     print()
     print(f"HP {char.hp}/{char.maxHp} DEF {char.dfn} SPD {char.spd}")
@@ -385,19 +462,19 @@ def check(char):
         print(attr_value.display)
     input(f"")
 
+# - Scout
 def scout(char):
     if char in playerA:
         player = playerB
     if char in playerB:
         player = playerA
-    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
-    result = ask(1,8)
-    result = player[result]
-    check(result)
-
+    displaySelect(player)
+    
+# - Order
 def order():
     pass
 
+# Turn
 def startTurn(char):
     #Bare Bones displays only
     #Start of turn effects
@@ -415,15 +492,17 @@ def startTurn(char):
             rally(char)
             break
         if x == 3:
-            swapSelect(char)
+            if swapSelect(char):
+                break
         if x == 4:
-            checkSelect(char)
+            check(char)
         if x == 5:
             scout(char)
         if x == 6:
             order()
     char.turn = False
 
+# Gameflow
 def start():
     global playerA
     global playerB
