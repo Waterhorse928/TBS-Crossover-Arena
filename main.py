@@ -28,8 +28,13 @@ playerA = ["Player A","","","","","","","",""]
 playerB = ["Player B","","","","","","","",""]
 thueMorse = [0,1,1,0,1,0,0,1,1,0,0,1,0,1,1,0]
 wikiList = list(range(1,13))
+oneEnemy = ["One Enemy","Two Enemies","Three Enemies"]
+allEnemies = ["All Enemies"]
+oneAlly = ["One Ally"]
+oneAllyDead = ["One Ko'ed Ally"]
+self = ["Self", None]
 
-# Display
+#//ANCHOR Display
 def box(text,align = "center"):
     boxSize = 120
     print(f'{"":-^{boxSize+2}}')
@@ -72,7 +77,7 @@ def checkTeams():
     for x in range(1,9):
         print(f'{str(x) + ". " + playerA[x].name: <{20}}{str(x) + ". " + playerB[x].name: <{20}}')
 
-# Input
+#//ANCHOR Input
 def ask (lowRange,highRange):
     while True:
         try:
@@ -141,7 +146,7 @@ def slotOrder (player):
         print (f"Selected {result[y].name} for Slot {y}")
     return result
 
-# Setup
+#//ANCHOR Setup
 def wikiToClass(id):
     char = getattr(characters,"Template")
     char = char(wiki[id][0],int(wiki[id][1]),int(wiki[id][2]),int(wiki[id][3]),int(wiki[id][4]),int(wiki[id][5]),int(wiki[id][6]),wiki[id][11],wiki[id][12],wiki[id][13],wiki[id][14],idToSkill(id,4),idToSkill(id,5),idToSkill(id,6),idToSkill(id,7),idToSkill(id,8),int(wiki[id][20]),int(wiki[id][21]),int(wiki[id][22]))
@@ -161,26 +166,61 @@ def idToSkill(idChar,idSkill):
     target = skillWiki[id][8]
     damageType = skillWiki[id][9]
     damage = skillWiki[id][10]
-    inflict = []
+    if skillWiki[id][11]:
+        inflict = eval(skillWiki[id][11])
+    else:
+        inflict = []
+    accuracy = int(skillWiki[id][12]) if skillWiki[id][12] else 0
     skill = getattr(skills,"Temp")
-    skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict)
+    skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy)
     return skill
 
-# Team List   
-def strList(list):
-    result = ""
-    for x in list:
-        result += str(x)
-    return result
-
+#//ANCHOR Refresh
 def refreshSlot():
     for x in playerA[1:]:
         x.slot = playerA.index(x)
     for x in playerB[1:]:
         x.slot = playerB.index(x)
 
+def refreshStats():
+    l = playerA[1:] + playerB[1:]
+    for x in l:
+        x.maxHp = x.maxHpB + x.maxHpC
+        x.maxSp = x.maxSpB + x.maxSpC
+        x.atk = x.atkB + x.atkC
+        x.mag = x.magB + x.magC
+        x.dfn = x.dfnB + x.dfnC
+        x.res = x.resB + x.resC
+        x.spd = x.spdB + x.spdC
+        x.eva = x.evaB + x.evaC
+        x.acc = x.accB + x.accC
+
+def refreshStatus():
+    l = playerA[1:] + playerB[1:]
+    stats = ["maxHpC","maxSpC","atkC","magC","dfnC","resC","spdC","evaC","accC"]
+    for x in l:
+        x.status = []
+        for stat in stats:
+            value = getattr(x, stat)
+            if value != 0:
+                if value > 0:
+                    x.status.append(f"+{value} {stat[:-1].upper()}")
+                else:
+                    x.status.append(f"{value} {stat[:-1].upper()}")
+
+#//ANCHOR Team List   
+def strList(list):
+    result = ""
+    for x in list:
+        result += str(x)
+    return result
+
 def inFront():
     l = [playerA[1],playerA[2],playerA[3],playerA[4],playerB[1],playerB[2],playerB[3],playerB[4]]
+    return l
+
+def inBack():
+    l = [playerA[5],playerA[6],playerA[7],playerA[8],playerB[5],playerB[6],playerB[7],playerB[8]]
     return l
 
 def allCharacters():
@@ -232,15 +272,21 @@ def beforeSlot(l,target):
             newList.append(x)
     return newList
 
-# Shortcuts
+#//ANCHOR Shortcuts
 def getTeam(char):
     if char in playerA:
-        return playerA
+        return playerA 
     if char in playerB:
         return playerB
 
-# Actions
-# - Skill
+def getTeamList(char):
+    if char in playerA:
+        return playerA [1:]
+    if char in playerB:
+        return playerB [1:]
+
+#//ANCHOR Actions
+#//ANCHOR -Skill
 def skillSelect(char):
     while True:
         print(f"---{char.name}'s Skills---")
@@ -266,38 +312,70 @@ def useSkill(char,skill):
     target = selectTarget(char,skill)
     if skill.skillType == "ATK" or skill.skillType == "MAG":
         target = targeting(char,skill,target)
-        hit  = accuracy(char,skill,target)
-        if hit:
-            if dealDamage(char,skill,target):
-                KOswap(target)
+        if not isinstance(target, list):
+            target = [target]
+        hitList = []
+        for x in target:
+            hitList.append(accuracy(char,skill,x))
+        n = 0
+        for x in target:
+            if hitList[n]:
+                if dealDamage(char,skill,x):
+                    KOswap(x)
+            n += 1
+    if skill.skillType == "SUP":
+        applyStatus(char,skill,target)
 
-def KOswap(target):
-    pass
-
-def dealDamage(char,skill,target):
-    damage = int(skill.damage)
-    
-    if skill.skillType == "ATK":
-        damage += char.atk
-        damage -= target.dfn
-        damage = max(0,damage)
-
-    if skill.skillType == "MAG":
-        damage += char.mag
-        damage -= target.res
-        damage = max(0,damage)
-
-    print (f'{char.name} deals {damage} damage to {target.name}.')
-    target.hp -= damage
-    if target.hp <= 0:
-        print(f"{target.name} is KO'ed.")
-        target.hp = 0
-        target.KO = True
-        return True
+#//ANCHOR --Cost
+def checkCost(char,skill):
+    skill = getattr(char,"s" + str(skill))
+    if checkIfSP(skill.cost):
+        if char.sp >= pullSP(skill.cost):
+            return True
     return False
 
+def payCost(char,skill):
+    if checkIfSP(skill.cost):
+        char.sp -= pullSP(skill.cost)
+        print(f"{char.name} spends {skill.cost}.")
+
+def checkIfSP(variable):
+    pattern = r"^\d+ SP$"
+    match = re.match(pattern, variable)
+    return match is not None
+
+def pullSP(variable):
+    pattern = r"(\d+) SP"
+    match = re.search(pattern, variable)
+    if match:
+        number = int(match.group(1))
+        return number
+    else:
+        return None
+
+#//ANCHOR --Targeting
+def selectTarget(char,skill):
+    if skill.target in oneEnemy or skill.target in oneAlly:
+        y = 0
+        if skill.target in oneEnemy:
+            l = onTeam(alive(inFront()),char,False)
+        if skill.target in oneAlly:
+            l = onTeam(alive(inFront()),char)
+        for x in l:
+            y += 1
+            print(f"{y}. {x.name}")
+        target = ask(1,y)
+        target = l[target-1]
+        return target
+    if skill.target in allEnemies:
+        target = alive(onTeam(inFront(),char,False))
+        return target
+    if skill.target in self:
+        target = char
+        return target
+
 def targeting(char,skill,target):
-    if skill.target == "One Enemy":
+    if skill.target in oneEnemy:
         l = beforeSlot(onTeam(alive(inFront()),target,True),target)
         interceptList = []
         for x in l:
@@ -319,92 +397,132 @@ def targeting(char,skill,target):
                 target = x
         print(f"Rolled a {n}. Targeting {target.name}")
         return target
+    if skill.target in allEnemies:
+        return target
 
+#//ANCHOR --Accuracy
 def accuracy(char,skill,target):
     miss = 0
     miss += target.eva
     miss -= char.acc
-    miss -= skill.acc
+    miss -= skill.accuracy
     n = random.randint(1,10)
     print(f"Rolling Accuracy. Number to beat is {miss}.")
     if n > miss:
-        print(f"Rolled {n}. Hit")
+        print(f"Rolled {n}. Hit {target.name}")
         return True
     else:
-        print(f"Rolled {n}. Miss")
+        print(f"Rolled {n}. Misssed {target.name}")
         return False
 
-def payCost(char,skill):
-    if checkIfSP(skill.cost):
-        char.sp -= pullSP(skill.cost)
-        print(f"{char.name} spends {skill.cost}.")
+#//ANCHOR --Damage
+def dealDamage(char,skill,target):
+    refreshStats()
+    damage = int(skill.damage)
+    
+    if skill.skillType == "ATK":
+        damage += char.atk
+        damage -= target.dfn
+        damage = max(0,damage)
 
-def selectTarget(char,skill):
-    if skill.target == "One Enemy":
-        y = 0
-        l = onTeam(alive(inFront()),char,False)
-        for x in l:
-            y += 1
-            print(f"{y}. {x.name}")
-        target = ask(1,y)
-        target = l[target-1]
-        return target
+    if skill.skillType == "MAG":
+        damage += char.mag
+        damage -= target.res
+        damage = max(0,damage)
 
-def checkCost(char,skill):
-    skill = getattr(char,"s" + str(skill))
-    if checkIfSP(skill.cost):
-        if char.sp >= pullSP(skill.cost):
-            return True
+    print (f'{char.name} deals {damage} damage to {target.name}.')
+    target.hp -= damage
+    if target.hp <= 0:
+        print(f"{target.name} is KO'ed.")
+        target.hp = 0
+        target.KO = True
+        return True
     return False
 
-def checkIfSP(variable):
-    pattern = r"^\d+ SP$"
-    match = re.match(pattern, variable)
-    return match is not None
+def KOswap(target):
+    party = alive(getTeamList(target))
+    if len(party) >= 4:
+        target.turn = False
+        party = alive(onTeam(inBack(),target))
+        swapSelect(party,target,False)
 
-def pullSP(variable):
-    pattern = r"(\d+) SP"
-    match = re.search(pattern, variable)
-    if match:
-        number = int(match.group(1))
-        return number
-    else:
-        return None
+#//ANCHOR --Effects
+def applyStatus(char, skill, target):
+    e = skill.inflict
+    stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
+    for stat in stats:
+        if stat.upper() in e:
+            statC = stat + "C"
+            statT = stat + "T"
+            valueC = getattr(target, statC)
+            valueT = getattr(target, statT)
+            change_made = False
 
-# - Rally
+            if e[stat.upper()] >= valueC >= 0 or e[stat.upper()] <= valueC <= 0 :
+                setattr(target, statC, e[stat.upper()])
+                change_made = True
+
+            elif e[stat.upper()] > 0 > valueC or e[stat.upper()] < 0 < valueC:
+                new_value = valueC + e[stat.upper()]
+                setattr(target, statC, new_value)
+                change_made = True
+
+            if change_made:
+                setattr(target, statT, True)
+                change_value = abs(e[stat.upper()])
+                change_sign = "-" if e[stat.upper()] < 0 else "+"
+                change_string = f"{change_sign}{change_value} {stat.upper()}"
+                print(f"{char.name} received {change_string}.")
+  
+#//ANCHOR -Rally
 def rally(char):
     char.sp = min(char.sp+4,char.maxSp)
 
-# - Swap
-def swapSelect(char):
+#//ANCHOR -Swap
+def swapTurn(char):
     party = onTeam(alive(allCharacters()),char,True)
     if len(party) >= 2: 
+        if swapSelect(party,None,True):
+            return True
+        else:
+            return False
+    else:
+        print("Too few allies to swap.")
+        return False
+
+def swapSelect(party,target1,turnAction):
+    if target1 == None:
         print("Swap whom?")
         y = 0
         for x in party:
             y += 1
             print(f"{y}. {x.name}")
-        print(f"0. Back")
-        n = ask(0,y)
-        if n == 0:
-            return False
+        if turnAction:
+            print(f"0. Back")
+            n = ask(0,y)
+            if n == 0:
+                return False
+        else:
+            n = ask(1,y)
         target1 = party.pop(n-1)
-        print(f"Swap {target1.name} with whom?")
-        y = 0
-        for x in party:
-            y += 1
-            print(f"{y}. {x.name}")
+
+    print(f"Swap {target1.name} with whom?")
+    y = 0
+    for x in party:
+        y += 1
+        print(f"{y}. {x.name}")
+    if turnAction:
         print(f"0. Back")
         n = ask(0,y)
         if n == 0:
             return False
-        target2 = party.pop(n-1)
-        swap(target1,target2)
-        return True
-        
     else:
-        print("Too few allies to swap.")
-        return False
+        n = ask(1,y)
+    target2 = party.pop(n-1)
+
+    swap(target1,target2)
+    if turnAction:
+        return True
 
 def swap(target1,target2):
     refreshSlot()
@@ -428,7 +546,7 @@ def swap(target1,target2):
         target2.turn = False
         print(f"{target2.name} lost their turn.")
 
-# - Check
+#//ANCHOR -Check
 def check(char):
     if char in playerA:
         player = playerA
@@ -446,10 +564,13 @@ def displaySelect(player):
     display(result)
 
 def display(char):
+    refreshStats()
+    refreshStatus()
     print(f"{char.name} - {char.fullname}")
     print()
     print(f"HP {char.hp}/{char.maxHp} DEF {char.dfn} SPD {char.spd}")
     print(f"SP {char.sp}/{char.maxSp} RES {char.res} EVA {char.eva}")
+    print(f"{char.status}")
     for x in range(1,char.passives+1):
         print()
         attr_name = "p" + str(x)
@@ -462,20 +583,21 @@ def display(char):
         print(attr_value.display)
     input(f"")
 
-# - Scout
+#//ANCHOR -Scout
 def scout(char):
     if char in playerA:
         player = playerB
     if char in playerB:
         player = playerA
     displaySelect(player)
-    
-# - Order
+ 
+#//ANCHOR -Order
 def order():
     pass
 
-# Turn
+#//ANCHOR Turn
 def startTurn(char):
+    char.turn = False
     #Bare Bones displays only
     #Start of turn effects
     #Actions
@@ -492,7 +614,7 @@ def startTurn(char):
             rally(char)
             break
         if x == 3:
-            if swapSelect(char):
+            if swapTurn(char):
                 break
         if x == 4:
             check(char)
@@ -500,9 +622,30 @@ def startTurn(char):
             scout(char)
         if x == 6:
             order()
-    char.turn = False
+    resolveStatus(char)
+    endOfTurn()
 
-# Gameflow
+def resolveStatus(char):
+    stats = ["maxHp","maxSp","atk","mag","dfn","res","spd","eva","acc"]
+    for stat in stats:
+        statC = stat + "C"
+        statT = stat + "T"
+        valueC = getattr(char, statC)
+        valueT = getattr(char, statT)
+
+        if valueC > 0 and not valueT:
+            setattr(char, statC, valueC - 1)
+        elif valueC < 0 and not valueT:
+            setattr(char, statC, valueC + 1)
+
+def endOfTurn():
+    l = playerA[1:] + playerB[1:]
+    stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
+    for x in l:
+        for stat in stats:
+            setattr(x, stat + "T", False)
+
+#//ANCHOR Gameflow
 def start():
     global playerA
     global playerB
@@ -558,5 +701,5 @@ def start():
         #Cleanup
             #Check Win Condtion
             #Rest
-    
+
 start()

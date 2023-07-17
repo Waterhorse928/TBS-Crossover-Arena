@@ -20,6 +20,7 @@ class Char:
         self.s5 = ""
         self.passives = 0
         self.skills = 0
+        self.status = []
         self.id = "000"
         self.acc = 0
         self.atk = 0
@@ -27,6 +28,8 @@ class Char:
         self.intercept = 1
         self.maxHp = self.hp
         self.maxSp = self.sp
+        self.maxHpC = 0
+        self.maxSpC = 0
         self.atkC = 0
         self.magC = 0
         self.dfnC = 0
@@ -34,20 +37,22 @@ class Char:
         self.spdC = 0
         self.evaC = 0
         self.accC = 0
-        self.atkT = 0
-        self.magT = 0
-        self.dfnT = 0
-        self.resT = 0
-        self.spdT = 0
-        self.evaT = 0
-        self.accT = 0
+        self.maxHpT = False
+        self.maxSpT = False
+        self.atkT = False
+        self.magT = False
+        self.dfnT = False
+        self.resT = False
+        self.spdT = False
+        self.evaT = False
+        self.accT = False
         self.turn = False
         self.KO = False
         self.slot = 0
 
 def base(self):
-    self.maxHp = self.hp
-    self.maxSp = self.sp
+    self.maxHpB = self.hp
+    self.maxSpB = self.sp
     self.atkB = 0
     self.magB = 0
     self.dfnB = self.dfn
