@@ -49,6 +49,8 @@ class Char:
         self.turn = False
         self.KO = False
         self.slot = 0
+        #status effects
+        self.crit = 0
 
 def base(self):
     self.maxHpB = self.hp
@@ -83,4 +85,6 @@ class Template(Char):
         self.passives = a20
         self.skills = a21
         self.id = a22
+        self.maxHp = self.hp
+        self.maxSp = self.sp
         base(self)

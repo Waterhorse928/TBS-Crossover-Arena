@@ -9,7 +9,7 @@ class Skill:
         self.target = "One Enemy"
         self.damageType = "Impact"
         self.damage = "2"
-        self.inflict = []
+        self.inflict = {}
         self.accuracy = "0"
 
 def base(self):

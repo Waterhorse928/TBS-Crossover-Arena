@@ -6,6 +6,7 @@ import csv
 import re
 
 #Next up is probably skill reslolution. Use attublutes for every skill text, lists of IDs for more uncommon effects.
+#Need to apply max hp and sp
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
     reader = csv.reader(infile)
@@ -32,6 +33,7 @@ oneEnemy = ["One Enemy","Two Enemies","Three Enemies"]
 allEnemies = ["All Enemies"]
 oneAlly = ["One Ally"]
 oneAllyDead = ["One Ko'ed Ally"]
+allAllies = ["All Allies"]
 self = ["Self", None]
 
 #//ANCHOR Display
@@ -207,6 +209,16 @@ def refreshStatus():
                     x.status.append(f"+{value} {stat[:-1].upper()}")
                 else:
                     x.status.append(f"{value} {stat[:-1].upper()}")
+        if x.crit > 0:
+            x.status.append(f"Crit {x.crit}")
+
+def refreshMax():
+    l = playerA[1:] + playerB[1:]
+    for char in l:
+        if char.hp > char.maxHp:
+            char.hp = char.maxHp
+        if char.sp > char.maxSp:
+            char.sp = char.maxSp
 
 #//ANCHOR Team List   
 def strList(list):
@@ -308,9 +320,14 @@ def skillSelect(char):
 
 def useSkill(char,skill):
     skill = getattr(char,"s" + str(skill))
+    beforeCost(char,skill)
     payCost(char,skill)
     target = selectTarget(char,skill)
     if skill.skillType == "ATK" or skill.skillType == "MAG":
+        crit = char.crit
+        char.crit = 0
+        if crit > 0:
+            print(f"Crit {crit} activates!")
         target = targeting(char,skill,target)
         if not isinstance(target, list):
             target = [target]
@@ -318,17 +335,26 @@ def useSkill(char,skill):
         for x in target:
             hitList.append(accuracy(char,skill,x))
         n = 0
+        crit += typeBoost(char,skill)
         for x in target:
             if hitList[n]:
-                if dealDamage(char,skill,x):
+                if dealDamage(char,skill,x,crit):
                     KOswap(x)
             n += 1
     if skill.skillType == "SUP":
+        if not isinstance(target, list):
+            target = [target]
+        supportInput(char,skill,target)
         applyStatus(char,skill,target)
 
 #//ANCHOR --Cost
 def checkCost(char,skill):
     skill = getattr(char,"s" + str(skill))
+    if skill.cost == "X SP":
+        if costXSP(char,skill):
+            return True
+        else:
+            return False
     if checkIfSP(skill.cost):
         if char.sp >= pullSP(skill.cost):
             return True
@@ -369,6 +395,9 @@ def selectTarget(char,skill):
         return target
     if skill.target in allEnemies:
         target = alive(onTeam(inFront(),char,False))
+        return target
+    if skill.target in allAllies:
+        target = alive(onTeam(inFront(),char))
         return target
     if skill.target in self:
         target = char
@@ -416,9 +445,10 @@ def accuracy(char,skill,target):
         return False
 
 #//ANCHOR --Damage
-def dealDamage(char,skill,target):
+def dealDamage(char,skill,target,crit):
     refreshStats()
     damage = int(skill.damage)
+    damage += crit
     
     if skill.skillType == "ATK":
         damage += char.atk
@@ -448,6 +478,11 @@ def KOswap(target):
 
 #//ANCHOR --Effects
 def applyStatus(char, skill, target):
+    for x in target:
+        statChanges(char, skill, x)
+        recover(char, skill, x)
+
+def statChanges(char, skill, target):
     e = skill.inflict
     stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
     for stat in stats:
@@ -455,7 +490,6 @@ def applyStatus(char, skill, target):
             statC = stat + "C"
             statT = stat + "T"
             valueC = getattr(target, statC)
-            valueT = getattr(target, statT)
             change_made = False
 
             if e[stat.upper()] >= valueC >= 0 or e[stat.upper()] <= valueC <= 0 :
@@ -473,10 +507,27 @@ def applyStatus(char, skill, target):
                 change_sign = "-" if e[stat.upper()] < 0 else "+"
                 change_string = f"{change_sign}{change_value} {stat.upper()}"
                 print(f"{char.name} received {change_string}.")
-  
+
+def recover(char, skill, target):
+    refreshStats()
+    e = skill.inflict
+    effects = ["RecoverHP","RecoverSP"]
+    for effect in effects:
+        if effect in e:
+            n = e[effect]
+            value = getattr(target,effect[-2:].lower())
+            before = value
+            setattr(target, effect[-2:].lower(), value+n)
+            refreshMax()
+            value = getattr(target,effect[-2:].lower())
+            print(f"{target.name} recovered {value-before} {effect[-2:]}.")
+
 #//ANCHOR -Rally
 def rally(char):
+    before = char.sp
     char.sp = min(char.sp+4,char.maxSp)
+    print(f"{char.name} recovered {char.sp-before} SP.")
+    rallyEffects(char)
 
 #//ANCHOR -Swap
 def swapTurn(char):
@@ -555,6 +606,7 @@ def check(char):
     displaySelect(player)
 
 def displaySelect(player):
+    refreshStats()
     box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
     print("0. Back")
     result = ask(0,8)
@@ -568,8 +620,8 @@ def display(char):
     refreshStatus()
     print(f"{char.name} - {char.fullname}")
     print()
-    print(f"HP {char.hp}/{char.maxHp} DEF {char.dfn} SPD {char.spd}")
-    print(f"SP {char.sp}/{char.maxSp} RES {char.res} EVA {char.eva}")
+    print(f"HP {char.hp}/{char.maxHpB} DEF {char.dfnB} SPD {char.spdB}")
+    print(f"SP {char.sp}/{char.maxSpB} RES {char.resB} EVA {char.evaB}")
     print(f"{char.status}")
     for x in range(1,char.passives+1):
         print()
@@ -644,6 +696,10 @@ def endOfTurn():
     for x in l:
         for stat in stats:
             setattr(x, stat + "T", False)
+    refreshSlot()
+    refreshStats()
+    refreshStatus()
+    refreshMax()
 
 #//ANCHOR Gameflow
 def start():
@@ -701,5 +757,40 @@ def start():
         #Cleanup
             #Check Win Condtion
             #Rest
+
+#//ANCHOR INDIVIDUAL MECHNICS (the begining of the end)
+def supportInput(char,skill,target):
+    if skill.id == 17:
+        print ("1.DEF or 2.RES?")
+        n = ask(1,2)
+        if n == 1:
+            skill.inflict = {"DFN":3}
+        if n == 2:
+            skill.inflict = {"RES":3}
+
+def rallyEffects(char):
+    if char.id == 1:
+        if char.crit < 3:
+            char.crit = 3
+            print(f"-Grand Incantation-\n{char.name} received Crit 3.")
+
+def typeBoost(char,skill):
+    party = alive(onTeam(inFront(),char))
+    boost = 0
+    for x in party:
+        if x.id == 2 and skill.damageType == "Mystic":
+            boost += 1
+            print(f"-Magic Overflowing-\nDamage increased by 1.")
+    return boost
+
+def costXSP(char,skill):
+    if skill.id == 27:
+        return True
+    return False
+
+def beforeCost(char,skill):
+    if skill.id == 27:
+        skill.cost = f"{char.sp} SP"
+        skill.damage = char.sp-3
 
 start()

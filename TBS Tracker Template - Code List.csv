@@ -8,10 +8,10 @@ All Enemies: [Spirit 3]
 This Skill has -1 ACC. ",001,15,Fantasy Seal ,MAG,3 SP,All Enemies,Spirit,3,,-1
 Reimu,3,"Exorcising Border 
 [SUP] Cost 3 SP
-All Allies : Recover 3 HP.",001,16,Exorcising Border ,SUP,3 SP,All Allies,,,,
+All Allies : Recover 3 HP.",001,16,Exorcising Border ,SUP,3 SP,All Allies,,,"{""RecoverHP"":3}",
 Reimu,4,"Great Hakurei Barrier 
 [SUP] Cost 5 SP
-All Allies : [+3 DEF] or [+3 RES]",001,17,Great Hakurei Barrier ,SUP,5 SP,All Allies,,,,
+All Allies : [+3 DEF] or [+3 RES]",001,17,Great Hakurei Barrier ,SUP,5 SP,All Allies,,,"{""The_Begining_of_the_End"":0}",
 Marisa,1,"Magic Missile 
 [MAG] Cost 2 SP
 One Enemy: [Mystic 4]",002,24,"Magic Missile ",MAG,2 SP,One Enemy,Mystic,4,,
@@ -21,7 +21,7 @@ All Enemies: [Mystic 3]
 This Skill has -1 ACC. ",002,25,"Asteroid Belt ",MAG,4 SP,All Enemies,Mystic,3,,
 Marisa,3,"Concentration
 [SUP] Cost 3 SP
-Self: [+3 SP] Recover 6 SP.",002,26,"Concentration",SUP,3 SP,Self,,,"{""MAXSP"":3}",
+Self: [+3 SP] Recover 6 SP.",002,26,"Concentration",SUP,3 SP,Self,,,"{""MAXSP"":3,""RecoverSP"":6}",
 Marisa,4,"Master Spark 
 [MAG] Cost X SP
 All Enemies: [Mystic Y]
@@ -50,7 +50,7 @@ All Enemies: [Cold 3] {50% -3 SPD}
 This Skill has -1 ACC.",004,46,"Perfect Freeze",ATK,5 SP,All Enemies,Cold,3,,
 Cirno,4,"White Album
 [SUP] Cost 3 SP
-Self: [+3 DEF, RES]",004,47,"White Album",SUP,3 SP,Self,,,"{""DEF"":3,""RES"":3}",
+Self: [+3 DEF, RES]",004,47,"White Album",SUP,3 SP,Self,,,"{""DFN"":3,""RES"":3}",
 Emilie,1,"Beatdown
 [ATK] Cost 2 SP
 Two Enemies : [Impact 2]
