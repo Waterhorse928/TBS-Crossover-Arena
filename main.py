@@ -5,8 +5,9 @@ import math
 import csv
 import re
 
-#Next up is probably skill reslolution. Use attublutes for every skill text, lists of IDs for more uncommon effects.
-#Need to apply max hp and sp
+#Use attublutes for common skill mechics, lists of IDs for more uncommon effects.
+#Speed Order Button
+#Indirect Targeting needs to overlook KO'ed frontliners
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
     reader = csv.reader(infile)
@@ -25,6 +26,7 @@ with open('TBS Tracker Template - Code List.csv', mode='r',encoding='utf-8') as 
         skillWiki[int(row[4])] = row
 
 teamPickMode = 0
+roundNumber = 0
 playerA = ["Player A","","","","","","","",""]
 playerB = ["Player B","","","","","","","",""]
 thueMorse = [0,1,1,0,1,0,0,1,1,0,0,1,0,1,1,0]
@@ -166,7 +168,7 @@ def idToSkill(idChar,idSkill):
     skillType = skillWiki[id][6]
     cost = skillWiki[id][7]
     target = skillWiki[id][8]
-    damageType = skillWiki[id][9]
+    damageType = [skillWiki[id][9]]
     damage = skillWiki[id][10]
     if skillWiki[id][11]:
         inflict = eval(skillWiki[id][11])
@@ -312,6 +314,7 @@ def skillSelect(char):
         skill = ask(0,char.skills)
         if skill == 0:
             return False
+        skill = getattr(char,"s" + str(skill))
         if checkCost(char,skill):
             useSkill(char,skill)
             return True
@@ -319,7 +322,6 @@ def skillSelect(char):
             print("Cannot use skill.")
 
 def useSkill(char,skill):
-    skill = getattr(char,"s" + str(skill))
     beforeCost(char,skill)
     payCost(char,skill)
     target = selectTarget(char,skill)
@@ -329,9 +331,13 @@ def useSkill(char,skill):
         if crit > 0:
             print(f"Crit {crit} activates!")
         target = targeting(char,skill,target)
+        target = indirectTargeting(char,skill,target)
         if not isinstance(target, list):
             target = [target]
         hitList = []
+        if target == []:
+            print(f"No target can be hit!")
+            return
         for x in target:
             hitList.append(accuracy(char,skill,x))
         n = 0
@@ -339,6 +345,7 @@ def useSkill(char,skill):
         for x in target:
             if hitList[n]:
                 if dealDamage(char,skill,x,crit):
+                    refreshSlot()
                     KOswap(x)
             n += 1
     if skill.skillType == "SUP":
@@ -349,7 +356,6 @@ def useSkill(char,skill):
 
 #//ANCHOR --Cost
 def checkCost(char,skill):
-    skill = getattr(char,"s" + str(skill))
     if skill.cost == "X SP":
         if costXSP(char,skill):
             return True
@@ -429,6 +435,21 @@ def targeting(char,skill,target):
     if skill.target in allEnemies:
         return target
 
+def indirectTargeting(char,skill,target):
+    refreshSlot()
+    inTargets = []
+    if skill.target in oneEnemy:
+        if skill.target == "One Enemy":
+            return target
+        if skill.target == "Two Enemies":
+            for x in alive(onTeam(inFront(),char)):
+                if x.slot == target.slot + 1:
+                    inTargets.append(x)
+    if skill.target in allEnemies:
+        return target
+    target = [target] + inTargets
+    return target
+
 #//ANCHOR --Accuracy
 def accuracy(char,skill,target):
     miss = 0
@@ -465,11 +486,12 @@ def dealDamage(char,skill,target,crit):
     if target.hp <= 0:
         print(f"{target.name} is KO'ed.")
         target.hp = 0
-        target.KO = True
+        target.turn = False
         return True
     return False
 
 def KOswap(target):
+    target.KO = True
     party = alive(getTeamList(target))
     if len(party) >= 4:
         target.turn = False
@@ -588,6 +610,7 @@ def swap(target1,target2):
     party = getTeam(target1)
     a, b = party.index(target1), party.index(target2)
     party[b], party[a] = party[a], party[b]
+    swapEffect(target1,target2)
 
     refreshSlot()
     if (target1.turn == True and target1.slot >= 5) or trigger1:
@@ -705,6 +728,7 @@ def endOfTurn():
 def start():
     global playerA
     global playerB
+    global roundNumber
     # Team Pick        
     box([["---Team Pick---"],["1. Draft Select","2. List Select","3. Debug Select"]])
     teamPickMode = ask(1,3)   
@@ -744,6 +768,8 @@ def start():
     #Main Flow
     while True:
         #Setup
+        roundNumber += 1
+        print (f"---Round {roundNumber}---")
         for x in alive(inFront()):
             x.turn = True
         #Flow
@@ -753,10 +779,23 @@ def start():
                 break
             #Next Turn in Speed Order
             startTurn(hasTurn(alive(speedOrder(inFront())))[0])
-
         #Cleanup
             #Check Win Condtion
-            #Rest
+        #Rest
+        for x in alive(inBack()):
+            beforeHP = x.hp
+            beforeSP = x.sp
+            x.hp += 2
+            x.sp += 2
+            restStep(x)
+            refreshMax()
+            recoveredHP = x.hp - beforeHP
+            recoveredSP = x.sp - beforeSP
+            if recoveredHP > 0:
+                print(f"{x.name} recovered {recoveredHP} HP.")
+            if recoveredSP > 0:
+                print(f"{x.name} recovered {recoveredSP} SP.")
+        endOfRound()
 
 #//ANCHOR INDIVIDUAL MECHNICS (the begining of the end)
 def supportInput(char,skill,target):
@@ -778,9 +817,9 @@ def typeBoost(char,skill):
     party = alive(onTeam(inFront(),char))
     boost = 0
     for x in party:
-        if x.id == 2 and skill.damageType == "Mystic":
+        if x.id == 2 and "Mystic" in skill.damageType:
             boost += 1
-            print(f"-Magic Overflowing-\nDamage increased by 1.")
+            print(f"-Magic Overflowing-\nMystic damage increased by 1.")
     return boost
 
 def costXSP(char,skill):
@@ -792,5 +831,19 @@ def beforeCost(char,skill):
     if skill.id == 27:
         skill.cost = f"{char.sp} SP"
         skill.damage = char.sp-3
+
+def swapEffect(target1,target2):
+    for x in [target1,target2]:
+        if x.id == 3 and x.oncePerRound and not x.KO:
+            print(f"-Instant Attack-\n{x.name} recovered her turn.")
+            x.turn = True
+            x.oncePerRound = False
+
+def restStep(x):
+    pass
+
+def endOfRound():
+    for x in alive(allCharacters()):
+        x.oncePerRound = True
 
 start()

@@ -49,6 +49,7 @@ class Char:
         self.turn = False
         self.KO = False
         self.slot = 0
+        self.oncePerRound = True
         #status effects
         self.crit = 0
 
