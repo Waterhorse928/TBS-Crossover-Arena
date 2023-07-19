@@ -14,20 +14,20 @@ Reimu,4,"Great Hakurei Barrier
 All Allies : [+3 DEF] or [+3 RES]",001,17,Great Hakurei Barrier ,SUP,5 SP,All Allies,,,"{""The_Begining_of_the_End"":0}",
 Marisa,1,"Magic Missile 
 [MAG] Cost 2 SP
-One Enemy: [Mystic 4]",002,24,"Magic Missile ",MAG,2 SP,One Enemy,Mystic,4,,
+One Enemy: [Mystic 4]",002,24,Magic Missile ,MAG,2 SP,One Enemy,Mystic,4,,
 Marisa,2,"Asteroid Belt 
 [MAG] Cost 4 SP
 All Enemies: [Mystic 3]
-This Skill has -1 ACC. ",002,25,"Asteroid Belt ",MAG,4 SP,All Enemies,Mystic,3,,
+This Skill has -1 ACC. ",002,25,Asteroid Belt ,MAG,4 SP,All Enemies,Mystic,3,,-1
 Marisa,3,"Concentration
 [SUP] Cost 3 SP
-Self: [+3 SP] Recover 6 SP.",002,26,"Concentration",SUP,3 SP,Self,,,"{""MAXSP"":3,""RecoverSP"":6}",
+Self: [+3 SP] Recover 6 SP.",002,26,Concentration,SUP,3 SP,Self,,,"{""MAXSP"":3,""RecoverSP"":6}",
 Marisa,4,"Master Spark 
 [MAG] Cost X SP
 All Enemies: [Mystic Y]
 This Skill has -1 ACC.
 X = Marisa's current SP.
-Y = X - 3",002,27,"Master Spark ",MAG,X SP,All Enemies,Mystic,Y,,
+Y = X - 3",002,27,Master Spark ,MAG,X SP,All Enemies,Mystic,Y,,-1
 Chen,1,"Flight of Idaten
 [ATK] Cost 1 SP
 One Enemy : [Pierce 3]",003,34,Flight of Idaten,ATK,1 SP,One Enemy,Pierce,3,,
@@ -39,15 +39,15 @@ Chen,3,"Kimontonkou
 Self : [+3 ATK]",003,36,"Kimontonkou",SUP,1 SP,Self,,,"{""ATK"":3}",
 Cirno,1,"Icicle Fall
 [ATK] Cost 2 SP
-One Enemy: [Cold 2] [-3 SPD]",004,44,"Icicle Fall",ATK,2 SP,One Enemy,Cold,2,,
+One Enemy: [Cold 2] [-3 SPD]",004,44,"Icicle Fall",ATK,2 SP,One Enemy,Cold,2,"{""SPD"":-3}",
 Cirno,2,"Diamond Blizzard
 [ATK] Cost 6 SP
 All Enemies: [Cold 4] [Paralysis 1]
-This Skill has -1 ACC. ",004,45,"Diamond Blizzard",ATK,6 SP,All Enemies,Cold,4,,
+This Skill has -1 ACC. ",004,45,"Diamond Blizzard",ATK,6 SP,All Enemies,Cold,4,"{""Paralysis"":1}",-1
 Cirno,3,"Perfect Freeze
 [ATK] Cost 5 SP
 All Enemies: [Cold 3] {50% -3 SPD}
-This Skill has -1 ACC.",004,46,"Perfect Freeze",ATK,5 SP,All Enemies,Cold,3,,
+This Skill has -1 ACC.",004,46,"Perfect Freeze",ATK,5 SP,All Enemies,Cold,3,"{""SPD"":[50,-3]}",-1
 Cirno,4,"White Album
 [SUP] Cost 3 SP
 Self: [+3 DEF, RES]",004,47,"White Album",SUP,3 SP,Self,,,"{""DFN"":3,""RES"":3}",

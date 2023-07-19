@@ -37,6 +37,8 @@ oneAlly = ["One Ally"]
 oneAllyDead = ["One Ko'ed Ally"]
 allAllies = ["All Allies"]
 self = ["Self", None]
+statusList = ["Crit","Paralysis"]
+statusListStop = ["Crit"]
 
 #//ANCHOR Display
 def box(text,align = "center"):
@@ -211,8 +213,10 @@ def refreshStatus():
                     x.status.append(f"+{value} {stat[:-1].upper()}")
                 else:
                     x.status.append(f"{value} {stat[:-1].upper()}")
-        if x.crit > 0:
-            x.status.append(f"Crit {x.crit}")
+        for status in statusList:
+            value = getattr(x, status.lower())
+            if value != 0:
+                x.status.append(f"{status} {value}")
 
 def refreshMax():
     l = playerA[1:] + playerB[1:]
@@ -251,8 +255,12 @@ def alive(l):
 def speedOrder(l):
     refreshSlot()
     random.shuffle(l)
+    for x in l:
+        if x.paralysis != 0:
+            x.spd -= 100
     l.sort(key=lambda x : x.slot)
     l.sort(key=lambda x : -x.spd)
+    refreshStats()
     return l
 
 def names(l):
@@ -325,29 +333,34 @@ def useSkill(char,skill):
     beforeCost(char,skill)
     payCost(char,skill)
     target = selectTarget(char,skill)
-    if skill.skillType == "ATK" or skill.skillType == "MAG":
-        crit = char.crit
-        char.crit = 0
-        if crit > 0:
-            print(f"Crit {crit} activates!")
-        target = targeting(char,skill,target)
-        target = indirectTargeting(char,skill,target)
-        if not isinstance(target, list):
-            target = [target]
-        hitList = []
-        if target == []:
-            print(f"No target can be hit!")
-            return
-        for x in target:
-            hitList.append(accuracy(char,skill,x))
-        n = 0
-        crit += typeBoost(char,skill)
-        for x in target:
-            if hitList[n]:
-                if dealDamage(char,skill,x,crit):
-                    refreshSlot()
-                    KOswap(x)
-            n += 1
+    while True:
+        if skill.skillType == "ATK" or skill.skillType == "MAG":
+            crit = char.crit
+            char.crit = 0
+            if crit > 0:
+                print(f"Crit {crit} activates!")
+            target = targeting(char,skill,target)
+            target = indirectTargeting(char,skill,target)
+            if not isinstance(target, list):
+                target = [target]
+            hitList = []
+            if target == []:
+                print(f"No target can be hit!")
+                break
+            for x in target:
+                hitList.append(accuracy(char,skill,x))
+            if not any(hitList):
+                break
+            n = 0
+            crit += typeBoost(char,skill)
+            for x in target:
+                if hitList[n]:
+                    if dealDamage(char,skill,x,crit):
+                        refreshSlot()
+                        KOswap(x)
+                        KOEffect(x)
+                n += 1
+        break
     if skill.skillType == "SUP":
         if not isinstance(target, list):
             target = [target]
@@ -483,6 +496,8 @@ def dealDamage(char,skill,target,crit):
 
     print (f'{char.name} deals {damage} damage to {target.name}.')
     target.hp -= damage
+    if skill.inflict:
+        applyStatus(char,skill,target)
     if target.hp <= 0:
         print(f"{target.name} is KO'ed.")
         target.hp = 0
@@ -500,15 +515,28 @@ def KOswap(target):
 
 #//ANCHOR --Effects
 def applyStatus(char, skill, target):
+    if not isinstance(target, list):
+            target = [target]
     for x in target:
-        statChanges(char, skill, x)
-        recover(char, skill, x)
+        e = skill.inflict
+        statChanges(char, e, x)
+        statuses(char, e, x)
+        recover(char, e, x)    
 
-def statChanges(char, skill, target):
-    e = skill.inflict
+def statChanges(char, e, target):
     stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
     for stat in stats:
         if stat.upper() in e:
+            
+            if isinstance(e[stat.upper()],list):
+                if not e[stat.upper()][0] >= random.randint(1,100):
+                    change_value = abs(e[stat.upper()][1])
+                    change_sign = "-" if e[stat.upper()][1] < 0 else "+"
+                    change_string = f"{change_sign}{change_value} {stat.upper()}"
+                    print(f"{target.name} resisted {change_string}.")
+                    continue
+                else:
+                    e[stat.upper()] = e[stat.upper()][1]
             statC = stat + "C"
             statT = stat + "T"
             valueC = getattr(target, statC)
@@ -528,11 +556,29 @@ def statChanges(char, skill, target):
                 change_value = abs(e[stat.upper()])
                 change_sign = "-" if e[stat.upper()] < 0 else "+"
                 change_string = f"{change_sign}{change_value} {stat.upper()}"
-                print(f"{char.name} received {change_string}.")
+                print(f"{target.name} received {change_string}.")
 
-def recover(char, skill, target):
+def statuses(char, e, target):
+    for status in statusList:
+        if status in e:
+            if isinstance(e[status],list):
+                if not e[status][0] >= random.randint(1,100):
+                    print(f"{target.name} resisted {stat} {status}.")
+                    continue
+                else:
+                    e[status] = e[status][1]
+            stat = e[status]
+            value = getattr(target, status.lower())
+
+            if stat >= value:
+                setattr(target,status.lower(),stat)
+                setattr(target,status.lower()+"T",True)
+                print(f"{target.name} recevied {stat} {status}.")
+            else:
+                print(f"{target.name}'s already has {value} {status}.")
+
+def recover(char, e, target):
     refreshStats()
-    e = skill.inflict
     effects = ["RecoverHP","RecoverSP"]
     for effect in effects:
         if effect in e:
@@ -713,12 +759,23 @@ def resolveStatus(char):
         elif valueC < 0 and not valueT:
             setattr(char, statC, valueC + 1)
 
+    for status in statusList:
+        if status in statusListStop:
+            continue
+        value = getattr(char,status.lower())
+        valueT = getattr(char,status.lower()+"T")
+
+        if value != 0 and not valueT:
+            setattr(char, status.lower(), value - 1)
+
 def endOfTurn():
     l = playerA[1:] + playerB[1:]
     stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
     for x in l:
         for stat in stats:
             setattr(x, stat + "T", False)
+        for status in statusList:
+            setattr(x, status.lower() + "T", False)
     refreshSlot()
     refreshStats()
     refreshStatus()
@@ -810,8 +867,9 @@ def supportInput(char,skill,target):
 def rallyEffects(char):
     if char.id == 1:
         if char.crit < 3:
-            char.crit = 3
-            print(f"-Grand Incantation-\n{char.name} received Crit 3.")
+            print(f"-Grand Incantation-")
+            e = {"Crit":3}
+            statuses(char,e,char)
 
 def typeBoost(char,skill):
     party = alive(onTeam(inFront(),char))
@@ -845,5 +903,13 @@ def restStep(x):
 def endOfRound():
     for x in alive(allCharacters()):
         x.oncePerRound = True
+
+def KOEffect(char):
+    if char.id == 4:
+        e = {"SPD":-2}
+        otherParty = alive(onTeam(inFront(),char,False))
+        print(names(otherParty))
+        for x in otherParty:
+            statChanges(char,e,x)
 
 start()

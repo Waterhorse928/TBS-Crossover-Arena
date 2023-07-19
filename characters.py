@@ -52,6 +52,9 @@ class Char:
         self.oncePerRound = True
         #status effects
         self.crit = 0
+        self.critT = False
+        self.paralysis = 0
+        self.paralysisT = False
 
 def base(self):
     self.maxHpB = self.hp
