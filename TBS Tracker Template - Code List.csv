@@ -57,15 +57,15 @@ Two Enemies : [Impact 2]
 Deals +1 damage if Emilie has [+3 SPD].",005,54,Beatdown,ATK,2 SP,Two Enemies,Impact,2,,
 Emilie,2,"Faucon Poing
 [ATK] Cost 4 SP
-One Enemy : [Fire 5] {20% Burn 3}",005,55,"Faucon Poing",ATK,4 SP,One Enemy,Fire,5,,
+One Enemy : [Fire 5] {20% Burn 3}",005,55,Faucon Poing,ATK,4 SP,One Enemy,Fire,5,"{""Burn"":[20,3]}",
 Emilie,3,"Amber Thrust
 [ATK] Cost 6 SP
 All Enemies : [Electric 2] [Paralysis 2]
-This Skill has -1 ACC. ",005,56,"Amber Thrust",ATK,6 SP,All Enemies,Electric,2,,
+This Skill has -1 ACC. ",005,56,Amber Thrust,ATK,6 SP,All Enemies,Electric,2,"{""Paralysis"":2}",-1
 Emilie,4,"Azure Strike
 [ATK] Cost 4 SP
 One Enemy : [Impact X]
-X = (Emilie' SPD) - (Target's SPD)",005,57,"Azure Strike",ATK,4 SP,One Enemy,Impact,X,,
+X = (Emilie' SPD) - (Target's SPD)",005,57,Azure Strike,ATK,4 SP,One Enemy,Impact,X,,
 Momiji,1,"Rabies Bite
 [ATK] Cost 3 SP
 One Enemy: [Pierce 3] 
@@ -73,7 +73,7 @@ This Skill has Break 2 and +2 ACC.",006,64,"Rabies Bite",ATK,3 SP,One Enemy,Pie
 Momiji,2,"Expellee's Canaan
 [ATK] Cost 4 SP
 All Enemies: [Wind 3]
-This Skill has -1 ACC.",006,65,"Expellee's Canaan",ATK,4 SP,All Enemies,Wind,3,,
+This Skill has -1 ACC.",006,65,Expellee's Canaan,ATK,4 SP,All Enemies,Wind,3,,
 Gaius,1,"Steal
 [SUP] Cost 1 SP
 One Target : All of the target's Status Effects

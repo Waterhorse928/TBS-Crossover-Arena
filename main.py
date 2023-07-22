@@ -8,6 +8,8 @@ import re
 #Use attublutes for common skill mechics, lists of IDs for more uncommon effects.
 #Speed Order Button
 #Indirect Targeting needs to overlook KO'ed frontliners
+#check lose condition
+#Ko Check
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
     reader = csv.reader(infile)
@@ -37,7 +39,7 @@ oneAlly = ["One Ally"]
 oneAllyDead = ["One Ko'ed Ally"]
 allAllies = ["All Allies"]
 self = ["Self", None]
-statusList = ["Crit","Paralysis"]
+statusList = ["Crit","Paralysis","Burn"]
 statusListStop = ["Crit"]
 
 #//ANCHOR Display
@@ -348,24 +350,22 @@ def useSkill(char,skill):
                 print(f"No target can be hit!")
                 break
             for x in target:
-                hitList.append(accuracy(char,skill,x))
+                if accuracy(char,skill,x):
+                    hitList.append(x)
             if not any(hitList):
                 break
             n = 0
             crit += typeBoost(char,skill)
-            for x in target:
-                if hitList[n]:
-                    if dealDamage(char,skill,x,crit):
-                        refreshSlot()
-                        KOswap(x)
-                        KOEffect(x)
-                n += 1
+            for x in hitList:
+                    dealDamage(char,skill,x,crit)
+
         break
     if skill.skillType == "SUP":
         if not isinstance(target, list):
             target = [target]
         supportInput(char,skill,target)
         applyStatus(char,skill,target)
+    cleanupSkill(char,skill)
 
 #//ANCHOR --Cost
 def checkCost(char,skill):
@@ -481,6 +481,7 @@ def accuracy(char,skill,target):
 #//ANCHOR --Damage
 def dealDamage(char,skill,target,crit):
     refreshStats()
+    beforeDamage(char,skill,target,crit)
     damage = int(skill.damage)
     damage += crit
     
@@ -498,12 +499,7 @@ def dealDamage(char,skill,target,crit):
     target.hp -= damage
     if skill.inflict:
         applyStatus(char,skill,target)
-    if target.hp <= 0:
-        print(f"{target.name} is KO'ed.")
-        target.hp = 0
-        target.turn = False
-        return True
-    return False
+    KOcheck(target)
 
 def KOswap(target):
     target.KO = True
@@ -563,7 +559,7 @@ def statuses(char, e, target):
         if status in e:
             if isinstance(e[status],list):
                 if not e[status][0] >= random.randint(1,100):
-                    print(f"{target.name} resisted {stat} {status}.")
+                    print(f"{target.name} resisted [{status} {e[status][1]}].")
                     continue
                 else:
                     e[status] = e[status][1]
@@ -759,6 +755,8 @@ def resolveStatus(char):
         elif valueC < 0 and not valueT:
             setattr(char, statC, valueC + 1)
 
+    drainHP = ["Burn"]
+    drainSP = ["Burn"]
     for status in statusList:
         if status in statusListStop:
             continue
@@ -766,7 +764,15 @@ def resolveStatus(char):
         valueT = getattr(char,status.lower()+"T")
 
         if value != 0 and not valueT:
+            if status in drainHP:
+                char.hp -= value
+                print(f"{char.name} lost {value} HP due to {status}.")
+            if status in drainSP:
+                char.sp -= value
+                print(f"{char.name} lost {value} SP due to {status}.")
             setattr(char, status.lower(), value - 1)
+            print(f"[{status} {value}] drops to [{status} {value}]")
+    KOcheck(char)
 
 def endOfTurn():
     l = playerA[1:] + playerB[1:]
@@ -854,6 +860,15 @@ def start():
                 print(f"{x.name} recovered {recoveredSP} SP.")
         endOfRound()
 
+def KOcheck(char):
+    if char.hp <= 0:
+        print(f"{char.name} is KO'ed.")
+        char.hp = 0
+        char.turn = False
+        refreshSlot()
+        KOswap(char)
+        KOEffect(char)
+
 #//ANCHOR INDIVIDUAL MECHNICS (the begining of the end)
 def supportInput(char,skill,target):
     if skill.id == 17:
@@ -889,6 +904,19 @@ def beforeCost(char,skill):
     if skill.id == 27:
         skill.cost = f"{char.sp} SP"
         skill.damage = char.sp-3
+        print(f"{skill.name}'s damage is {char.sp} - 3 = {skill.damage}.")
+
+def beforeDamage(char,skill,target,crit):
+    if skill.id == 54: #Emilie's Beatdown
+        if char.spdC >= 3:
+            skill.damage = 3
+            print(f"+{char.spdC} SPD, {skill.name} does +1 damage.")
+        else:
+            skill.damage = 2 
+    
+    if skill.id == 57: #Emilie's Azure Strike
+        skill.damage = char.spd - target.spd
+        print(f"{char.name}'s SPD {char.spd} - {target.name}'s SPD {target.spd} = {skill.damage} damage.")
 
 def swapEffect(target1,target2):
     for x in [target1,target2]:
@@ -896,6 +924,16 @@ def swapEffect(target1,target2):
             print(f"-Instant Attack-\n{x.name} recovered her turn.")
             x.turn = True
             x.oncePerRound = False
+    #Swap In Effects
+    swappedIn = None
+    if target1.slot >= 5 and target2.slot < 5:
+        swappedIn = target1
+    if target1.slot < 5 and target2.slot >= 5:
+        swappedIn = target2
+    if swappedIn:
+        if swappedIn.id == 5:
+            e = {"SPD":3}
+            statChanges(swappedIn,e,swappedIn)
 
 def restStep(x):
     pass
@@ -911,5 +949,9 @@ def KOEffect(char):
         print(names(otherParty))
         for x in otherParty:
             statChanges(char,e,x)
+
+def cleanupSkill(char,skill):
+    if skill.id == 27:
+        skill.cost = "X SP"
 
 start()

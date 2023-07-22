@@ -55,6 +55,8 @@ class Char:
         self.critT = False
         self.paralysis = 0
         self.paralysisT = False
+        self.burn = 0
+        self.burnT = 0
 
 def base(self):
     self.maxHpB = self.hp
