@@ -10,6 +10,7 @@ class Char:
         self.spd = 0
         self.eva = 0
         self.fullname = "I AM ERROR, YES IT'S TRUE. I AM ERROR, HOW ABOUT YOU?"
+        self.pronoun = ["they","their"]
         self.p1 = ""
         self.p2 = ""
         self.p3 = ""
@@ -22,6 +23,7 @@ class Char:
         self.skills = 0
         self.status = []
         self.id = "000"
+        self.pids = []
         self.acc = 0
         self.atk = 0
         self.mag = 0
@@ -57,6 +59,14 @@ class Char:
         self.paralysisT = False
         self.burn = 0
         self.burnT = 0
+        self.brea = 0
+        self.breaT = 0
+        self.terror = 0
+        self.terrorT = 0
+        self.silence = 0
+        self.silenceT = 0
+        self.weaken = 0
+        self.weakenT = 0
 
 def base(self):
     self.maxHpB = self.hp
@@ -93,4 +103,6 @@ class Template(Char):
         self.id = a22
         self.maxHp = self.hp
         self.maxSp = self.sp
+        for x in range(1,self.passives+1):
+            self.pids.append((self.id*10)+x)
         base(self)

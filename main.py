@@ -8,8 +8,6 @@ import re
 #Use attublutes for common skill mechics, lists of IDs for more uncommon effects.
 #Speed Order Button
 #Indirect Targeting needs to overlook KO'ed frontliners
-#check lose condition
-#Ko Check
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
     reader = csv.reader(infile)
@@ -39,7 +37,9 @@ oneAlly = ["One Ally"]
 oneAllyDead = ["One Ko'ed Ally"]
 allAllies = ["All Allies"]
 self = ["Self", None]
-statusList = ["Crit","Paralysis","Burn"]
+oneTarget = ["One Target", "One Other Target"]
+other = ["One Other Target"]
+statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence"]
 statusListStop = ["Crit"]
 
 #//ANCHOR Display
@@ -84,6 +84,15 @@ def checkTeams():
     print(f'{"Player A": <{20}}{"Player B": <{20}}')
     for x in range(1,9):
         print(f'{str(x) + ". " + playerA[x].name: <{20}}{str(x) + ". " + playerB[x].name: <{20}}')
+
+def displayBox(l):
+    if len(l) <= 4:
+        #box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp if not c.KO else "KO","/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
+        box([[f"Player {'A' if l[0] in playerA else 'B'}"],[f"Slot {c.slot}" for c in l],[f"{c.name}" for c in l],[f"HP {c.hp if not c.KO else 'KO'}/{c.maxHpB} - SP {c.sp}/{c.maxSpB}" for c in l],[f"{c.status if c.status else ''}" for c in l]])
+    elif len(l) <= 8:
+        pass
+    else:
+        pass
 
 #//ANCHOR Input
 def ask (lowRange,highRange):
@@ -177,10 +186,14 @@ def idToSkill(idChar,idSkill):
     if skillWiki[id][11]:
         inflict = eval(skillWiki[id][11])
     else:
-        inflict = []
+        inflict = {}
     accuracy = int(skillWiki[id][12]) if skillWiki[id][12] else 0
+    if skillWiki[id][13]:
+        effect = eval(skillWiki[id][13])
+    else:
+        effect = {}
     skill = getattr(skills,"Temp")
-    skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy)
+    skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy,effect)
     return skill
 
 #//ANCHOR Refresh
@@ -216,9 +229,11 @@ def refreshStatus():
                 else:
                     x.status.append(f"{value} {stat[:-1].upper()}")
         for status in statusList:
-            value = getattr(x, status.lower())
+            statusA = status.lower() if not isinstance(status,list) else status[1]
+            statusD = status if not isinstance(status,list) else status[0]
+            value = getattr(x, statusA)
             if value != 0:
-                x.status.append(f"{status} {value}")
+                x.status.append(f"{statusD} {value}")
 
 def refreshMax():
     l = playerA[1:] + playerB[1:]
@@ -245,6 +260,14 @@ def inBack():
 
 def allCharacters():
     l = [playerA[1],playerA[2],playerA[3],playerA[4],playerA[5],playerA[6],playerA[7],playerA[8],playerB[1],playerB[2],playerB[3],playerB[4],playerB[5],playerB[6],playerB[7],playerB[8]]
+    return l
+
+def playerAList():
+    l = [playerA[1],playerA[2],playerA[3],playerA[4],playerA[5],playerA[6],playerA[7],playerA[8]]
+    return l
+
+def playerBList():
+    l = [playerB[1],playerB[2],playerB[3],playerB[4],playerB[5],playerB[6],playerB[7],playerB[8]]
     return l
 
 def alive(l):
@@ -365,10 +388,13 @@ def useSkill(char,skill):
             target = [target]
         supportInput(char,skill,target)
         applyStatus(char,skill,target)
+        uniqueSupports(char,skill,target)
     cleanupSkill(char,skill)
 
 #//ANCHOR --Cost
 def checkCost(char,skill):
+    if checkIfBlocked(char,skill):
+        return False
     if skill.cost == "X SP":
         if costXSP(char,skill):
             return True
@@ -400,12 +426,16 @@ def pullSP(variable):
 
 #//ANCHOR --Targeting
 def selectTarget(char,skill):
-    if skill.target in oneEnemy or skill.target in oneAlly:
+    if skill.target in oneEnemy or skill.target in oneAlly or skill.target in oneTarget:
         y = 0
         if skill.target in oneEnemy:
             l = onTeam(alive(inFront()),char,False)
         if skill.target in oneAlly:
             l = onTeam(alive(inFront()),char)
+        if skill.target in oneTarget:
+            l = onTeam(alive(inFront()),char) + onTeam(alive(inFront()),char,False)
+        if skill.target in other:
+            l.remove(char)
         for x in l:
             y += 1
             print(f"{y}. {x.name}")
@@ -465,18 +495,23 @@ def indirectTargeting(char,skill,target):
 
 #//ANCHOR --Accuracy
 def accuracy(char,skill,target):
+    refreshStats()
+    beforeAccuracy(char,skill,target)
     miss = 0
     miss += target.eva
     miss -= char.acc
     miss -= skill.accuracy
     n = random.randint(1,10)
-    print(f"Rolling Accuracy. Number to beat is {miss}.")
-    if n > miss:
-        print(f"Rolled {n}. Hit {target.name}")
-        return True
-    else:
-        print(f"Rolled {n}. Misssed {target.name}")
+    if autoMiss(char,skill,target):
         return False
+    else:
+        print(f"Rolling Accuracy. Number to beat is {miss}.")
+        if n > miss:
+            print(f"Rolled {n}. Hit {target.name}")
+            return True
+        else:
+            print(f"Rolled {n}. Misssed {target.name}")
+            return False
 
 #//ANCHOR --Damage
 def dealDamage(char,skill,target,crit):
@@ -484,22 +519,25 @@ def dealDamage(char,skill,target,crit):
     beforeDamage(char,skill,target,crit)
     damage = int(skill.damage)
     damage += crit
+    ignore = gatherBreak(char,skill,target)
     
     if skill.skillType == "ATK":
         damage += char.atk
-        damage -= target.dfn
+        damage = beforeBlock(char,skill,target,damage)
+        damage -= max(target.dfn-ignore,0)
         damage = max(0,damage)
 
     if skill.skillType == "MAG":
         damage += char.mag
-        damage -= target.res
+        damage -= max(target.res-ignore,0)
         damage = max(0,damage)
 
     print (f'{char.name} deals {damage} damage to {target.name}.')
     target.hp -= damage
     if skill.inflict:
         applyStatus(char,skill,target)
-    KOcheck(target)
+    if KOcheck(target):
+        effectOnKO(char,skill,target)
 
 def KOswap(target):
     target.KO = True
@@ -514,7 +552,10 @@ def applyStatus(char, skill, target):
     if not isinstance(target, list):
             target = [target]
     for x in target:
-        e = skill.inflict
+        if isinstance(skill,dict):
+            e = skill
+        else:
+            e = skill.inflict
         statChanges(char, e, x)
         statuses(char, e, x)
         recover(char, e, x)    
@@ -523,7 +564,6 @@ def statChanges(char, e, target):
     stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
     for stat in stats:
         if stat.upper() in e:
-            
             if isinstance(e[stat.upper()],list):
                 if not e[stat.upper()][0] >= random.randint(1,100):
                     change_value = abs(e[stat.upper()][1])
@@ -533,10 +573,19 @@ def statChanges(char, e, target):
                     continue
                 else:
                     e[stat.upper()] = e[stat.upper()][1]
+
             statC = stat + "C"
             statT = stat + "T"
             valueC = getattr(target, statC)
             change_made = False
+
+            if e[stat.upper()] == "R" and valueC != 0:
+                change_value = abs(valueC)
+                change_sign = "-" if valueC < 0 else "+"
+                change_string = f"{change_sign}{change_value} {stat.upper()}"
+                setattr(target, statC, 0)
+                print(f"{change_string} was removed from {target.name}.")
+                continue
 
             if e[stat.upper()] >= valueC >= 0 or e[stat.upper()] <= valueC <= 0 :
                 setattr(target, statC, e[stat.upper()])
@@ -556,22 +605,29 @@ def statChanges(char, e, target):
 
 def statuses(char, e, target):
     for status in statusList:
-        if status in e:
-            if isinstance(e[status],list):
-                if not e[status][0] >= random.randint(1,100):
-                    print(f"{target.name} resisted [{status} {e[status][1]}].")
+        statusA = status.lower() if not isinstance(status,list) else status[1]
+        statusD = status if not isinstance(status,list) else status[0]
+        if statusD in e:
+            if isinstance(e[statusD],list):
+                if not e[statusD][0] >= random.randint(1,100):
+                    print(f"{target.name} resisted [{statusD} {e[statusD][1]}].")
                     continue
                 else:
-                    e[status] = e[status][1]
-            stat = e[status]
-            value = getattr(target, status.lower())
+                    e[statusD] = e[statusD][1]
+            stat = e[statusD]
+            value = getattr(target, statusA)
+
+            if stat == "R" and value != 0:
+                setattr(target, statusA, 0)
+                print(f"{statusD} {value} was removed from {target.name}.")
+                continue
 
             if stat >= value:
-                setattr(target,status.lower(),stat)
-                setattr(target,status.lower()+"T",True)
-                print(f"{target.name} recevied {stat} {status}.")
+                setattr(target,statusA,stat)
+                setattr(target,statusA+"T",True)
+                print(f"{target.name} recevied {statusD} {stat}.")
             else:
-                print(f"{target.name}'s already has {value} {status}.")
+                print(f"{target.name}'s already has {statusD} {value}.")
 
 def recover(char, e, target):
     refreshStats()
@@ -672,7 +728,7 @@ def check(char):
 
 def displaySelect(player):
     refreshStats()
-    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp,"/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
+    box([[strList([c.slot,". ",c.name])] + [strList(["HP ",c.hp if not c.KO else "KO","/",c.maxHp])] + [strList(["SP ",c.sp,"/",c.maxSp])] + [strList(["DEF ",c.dfn])] + [strList(["RES ",c.res])] + [strList(["SPD ",c.spd])] + [strList(["EVA ",c.eva])] for c in player[1:]],"left")
     print("0. Back")
     result = ask(0,8)
     if result == 0:
@@ -684,7 +740,8 @@ def display(char):
     refreshStats()
     refreshStatus()
     print(f"{char.name} - {char.fullname}")
-    print()
+    ko = "KO'ed"
+    print(f'{"" if not char.KO else ko}')
     print(f"HP {char.hp}/{char.maxHpB} DEF {char.dfnB} SPD {char.spdB}")
     print(f"SP {char.sp}/{char.maxSpB} RES {char.resB} EVA {char.evaB}")
     print(f"{char.status}")
@@ -709,19 +766,31 @@ def scout(char):
     displaySelect(player)
  
 #//ANCHOR -Order
-def order():
-    pass
+def order(char):
+    player = speedOrder(inFront())
+    refreshStats()
+    box([[strList([player.index(c)+1,". ",c.name])] + [strList(["Turn ","[X]" if c.turn else "[ ]"])] + [strList(["SPD ",c.spd])] + [strList([c.status])] for c in player],"left")
+    print("0. Back")
+    result = ask(0,8)
+    if result == 0:
+        return
+    result = player[result-1]
+    display(result)
 
 #//ANCHOR Turn
 def startTurn(char):
     char.turn = False
+    startOfTurn(char)
     #Bare Bones displays only
     #Start of turn effects
     #Actions
     #End of turn effects
     #Status Effects Resolve
     while True:
-        box([[f"---{char.name}'s Turn---"],["1. Skill","2. Rally","3. Swap","4. Check","5. Scout","6. Order"]])
+        refreshStatus()
+        displayBox(onTeam(inFront(),playerA[0]))
+        displayBox(onTeam(inFront(),playerB[0]))
+        box([[f"Player {'A' if char in playerA else 'B'}'s"],[f"---{char.name}'s Turn---"],[f"HP {char.hp}/{char.maxHpB} - SP {char.sp}/{char.maxSpB}"],[f"{char.status if char.status else ''}"],["1. Skill","2. Rally","3. Swap","4. Check","5. Scout","6. Order"]])
         refreshSlot()
         x = ask(1,6)
         if x == 1:
@@ -738,7 +807,7 @@ def startTurn(char):
         if x == 5:
             scout(char)
         if x == 6:
-            order()
+            order(char)
     resolveStatus(char)
     endOfTurn()
 
@@ -756,22 +825,35 @@ def resolveStatus(char):
             setattr(char, statC, valueC + 1)
 
     drainHP = ["Burn"]
-    drainSP = ["Burn"]
+    drainSP = ["Burn","Terror"]
     for status in statusList:
         if status in statusListStop:
             continue
-        value = getattr(char,status.lower())
-        valueT = getattr(char,status.lower()+"T")
+
+        statusA = status.lower() if not isinstance(status,list) else status[1]
+        statusD = status if not isinstance(status,list) else status[0]
+
+        value = getattr(char,statusA)
+        valueT = getattr(char,statusA + "T")
 
         if value != 0 and not valueT:
             if status in drainHP:
+                before = char.hp
                 char.hp -= value
-                print(f"{char.name} lost {value} HP due to {status}.")
+                char.hp = max(char.hp,0)
+                lost = before - char.hp
+                print(f"{char.name} lost {lost} HP due to {statusD}.")
             if status in drainSP:
+                before = char.sp
                 char.sp -= value
-                print(f"{char.name} lost {value} SP due to {status}.")
-            setattr(char, status.lower(), value - 1)
-            print(f"[{status} {value}] drops to [{status} {value}]")
+                char.sp = max(char.sp,0)
+                lost = before - char.sp
+                print(f"{char.name} lost {lost} SP due to {statusD}.")
+            setattr(char, statusA, value - 1)
+            if value - 1 != 0:
+                print(f"[{statusD} {value}] drops to [{statusD} {value - 1}]")
+            else:
+                print(f"[{statusD} {value}] drops to [{statusD} {value - 1}] and is removed")
     KOcheck(char)
 
 def endOfTurn():
@@ -781,14 +863,16 @@ def endOfTurn():
         for stat in stats:
             setattr(x, stat + "T", False)
         for status in statusList:
-            setattr(x, status.lower() + "T", False)
+            statusA = status.lower() if not isinstance(status,list) else status[1]
+            statusD = status if not isinstance(status,list) else status[0]
+            setattr(x, statusA + "T", False)
     refreshSlot()
     refreshStats()
     refreshStatus()
     refreshMax()
 
 #//ANCHOR Gameflow
-def start():
+def main():
     global playerA
     global playerB
     global roundNumber
@@ -803,24 +887,8 @@ def start():
         playerB = listPick(playerB)
         checkTeams()
     elif teamPickMode == 3:
-        playerA = ["Player A",
-                   wikiToClass(1),
-                   wikiToClass(2),
-                   wikiToClass(3),
-                   wikiToClass(4),
-                   wikiToClass(5),
-                   wikiToClass(6),
-                   wikiToClass(7),
-                   wikiToClass(8)]
-        playerB = ["Player B",
-                   wikiToClass(1),
-                   wikiToClass(2),
-                   wikiToClass(3),
-                   wikiToClass(4),
-                   wikiToClass(5),
-                   wikiToClass(6),
-                   wikiToClass(7),
-                   wikiToClass(8)]
+        playerA = testA
+        playerB = testB
 
     # Slot Order
     if teamPickMode != 3:
@@ -828,6 +896,8 @@ def start():
         playerB = slotOrder(playerB)
         checkTeams()
 
+    playerAwin =False
+    playerBwin =False
     #Main Flow
     while True:
         #Setup
@@ -843,7 +913,31 @@ def start():
             #Next Turn in Speed Order
             startTurn(hasTurn(alive(speedOrder(inFront())))[0])
         #Cleanup
-            #Check Win Condtion
+        n = 0
+        for x in playerAList():
+            if x.KO:
+                n+=1
+        if n == len(playerAList()):
+            playerBwin = True
+        n = 0
+        for x in playerBList():
+            if x.KO:
+                n+=1
+        if n == len(playerBList()):
+            playerAwin = True
+        if playerAwin or playerBwin:
+            if playerAwin and playerBwin:
+                box([[""],["GAME END"],[""],["---DRAW?---"],[""]])
+                input()
+                break
+            if playerAwin:
+                box([[""],["GAME END"],[""],["---PLAYER A WINS!---"],[""]])
+                input()
+                break
+            if playerBwin:
+                box([[""],["GAME END"],[""],["---PLAYER B WINS!---"],[""]])
+                input()
+                break
         #Rest
         for x in alive(inBack()):
             beforeHP = x.hp
@@ -868,45 +962,83 @@ def KOcheck(char):
         refreshSlot()
         KOswap(char)
         KOEffect(char)
+        return True
+    return False
 
-#//ANCHOR INDIVIDUAL MECHNICS (the begining of the end)
+#//ANCHOR Status Effect Funcions
+def gatherBreak(char,skill,target):
+    b = 0
+    if "Break" in skill.effect:
+        b += skill.effect["Break"]
+    if char.brea != 0:
+        b += char.brea
+    return b
+
+def checkIfBlocked(char,skill):
+    atkBlocks = ["Weaken"]
+    magBlocks = ["Silence"]
+    supBlocks = []
+    types = ["ATK","MAG","SUP"]
+    for type in types:
+        if skill.skillType == type:
+            for block in eval(f"{type.lower()}Blocks"):
+                value = getattr(char,block.lower())
+                if value != 0:
+                    print(f"Suffering {block}.")
+                    return True
+    return False
+
+#//ANCHOR INDIVIDUAL MECHANICS (The beginning of the end)
 def supportInput(char,skill,target):
-    if skill.id == 17:
-        print ("1.DEF or 2.RES?")
+    if skill.id == 17: #Reimu's Great Hakurei Barrier
+        print ("(1) +3 DEF or\n(2) +3 RES?")
         n = ask(1,2)
         if n == 1:
             skill.inflict = {"DFN":3}
         if n == 2:
             skill.inflict = {"RES":3}
 
-def rallyEffects(char):
-    if char.id == 1:
-        if char.crit < 3:
-            print(f"-Grand Incantation-")
-            e = {"Crit":3}
-            statuses(char,e,char)
-
-def typeBoost(char,skill):
-    party = alive(onTeam(inFront(),char))
-    boost = 0
-    for x in party:
-        if x.id == 2 and "Mystic" in skill.damageType:
-            boost += 1
-            print(f"-Magic Overflowing-\nMystic damage increased by 1.")
-    return boost
+def uniqueSupports(char,skill,target):
+    stats = ["maxHpC","maxSpC","atkC","magC","dfnC","resC","spdC","evaC","accC"]
+    for tar in target:
+        if skill.id == 74: #Gaius's Steal
+            charStats = {}
+            targetStats = {}
+            for stat in stats:
+                value = getattr(tar, stat)
+                if value != 0:
+                    charStats[stat[:-1].upper()] = value
+                    targetStats[stat[:-1].upper()] = "R"
+            for status in statusList:
+                statusA = status.lower() if not isinstance(status,list) else status[1]
+                statusD = status if not isinstance(status,list) else status[0]
+                value = getattr(tar,statusA)
+                if value != 0:
+                    charStats[statusD] = value
+                    targetStats[statusD] = "R"
+            applyStatus(char,targetStats,tar)
+            applyStatus(char,charStats,char)
 
 def costXSP(char,skill):
-    if skill.id == 27:
+    if skill.id == 27:#Marisa's Master Spark
         return True
     return False
 
 def beforeCost(char,skill):
-    if skill.id == 27:
+    if skill.id == 27: #Marisa's Master Spark
         skill.cost = f"{char.sp} SP"
         skill.damage = char.sp-3
         print(f"{skill.name}'s damage is {char.sp} - 3 = {skill.damage}.")
 
 def beforeDamage(char,skill,target,crit):
+    if 62 in char.pids: #Momiji's Eyes that Perceive Reality
+        if target.dfn > target.dfnB:
+            print(f"-Eyes that Perceive Reality-\n{char.name} ignores {target.name}'s +{target.dfnC} DEF.")
+            target.dfn = target.dfnB
+        if target.res > target.resB:
+            print(f"-Eyes that Perceive Reality-\n{char.name} ignores {target.name}'s +{target.resC} RES.")
+            target.res = target.resB
+
     if skill.id == 54: #Emilie's Beatdown
         if char.spdC >= 3:
             skill.damage = 3
@@ -918,9 +1050,89 @@ def beforeDamage(char,skill,target,crit):
         skill.damage = char.spd - target.spd
         print(f"{char.name}'s SPD {char.spd} - {target.name}'s SPD {target.spd} = {skill.damage} damage.")
 
+def beforeBlock(char,skill,target,damage):
+    e = skill.inflict
+    effects = ["damage"]
+    for effect in effects:
+        if effect in e:
+            if effect == "damage": # For % *damage
+                if not e[effect][0] >= random.randint(1,100):
+                    print(f"Unlucky... ({e[effect][1]}*damage does not activate)")
+                else:
+                    damage *= e[effect][1]
+                    print(f"Lucky!!! (Damage multiplied by {e[effect][1]})")
+    return damage
+
+def restStep(x):
+    pass
+
+def endOfRound():
+    for x in alive(allCharacters()):
+        x.oncePerRound = True
+
+def KOEffect(char):
+    if 41 in char.pids:#Cirno's Blizzard Blowout
+        e = {"SPD":-2}
+        otherParty = alive(onTeam(inFront(),char,False))
+        for x in otherParty:
+            statChanges(char,e,x)
+
+def effectOnKO(char,skill,target):
+    if 71 in char.pids: #Gaius's Pay me in Candy
+        print("-Pay me in Candy-")
+        e = {"RecoverSP":6}
+        recover(char,e,char)
+
+def cleanupSkill(char,skill):
+    if skill.id == 27:#Marisa's Master Spark
+        skill.cost = "X SP"
+
+def startOfTurn(char):
+    if 61 in char.pids: # Momiji's Ability to See Far Distances
+        print("-Ability to See Far Distances-")
+        e = {"ACC":2}
+        party = alive(onTeam(inFront(),char))
+        for x in party:
+            statChanges(char,e,x)
+
+def beforeAccuracy(char,skill,target):
+    if 62 in char.pids: #Momiji's Eyes that Perceive Reality
+        if target.eva > target.evaB:
+            print(f"-Eyes that Perceive Reality-\n{char.name} ignores {target.names}'s +{target.evaC} EVA.")
+            target.eva = target.evaB
+
+def autoMiss(char,skill,target):
+    if skill.id == 87: #Parsee's Jealousy of the Kind and Lovely
+        if target.terror != 0:
+            return False
+        else:
+            print(f"{target.name} is not terrified and cannot be hit.")
+            return True
+    return False
+    
+#//ANCHOR -Common Passives
+def rallyEffects(char):
+    if 11 in char.pids:#Reimu's Grand Incantation
+        if char.crit < 3:
+            print(f"-Grand Incantation-")
+            e = {"Crit":3}
+            statuses(char,e,char)
+
+def typeBoost(char,skill):
+    party = alive(onTeam(inFront(),char))
+    boost = 0
+    damageTypes = [["Mystic",21,"Magic Overflowing"],
+                 ["Dark",81,"Flames of Jealousy"]]
+    for x in party:
+        for type in damageTypes:
+            if type[1] in char.pids and type[0] in skill.damageType:
+                boost += 1
+                print(f"-{type[2]}-\n{type[0]} damage increased by 1.")
+    return boost
+
 def swapEffect(target1,target2):
     for x in [target1,target2]:
-        if x.id == 3 and x.oncePerRound and not x.KO:
+        if 31 in x.pids and x.oncePerRound and not x.KO: #Chen's Instant Attack
             print(f"-Instant Attack-\n{x.name} recovered her turn.")
             x.turn = True
             x.oncePerRound = False
@@ -931,27 +1143,29 @@ def swapEffect(target1,target2):
     if target1.slot < 5 and target2.slot >= 5:
         swappedIn = target2
     if swappedIn:
-        if swappedIn.id == 5:
+        if 51 in swappedIn.pids: #Emilie's Dashing In
             e = {"SPD":3}
+            print("-Dashing In-")
             statChanges(swappedIn,e,swappedIn)
 
-def restStep(x):
-    pass
+#//ANCHOR Test Section
+testA = ["Player A",
+            wikiToClass(4),
+            wikiToClass(8),
+            wikiToClass(1),
+            wikiToClass(2),
+            wikiToClass(5),
+            wikiToClass(3),
+            wikiToClass(6),
+            wikiToClass(7)]
+testB = ["Player B",
+            wikiToClass(6),
+            wikiToClass(7),
+            wikiToClass(8),
+            wikiToClass(1),
+            wikiToClass(2),
+            wikiToClass(3),
+            wikiToClass(4),
+            wikiToClass(5)]
 
-def endOfRound():
-    for x in alive(allCharacters()):
-        x.oncePerRound = True
-
-def KOEffect(char):
-    if char.id == 4:
-        e = {"SPD":-2}
-        otherParty = alive(onTeam(inFront(),char,False))
-        print(names(otherParty))
-        for x in otherParty:
-            statChanges(char,e,x)
-
-def cleanupSkill(char,skill):
-    if skill.id == 27:
-        skill.cost = "X SP"
-
-start()
+main()

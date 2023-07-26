@@ -27,7 +27,8 @@ X = Marisa's current SP.
 Y = X - 3",,1,4,002,11/6/2020
 Chen,3,3,0,0,10,5,21,🔗,https://tbs-crossover-arena.fandom.com/wiki/Chen,,Chen,"Instant Attack
 When Chen is swapped,
-She recovers her turn this round.",,,"Flight of Idaten
+She recovers her turn.
+(Once per round.)",,,"Flight of Idaten
 [ATK] Cost 1 SP
 One Enemy : [Pierce 3]","Phoenix Spread Wings
 [ATK] Cost 2 SP
@@ -73,27 +74,27 @@ All Enemies: [Wind 3]
 This Skill has -1 ACC.",,,,2,2,006,11/6/2020
 Gaius,8,7,1,0,7,4,27,🔗,https://tbs-crossover-arena.fandom.com/wiki/Gaius,,Gaius,"Pay me in Candy
 When Gaius KOs a target,
-recover 8 SP.",,,"Steal
+recover 6 SP.",,,"Steal
 [SUP] Cost 1 SP
-One Target : All of the target's Status Effects
+One Other Target : All of the target's Status Effects
 are transferred onto Gaius.","Candied Dagger
 [ATK] Cost 3 SP
-One Enemy: [3 Blade] {50% -2 DEF,RES}","Levin Sword
+One Enemy: [Blade 3] {50% -2 DEF,RES}","Levin Sword
 [MAG] Cost 2 SP
-One Enemy: [3 Electric]",,,1,3,007,11/8/2020
+One Enemy: [Electric 3]",,,1,3,007,11/8/2020
 Parsee,4,7,2,4,5,2,24,🔗,https://tbs-crossover-arena.fandom.com/wiki/Parsee,,Parsee Mizuhashi,"Flames of Jealousy
 When Parsee is in front,
 All Dark damage is increased by 1.",,,"Large Box and Small Box
-[ATK] Cost 3 SP
-One Enemy: [Impact 2] {20% 3*damage}","Midnight Anathema Ritual
+[ATK] Cost 2 SP
+One Enemy: [Impact 2] {30% 3*damage}","Midnight Anathema Ritual
 [ATK] Cost 1 SP
 One Enemy: [Dark 0] {50% Terror 4, Silence 2}","Grudge Returning
 [ATK] Cost 2 SP
 All Enemies: [Dark 0] [Terror 2]  
 This Skill has -1 ACC. ","Jealousy of the Kind and Lovely
 [ATK] Cost 4 SP
-All Enemies: [Dark 7]
-Only hits targets with Terror. Removes Terror on hit.
+All Enemies: [Dark 6]
+Only hits targets with Terror.
 This Skill has -1 ACC.",,1,4,008,11/9/2020
 Stahl,8,8,2,2,5,1,26,🔗,https://tbs-crossover-arena.fandom.com/wiki/Stahl,,Stahl,"The Exact Median of the Army
 At the end of Stahl's turn,
@@ -1649,7 +1650,7 @@ All Enemies : [Dark 3] [Curse 2]
 This Skill has +1 ACC.",0,5,133,11/6/2021
 Cho'Gath,12,9,2,2,5,0,30,🔗,https://tbs-crossover-arena.fandom.com/wiki/Cho%27Gath,,Cho'Gath,"Carnivore
 When Cho'Gath KOs a target,
-Recover 4 HP and SP.","The Terror of the Void
+Recover 3 HP and SP.","The Terror of the Void
 At the end of Cho'Gath's turn, gain [+X HP,ACC].
 X = Feast ",,"Rupture
 [MAG] Cost 4 SP
