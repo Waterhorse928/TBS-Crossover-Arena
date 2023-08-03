@@ -67,6 +67,12 @@ class Char:
         self.silenceT = 0
         self.weaken = 0
         self.weakenT = 0
+        self.precision = 0
+        self.precisionT = 0
+        self.death = 0
+        self.deathT = 0
+        self.distance = 0
+        self.distanceT = 0
 
 def base(self):
     self.maxHpB = self.hp

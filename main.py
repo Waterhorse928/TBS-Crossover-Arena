@@ -5,9 +5,8 @@ import math
 import csv
 import re
 
-#Use attublutes for common skill mechics, lists of IDs for more uncommon effects.
-#Speed Order Button
 #Indirect Targeting needs to overlook KO'ed frontliners
+#Death and Distance
 
 with open('TBS Tracker Template - Characters.csv', mode='r',encoding='utf-8') as infile:
     reader = csv.reader(infile)
@@ -39,8 +38,9 @@ allAllies = ["All Allies"]
 self = ["Self", None]
 oneTarget = ["One Target", "One Other Target"]
 other = ["One Other Target"]
-statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence"]
+statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance"]
 statusListStop = ["Crit"]
+statusListCount = ["Death"]
 
 #//ANCHOR Display
 def box(text,align = "center"):
@@ -192,8 +192,12 @@ def idToSkill(idChar,idSkill):
         effect = eval(skillWiki[id][13])
     else:
         effect = {}
+    if skillWiki[id][14]:
+        self = eval(skillWiki[id][14])
+    else:
+        self = {}
     skill = getattr(skills,"Temp")
-    skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy,effect)
+    skill = skill(name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy,effect,self)
     return skill
 
 #//ANCHOR Refresh
@@ -240,7 +244,7 @@ def refreshMax():
     for char in l:
         if char.hp > char.maxHp:
             char.hp = char.maxHp
-        if char.sp > char.maxSp:
+        if char.sp > char.maxSp and not uncappedSP(char):
             char.sp = char.maxSp
 
 #//ANCHOR Team List   
@@ -332,6 +336,21 @@ def getTeamList(char):
     if char in playerB:
         return playerB [1:]
 
+def getStatChangeDict(char):
+    stats = ["maxHpC","maxSpC","atkC","magC","dfnC","resC","spdC","evaC","accC"]
+    statDict = {}
+    for stat in stats:
+        value = getattr(char,stat)
+        if value != 0:
+            statDict[stat[:-1].upper()] = value
+    return statDict
+
+def getSkillList(char):
+    l = []
+    for x in range(1,char.skills+1):
+        l.append(getattr(char,"s" + str(x)))
+    return l
+
 #//ANCHOR Actions
 #//ANCHOR -Skill
 def skillSelect(char):
@@ -360,6 +379,7 @@ def useSkill(char,skill):
     target = selectTarget(char,skill)
     while True:
         if skill.skillType == "ATK" or skill.skillType == "MAG":
+            skill.damageDealt = 0
             crit = char.crit
             char.crit = 0
             if crit > 0:
@@ -381,7 +401,6 @@ def useSkill(char,skill):
             crit += typeBoost(char,skill)
             for x in hitList:
                     dealDamage(char,skill,x,crit)
-
         break
     if skill.skillType == "SUP":
         if not isinstance(target, list):
@@ -389,6 +408,9 @@ def useSkill(char,skill):
         supportInput(char,skill,target)
         applyStatus(char,skill,target)
         uniqueSupports(char,skill,target)
+    if skill.self:
+        selfEffect(char,skill)
+        applyStatus(char,skill.self,char)
     cleanupSkill(char,skill)
 
 #//ANCHOR --Cost
@@ -482,13 +504,24 @@ def indirectTargeting(char,skill,target):
     refreshSlot()
     inTargets = []
     if skill.target in oneEnemy:
+        party = alive(onTeam(inFront(),target))
         if skill.target == "One Enemy":
             return target
         if skill.target == "Two Enemies":
-            for x in alive(onTeam(inFront(),char)):
-                if x.slot == target.slot + 1:
-                    inTargets.append(x)
+            for x in party:
+                if party.index(x) == party.index(target) + 1:
+                    if x.distance != 0:
+                        print(f"{x.name} has [Distance {x.distance}] and is out of range!")
+                    else:
+                        inTargets.append(x)
     if skill.target in allEnemies:
+        for x in target:
+            print(x.distance)
+            if x.distance != 0:
+                print(f"{x.name} has [Distance {x.distance}] and is out of range!")
+                target.remove(x)
+            else:
+                pass
         return target
     target = [target] + inTargets
     return target
@@ -506,11 +539,14 @@ def accuracy(char,skill,target):
         return False
     else:
         print(f"Rolling Accuracy. Number to beat is {miss}.")
+        if char.precision != 0 or "Precision" in skill.effect:
+            print(f"Precision! Hit {target.name}.")
+            return True
         if n > miss:
-            print(f"Rolled {n}. Hit {target.name}")
+            print(f"Rolled {n}, Hit {target.name}.")
             return True
         else:
-            print(f"Rolled {n}. Misssed {target.name}")
+            print(f"Rolled {n}, Missed {target.name}.")
             return False
 
 #//ANCHOR --Damage
@@ -532,8 +568,13 @@ def dealDamage(char,skill,target,crit):
         damage -= max(target.res-ignore,0)
         damage = max(0,damage)
 
-    print (f'{char.name} deals {damage} damage to {target.name}.')
+    before = target.hp
     target.hp -= damage
+    refreshMax()
+    dealt = before - target.hp
+    print (f'{char.name} deals {dealt} damage to {target.name}.')
+    skill.damageDealt += dealt
+    onHitEffects(char,skill,target)
     if skill.inflict:
         applyStatus(char,skill,target)
     if KOcheck(target):
@@ -622,11 +663,21 @@ def statuses(char, e, target):
                 print(f"{statusD} {value} was removed from {target.name}.")
                 continue
 
-            if stat >= value:
+            if stat >= value and not statusD in statusListCount:
                 setattr(target,statusA,stat)
                 setattr(target,statusA+"T",True)
                 print(f"{target.name} recevied {statusD} {stat}.")
-            else:
+            elif not statusD in statusListCount:
+                print(f"{target.name}'s already has {statusD} {value}.")
+
+            if (stat < value or value == 0) and statusD in statusListCount:
+                setattr(target,statusA,stat)
+                setattr(target,statusA+"T",True)
+                print(f"{target.name} recevied {statusD} {stat}.")
+                if stat == 0:
+                    countdown(statusD,target)
+                    KOcheck(target)
+            elif statusD in statusListCount:
                 print(f"{target.name}'s already has {statusD} {value}.")
 
 def recover(char, e, target):
@@ -661,7 +712,7 @@ def swapTurn(char):
         print("Too few allies to swap.")
         return False
 
-def swapSelect(party,target1,turnAction):
+def swapSelect(party,target1,turnAction=False):
     if target1 == None:
         print("Swap whom?")
         y = 0
@@ -809,7 +860,8 @@ def startTurn(char):
         if x == 6:
             order(char)
     resolveStatus(char)
-    endOfTurn()
+    endOfTurnEffects(char)
+    endTurn()
 
 def resolveStatus(char):
     stats = ["maxHp","maxSp","atk","mag","dfn","res","spd","eva","acc"]
@@ -854,9 +906,11 @@ def resolveStatus(char):
                 print(f"[{statusD} {value}] drops to [{statusD} {value - 1}]")
             else:
                 print(f"[{statusD} {value}] drops to [{statusD} {value - 1}] and is removed")
+                if statusD in statusListCount:
+                    countdown(statusD,char)
     KOcheck(char)
 
-def endOfTurn():
+def endTurn():
     l = playerA[1:] + playerB[1:]
     stats = ["maxHp", "maxSp", "atk", "mag", "dfn", "res", "spd", "eva", "acc"]
     for x in l:
@@ -870,7 +924,7 @@ def endOfTurn():
     refreshStats()
     refreshStatus()
     refreshMax()
-
+    
 #//ANCHOR Gameflow
 def main():
     global playerA
@@ -942,8 +996,8 @@ def main():
         for x in alive(inBack()):
             beforeHP = x.hp
             beforeSP = x.sp
-            x.hp += 2
-            x.sp += 2
+            x.hp = min(x.hp+2,x.maxHp)
+            x.sp = min(x.sp+2,x.maxSp)
             restStep(x)
             refreshMax()
             recoveredHP = x.hp - beforeHP
@@ -988,6 +1042,11 @@ def checkIfBlocked(char,skill):
                     return True
     return False
 
+def countdown(status,char):
+    if status == "Death":
+        print("Death hit 0!")
+        char.hp = 0
+
 #//ANCHOR INDIVIDUAL MECHANICS (The beginning of the end)
 def supportInput(char,skill,target):
     if skill.id == 17: #Reimu's Great Hakurei Barrier
@@ -1018,9 +1077,19 @@ def uniqueSupports(char,skill,target):
                     targetStats[statusD] = "R"
             applyStatus(char,targetStats,tar)
             applyStatus(char,charStats,char)
+    if skill.id == 127:
+        party = alive(onTeam(allCharacters(),char))
+        tug = None
+        for x in party:
+            if x.id == 60:
+                tug = x
+                party.remove(tug)
+                swapSelect(party,tug)
 
 def costXSP(char,skill):
     if skill.id == 27:#Marisa's Master Spark
+        return True
+    if skill.id == 106:#Therion's Share SP
         return True
     return False
 
@@ -1029,8 +1098,14 @@ def beforeCost(char,skill):
         skill.cost = f"{char.sp} SP"
         skill.damage = char.sp-3
         print(f"{skill.name}'s damage is {char.sp} - 3 = {skill.damage}.")
+    if skill.id == 106: #Therion's Share SP
+        print(f"Choose the value of X, a number between 0 and {char.sp}.")
+        skill.x = ask(0,char.sp)
+        skill.cost = f"{skill.x} SP"
+        skill.inflict = {"RecoverSP":skill.x}
 
 def beforeDamage(char,skill,target,crit):
+    refreshStats()
     if 62 in char.pids: #Momiji's Eyes that Perceive Reality
         if target.dfn > target.dfnB:
             print(f"-Eyes that Perceive Reality-\n{char.name} ignores {target.name}'s +{target.dfnC} DEF.")
@@ -1050,6 +1125,10 @@ def beforeDamage(char,skill,target,crit):
         skill.damage = char.spd - target.spd
         print(f"{char.name}'s SPD {char.spd} - {target.name}'s SPD {target.spd} = {skill.damage} damage.")
 
+    if skill.id == 107: #Therion's Aeber's Reckoning
+        skill.damage = char.spd*2
+        print(f"{char.name}'s SPD {char.spd} * 2 = {skill.damage} damage.")
+
 def beforeBlock(char,skill,target,damage):
     e = skill.inflict
     effects = ["damage"]
@@ -1062,6 +1141,24 @@ def beforeBlock(char,skill,target,damage):
                     damage *= e[effect][1]
                     print(f"Lucky!!! (Damage multiplied by {e[effect][1]})")
     return damage
+
+def onHitEffects(char,skill,target):
+    if 101 in char.pids and target.sp != 0:
+        target.sp -= 1
+        print(f"-Snatch-\n{target.name} loses 1 SP.")
+    if 111 in char.pids and target.terror != 0:
+        print(f"-Troubled Forgotten Item-")
+        applyStatus(char,{"RecoverHP":5,"RecoverSP":8},char)
+
+def endOfTurnEffects(char):
+    if 91 in char.pids:#Stahl's The Exact Median of the Army
+        statDict = getStatChangeDict(char)
+        party = alive(onTeam(inFront(),char))
+        if char in party:
+            party.remove(char) 
+        if statDict and party:
+            print("-The Exact Median of the Army-")
+            applyStatus(char,statDict,party)
 
 def restStep(x):
     pass
@@ -1086,6 +1183,8 @@ def effectOnKO(char,skill,target):
 def cleanupSkill(char,skill):
     if skill.id == 27:#Marisa's Master Spark
         skill.cost = "X SP"
+    if skill.id == 106:#Therion's Share SP
+        skill.cost = "X SP"
 
 def startOfTurn(char):
     if 61 in char.pids: # Momiji's Ability to See Far Distances
@@ -1109,7 +1208,22 @@ def autoMiss(char,skill,target):
             print(f"{target.name} is not terrified and cannot be hit.")
             return True
     return False
-    
+
+def uncappedSP(char):
+    if 101 in char.pids:
+        return True
+    return False
+
+def updateVaribles(char):
+    for x in getSkillList(char):
+        if x.id == 104:
+            x.x = x.damageDealt * 2
+
+def selfEffect(char,skill):
+    updateVaribles(char)
+    if skill.id == 104:
+        skill.self = {"RecoverSP":skill.x}
+
 #//ANCHOR -Common Passives
 def rallyEffects(char):
     if 11 in char.pids:#Reimu's Grand Incantation
@@ -1117,6 +1231,9 @@ def rallyEffects(char):
             print(f"-Grand Incantation-")
             e = {"Crit":3}
             statuses(char,e,char)
+    if 131 in char.pids:#Komachi's Slacking Off
+        print("-Slacking Off-")
+        applyStatus(char,{"RecoverHP":6},char)
 
 def typeBoost(char,skill):
     party = alive(onTeam(inFront(),char))
@@ -1125,7 +1242,7 @@ def typeBoost(char,skill):
                  ["Dark",81,"Flames of Jealousy"]]
     for x in party:
         for type in damageTypes:
-            if type[1] in char.pids and type[0] in skill.damageType:
+            if type[1] in x.pids and type[0] in skill.damageType:
                 boost += 1
                 print(f"-{type[2]}-\n{type[0]} damage increased by 1.")
     return boost
@@ -1136,6 +1253,9 @@ def swapEffect(target1,target2):
             print(f"-Instant Attack-\n{x.name} recovered her turn.")
             x.turn = True
             x.oncePerRound = False
+        if 121 in x.pids and not x.KO and x.crit <= 3:
+            print(f"-Unseen Movement-\n{x.name} gains [Crit 3].")
+            applyStatus(x,{"Crit":3},x)
     #Swap In Effects
     swappedIn = None
     if target1.slot >= 5 and target2.slot < 5:
@@ -1150,8 +1270,8 @@ def swapEffect(target1,target2):
 
 #//ANCHOR Test Section
 testA = ["Player A",
-            wikiToClass(4),
-            wikiToClass(8),
+            wikiToClass(13),
+            wikiToClass(6),
             wikiToClass(1),
             wikiToClass(2),
             wikiToClass(5),
@@ -1160,11 +1280,11 @@ testA = ["Player A",
             wikiToClass(7)]
 testB = ["Player B",
             wikiToClass(6),
-            wikiToClass(7),
+            wikiToClass(9),
             wikiToClass(8),
-            wikiToClass(1),
             wikiToClass(2),
-            wikiToClass(3),
+            wikiToClass(2),
+            wikiToClass(10),
             wikiToClass(4),
             wikiToClass(5)]
 

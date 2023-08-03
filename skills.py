@@ -12,12 +12,15 @@ class Skill:
         self.inflict = {}
         self.accuracy = "0"
         self.effect = {}
+        self.self = {}
+        self.x = 0
+        self.damageDealt = 0
 
 def base(self):
     pass
 
 class Temp(Skill):
-    def __init__(self,name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy,effect):
+    def __init__(self,name,display,id,skillType,cost,target,damageType,damage,inflict,accuracy,effect,selfE):
         super().__init__()
         self.name = name
         self.display = display
@@ -30,4 +33,5 @@ class Temp(Skill):
         self.inflict = inflict
         self.accuracy = accuracy
         self.effect = effect
+        self.self = selfE
         base(self)
