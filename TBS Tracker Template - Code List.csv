@@ -39,15 +39,15 @@ Chen,3,"Kimontonkou
 Self : [+3 ATK]",003,36,"Kimontonkou",SUP,1 SP,Self,,,"{""ATK"":3}",,,
 Cirno,1,"Icicle Fall
 [ATK] Cost 2 SP
-One Enemy: [Cold 2] [-3 SPD]",004,44,"Icicle Fall",ATK,2 SP,One Enemy,Cold,2,"{""SPD"":-3}",,,
+One Enemy: [Cold 2] [-3 SPD]",004,44,Icicle Fall,ATK,2 SP,One Enemy,Cold,2,"{""SPD"":-3}",,,
 Cirno,2,"Diamond Blizzard
 [ATK] Cost 6 SP
 All Enemies: [Cold 4] [Paralysis 1]
-This Skill has -1 ACC. ",004,45,"Diamond Blizzard",ATK,6 SP,All Enemies,Cold,4,"{""Paralysis"":1}",-1,,
+This Skill has -1 ACC. ",004,45,Diamond Blizzard,ATK,6 SP,All Enemies,Cold,4,"{""Paralysis"":1}",-1,,
 Cirno,3,"Perfect Freeze
 [ATK] Cost 5 SP
 All Enemies: [Cold 3] {50% -3 SPD}
-This Skill has -1 ACC.",004,46,"Perfect Freeze",ATK,5 SP,All Enemies,Cold,3,"{""SPD"":[50,-3]}",-1,,
+This Skill has -1 ACC.",004,46,Perfect Freeze,ATK,5 SP,All Enemies,Cold,3,"{""SPD"":[50,-3]}",-1,,
 Cirno,4,"White Album
 [SUP] Cost 3 SP
 Self: [+3 DEF, RES]",004,47,"White Album",SUP,3 SP,Self,,,"{""DFN"":3,""RES"":3}",,,
@@ -168,36 +168,36 @@ Komachi,4,"Scythe that Chooses the Dead
 One Enemy : [Blade 5]",013,137,"Scythe that Chooses the Dead",ATK,4 SP,One Enemy,Blade,5,,,,
 Olberic,1,"Stout Wall
 [SUP] Cost 1 SP
-Self: [+2 DEF]",014,144,"Stout Wall",SUP,1 SP,Self,,,,,,
+Self: [+2 DEF]",014,144,"Stout Wall",SUP,1 SP,Self,,,"{""DEF"":2}",,,
 Olberic,2,"Incite
 [SUP] Cost 2 SP
-Self: [Taunt 3]",014,145,"Incite",SUP,2 SP,Self,,,,,,
+Self: [Taunt 3]",014,145,"Incite",SUP,2 SP,Self,,,"{""Taunt"":3}",,,
 Olberic,3,"Cross Strike
 [ATK] Cost 3 SP
 One Enemy: [Blade 4]",014,146,"Cross Strike",ATK,3 SP,One Enemy,Blade,4,,,,
 Olberic,4,"Thousand Spears
 [ATK] Cost 5 SP
 All Enemies: [Pierce 6]
-This skill has -5 ACC.",014,147,"Thousand Spears",ATK,5 SP,All Enemies,Pierce,6,,,,
+This skill has -5 ACC.",014,147,"Thousand Spears",ATK,5 SP,All Enemies,Pierce,6,,-5,,
 Youmu,1,"Present Life Slash
 [ATK] Cost 4 SP
 One Enemy : [3 Blade]
-This skill has Scope and +4 ACC.",015,154,"Present Life Slash",ATK,4 SP,One Enemy,#N/A,,,,,
+This skill has Scope and +4 ACC.",015,154,"Present Life Slash",ATK,4 SP,One Enemy,#N/A,,,4,,
 Youmu,2,"Slash of Eternity
 [ATK] Cost 8 SP
 One Enemy : [12 Blade]
 Self : [-1 SPD,DEF]
-This Skill has +2 ACC. ",015,155,"Slash of Eternity",ATK,8 SP,One Enemy,#N/A,,,,,
+This Skill has +2 ACC. ",015,155,"Slash of Eternity",ATK,8 SP,One Enemy,#N/A,,,4,,
 Youmu,3,"Divine Slash of Karmic Wind
 [ATK] Cost 11 SP
 All Enemies: [10 Wind]
 Self : [-2 SPD,DEF] 
-This Skill has +3 ACC. ",015,156,"Divine Slash of Karmic Wind",ATK,11 SP,All Enemies,#N/A,,,,,
+This Skill has +3 ACC. ",015,156,"Divine Slash of Karmic Wind",ATK,11 SP,All Enemies,#N/A,,,3,,
 Youmu,4,"Slash Clearing the Six Senses
 [ATK] Cost 7 SP
 All Enemies : [Nature 5]
 Self : [Cure 1] 
-This Skill has -1 ACC.",015,157,"Slash Clearing the Six Senses",ATK,7 SP,All Enemies,Nature,5,,,,
+This Skill has -1 ACC.",015,157,"Slash Clearing the Six Senses",ATK,7 SP,All Enemies,Nature,5,,-1,,
 Sully,1,"Fiery Words
 [SUP] Cost 3 SP
 All Allies : [Crit 2] [Bold 2] [-2 RES]",016,164,"Fiery Words",SUP,3 SP,All Allies,,,,,,

@@ -73,6 +73,8 @@ class Char:
         self.deathT = 0
         self.distance = 0
         self.distanceT = 0
+        self.taunt = 0
+        self.tauntT = 0
 
 def base(self):
     self.maxHpB = self.hp

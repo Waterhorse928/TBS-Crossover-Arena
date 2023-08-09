@@ -38,7 +38,7 @@ allAllies = ["All Allies"]
 self = ["Self", None]
 oneTarget = ["One Target", "One Other Target"]
 other = ["One Other Target"]
-statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance"]
+statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance","Taunt"]
 statusListStop = ["Crit"]
 statusListCount = ["Death"]
 
@@ -284,9 +284,7 @@ def alive(l):
 def speedOrder(l):
     refreshSlot()
     random.shuffle(l)
-    for x in l:
-        if x.paralysis != 0:
-            x.spd -= 100
+    l = speedEffects(l)
     l.sort(key=lambda x : x.slot)
     l.sort(key=lambda x : -x.spd)
     refreshStats()
@@ -478,6 +476,7 @@ def targeting(char,skill,target):
     if skill.target in oneEnemy:
         l = beforeSlot(onTeam(alive(inFront()),target,True),target)
         interceptList = []
+        interceptEffects(l)
         for x in l:
             for y in range(0,x.intercept):
                 interceptList.append(x.name)
@@ -486,7 +485,7 @@ def targeting(char,skill,target):
         roll = []
         for x in range(0,6):
             roll.append(interceptList[x])
-        print("rolling targeting")
+        print("Rolling targeting.")
         y = 0
         for x in roll:
             y += 1
@@ -495,7 +494,7 @@ def targeting(char,skill,target):
         for x in l:
             if roll[n-1] == x.name:
                 target = x
-        print(f"Rolled a {n}. Targeting {target.name}")
+        print(f"Rolled a {n}, targeting {target.name}.")
         return target
     if skill.target in allEnemies:
         return target
@@ -510,15 +509,14 @@ def indirectTargeting(char,skill,target):
         if skill.target == "Two Enemies":
             for x in party:
                 if party.index(x) == party.index(target) + 1:
-                    if x.distance != 0:
-                        print(f"{x.name} has [Distance {x.distance}] and is out of range!")
+                    if indirectTargetBlock(x):
+                        pass
                     else:
                         inTargets.append(x)
     if skill.target in allEnemies:
         for x in target:
             print(x.distance)
-            if x.distance != 0:
-                print(f"{x.name} has [Distance {x.distance}] and is out of range!")
+            if indirectTargetBlock(x):
                 target.remove(x)
             else:
                 pass
@@ -539,8 +537,7 @@ def accuracy(char,skill,target):
         return False
     else:
         print(f"Rolling Accuracy. Number to beat is {miss}.")
-        if char.precision != 0 or "Precision" in skill.effect:
-            print(f"Precision! Hit {target.name}.")
+        if alwaysHit(char,skill,target):
             return True
         if n > miss:
             print(f"Rolled {n}, Hit {target.name}.")
@@ -876,8 +873,6 @@ def resolveStatus(char):
         elif valueC < 0 and not valueT:
             setattr(char, statC, valueC + 1)
 
-    drainHP = ["Burn"]
-    drainSP = ["Burn","Terror"]
     for status in statusList:
         if status in statusListStop:
             continue
@@ -888,19 +883,9 @@ def resolveStatus(char):
         value = getattr(char,statusA)
         valueT = getattr(char,statusA + "T")
 
+        
         if value != 0 and not valueT:
-            if status in drainHP:
-                before = char.hp
-                char.hp -= value
-                char.hp = max(char.hp,0)
-                lost = before - char.hp
-                print(f"{char.name} lost {lost} HP due to {statusD}.")
-            if status in drainSP:
-                before = char.sp
-                char.sp -= value
-                char.sp = max(char.sp,0)
-                lost = before - char.sp
-                print(f"{char.name} lost {lost} SP due to {statusD}.")
+            drainEffects(value,valueT,status,statusD,statusA,char)
             setattr(char, statusA, value - 1)
             if value - 1 != 0:
                 print(f"[{statusD} {value}] drops to [{statusD} {value - 1}]")
@@ -1046,6 +1031,44 @@ def countdown(status,char):
     if status == "Death":
         print("Death hit 0!")
         char.hp = 0
+
+def speedEffects(l):
+    for x in l:
+        if x.paralysis != 0:
+            x.spd -= 100
+    return l
+
+def indirectTargetBlock(x):
+    if x.distance != 0:
+        print(f"{x.name} has [Distance {x.distance}] and is out of range!")
+
+def alwaysHit(char,skill,target):
+    if char.precision != 0 or "Precision" in skill.effect:
+        print(f"Precision! Hit {target.name}.")
+        return True
+    return False
+
+def drainEffects(value,valueT,status,statusD,statusA,char):
+    drainHP = ["Burn"]
+    drainSP = ["Burn","Terror"]
+    if status in drainHP:
+        before = char.hp
+        char.hp -= value
+        char.hp = max(char.hp,0)
+        lost = before - char.hp
+        print(f"{char.name} lost {lost} HP due to {statusD}.")
+    if status in drainSP:
+        before = char.sp
+        char.sp -= value
+        char.sp = max(char.sp,0)
+        lost = before - char.sp
+        print(f"{char.name} lost {lost} SP due to {statusD}.")
+
+def interceptEffects(l):
+    for x in l:
+        x.intercept = 1
+        x.intercept += x.taunt
+        x.intercept += tauntPassives(x)
 
 #//ANCHOR INDIVIDUAL MECHANICS (The beginning of the end)
 def supportInput(char,skill,target):
@@ -1224,6 +1247,12 @@ def selfEffect(char,skill):
     if skill.id == 104:
         skill.self = {"RecoverSP":skill.x}
 
+def tauntPassives(x):
+    if 141 in x.pids:#Olberic
+        print(f"-Cover-\n{x.name} has Taunt 2.")
+        return 2
+    return 0
+
 #//ANCHOR -Common Passives
 def rallyEffects(char):
     if 11 in char.pids:#Reimu's Grand Incantation
@@ -1270,7 +1299,7 @@ def swapEffect(target1,target2):
 
 #//ANCHOR Test Section
 testA = ["Player A",
-            wikiToClass(13),
+            wikiToClass(14),
             wikiToClass(6),
             wikiToClass(1),
             wikiToClass(2),
