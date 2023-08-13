@@ -1,11 +1,11 @@
 Character,#,Text,Char ID,Skill ID,Name,Skill Type,Cost,Target,Damage Type,Damage,Inflict,Accuracy,Effect,Self
 Reimu,1,"Yin-Yang Orb 
 [ATK] Cost 2 SP
-One Enemy: [Spirit 3]",001,14,Yin-Yang Orb ,ATK,2 SP,One Enemy,Spirit,3,,,,
+One Enemy: [Spirit 3]",001,14,Yin-Yang Orb ,ATK,2 SP,One Enemy,Spirit,3,"{""Spirit"":3}",,,
 Reimu,2,"Fantasy Seal 
 [MAG] Cost 3 SP
 All Enemies: [Spirit 3]
-This Skill has -1 ACC. ",001,15,Fantasy Seal ,MAG,3 SP,All Enemies,Spirit,3,,-1,,
+This Skill has -1 ACC. ",001,15,Fantasy Seal ,MAG,3 SP,All Enemies,Spirit,3,"{""Spirit"":3}",-1,,
 Reimu,3,"Exorcising Border 
 [SUP] Cost 3 SP
 All Allies : Recover 3 HP.",001,16,Exorcising Border ,SUP,3 SP,All Allies,,,"{""RecoverHP"":3}",,,
@@ -14,7 +14,7 @@ Reimu,4,"Great Hakurei Barrier
 All Allies : [+3 DEF] or [+3 RES]",001,17,Great Hakurei Barrier ,SUP,5 SP,All Allies,,,"{""The_Begining_of_the_End"":0}",,,
 Marisa,1,"Magic Missile 
 [MAG] Cost 2 SP
-One Enemy: [Mystic 4]",002,24,Magic Missile ,MAG,2 SP,One Enemy,Mystic,4,,,,
+One Enemy: [Mystic 4]",002,24,Magic Missile ,MAG,2 SP,One Enemy,Mystic,4,"{""Mystic"":4}",,,
 Marisa,2,"Asteroid Belt 
 [MAG] Cost 4 SP
 All Enemies: [Mystic 3]
@@ -145,11 +145,11 @@ One Enemy : [Pierce 3]
 This skill has Precision.",012,124,Expert Shot,ATK,4 SP,One Enemy,Pierce,3,,,"{""Precision"":1}",
 Will,2,"Unexpected Strategy
 [SUP] Cost 4 SP
-All Enemies : [-2 DEF,RES]",012,125,"Unexpected Strategy",SUP,4 SP,All Enemies,,,"{""DFN"":-2,""RES"":-2}",,,
+All Enemies : [-2 DEF,RES]",012,125,Unexpected Strategy,SUP,4 SP,All Enemies,,,"{""DFN"":-2,""RES"":-2}",,,
 Will,3,"Double Knife Defense
 [ATK] Cost 1 SP
 One Enemy : [Blade 1] 
-Self : [+2 DEF]",012,126,"Double Knife Defense",ATK,1 SP,One Enemy,Blade,1,,,,"{""DFN"":2}"
+Self : [+2 DEF]",012,126,Double Knife Defense,ATK,1 SP,One Enemy,Blade,1,,,,"{""DFN"":2}"
 Will,4,"Hit-and-Run Tactics
 [SUP] Cost 3 SP
 One Enemy : [Terror 2]
@@ -168,7 +168,7 @@ Komachi,4,"Scythe that Chooses the Dead
 One Enemy : [Blade 5]",013,137,"Scythe that Chooses the Dead",ATK,4 SP,One Enemy,Blade,5,,,,
 Olberic,1,"Stout Wall
 [SUP] Cost 1 SP
-Self: [+2 DEF]",014,144,"Stout Wall",SUP,1 SP,Self,,,"{""DEF"":2}",,,
+Self: [+2 DEF]",014,144,"Stout Wall",SUP,1 SP,Self,,,"{""DFN"":2}",,,
 Olberic,2,"Incite
 [SUP] Cost 2 SP
 Self: [Taunt 3]",014,145,"Incite",SUP,2 SP,Self,,,"{""Taunt"":3}",,,
@@ -181,26 +181,26 @@ All Enemies: [Pierce 6]
 This skill has -5 ACC.",014,147,"Thousand Spears",ATK,5 SP,All Enemies,Pierce,6,,-5,,
 Youmu,1,"Present Life Slash
 [ATK] Cost 4 SP
-One Enemy : [3 Blade]
-This skill has Scope and +4 ACC.",015,154,"Present Life Slash",ATK,4 SP,One Enemy,#N/A,,,4,,
+One Enemy : [Blade 3]
+This skill has Scope and +4 ACC.",015,154,Present Life Slash,ATK,4 SP,One Enemy,Blade,3,,4,"{""Scope"":1}",
 Youmu,2,"Slash of Eternity
 [ATK] Cost 8 SP
-One Enemy : [12 Blade]
+One Enemy : [Blade 12]
 Self : [-1 SPD,DEF]
-This Skill has +2 ACC. ",015,155,"Slash of Eternity",ATK,8 SP,One Enemy,#N/A,,,4,,
+This Skill has +2 ACC. ",015,155,Slash of Eternity,ATK,8 SP,One Enemy,Blade,12,,4,,"{""SPD"":-1,""DFN"":-1}"
 Youmu,3,"Divine Slash of Karmic Wind
 [ATK] Cost 11 SP
-All Enemies: [10 Wind]
+All Enemies: [Wind 10]
 Self : [-2 SPD,DEF] 
-This Skill has +3 ACC. ",015,156,"Divine Slash of Karmic Wind",ATK,11 SP,All Enemies,#N/A,,,3,,
+This Skill has +3 ACC. ",015,156,Divine Slash of Karmic Wind,ATK,11 SP,All Enemies,Wind,10,,3,,"{""SPD"":-2,""DFN"":-2}"
 Youmu,4,"Slash Clearing the Six Senses
 [ATK] Cost 7 SP
 All Enemies : [Nature 5]
 Self : [Cure 1] 
-This Skill has -1 ACC.",015,157,"Slash Clearing the Six Senses",ATK,7 SP,All Enemies,Nature,5,,-1,,
+This Skill has -1 ACC.",015,157,Slash Clearing the Six Senses,ATK,7 SP,All Enemies,Nature,5,,-1,,"{""Cure"":1}"
 Sully,1,"Fiery Words
 [SUP] Cost 3 SP
-All Allies : [Crit 2] [Bold 2] [-2 RES]",016,164,"Fiery Words",SUP,3 SP,All Allies,,,,,,
+All Allies : [Crit 2] [Bold 2] [-2 RES]",016,164,"Fiery Words",SUP,3 SP,All Allies,,,"{""Crit"":2,""Bold"":2,""RES"":-2}",,,
 Sully,2,"Swordbreaker
 [ATK] Cost 4 SP
 One Enemy: [Pierce 8]
@@ -210,7 +210,7 @@ Sully,3,"Charge of the Bull
 Two Enemies : [Pierce 4]",016,166,Charge of the Bull,ATK,4 SP,Two Enemies,Pierce,4,,,,
 Vaike,1,"Teach's Lesson
 [SUP] Cost 2 SP
-One Ally : [+4 ATK] [-3 SPD]",017,174,"Teach's Lesson",SUP,2 SP,One Ally,,,,,,
+One Ally : [+4 ATK] [-3 SPD]",017,174,"Teach's Lesson",SUP,2 SP,One Ally,,,"{""ATK"":4,""SPD"":-3}",,,
 Vaike,2,"""Here Comes The Vaike!""
 [ATK] Cost 5 SP
 Two Enemies : [Impact 5 + X]
@@ -218,55 +218,55 @@ X = [5 - Vaike's SPD]",017,175,"""Here Comes The Vaike!""",ATK,5 SP,Two Enemies,
 Vaike,3,"Tomahawk
 [ATK] Cost 3 SP
 One Enemy : [Impact 4]
-This Skill has Scope and -2 ACC.",017,176,"Tomahawk",ATK,3 SP,One Enemy,Impact,4,,,,
+This Skill has Scope and -2 ACC.",017,176,"Tomahawk",ATK,3 SP,One Enemy,Impact,4,,-2,"{""Scope"":1}",
 Keine,1,"Ancient History - Old History
 [MAG] Cost 4 SP
 All Enemies : [Dark 3]
 This Skill's damage is reduced by
 the opposite defensive stat.
-This Skill has -1 ACC.",018,184,"Ancient History - Old History",MAG,4 SP,All Enemies,Dark,3,,,,
+This Skill has -1 ACC.",018,184,Ancient History - Old History,MAG,4 SP,All Enemies,Dark,3,,-1,,
 Keine,2,"New History - Next History
 [MAG] Cost 4 SP
 All Enemies : [Spirit 3]
-This Skill has -1 ACC. ",018,185,"New History - Next History",MAG,4 SP,All Enemies,Spirit,3,,,,
+This Skill has -1 ACC. ",018,185,"New History - Next History",MAG,4 SP,All Enemies,Spirit,3,,-1,,
 Keine,3,"Three Treasures - Sword
 [SUP] Cost 3 SP
-All Allies : [+1 ATK,MAG,SPD]",018,186,"Three Treasures - Sword",SUP,3 SP,All Allies,,,,,,
+All Allies : [+1 ATK,MAG,SPD]",018,186,Three Treasures - Sword,SUP,3 SP,All Allies,,,"{""ATK"":1,""MAG"":1,""SPD"":1}",,,
 Keine,4,"Three Treasures - Mirror
 [SUP] Cost 3 SP
-All Allies : [+1 DEF,RES,EVA]",018,187,"Three Treasures - Mirror",SUP,3 SP,All Allies,,,,,,
+All Allies : [+1 DEF,RES,EVA]",018,187,"Three Treasures - Mirror",SUP,3 SP,All Allies,,,"{""DFN"":1,""RES"":1,""EVA"":1}",,,
 Minoriko,1,"Autumn Sky
 [MAG] Cost 2 SP
-One Enemy: [2 Nature]  
-Minoriko gains [+2 SPD].",019,194,"Autumn Sky",MAG,2 SP,One Enemy,#N/A,,,,,
+One Enemy : [2 Nature]  
+Minoriko gains [+2 SPD].",019,194,Autumn Sky,MAG,2 SP,One Enemy,#N/A,,,,,"{""SPD"":2}"
 Minoriko,2,"Warm Color Harvest
 [MAG] Cost 6 SP
-All Enemies: [X Nature] 
+All Enemies : [X Nature] 
 X = RES.
-This Skill has -1 ACC. ",019,195,"Warm Color Harvest",MAG,6 SP,All Enemies,X,Nature,,,,
+This Skill has -1 ACC. ",019,195,Warm Color Harvest,MAG,6 SP,All Enemies,X,Nature,,-1,,
 Minoriko,3,"Sweet Potato Room
 [SUP] Cost 3 SP
-One Ally: Recover 6 HP.",019,196,"Sweet Potato Room",SUP,3 SP,One Ally,,,,,,
+One Ally : Recover 6 HP.",019,196,Sweet Potato Room,SUP,3 SP,One Ally,,,"{""RecoverHP"":6}",,,
 Minoriko,4,"Owotoshi Harvester
 [SUP] Cost 3 SP
-One Ally: [+2 DEF, RES].",019,197,"Owotoshi Harvester",SUP,3 SP,One Ally,,,,,,
+One Ally : [+2 DEF, RES].",019,197,Owotoshi Harvester,SUP,3 SP,One Ally,,,"{""DEF"":2,""RES"":2}",,,
 Ophilia,1,"Heal Wounds
 [SUP] Cost 5 SP
-All Allies: Recover 5 HP.",020,204,"Heal Wounds",SUP,5 SP,All Allies,,,,,,
+All Allies: Recover 5 HP.",020,204,"Heal Wounds",SUP,5 SP,All Allies,,,"{""RecoverHP"":5}",,,
 Ophilia,2,"Luminescence
 [MAG] Cost 4 SP
 All Enemies: [Light 3]
-This Skill has -1 ACC. ",020,205,"Luminescence",MAG,4 SP,All Enemies,Light,3,,,,
+This Skill has -1 ACC. ",020,205,Luminescence,MAG,4 SP,All Enemies,Light,3,,-1,,
 Ophilia,3,"Sheltering Veil
 [SUP] Cost 3 SP
-All Allies: [+2 RES]",020,206,"Sheltering Veil",SUP,3 SP,All Allies,,,,,,
+All Allies: [+2 RES]",020,206,"Sheltering Veil",SUP,3 SP,All Allies,,,"{""RES"":2}",,,
 Ophilia,4,"Revive
 [SUP] Cost 5 SP
-Any Ally: Revive KO'ed Ally with 1 HP.",020,207,"Revive",SUP,5 SP,Any Ally,,,,,,
+Any KO'ed Ally: Revive Ally with 1 HP.",020,207,Revive,SUP,5 SP,Any KO'ed Ally,,,"{""Revive"":0,""RecoverHP"":1}",,,
 Nitori,1,"Kappa's Illusionary Waterfall
 [ATK] Cost 2 SP
 All Enemies: [Water 1] {50% -2 DEF}
-This Skill has -1 ACC. ",021,214,"Kappa's Illusionary Waterfall",ATK,2 SP,All Enemies,Water,1,,,,
+This Skill has -1 ACC. ",021,214,"Kappa's Illusionary Waterfall",ATK,2 SP,All Enemies,Water,1,"{""DEF"":[50,2]}",,,
 Nitori,2,"Exteeeending Aaaaarm
 [ATK] Cost 2 SP
 All Enemies: [Nature 2]

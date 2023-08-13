@@ -75,6 +75,12 @@ class Char:
         self.distanceT = 0
         self.taunt = 0
         self.tauntT = 0
+        self.scope = 0
+        self.scopeT = 0
+        self.cure = 0
+        self.cureT = 0
+        self.disable = 0
+        self.disableT = 0
 
 def base(self):
     self.maxHpB = self.hp
