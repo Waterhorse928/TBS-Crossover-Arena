@@ -237,19 +237,19 @@ Keine,4,"Three Treasures - Mirror
 All Allies : [+1 DEF,RES,EVA]",018,187,"Three Treasures - Mirror",SUP,3 SP,All Allies,,,"{""DFN"":1,""RES"":1,""EVA"":1}",,,
 Minoriko,1,"Autumn Sky
 [MAG] Cost 2 SP
-One Enemy : [2 Nature]  
-Minoriko gains [+2 SPD].",019,194,Autumn Sky,MAG,2 SP,One Enemy,#N/A,,,,,"{""SPD"":2}"
+One Enemy : [Nature 2]  
+Minoriko gains [+2 SPD].",019,194,Autumn Sky,MAG,2 SP,One Enemy,Nature,2,,,,"{""SPD"":2}"
 Minoriko,2,"Warm Color Harvest
 [MAG] Cost 6 SP
-All Enemies : [X Nature] 
+All Enemies : [Nature X] 
 X = RES.
-This Skill has -1 ACC. ",019,195,Warm Color Harvest,MAG,6 SP,All Enemies,X,Nature,,-1,,
+This Skill has -1 ACC. ",019,195,Warm Color Harvest,MAG,6 SP,All Enemies,Nature,X,,-1,,
 Minoriko,3,"Sweet Potato Room
 [SUP] Cost 3 SP
 One Ally : Recover 6 HP.",019,196,Sweet Potato Room,SUP,3 SP,One Ally,,,"{""RecoverHP"":6}",,,
 Minoriko,4,"Owotoshi Harvester
 [SUP] Cost 3 SP
-One Ally : [+2 DEF, RES].",019,197,Owotoshi Harvester,SUP,3 SP,One Ally,,,"{""DEF"":2,""RES"":2}",,,
+One Ally : [+2 DEF, RES].",019,197,Owotoshi Harvester,SUP,3 SP,One Ally,,,"{""DFN"":2,""RES"":2}",,,
 Ophilia,1,"Heal Wounds
 [SUP] Cost 5 SP
 All Allies: Recover 5 HP.",020,204,"Heal Wounds",SUP,5 SP,All Allies,,,"{""RecoverHP"":5}",,,

@@ -34,7 +34,7 @@ oneEnemy = ["One Enemy","Two Enemies","Three Enemies"]
 allEnemies = ["All Enemies"]
 oneAlly = ["One Ally","One KO'ed Ally"]
 dead = ["One KO'ed Ally","Any KO'ed Ally"]
-any = ["Any Target","Any KO'ed Ally"]
+anyTarget = ["Any Target","Any KO'ed Ally"]
 allAllies = ["All Allies"]
 self = ["Self", None]
 oneTarget = ["One Target", "One Other Target"]
@@ -291,6 +291,13 @@ def alive(l):
             newList.append(x)
     return newList
 
+def deadList(l):
+    newList = []
+    for x in l:
+        if x.KO == True:
+            newList.append(x)
+    return newList
+
 def speedOrder(l):
     refreshSlot()
     random.shuffle(l)
@@ -467,7 +474,7 @@ def pullSP(variable):
 
 #//ANCHOR --Targeting
 def selectTarget(char,skill):
-    if skill.target in one or skill.target in any:
+    if skill.target in one or skill.target in anyTarget:
         y = 0
         if skill.target in oneEnemy:
             l = onTeam(inFront(),char,False)
@@ -475,10 +482,12 @@ def selectTarget(char,skill):
             l = onTeam(inFront(),char)
         if skill.target in oneTarget:
             l = onTeam(inFront(),char) + onTeam(inFront(),char,False)
-        if skill.target in any:
+        if skill.target in anyTarget:
             l = allCharacters()
         if skill.target not in dead:
             l = alive(l)
+        else:
+            l = deadList(l)
         if skill.target in other:
             l.remove(char)
         if l:
@@ -581,7 +590,7 @@ def accuracy(char,skill,target):
 #//ANCHOR --Damage
 def dealDamage(char,skill,target,crit):
     refreshStats()
-    beforeDamage(char,skill,target,crit)
+    crit = beforeDamage(char,skill,target,crit)
     damage = int(skill.damage)
     damage += crit
     ignore = gatherBreak(char,skill,target)
@@ -590,17 +599,19 @@ def dealDamage(char,skill,target,crit):
     if skill.skillType == "ATK":
         damage += char.atk
         damage = beforeBlock(char,skill,target,damage)
-        damage -= max(target.dfn-ignore,0)
         if opposite:
             damage -= max(target.res-ignore,0)
+        else:
+            damage -= max(target.dfn-ignore,0)
         damage = max(0,damage)
 
     if skill.skillType == "MAG":
         damage += char.mag
         damage = beforeBlock(char,skill,target,damage)
-        damage -= max(target.res-ignore,0)
         if opposite:
             damage -= max(target.dfn-ignore,0)
+        else:
+            damage -= max(target.res-ignore,0)
         damage = max(0,damage)
 
     before = target.hp
@@ -1265,6 +1276,8 @@ def beforeDamage(char,skill,target,crit):
         skill.damage = char.res
         print(f"{char.name}'s RES {char.res} = {skill.damage} damage.")
 
+    return crit
+
 def beforeBlock(char,skill,target,damage):
     e = skill.inflict
     effects = ["damage"]
@@ -1353,11 +1366,11 @@ def autoMiss(char,skill,target):
         
     if skill.id == 165: #Sully's Swordbreaker
         dt = "Blade"
-        if dt in getDamageTypes(target):
-            return False
-        else:
-            print(f"{target.name} wields no {dt} skills, {skill.name} is ineffective.")
-            return True
+        for x in getDamageTypes(target):
+            if dt in x:
+                return False
+        print(f"{target.name} wields no {dt} skills, {skill.name} is ineffective.")
+        return True
     return False
 
 def uncappedHP(char):
@@ -1387,8 +1400,9 @@ def tauntPassives(x):
     return 0
 
 def startOfGame():
+    refreshSlot()
     for x in allCharacters():
-        if 171 in x.pids and x.slot >= 4:
+        if 171 in x.pids and x.slot <= 4:
             print(f"-Slightly Forgetful-")
             applyStatus(x,{"Weaken":1,"Disable":1},x)
 
@@ -1454,7 +1468,7 @@ def swapEffect(target1,target2):
 
 #//ANCHOR Test Section
 testA = ["Player A",
-            wikiToClass(15),
+            wikiToClass(18),
             wikiToClass(16),
             wikiToClass(17),
             wikiToClass(1),
@@ -1463,7 +1477,7 @@ testA = ["Player A",
             wikiToClass(4),
             wikiToClass(5)]
 testB = ["Player B",
-            wikiToClass(18),
+            wikiToClass(15),
             wikiToClass(19),
             wikiToClass(20),
             wikiToClass(6),
