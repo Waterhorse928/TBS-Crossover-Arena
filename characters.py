@@ -81,6 +81,8 @@ class Char:
         self.cureT = 0
         self.disable = 0
         self.disableT = 0
+        self.bold = 0
+        self.boldT = 0
 
 def base(self):
     self.maxHpB = self.hp

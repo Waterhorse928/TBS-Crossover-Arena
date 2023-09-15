@@ -41,7 +41,7 @@ oneTarget = ["One Target", "One Other Target"]
 ally = oneAlly + allAllies + ["Any KO'ed Ally"]
 one = oneTarget + oneAlly + oneEnemy
 other = ["One Other Target"]
-statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance","Taunt","Scope","Cure","Weaken","Disable"]
+statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance","Taunt","Scope","Cure","Weaken","Disable","Bold"]
 debuffList = ["Paralysis","Burn","Terror","Silence","Death","Weaken","Disable"]
 statusListStop = ["Crit"]
 statusListCount = ["Death"]
@@ -951,6 +951,7 @@ def resolveStatus(char):
 
         
         if value != 0 and not valueT:
+            recoverEffects(value,valueT,status,statusD,statusA,char)
             drainEffects(value,valueT,status,statusD,statusA,char)
             setattr(char, statusA, value - 1)
             if value - 1 != 0:
@@ -1116,19 +1117,31 @@ def alwaysHit(char,skill,target):
         return True
     return False
 
+def recoverEffects(value,valueT,status,statusD,statusA,char):
+    healHP = []
+    healSP = ["Bold"]
+    if status in healHP:
+        before = char.hp
+        char.hp += value
+        gain = char.hp - before
+        print(f"{char.name} recovered {gain} HP due to {statusD}.")
+    if status in healSP:
+        before = char.sp
+        char.sp += value
+        gain = char.sp - before
+        print(f"{char.name} recovered {gain} SP due to {statusD}.")
+
 def drainEffects(value,valueT,status,statusD,statusA,char):
     drainHP = ["Burn"]
     drainSP = ["Burn","Terror"]
     if status in drainHP:
         before = char.hp
         char.hp -= value
-        char.hp = max(char.hp,0)
         lost = before - char.hp
         print(f"{char.name} lost {lost} HP due to {statusD}.")
     if status in drainSP:
         before = char.sp
         char.sp -= value
-        char.sp = max(char.sp,0)
         lost = before - char.sp
         print(f"{char.name} lost {lost} SP due to {statusD}.")
 
@@ -1471,7 +1484,7 @@ testA = ["Player A",
             wikiToClass(18),
             wikiToClass(16),
             wikiToClass(17),
-            wikiToClass(1),
+            wikiToClass(12),
             wikiToClass(2),
             wikiToClass(3),
             wikiToClass(4),
