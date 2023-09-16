@@ -274,31 +274,31 @@ This Skill has -2 ACC. ",021,215,"Exteeeending Aaaaarm",ATK,2 SP,All Enemies,Na
 Nitori,3,"Super Scope 3D
 [ATK] Cost 8 SP
 One Enemy: [Pierce 10]
-This Skill has Scope. ",021,216,"Super Scope 3D",ATK,8 SP,One Enemy,Pierce,10,,,,
+This Skill has Scope. ",021,216,"Super Scope 3D",ATK,8 SP,One Enemy,Pierce,10,,,"{""Scope"":1}",
 Nitori,4,"Portable Versatile Machine
 [SUP] Cost 2 SP
-Self: [+1 ATK,DEF,RES,SPD]",021,217,"Portable Versatile Machine",SUP,2 SP,Self,,,,,,
+Self: [+1 ATK,DEF,RES,SPD]",021,217,"Portable Versatile Machine",SUP,2 SP,Self,,,"{""ATK"":1,""DEF"":1,""RES"":1,""SPD"":1}",,,
 Rinnosuke,1,"First Aid
 [SUP] Cost: 1 SP
-One Ally : Recovers 3 HP.",022,224,First Aid,SUP,: 1 SP,[SUP] Cost,,,,,,
+One Ally : Recovers 3 HP.",022,224,First Aid,SUP,: 1 SP,[SUP] Cost,,,"{""RecoverHP"":3}",,,
 Rinnosuke,2,"Battle Command
 [SUP] Cost: 2 SP
-One Ally : [+1 ATK,MAG,DEF,RES]",022,225,Battle Command,SUP,: 2 SP,[SUP] Cost,,,,,,
+One Ally : [+1 ATK,MAG,DEF,RES]",022,225,Battle Command,SUP,: 2 SP,[SUP] Cost,,,"{""ATK"":1,""MAG"":1,""DEF"":1,""RES"":1}",,,
 Rumia,1,"Moonlight Ray
 [MAG] Cost 2 SP
 One Enemy: [Dark 4]",023,234,"Moonlight Ray",MAG,2 SP,One Enemy,Dark,4,,,,
 Rumia,2,"Dark Side of the Moon
 [MAG] Cost 2 SP
 All Enemies: [Dark 2]
-This Skill has Break and -1 ACC. ",023,235,"Dark Side of the Moon",MAG,2 SP,All Enemies,Dark,2,,,,
+This Skill has Break and -1 ACC. ",023,235,"Dark Side of the Moon",MAG,2 SP,All Enemies,Dark,2,,-1,"{""Break"":1}",
 Rumia,3,"Demarcation
 [SUP] Cost 3 SP
-All Allies: Recover 2 HP. [Cure 0].",023,236,"Demarcation",SUP,3 SP,All Allies,,,,,,
+All Allies: Recover 2 HP. [Cure 0].",023,236,"Demarcation",SUP,3 SP,All Allies,,,"{""RecoverHP"":2,""Cure"":0}",,,
 Wobbuffet,1,"Rebound
 [X] Cost 1 SP
 All Enemies : [Impact 0]
 X = ATK or MAG. 
-This Skill has -1 ACC. ",024,244,"Rebound",X,1 SP,All Enemies,,,,,,
+This Skill has -1 ACC. ",024,244,"Rebound",X,1 SP,All Enemies,,,,-1,,
 Ruby,1,"Crescent Rose: Sniper Shot 
 [ATK] Cost 3 SP
 One Enemy: [Pierce 3]

@@ -41,7 +41,7 @@ oneTarget = ["One Target", "One Other Target"]
 ally = oneAlly + allAllies + ["Any KO'ed Ally"]
 one = oneTarget + oneAlly + oneEnemy
 other = ["One Other Target"]
-statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance","Taunt","Scope","Cure","Weaken","Disable","Bold"]
+statusList = ["Crit","Paralysis","Burn",["Break","brea"],"Terror","Silence","Precision","Death","Distance","Taunt","Scope","Cure","Weaken","Disable","Bold","Cloak"]
 debuffList = ["Paralysis","Burn","Terror","Silence","Death","Weaken","Disable"]
 statusListStop = ["Crit"]
 statusListCount = ["Death"]
@@ -490,6 +490,7 @@ def selectTarget(char,skill):
             l = deadList(l)
         if skill.target in other:
             l.remove(char)
+        untargetable(l,char,skill)
         if l:
             for x in l:
                 y += 1
@@ -1150,6 +1151,8 @@ def interceptEffects(l):
         x.intercept = 1
         x.intercept += x.taunt
         x.intercept += tauntPassives(x)
+        if x.cloak != 0:
+            x.intercept = 0
 
 def autoTarget(char,skill,target):
     if char.scope != 0 or "Scope" in skill.effect:
@@ -1193,6 +1196,11 @@ def oppositeCheck(char,skill,target):
         print(f"Swapping defensive stat.")
         return True
     return False
+
+def untargetable(l,char,skill):
+    for x in l:
+        if x.cloak != 0 and (skill.skillType == "ATK" or skill.skillType == "MAG"):
+            l.remove(x)
 
 #//ANCHOR INDIVIDUAL MECHANICS (The beginning of the end)
 def supportInput(char,skill,target):
@@ -1326,6 +1334,10 @@ def endOfTurnEffects(char):
         party = alive(onTeam(inFront(),char,False))
         print(f"-Verbal Abuse-")
         applyStatus(char,{"ATK":-1},party)
+
+    if 211 in char.pids:#Nitori's Opitical Camouflage
+        print(f"-Optical Camouflage Suit-")
+        applyStatus(char,{"Cloak":1},char)
 
 def restStep(x):
     if 191 in x.pids:#Minoriko
@@ -1481,7 +1493,7 @@ def swapEffect(target1,target2):
 
 #//ANCHOR Test Section
 testA = ["Player A",
-            wikiToClass(18),
+            wikiToClass(21),
             wikiToClass(16),
             wikiToClass(17),
             wikiToClass(12),
